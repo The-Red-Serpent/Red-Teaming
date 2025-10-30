@@ -305,5 +305,3 @@ Mitigation strategies:
 | HTTPProxyToSocks, SNIProxy | Domain fronting & relay     |
 
 
-Sample Diagram:
-![[Pasted image 20250820193947.png]]
