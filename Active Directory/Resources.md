@@ -92,9 +92,19 @@
 * Evilginx Phishlets – [https://github.com/An0nUD4Y/Evilginx2-Phishlets](https://github.com/An0nUD4Y/Evilginx2-Phishlets)
 * Phishing Infra – [https://payatu.com/blog/phishing-infrastructure-setup/](https://payatu.com/blog/phishing-infrastructure-setup/)
 * Cloudflare For Phishing - [https://0xd33r.com/article/2025/cloudflare-tunnels-for-phishing](https://0xd33r.com/article/2025/cloudflare-tunnels-for-phishing)
-* 
+* Building An Local SMTP Server - [https://m3rcer.github.io/redteaming/spamfilterbypass/](https://m3rcer.github.io/redteaming/spamfilterbypass/)
+* Setting up Gophish - [https://0xsebin-blogs.vercel.app/2025/10/21/GoPhish-Setting-up-without-Evilgnix-Part-1/](https://0xsebin-blogs.vercel.app/2025/10/21/GoPhish-Setting-up-without-Evilgnix-Part-1/)
+
 
 
 ## Toolkit
 * Red Team Tools - [https://stack.chaitin.com/tool/detail/199](https://stack.chaitin.com/tool/detail/199)
 * AD Pentesting Tools - [https://github.com/theyoge/AD-Pentesting-Tools](https://github.com/theyoge/AD-Pentesting-Tools)
+
+## Pre Compiled Binaries
+* https://github.com/h4rithd/PrecompiledBinaries
+
+## Knowledge Bases
+* Swiz Security - [https://hacking.swizsecurity.com/hacking_methodology](https://hacking.swizsecurity.com/hacking_methodology)
+* DarkRavenOps - [https://darkravenops.in/](https://darkravenops.in/)
+* Blue Team Files - [https://blueteamfiles.com/](https://blueteamfiles.com/)
