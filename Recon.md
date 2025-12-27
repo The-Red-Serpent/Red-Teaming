@@ -1,353 +1,351 @@
+
+
 ### ASN and IP Range Enumeration
- - Hurricane Electric BGP Toolkit
- - Asnmap (github)
- - Asnlookup (github)
- - Iprange (github)
- - Netdiscover
- - cidr2ip
- - whois.domaintools.com
+| Tool Name | Link |
+|---|---|
+| Hurricane Electric BGP Toolkit | https://bgp.he.net/ |
+| Asnmap | https://github.com/nicocha30/asnmap |
+| Asnlookup | https://github.com/yassineaboukir/Asnlookup |
+| Iprange | https://github.com/zmap/iprange |
+| Netdiscover | https://github.com/netdiscover-scanner/netdiscover |
+| cidr2ip | https://github.com/roaldnefs/cidr2ip |
+| whois.domaintools.com | https://whois.domaintools.com/ |
 
 ### Apex Domain Enumeration
-- Crunchbase
-- Dealroom
-- ExplodingTopics
-- Techcrunch
-
+| Tool Name | Link |
+|---|---|
+| Crunchbase | https://www.crunchbase.com/ |
+| Dealroom | https://dealroom.co/ |
+| ExplodingTopics | https://explodingtopics.com/ |
+| Techcrunch | https://techcrunch.com/ |
 
 ### Whois Enumeration
-- Whoislookup
-- Reverse whois lookup
-- whoxy.com
+| Tool Name | Link |
+|---|---|
+| Whoislookup | https://github.com/joelgrus/whoislookup |
+| Reverse whois lookup | https://www.whoxy.com/reverse-whois/ |
+| whoxy.com | https://www.whoxy.com/ |
 
-###  DNS Enumeration
-- dig
-- nslookup
-- Dnsenum
-- dnsrecon
-- dnsdumpster
-- host
-- Viewdnsinfo
-- Fierce
-- dnsx
-- puredns
-- https://viewdns.info/
-- Dnschef
-- Dnscat2
-- DNsproxy
+### DNS Enumeration
+| Tool Name | Link |
+|---|---|
+| dig | https://linux.die.net/man/1/dig |
+| nslookup | https://linux.die.net/man/1/nslookup |
+| Dnsenum | https://github.com/fwaeyteens/dnsenum |
+| dnsrecon | https://github.com/darkoperator/dnsrecon |
+| dnsdumpster | https://dnsdumpster.com/ |
+| host | https://linux.die.net/man/1/host |
+| Viewdnsinfo | https://viewdns.info/ |
+| Fierce | https://github.com/mschwager/fierce |
+| dnsx | https://github.com/projectdiscovery/dnsx |
+| puredns | https://github.com/d3mondev/puredns |
+| https://viewdns.info/ | https://viewdns.info/ |
+| Dnschef | https://github.com/iphelix/dnschef |
+| Dnscat2 | https://github.com/iagox86/dnscat2 |
+| DNsproxy | https://github.com/AlphaEs/dnsproxy |
 
-### SMTP
-- smtp_user_enum
-- Evolution
+### Tech Stack Vulnerability Finder
+| Tool Name | Link |
+|---|---|
+| Vulntechx | https://github.com/rix4uni/vulntechfinder |
+
+### Dorking
+| Tool Name | Link |
+|---|---|
+| Dorkengine | https://dorkengine.github.io/ |
+| Bug Bounty Hunting | https://www.bugbountyhunting.com/ |
+| Bug Bounty Search Engine | https://nitinyadav00.github.io/Bug-Bounty-Search-Engine/ |
+
+### Host and IP Range Information
+| Tool Name | Link |
+|---|---|
+| host.io | https://host.io/ |
+| whois.irinn.in | https://whois.irinn.in/ |
+
+### Source Code Analysis
+| Tool Name | Link |
+|---|---|
+| Stratus | https://github.com/BiswajeetRay7/Stratus |
+
+### Vulnerability Scanning
+| Tool Name | Link |
+|---|---|
+| Shield-Eye | https://github.com/exiv703/Shield-Eye |
+| bbot | https://github.com/blacklanternsecurity/bbot |
+
+### Shodan Automation
+| Tool Name | Link |
+|---|---|
+| karma_v2 | https://github.com/Dheerajmadhukar/karma_v2 |
+| wtfis | https://github.com/pirxthepilot/wtfis |
+
+### SMTP Enumeration
+| Tool Name | Link |
+|---|---|
+| smtp_user_enum | https://github.com/pentestmonkey/smtp-user-enum |
+| Evolution | https://evolution.zco.in/ |
 
 ### SMB Enumeration
-- smbclient
-- enum4linux
-- enum4linux-ng
-- CrackmapExec
-- SMBmap
-- smbcacls
-- smbclient.py (impacket)
-- lookupsid.py (impacket)
-- samrdump.py
-- Smbclient-ng
+| Tool Name | Link |
+|---|---|
+| smbclient | https://www.samba.org/samba/docs/current/man-html/smbclient.1.html |
+| enum4linux | https://github.com/pentestmonkey/enum4linux |
+| enum4linux-ng | https://github.com/CiscoCXSecurity/enum4linux-ng |
+| CrackmapExec | https://github.com/byt3bl33d3r/CrackMapExec |
+| SMBmap | https://github.com/ShawnDEvans/smbmap |
+| smbcacls | https://www.samba.org/samba/docs/current/man-html/smbcacls.1.html |
+| smbclient.py (impacket) | https://github.com/SecureAuthCorp/impacket/blob/master/examples/smbclient.py |
+| lookupsid.py (impacket) | https://github.com/SecureAuthCorp/impacket/blob/master/examples/lookupsid.py |
+| samrdump.py | https://github.com/SecureAuthCorp/impacket/blob/master/examples/samrdump.py |
+| Smbclient-ng | https://github.com/p0dalirius/Smbclient-ng |
+
 ### NetBios Enumeration
-- nbtstat
-- NBTscan
-- nmblookup
-- NBTEnum
+| Tool Name | Link |
+|---|---|
+| nbtstat | https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/nbtstat |
+| NBTscan | https://github.com/elliotwutingfeng/nbtscan |
+| nmblookup | https://www.samba.org/samba/docs/current/man-html/nmblookup.1.html |
+| NBTEnum | https://github.com/mhagis/NBTEnum |
 
 ### Remote Procedural Call Enumeration
-- rpcclient
-- rpcdump.py  (impacket)
+| Tool Name | Link |
+|---|---|
+| rpcclient | https://www.samba.org/samba/docs/current/man-html/rpcclient.1.html |
+| rpcdump.py (impacket) | https://github.com/SecureAuthCorp/impacket/blob/master/examples/rpcdump.py |
 
-### Ldap Enumeratio
-- ldapsearch
-- ldapdomaindump
-- windapsearch
+### LDAP Enumeration
+| Tool Name | Link |
+|---|---|
+| ldapsearch | https://www.openldap.org/software/man.cgi?query=ldapsearch |
+| ldapdomaindump | https://github.com/dirkjanm/ldapdomaindump |
+| windapsearch | https://github.com/SecureAuthCorp/impacket/blob/master/examples/windapsearch.py |
 
 ### SSL/TLS Enumeration
-- ssl labs from qualys
-- crt.sh
-- Censys
-- testssl.sh (github)
-- sslyze (github)
-- ssl Server test
-- sslscan
-- tlsx
-- tls-scan
+| Tool Name | Link |
+|---|---|
+| ssl labs from qualys | https://www.ssllabs.com/ssltest/ |
+| crt.sh | https://crt.sh/ |
+| Censys | https://censys.io/ |
+| testssl.sh | https://github.com/drwetter/testssl.sh |
+| sslyze | https://github.com/nabla-c0d3/sslyze |
+| ssl Server test | https://www.sslshopper.com/ssl-checker.html |
+| sslscan | https://github.com/rbsec/sslscan |
+| tlsx | https://github.com/projectdiscovery/tlsx |
+| tls-scan | https://github.com/aquasecurity/tls-scan |
 
 ### Web Technology Enumeration
-- Wappalyzer
-- whatweb
-- Builtwith
-- httpheaders
-- Wpscan
-- Netcraft
-- WhatRuns
-- uniscan
+| Tool Name | Link |
+|---|---|
+| Wappalyzer | https://www.wappalyzer.com/ |
+| whatweb | https://github.com/urbanadventurer/WhatWeb |
+| Builtwith | https://builtwith.com/ |
+| httpheaders | https://github.com/lukehsiao/httpheaders |
+| Wpscan | https://wpscan.com/ |
+| Netcraft | https://www.netcraft.com/ |
+| WhatRuns | https://www.whatruns.com/ |
+| uniscan | https://github.com/yassineaboukir/Uniscan |
 
 ### Security Posture Enumeration
-- Security Headers.io
-
-### Open Source Enumeration
-- Shodan
-- Haveibeenpwned
-- Theharvester (github)
-- Karma V2 (github)
-- linkedin2username
-- Amass
-- Archive.org
-- Recon-ng (github)
-- Intel techniques
-- Spoon bill
-- Wigle
-- SpiderFoot
-- OSINT Framework
+| Tool Name | Link |
+|---|---|
+| Security Headers.io | https://securityheaders.com/ |
 
 ### Sub Domain Enumeration
-- Sublister
-- Subfinder
-- Amass
-- FindDomain
-- Assetfinder (github)
-- Subdomanizer (github)
-- Dnsrecon
-- SubBrute
-- knockpy
-- subbrute
-- shosubgo (github)
+| Tool Name | Link |
+|---|---|
+| Sublister | https://github.com/aboul3la/Sublist3r |
+| Subfinder | https://github.com/projectdiscovery/subfinder |
+| Amass | https://github.com/OWASP/Amass |
+| FindDomain | https://github.com/Wee-Jay/FindDomain |
+| Assetfinder | https://github.com/tomnomnom/assetfinder |
+| Subdomanizer | https://github.com/nsonaniya2010/SubDomainizer |
+| Dnsrecon | https://github.com/darkoperator/dnsrecon |
+| SubBrute | https://github.com/TheRook/subbrute |
+| knockpy | https://github.com/guelfoweb/knock |
+| subbrute | https://github.com/TheRook/subbrute |
+| shosubgo | https://github.com/incogbyte/shosubgo |
+| Censys Enumeration | https://github.com/0xbharath/censys-enumeration |
 
 ### Sub Domain Takeover
-- Subjack (github)
-- Subover (github)
-- Can-i-takeover-XYZ (github)
-- HijackThis (github)
+| Tool Name | Link |
+|---|---|
+| Subjack | https://github.com/haccer/subjack |
+| Subover | https://github.com/Ice3man543/subover |
+| Can-i-takeover-XYZ | https://github.com/EdOverflow/can-i-take-over-xyz |
+| HijackThis | https://sourceforge.net/projects/hjt/ |
 
 ### Directory and File Enumeration
-- Gobuster
-- Ffuf
-- Wfuzz
-- Dirbuster
-- feroxbuster
-- dirsearch
+| Tool Name | Link |
+|---|---|
+| Gobuster | https://github.com/OJ/gobuster |
+| Ffuf | https://github.com/ffuf/ffuf |
+| Wfuzz | https://github.com/xmendez/wfuzz |
+| Dirbuster | https://github.com/v0re/dirbuster |
+
 
 ### Network and Service Enumeration
-- Nmap
-- Censys
-- Shodan
-- BruteSpray (github)
-- Naabu - stealthy port scanning tool identifies ports only
-- Rustscan
-- Smap - Stealthy as well
-- rustscan\
-- fragroute 
+| Tool Name | Link |
+|---|---|
+| Nmap | https://nmap.org/ |
+| Censys | https://censys.io/ |
+| Shodan | https://www.shodan.io/ |
+| BruteSpray | https://github.com/x90skysn3k/brutespray |
+| Naabu | https://github.com/projectdiscovery/naabu |
+| Rustscan | https://github.com/RustScan/RustScan |
+| Smap | https://github.com/s0md3v/Smap |
+| fragroute | https://github.com/kpcyrd/fragroute |
 
 ### Cloud Enumeration
-- Bucket-finder (github)
-- Cloudfail (github)
-- Cloud Enum
-- Cloud Recon (github)
-- Kaefyjaegar.gay website
-
+| Tool Name | Link |
+|---|---|
+| Bucket-finder | https://github.com/RhinoSecurityLabs/bucket-finder |
+| Cloudfail | https://github.com/m0rtem/CloudFail |
+| Cloud Enum | https://github.com/s0md3v/CloudFail |
+| Cloud Recon | https://github.com/g0ldencybersec/CloudRecon |
+| Kaefyjaegar.gay website | https://kaefyjaegar.gay/ |
 
 ### Github Enumeration
-- Gitrob (github)
-- Gitleaks (github)
-- Trufflehog (github)
-- git-secrets (github)
-- repo-Supervisor (github)
-- githound
-- gitjacker
-- gittools
-- CGShield
+| Tool Name | Link |
+|---|---|
+| Gitrob | https://github.com/michenriksen/gitrob |
+| Gitleaks | https://github.com/zricethezav/gitleaks |
+| Trufflehog | https://github.com/trufflesecurity/trufflehog |
+| git-secrets | https://github.com/awslabs/git-secrets |
+| repo-Supervisor | https://github.com/mazen160/repo-supervisor |
+| githound | https://github.com/ttrambone/githound |
+| gitjacker | https://github.com/liamg/gitjacker |
+| gittools | https://github.com/internetwache/GitTools |
+| CGShield | https://www.cgshield.io/ |
 
 ### URL Enumeration
-- Get all urls (github)
-- Crawley (github)
-- GoSpider (github)
-- Zscanner (github)
-- Katana (github)
+| Tool Name | Link |
+|---|---|
+| Get all urls | https://github.com/lc/gau |
+| Crawley | https://github.com/s0md3v/Crawley |
+| GoSpider | https://github.com/jaeles-project/gospider |
+| Zscanner | https://github.com/Edu4rdSHL/zscanner |
+| Katana | https://github.com/projectdiscovery/katana |
 
 ### JS Files Enumeration
-
-- JSScanner
-- JS-Scan
-- hakrawler
-- gf
-- LinkFinder
-- JSHunter
-- Jsleaks
+| Tool Name | Link |
+|---|---|
+| JSScanner | https://github.com/aas-singh/jsscanner |
+| JS-Scan | https://github.com/koto/blog-kotowicz-net-examples/tree/master/js_scan |
+| hakrawler | https://github.com/hakluke/hakrawler |
+| gf | https://github.com/tomnomnom/gf |
+| LinkFinder | https://github.com/GerbenJavado/LinkFinder |
+| JSHunter | https://github.com/ob-he/jshunter |
+| Jsleaks | https://github.com/dsopas/JSleaks |
+| Js Snitch | https://github.com/vavkamil/js-snitch |
 
 ### Web Application Firewall Enumeration
-- Wafwoof
-- Whatwaf
-- BlindElephant
-- waffaudit
-- w3af
-- CF-hero
+| Tool Name | Link |
+|---|---|
+| Wafwoof | https://github.com/EnableSecurity/wafw00f |
+| Whatwaf | https://github.com/Ekultek/WhatWaf |
+| BlindElephant | https://github.com/visuslabs/BlindElephant |
+| waffaudit | https://github.com/righettod/waf-f-audit |
+| w3af | https://github.com/w3af/w3af |
+| CF-hero | https://github.com/Screetsec/CF-Hero |
 
 ### Live Host Enumeration
-- EyeWitness (github)
-- Aquatone (github)
-- HttpScreenshot (github)
-- httprobe
-- httpx
+| Tool Name | Link |
+|---|---|
+| EyeWitness | https://github.com/FortyNorthSecurity/EyeWitness |
+| Aquatone | https://github.com/michenriksen/aquatone |
+| HttpScreenshot | https://github.com/lanmaster53/recon-ng |
+| httprobe | https://github.com/tomnomnom/httprobe |
+| httpx | https://github.com/projectdiscovery/httpx |
 
 ### Proxy Tool
-- BurpSuite
-- Caido
-- pwnfox
+| Tool Name | Link |
+|---|---|
+| BurpSuite | https://portswigger.net/burp |
+| Caido | https://caido.io/ |
+| pwnfox | https://github.com/rxwy/pwnfox |
+
 ### Favicon Enumeration
-- Favfreak
+| Tool Name | Link |
+|---|---|
+| Favfreak | https://github.com/devanshbatham/FavFreak |
 
-### Api Enumeration
-- Kite runner - Brute Force API End points
-- ParamSpider- Finds hidden API parameters
-- Arjun- Finds hidden GET/POST parameters
+### API Enumeration
+| Tool Name | Link |
+|---|---|
+| Kite runner | https://github.com/AssetNote/kiterunner |
+| Brute Force API End points | https://github.com/assetnote/kiterunner |
+| ParamSpider | https://github.com/devanshbatham/ParamSpider |
+| Arjun | https://github.com/s0md3v/Arjun |
 
-### Miscellaneous 
-- Httpx
-- hakip2host
-- Prips.sh
+### Miscellaneous
+| Tool Name | Link |
+|---|---|
+| Httpx | https://github.com/projectdiscovery/httpx |
+| hakip2host | https://www.hakip2host.com/ |
+| Prips.sh | https://github.com/hilbiks/prips.sh |
 
-###  Shell Handlers
-- penelope
-- hoaxshell
-- villain
-- pwncat
-- rustcat
-- Powercat
-- Socat
-- [hackshell](https://github.com/hackerschoice/hackshell)
+### Shell Handlers
+| Tool Name | Link |
+|---|---|
+| penelope | https://github.com/penelope-tools/penelope |
+| hoaxshell | https://github.com/t3l3machus/hoaxshell |
+| villain | https://github.com/t3l3machus/villain |
+| pwncat | https://github.com/calebstewart/pwncat |
+| rustcat | https://github.com/bs-bch/rustcat |
+| Powercat | https://github.com/besimorhino/powercat |
+| Socat | http://www.dest-unreach.org/socat/ |
+| hackshell | https://github.com/hackerschoice/hackshell |
 
-
-### Lateral Movement and pivoting
-- sshuttle
-- ligolo-ng
-- chisel
-- rpivot
-- htran
-- Ligolo-Mp
-- [Socksoverrdp](https://github.com/nccgroup/SocksOverRDP)
-- [Port Bender](https://github.com/praetorian-inc/PortBender)
-- socat
+### Lateral Movement and Pivoting
+| Tool Name | Link |
+|---|---|
+| sshuttle | https://github.com/sshuttle/sshuttle |
+| ligolo-ng | https://github.com/nicocha30/ligolo-ng |
+| chisel | https://github.com/jpillora/chisel |
+| rpivot | https://github.com/klsec/rpivot |
+| htran | https://github.com/kavika13/htran |
+| Ligolo-Mp | https://github.com/evilsocket/ligolo |
+| Socksoverrdp | https://github.com/nccgroup/SocksOverRDP |
+| Port Bender | https://github.com/praetorian-inc/PortBender |
+| socat | http://www.dest-unreach.org/socat/ |
 
 ### Vulnerability Scanning Tools
-- Nessus
-- Openvas
-- Nxposed
+| Tool Name | Link |
+|---|---|
+| Nessus | https://www.tenable.com/products/nessus |
+| Openvas | https://www.openvas.org/ |
+| Nxposed | https://github.com/nxposed/Nxposed |
 
-### Previlege Escalation Tools
-	Linux
-		- LinPEAS
-		- LinEnum
-		- Linux-Exploit-suggester
-		- SUID3Num
-		- [LinEnum_PE](HernanRodriguez1/Linux_EnumPE/)
-		- Pspy
-	Windows
-		- Watson
-		- WinPEAS
-		- Wes-NG
-		- PowerUp
-		- Sharpup
-		- Seatbelt
-		- PowerUP
-		- JAWS
-		- Lazagne
-		- Privescheck
-		- Windows Exploit Suggester
-		- SessionGopher
+### Privilege Escalation Tools
+| Tool Name | Link |
+|---|---|
+| **Linux** | |
+| LinPEAS | https://github.com/carlospolop/PEASS-ng |
+| LinEnum | https://github.com/rebootuser/LinEnum |
+| Linux-Exploit-suggester | https://github.com/mzet-/linux-exploit-suggester |
+| SUID3Num | https://github.com/Anon-Exploiter/SUID3NUM |
+| LinEnum_PE | https://github.com/HernanRodriguez1/Linux_EnumPE |
+| Pspy | https://github.com/DominicBreuker/pspy |
+| **Windows** | |
+| Watson | https://github.com/rasta-mouse/Watson |
+| WinPEAS | https://github.com/carlospolop/PEASS-ng |
+| Wes-NG | https://github.com/bitsadmin/wesng |
+| PowerUp | https://github.com/PowerShellMafia/PowerSploit |
+| Sharpup | https://github.com/GhostPack/SharpUp |
+| Seatbelt | https://github.com/GhostPack/Seatbelt |
+| JAWS | https://github.com/411hall/JAWS |
+| Lazagne | https://github.com/AlessandroZ/LaZagne |
+| Privescheck | https://github.com/itm4n/PrivescCheck |
+| Windows Exploit Suggester | https://github.com/gellin/windows-exploit-suggester |
+| SessionGopher | https://github.com/obscuresec/SessionGopher |
+
 ### Logging and Monitoring Evasion Tools
-- Ghostpack
-- Sharploader
-- Eventcleaner
-- Nishang
-- shinjector
-- SharpEtwpatch
-- Sharploader
-- PatchETW
-- ETWti
-- Invoke-ETWBypass
-- Silent trininty
-- sharpbypass
-- Brute ratel C4
-
-### Run Time Detection Evasion
-- amsi.fail
-- Invoke-AMSIBypass
-- AmsiDisable
-- SharpAmsi
-- Amsipatch
-- Sharpsploit
-- AMSITrigger
-
-### system monitoring (event logging)
-
-- **Sysmon** – Provides detailed event logging and detection
-
-### Log analysis
-
-- **Eric Zimmerman Tools** – Forensic utilities for analyzing digital evidence, such as registry hives and event logs.
-
-### Threat detection and monitoring
-
-- **Yara** – Signature-based file scanning tool
-- **Chainsaw** – Command-line tool for parsing and hunting through Windows Event Logs
-- **Sigma** – Generic signature format for SIEM rule creation
-- **Zircolite** – Sigma-based EVTX log analysis
-- **Osquery** – Endpoint monitoring using SQL-like queries
-- **Velociraptor** – Endpoint monitoring, collection, and response
-
-#### Traffic capturing
-
-- **Wireshark** – Packet capture tool for network traffic analysis
-#### memory dumping
-
-- **DumpIt** – Memory dumping utility for memory forensics
-- **WinPmem** – Memory dumping utility for memory forensics
-
-#### memory forensics
-
-- **Volatility v2** – Memory forensics tool for analyzing memory dumps
-- **Volatility v3** – Updated memory forensics framework with modern support
-#### additional telemetry
-
-- **SilkETW** – C# wrappers for Event Tracing for Windows (ETW)
-- **SealighterTI** – Runs Microsoft-Windows-Threat-Intelligence without a driver
-- **AMSI-Monitoring-Script** – Extracts script content via AMSI ETW provider
-- **JonMon** – Open-source telemetry sensor collection
-- **Fibratus** – Behavior-driven detection with ETW and YARA memory scanning
-- **Atomic Red Team** – Adversary simulation framework based on MITRE ATT&CK
-
-###  Malware, process, and pe analysis
-
-- **CFF Explorer** – Examines and edits Windows PE files
-- **Ghidra** – Software reverse engineering framework
-- **x64dbg** – Debugger for x64/x86 Windows applications
-- **SpeakEasy** – Modular emulator for kernel and user-mode malware
-- **SysInternalsSuite** – Microsoft tools for system troubleshooting and malware analysis
-- **Get-InjectedThread** – Detects thread creation from code injection
-- **Hollows_Hunter** – Scans for and dumps suspicious implants
-- **Moneta** – Live memory analysis for user-mode malware detection
-- **PE-Sieve** – Detects and collects injected or modified PE files
-- **API Monitor** – Monitors API calls made by applications
-- **PE-Bear** – Multiplatform PE analysis and reversing tool
-- **ProcessHacker** – Monitors system processes and detects anomalies
-- **ProcMonX** – Extended process monitor built on ETW
-- **Frida** – Dynamic instrumentation and API hooking toolkit
-- **LitterBox** – Sandbox environment for testing malware behavior
-.
-### Custom Tools
-- https://github.com/gotr00t0day
-- https://github.com/sp34rh34d
-- https://github.com/blacklanternsecurity
-- https://sploitify.haxx.it/
-- https://threatintelligenceplatform.com/
-- https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=snmpssh
-- UACME
-- Meshagent
-- Classroomspy
-- Argfuscator
-
-
+| Tool Name | Link |
+|---|---|
+| Ghostpack | https://github.com/ghostpack |
+| Sharploader | https://github.com/FortyNorthSecurity/SharpLoader |
+| Eventcleaner | https://github.com/QAX-A-Team/EventCleaner |
+| Nishang | https://github.com/samratashok/nishang |
+| shinjector | https://github.com/hasherezade/shellcode_injector |
+| SharpEtwpatch | https://github.com/FSecureLABS/SharpEtwPatch |
+| PatchETW | https://github.com
