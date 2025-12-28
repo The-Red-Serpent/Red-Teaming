@@ -106,7 +106,11 @@
 ## Pre Compiled Binaries
 * https://github.com/h4rithd/PrecompiledBinaries
 
+## APT emulation
+* https://github.com/S3N4T0R-0X0/APTs-Adversary-Simulation
+
 ## Knowledge Bases
 * Swiz Security - [https://hacking.swizsecurity.com/hacking_methodology](https://hacking.swizsecurity.com/hacking_methodology)
 * DarkRavenOps - [https://darkravenops.in/](https://darkravenops.in/)
 * Blue Team Files - [https://blueteamfiles.com/](https://blueteamfiles.com/)
+* https://www.notion.so/Red-Team-Notes-26dabf92dc0f800ebb7ee35a93d2ea58
