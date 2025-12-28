@@ -45,11 +45,14 @@
 * Persistence – [https://hadess.io/pwning-the-domain-persistence/](https://hadess.io/pwning-the-domain-persistence/)
 
 ## Living of the Land
+* Base - [https://lolol.farm/](https://lolol.farm/)
 * LOLBAS – [https://lolbas-project.github.io/](https://lolbas-project.github.io/)
 * LOLdrivers - [https://www.loldrivers.io/](https://www.loldrivers.io/)
 * Filesec – [https://filesec.io/](https://filesec.io/)
 * LOLAD - [https://lolad-project.github.io/](https://lolad-project.github.io/)
 * LOTS - [https://lots-project.com/](https://lots-project.com/)
+* File Transfer - [https://www.lolfs.app/](https://www.lolfs.app/)
+* RMM - [https://lolrmm.io/](https://lolrmm.io/)
 
 
 ## Bloodhound
@@ -101,6 +104,7 @@
 * Red Team Tools - [https://stack.chaitin.com/tool/detail/199](https://stack.chaitin.com/tool/detail/199)
 * AD Pentesting Tools - [https://github.com/theyoge/AD-Pentesting-Tools](https://github.com/theyoge/AD-Pentesting-Tools)
 * AD Pentesting tools - [https://github.com/infosecn1nja/Red-Teaming-Toolkit](https://github.com/infosecn1nja/Red-Teaming-Toolkit)
+* Inventory - [https://inventory.raw.pm/tools.html](https://inventory.raw.pm/tools.html)
 
 ## Pre Compiled Binaries
 * https://github.com/h4rithd/PrecompiledBinaries
