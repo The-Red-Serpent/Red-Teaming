@@ -100,6 +100,7 @@
 ## Toolkit
 * Red Team Tools - [https://stack.chaitin.com/tool/detail/199](https://stack.chaitin.com/tool/detail/199)
 * AD Pentesting Tools - [https://github.com/theyoge/AD-Pentesting-Tools](https://github.com/theyoge/AD-Pentesting-Tools)
+* AD Pentesting tools - [https://github.com/infosecn1nja/Red-Teaming-Toolkit](https://github.com/infosecn1nja/Red-Teaming-Toolkit)
 
 ## Pre Compiled Binaries
 * https://github.com/h4rithd/PrecompiledBinaries
