@@ -80,9 +80,6 @@
 * DarkArmour – [https://github.com/bats3c/darkarmour](https://github.com/bats3c/darkarmour)
 * EDR Telemetry – [https://www.edr-telemetry.com/](https://www.edr-telemetry.com/)
 
----
-
-## OPSEC
 
 
 ## Infrastructure & Red Team Ops
