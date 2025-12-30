@@ -6,6 +6,7 @@
 | FreeOSINT   | [https://freeosint.github.io/](https://freeosint.github.io/) |
 | Cscorza     | https://cscorza.github.io/CScorza/                           |
 | Infoooze    | https://github.com/devxprite/infoooze                        |
+
 ### Search Engines
 
 | Tool         | URL                                                      |
@@ -43,8 +44,6 @@
 | XSS           |                         |                                                                                       |
 
 
----
-
 ## Other Forums
 
 | Community       | Categories     | URL                                                                   |
@@ -74,7 +73,6 @@
 | Sinisterly      | hacking        | https://www.sinister.ly                                               |
 | Wilder Security | security       | https://www.wilderssecurity.com                                       |
 
----
 
 ## Dangerous / Honeypots
 
@@ -87,7 +85,7 @@
 | Altenens | https://altenens.is | exit scams |
 | HackForums | https://www.hackforums.net | long-term honeypot |
 
----
+
 
 ## Dead / Inactive
 
@@ -100,6 +98,12 @@
 | https://darkpro.net           |
 | https://hackonology.com       |
 | https://underworldmafias.net/ |
+
+## APT Analysis
+| Tool           | URL                                                      |
+| -------------- | -------------------------------------------------------- |
+| Malpedia       | https://malpedia.caad.fkie.fraunhofer.de/actors          |
+| Senator github | https://github.com/S3N4T0R-0X0/APTs-Adversary-Simulation |
 
 ## People Profiling
 
@@ -158,7 +162,6 @@
 |DDoSecrets|[https://ddosecrets.com/](https://ddosecrets.com/)|
 |CheckLeaked|[https://checkleaked.cc/](https://checkleaked.cc/)|
 |IntelX|[https://intelx.io](https://intelx.io)|
-
 
 ## Email Gathering
 
