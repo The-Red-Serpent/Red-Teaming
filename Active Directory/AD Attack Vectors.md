@@ -1,5 +1,3 @@
-# Protocol-Based Enumeration & Tools
-
 ## Username Enumeration
 - `lookupsid.py`
 - `username-anarchy`
@@ -76,11 +74,12 @@
 - `BOFHound`
 - `LUDUShound`
 - `Plumhound`
-- `Sharphound
+- `Sharphouns.exe/ps1`
 - [Network Hound](https://github.com/MorDavid/NetworkHound)
 - `Soapy`
 - [BloodHound Cypher Cheatsheet](https://hausec.com/2019/09/09/bloodhound-cypher-cheatsheet/)
 - [BloodHound Query Library](https://queries.specterops.io/)
+- Taskhound
 
 ---
 
@@ -114,11 +113,15 @@ ldapsearch -x -H ldap://dc-ip-here -s base -b "" "(objectClass=*)" namingContext
 # Query all the objects in directory
 ldapsearch -x -H ldap://dc-ip-here -D 'admin@contoso.org' -W -b 'DC=CONTOSO,DC=ORG' 'objectClass=*'
 
-# dump all
-ldapsearch -x -b "domainbase" "*"  -h <ip>
+# Dump everything
+ldapsearch -x -H ldap://10.129.89.167 -b "DC=baby,DC=vl" "*" | grep dn
 
-# query all users
-ldapsearch -x -H ldap://dc-ip-here -D 'admin@contoso.org' -W -b 'DC=AD,DC=LAB' '(objectClass=user)'
+# with netexec (only live accounts wil be shown)
+netexec ldap  baby.vl -u '' -p ''
+
+# users Description
+netexec ldap  baby.vl -u '' -p '' --users
+
 ```
 - RPC Anonymous Authentication
 
@@ -181,18 +184,17 @@ ldapsearch -x -H ldap://dc-ip-here -D 'admin@contoso.org' -W -b 'DC=AD,DC=LAB' '
 ```
 nxc ldap <ip>  -u username -p password -M pre2K
 ```
-	- if u find a pre2k computer u can use netexec with `-k` to authenticate or use --generate-tgt-ticket . 0xdf retrro machine
+	- if u find a pre2k computer u can use netexec with `-k` to authenticate or use --generate-tgt-ticket . 0xdf retro machine
 - Enumerate Machine Account Quota
 - Check if ADCS is present or not
 - MOTW Evasion
 - payload delivery as pdf via html smuggling iso container and link trigger
 - HTMl smuggling + containered payload delivery with bacdoored msi
 - [Read](https://blog.delivr.to/delivr-tos-top-10-payloads-highlighting-notable-and-trending-techniques-fb5e9fdd9356)
-- Check the Windows Server version and look for CVE's
+- Check the Windows Server version and look for CVE's or latest vulns
 ```
  nxc smb 10.10.112.106  
 ```
-- 
 
 ## Host Reconnaissance
 
@@ -307,7 +309,6 @@ nxc ldap <ip>  -u username -p password -M pre2K
 - Find all OUs in the domain
 - Find the users in local Administrators group
 - FInd Shares using PowerHuntShares
-- Domain trust info (Get-DomainTrust)
 - Screenshot
 - Clipboard Data
 	```
@@ -320,46 +321,69 @@ sudo find / -type f -name 'krb5cc_*' 2>/dev/null
 
 ###  Forest and Trust Enumeration
 - [DomainTrustMapper](https://github.com/sixdub/DomainTrustExplorer)
+
 ```
-# Inbuilt
+ --- [1] BASIC DOMAIN TRUST ENUMERATION (Windows built-ins) ---
+
+# List trusted domains known to the local machine
 nltest /trusted_domains
 
+# Query domain trusts for a specific domain
 netdom query /domain:inlanefreight.local trust
 
-# Powershell
+
+ --- [2] ENUMERATION WITH POWERSHELL (AD Module) ---
+
+# Get all trust objects visible to the current domain
 Get-ADTrust -Filter *
 
-# Powerview
-Get-DomainTrust
-
-Get-DomainTrust -Domain <Domain_name>
-
-# trust mapping
-Get-DomainTrustMapping
-
-# Netexec
-nxc ldap <ip> -u <user> -p <pass> -M enum_trusts
-
-# Listing Users in Child Domain
-Get-DomainUser -Domain LOGISTICS.INLANEFREIGHT.LOCAL | select SamAccountName
-
-# All Details About Current Forest
+# Retrieve details about the current forest (forest-wide info)
 Get-Forest
 
-# Get All Domains in Current Forest
-Get-ForestDomain 
+# List all domains in the current forest
+Get-ForestDomain
 
-# Get all global catalogs for the current forest
+# List all global catalog servers in the current forest
 Get-ForestGlobalCatalog
 
-# Get all forests trust
+# Enumerate forest-level trusts
 Get-ForestTrust
 
-# To enumerate users who are in groups outside of the user’s primary domain
+
+--- [3] ENUMERATION WITH POWERVIEW (Offensive/Red Team PowerShell) ---
+
+# Enumerate domain trusts for the current domain
+Get-DomainTrust
+
+# Enumerate trusts for a specific domain
+Get-DomainTrust -Domain <Domain_name>
+
+# Show mapped trust relationships and details between domains
+Get-DomainTrustMapping
+
+# List users in a specific child domain
+Get-DomainUser -Domain LOGISTICS.INLANEFREIGHT.LOCAL | select SamAccountName
+
+# Enumerate users who are members of groups outside their primary domain
 Get-DomainForeignUser -Domain <domain_name>
 
-# To enumerate groups with users who are outside of the group’s primary domain
+# Enumerate groups that contain users from other domains
 Get-DomainForeignGroupMember
+
+# Map and enumerate all trusts recursively across the forest
+Invoke-MapDomainTrust
+
+# Find users that are members of groups in other domains
+Find-ForeignUser -Domain <domain>
+
+# Find groups that contain members from other domains
+Find-ForeignGroup -Domain <domain>
+
+
+--- [4] ENUMERATION WITH NETEXEC / IMPACKET STYLE TOOLS ---
+
+# Enumerate domain trusts using LDAP with credentials
+nxc ldap <ip> -u <user> -p <pass> -M enum_trusts
 
 # Trust Attacks
 https://itm8.com/articles/sid-filter-as-security-boundary-between-domains-part-1
@@ -406,8 +430,6 @@ Get-LAPSComputers
 - Enumerate ACLs 
 	- dacledit.py
 ```
- Enumerate ACLs 
-	- dacledit.py
 # Powerview
 Find-InterestingDomainACL
 
@@ -416,7 +438,7 @@ $sid= Convert-NameToSid <username>
 Get-DomainObjectACL -ResolveGUIDs -Identity * | ? {$_.SecurityIdentifier -eq $sid}  -verbose
 
 # dacledit.py
-dacledit.py -target <user> -dc-ip <ip> <Domain_name>/<username>:'<password>'
+dacledit.py -target <user> -dc-ip <ip><Domain_name>/<username>:'<password>'
 ```
 
 - Group Policy Enumeration
@@ -471,9 +493,12 @@ dacledit.py -target <user> -dc-ip <ip> <Domain_name>/<username>:'<password>'
 - `Privesc`
 - `linWinPwn`
 - `Lynis`
+- Named Pipe Impersonation
+- Named Pipe Hijacking
+- COM Hijacking
 - enigma0x3 blogs
 - powerview
-- privesc
+- Seatbelt
 
 ---
 
@@ -483,6 +508,8 @@ dacledit.py -target <user> -dc-ip <ip> <Domain_name>/<username>:'<password>'
 - FInd Shares using PowerHuntShares
 - Keystroke Logging
 - SAM Database Dumping
+	- Secretsdump.py
+	- [Sharpsecdump](https://github.com/G0ldenGunSec/SharpSecDump)
 	```
 	nxc smb 192.168.1.0/24 -u UserName -p 'PASSWORDHERE' --sam
 	```
@@ -493,6 +520,8 @@ dacledit.py -target <user> -dc-ip <ip> <Domain_name>/<username>:'<password>'
 - Autologon Credential Dumping
 - Windows Credential Manager (DPAPI)
 	-[SharpDPAPI](https://github.com/GhostPack/SharpDPAPI)
+	-[donpwner](https://github.com/MorDavid/donpwner)
+	-Donpapi
 	```
 	nxc smb <ip> -u <user> -p <pass> --dpapi
 	```
@@ -521,6 +550,11 @@ dacledit.py -target <user> -dc-ip <ip> <Domain_name>/<username>:'<password>'
 	```
 	nxc smb 192.168.1.0/24 -u UserName -p 'PASSWORDHERE' --lsa
 	```
+-  Credentials from Web Browsers
+	- [Sharpweb](https://github.com/djhohnstein/SharpWeb)
+	- [Sharpchrome](https://github.com/GhostPack/SharpDPAPI/tree/master/SharpChrome)
+	- [Sharpweb](https://github.com/djhohnstein/SharpWeb)
+
 ---
 
 ## Post-Exploitation Attacks
@@ -583,7 +617,16 @@ Tools
 ---
 
 ## Active Directory Persistence
-
+- Registry Run Keys
+- Startup Folder
+	```
+	# Folder Path
+		C:\Users\User_name\AppData\Roaming\Microsoft\Windows\Start
+	```
+- Logon Script
+- Powershell Profile
+- scheduled tasks
+- COM Hijacking 
 - Golden Ticket
 - Silver Ticket
 - DCSync
@@ -633,6 +676,9 @@ Tools
 - MS14-068
 - MS14-025
 - Ntlm Reflection
+	```
+	nxc smb 10.42.42.10 -u dave -p dragon -M ntlm_reflection
+	```
 ---
 
 ## MS SQL Servers
@@ -642,6 +688,8 @@ Tools
 
 ### Interaction
 - `mssqlclient.py`
+- [MSsqlPwner](https://github.com/ScorpionesLabs/MSSqlPwner)
+- 
 
 ---
 
