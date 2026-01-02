@@ -1,3 +1,7 @@
+![Trust image](https://ad4noobs.justin-p.me/terminology_installing_a_active_directory/domain_tree_forest/domain_tree_forest_05.png)
+
+
+
 ## What is Trust
 A trust is a security Relationship between 2 domains that allows user in one domain to access resources in another domain.(trusted_domain_user<----->trusting_domain_resource )
 ### Types of Trust
@@ -119,18 +123,6 @@ A Trusted Domain Object (TDO) is an Active Directory object that represents a tr
 ldapsearch (objectClass=trustedDomain)
 ```
 
-## PAC
-PAC (Privileged Attribute Certificate) is a cryptographically signed data structure inside Kerberos tickets that securely carries a user's security context (like their SID and group memberships) from the Domain Controller (DC) to services, allowing those services to verify the user's permissions (authorization) without needing to query the DC repeatedly, speeding up authentication
-
-### SID Filtering
-The **Security Identifier (SID) Filtering mechanism** is a **security feature in Microsoft Active Directory (AD)** designed to protect domains that are connected through **trust relationships**. It prevents unauthorized elevation of privileges by ensuring that only valid, legitimate SIDs are honored when users from one domain access resources in another domain. When SID Filtering is **enabled**:
-- The trusting domain examines the list of SIDs in the user’s token.
-- It only honors SIDs that **originate from the trusted domain’s own namespace**.
-- Any **foreign, spoofed, or invalid SIDs** are **filtered out** before access is granted.
-
-## SID History
-**SID History** is an **attribute in Active Directory** that stores **previous SIDs (Security Identifiers)** that were associated with a user, group, or computer account before it was migrated or renamed. This mechanism allows users and groups to **retain access to resources** that were secured under their **old SID** even after being moved to a new domain.
-
 ## **Cross-Domain Kerberos Authentication Process**
 When a user in Domain A wants to access a resource in an Domain B. There are 2 steps involved
 - Authentication
@@ -179,6 +171,23 @@ The **Domain B server** now performs **authorization** locally:
 4. If not, access is **denied**.
 
 ![Kerberos Trust Flow Diagram](https://miro.medium.com/v2/resize:fit:1100/format:webp/0*gUBEFVsfluURDEgJ.png)
+
+## PAC
+PAC (Privileged Attribute Certificate) is a cryptographically signed data structure inside Kerberos tickets that securely carries a user's security context (like their SID and group memberships) from the Domain Controller (DC) to services, allowing those services to verify the user's permissions (authorization) without needing to query the DC repeatedly, speeding up authentication
+
+### SID Filtering
+The **Security Identifier (SID) Filtering mechanism** is a **security feature in Microsoft Active Directory (AD)** designed to protect domains that are connected through **trust relationships**. It prevents unauthorized elevation of privileges by ensuring that only valid, legitimate SIDs are honored when users from one domain access resources in another domain. When SID Filtering is **enabled**:
+- The trusting domain examines the list of SIDs in the user’s token.
+- It only honors SIDs that **originate from the trusted domain’s own namespace**.
+- Any **foreign, spoofed, or invalid SIDs** are **filtered out** before access is granted.
+
+## SID History
+SID History is an attribute in AD that supports migration scenarios. Every user account has an associated Security IDentifier (SID) which is used to track the security principal and the access the account has when connecting to resources. SID History enables access for another account to effectively be cloned to another. This is extremely useful to ensure users retain access when moved (migrated) from one domain to another. Since the user’s SID changes when the new account is created, the old SID needs to map to the new one. When a user in Domain A is migrated to Domain B, a new user account is created in DomainB and DomainA user’s SID is added to DomainB’s user account’s SID History attribute. This ensures that DomainB user can still access resources in DomainA.
+
+The interesting part of this is that SID History works for SIDs in the same domain as it does across domains in the same forest, which means that a regular user account in DomainA can contain DomainA SIDs and if the DomainA SIDs are for privileged accounts or groups, a regular user account can be granted Domain Admin rights without being a member of Domain Admins.
+
+## Enterprise Admins
+An Enterprise Admin is a highly privileged built‑in group in Active Directory that has full administrative control over the entire forest, not just a single domain. Members of this group can manage all domains in the forest, create or remove domains, modify forest‑wide configuration and trusts, and add themselves or others to any privileged group. The group exists in the forest root domain, and its permissions automatically apply across every child domain and tree in the forest. In practice, Enterprise Admins are the highest‑level administrators in Active Directory, meaning compromise of this role equals complete forest compromise.
 
 
 ###### Trust Attacks
