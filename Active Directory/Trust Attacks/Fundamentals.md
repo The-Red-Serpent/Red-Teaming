@@ -90,6 +90,10 @@ Key properties:
 - Holds the  Trust Account Password.
 Used only for Kerberos authentication
 
+```
+ldapsearch (samAccountType=805306370) --attributes samAccountName
+```
+
 ## Trust Key or Kereberos Keys
 A trust key is a cryptographic key derived from the trust account password in the active Directory that is used to sign the inter realm ticket granting ticket or inter Domain Kerberos ticket
 Important Detail
