@@ -154,6 +154,9 @@ The **Domain B server** now performs **authorization** locally:
 3. If there’s a match (e.g., Alice’s SID or one of her group SIDs appears in the ACL), access is **granted**.
 4. If not, access is **denied**.
 
+![Kerberos Trust Flow Diagram](https://miro.medium.com/v2/resize:fit:1100/format:webp/0*gUBEFVsfluURDEgJ.png)
+
+
 ###### Trust Attacks
 
 - [https://itm8.com/articles/sid-filter-as-security-boundary-between-domains-part-1](https://itm8.com/articles/sid-filter-as-security-boundary-between-domains-part-1)
