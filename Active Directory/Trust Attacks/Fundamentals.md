@@ -82,18 +82,38 @@ Also called as forest root domain is the **first domain created** in an Active D
     - Domain Naming Master
 
 ## Trust Account
-When 2 Domains Establish a trust , each Domain creates a trust account in it own domain to represent the other domain. The trust account is essentially a placeholder or identity in AD for the other Domain
+When two domains establish a trust, each domain creates a hidden trust account in its own Active Directory to represent the other domain’s KDC.
+The trust account acts as a Kerberos principal, not a user or computer.
+Key properties:
+- sAMAccountType = SAM_TRUST_ACCOUNT
+- sAMAccountName = <OtherDomain>$
+- Holds the  Trust Account Password.
+Used only for Kerberos authentication
 
-- It Stores some metadata like
-    - The type of trust
-    - The Direction of trust
-    - A trust Password
-
-## Trust Key
+## Trust Key or Kereberos Keys
 A trust key is a cryptographic key derived from the trust account password in the active Directory that is used to sign the inter realm ticket granting ticket or inter Domain Kerberos ticket
+Important Detail
+- In the Trusted Domain the shared secret or the trust Key is stored as the password of the trust account which is used by the Trusted Domain KDC to encrypt the inter realm TGTS
+- In the Trusting Domain The same shared secret or the trust key is stored in the Trusted Domain Object (TDO) which is used by  the trusting domain’s KDC to Validate and re-sign cross-domain  kereberos tickets
+
 
 ## What is Inter-Realm ticket granting ticket
 It is a special type of Kerberos ticket granting ticket that is used to authenticate a user form one domain to another domain in a trusted active Directory environment.
+
+## Trusted Domain Object
+A Trusted Domain Object (TDO) is an Active Directory object that represents a trust relationship with another domain or forest and contains the trust’s configuration, direction, and authentication information.
+
+### A TDO stores metadata about a trust, including:
+- Which domain is trusted
+- How authentication flows
+- Whether the trust is transitive
+- Whether SID filtering is enabled
+- A shared secret (trust password) used by Domain Controllers
+- This allows Domain Controllers (KDCs) in different domains to verify each other during authentication.
+
+```
+ldapsearch (objectClass=trustedDomain)
+```
 
 ## PAC
 PAC (Privileged Attribute Certificate) is a cryptographically signed data structure inside Kerberos tickets that securely carries a user's security context (like their SID and group memberships) from the Domain Controller (DC) to services, allowing those services to verify the user's permissions (authorization) without needing to query the DC repeatedly, speeding up authentication
