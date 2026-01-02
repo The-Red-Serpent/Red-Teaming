@@ -104,6 +104,8 @@
 | -------------- | -------------------------------------------------------- |
 | Malpedia       | https://malpedia.caad.fkie.fraunhofer.de/actors          |
 | Senator github | https://github.com/S3N4T0R-0X0/APTs-Adversary-Simulation |
+| DIFR report    | https://thedfirreport.com/                               |
+
 
 ## People Profiling
 
