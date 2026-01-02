@@ -10,7 +10,7 @@
 * Persistence – [https://hadess.io/pwning-the-domain-persistence/](https://hadess.io/pwning-the-domain-persistence/)
 * AD CS Attacks – [https://dirkjanm.io/extending-ad-cs-attack-surface-intune-certs/](https://dirkjanm.io/extending-ad-cs-attack-surface-intune-certs/)
 * AD Command Generator – [https://gzzcoo.com/CS](https://gzzcoo.com/CS)
-* CRTP Guide – [https://crtp-certification.certs-study.com/domain-persistence/skeleton-keys](https://crtp-certification.certs-study.com/domain-persistence/skeleton-keys)
+* CRTP Guide – [https://crtp-certification.certs-study.com/](https://crtp-certification.certs-study.com/)
 * Iredteam - [https://www.ired.team/](https://www.ired.team/)
 * Red Teaming and Malware Analysis - [https://gitbook.seguranca-informatica.pt/](https://gitbook.seguranca-informatica.pt/)
 * Ben Heater Notes - [https://notes.benheater.com/books/active-directory](https://notes.benheater.com/books/active-directory)
