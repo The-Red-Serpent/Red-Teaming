@@ -13,6 +13,8 @@
 * CRTP Guide – [https://crtp-certification.certs-study.com/domain-persistence/skeleton-keys](https://crtp-certification.certs-study.com/domain-persistence/skeleton-keys)
 * Iredteam - [https://www.ired.team/](https://www.ired.team/)
 * Red Teaming and Malware Analysis - [https://gitbook.seguranca-informatica.pt/](https://gitbook.seguranca-informatica.pt/)
+* Ben Heater Notes - [https://notes.benheater.com/books/active-directory](https://notes.benheater.com/books/active-directory)
+
 
 
 
