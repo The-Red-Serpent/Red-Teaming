@@ -14,23 +14,18 @@ Non-Transitive trust, if domain A trusts domain B, and domain B has a non-transi
 ##### Parent-Child Trust
 Parent-child trust is implicitly established. It is a two-way transitive trust. Parent-child trust is automatically generated when a child domain is added to a parent domain. When a new child domain is added, the trust path flows upward through the domain hierarchy.
 
-![[Pasted image 20251030170146.png]]
 ##### Tree-Root Trust
 It link the root domain of one tree to root domain of another tree within the same forest. This trust is created automatically when a new tree created in the forest. Tree-root trust is also a two-way transitive trust
 
-![[Pasted image 20251030170403.png]]
 ##### External Trust
 An External trust is a one-way non-transitive trust. The trust links forms between a domain in one forest and a domain in another separate forest.
 
-![[Pasted image 20251030170418.png]]
 ##### Forest Trust
 Forest trust are transitive trust, and they can either one-way or two-way trust. It is explicitly transitive (between two forest) created trust between two forest root domains. Forest trust are manually created, one-way transitive or two-way transitive trust that allows you to provide access to the resource between multiple forest. It required DNS resolution to be established between forests.
 
-![[Pasted image 20251030170451.png]]
 ##### Shortcut (cross link) trust
 Shortcut trust are manually created one-way, transitive trusts. They can only exist within a forest. This trust connection emerges between 2 child domains belonging to diff tress within same forest.
 
-![[Pasted image 20251030170429.png]]
 
 
 
@@ -161,7 +156,7 @@ The **Domain B server** now performs **authorization** locally:
 3. If there’s a match (e.g., Alice’s SID or one of her group SIDs appears in the ACL), access is **granted**.
 4. If not, access is **denied**.
 
-![[Pasted image 20251030175329.png]]
+
 
 
 ###### Trust Attacks
