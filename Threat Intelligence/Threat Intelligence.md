@@ -6,6 +6,7 @@
 | FreeOSINT   | [https://freeosint.github.io/](https://freeosint.github.io/) |
 | Cscorza     | https://cscorza.github.io/CScorza/                           |
 | Infoooze    | https://github.com/devxprite/infoooze                        |
+| Osint.sh    | https://osint.sh/                                            |
 
 ### Search Engines
 
