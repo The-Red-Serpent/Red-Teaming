@@ -115,4 +115,5 @@
 * Swiz Security - [https://hacking.swizsecurity.com/hacking_methodology](https://hacking.swizsecurity.com/hacking_methodology)
 * DarkRavenOps - [https://darkravenops.in/](https://darkravenops.in/)
 * Blue Team Files - [https://blueteamfiles.com/](https://blueteamfiles.com/)
-* https://www.notion.so/Red-Team-Notes-26dabf92dc0f800ebb7ee35a93d2ea58
+* DBgman - [https://www.notion.so/Red-Team-Notes-26dabf92dc0f800ebb7ee35a93d2ea58](https://www.notion.so/Red-Team-Notes-26dabf92dc0f800ebb7ee35a93d2ea58)
+* hackers Arise -[https://www.notion.so/Red-Team-Notes-26dabf92dc0f800ebb7ee35a93d2ea58](https://www.notion.so/Red-Team-Notes-26dabf92dc0f800ebb7ee35a93d2ea58)
