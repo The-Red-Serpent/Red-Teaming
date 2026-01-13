@@ -39,7 +39,8 @@
 | BHF           | hacking, leaks          | https://bhf.pro<br>bhf2b5nb3lb2kxpaoyqz7cuk2dkgej5n2refuffxzyhldwt4d7de4zqd.onion     |
 | CryptBB       | Hacking, leaks          | http://cryptbbtg65gibadeeo2awe3j7s6evg7eklserehqr4w4e2bis5tebid.onion/                |
 | Dread         | hacking, leaks etc      | https://dreadytofatroptsdj6io7l3xptbet6onoyno2yv7jicoxknyazubrad.onion/               |
-| Umbra Forums  | Leaks                   | https://umbra.by/
+| Umbra Forums  | Leaks                   | https://umbra.by/                                                                     |
+| leak Forums   | Cracking , Leaks        | https://cyllex.io/                                                                    |
 | Raid Forums   |                         |                                                                                       |
 | Breach Forums |                         |                                                                                       |
 | Dark Forums   |                         |                                                                                       |
@@ -107,6 +108,7 @@
 | Malpedia       | https://malpedia.caad.fkie.fraunhofer.de/actors          |
 | Senator github | https://github.com/S3N4T0R-0X0/APTs-Adversary-Simulation |
 | DIFR report    | https://thedfirreport.com/                               |
+| Cyllex         | https://cyllex.io/                                       |
 
 
 ## People Profiling
