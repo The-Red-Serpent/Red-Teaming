@@ -349,3 +349,11 @@
 | shinjector | https://github.com/hasherezade/shellcode_injector |
 | SharpEtwpatch | https://github.com/FSecureLABS/SharpEtwPatch |
 | PatchETW | https://github.com
+
+### Port Forwarding
+| Tool Name | Link |
+|---|---|
+| portmP  | [https://www.tenable.com/products/nessus](https://portmap.io/) |
+| Outray | https://outray.dev/ |
+| Nxposed | https://github.com/nxposed/Nxposed |
+
