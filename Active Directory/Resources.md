@@ -56,6 +56,7 @@
 * File Transfer - [https://www.lolfs.app/](https://www.lolfs.app/)
 * RMM - [https://lolrmm.io/](https://lolrmm.io/)
 * WADcoms - [https://wadcoms.github.io/](https://wadcoms.github.io/)
+* Worst fit - [https://worst.fit/](https://worst.fit/)
 
 
 ## Bloodhound
