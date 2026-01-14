@@ -169,6 +169,7 @@
 |DDoSecrets|[https://ddosecrets.com/](https://ddosecrets.com/)|
 |CheckLeaked|[https://checkleaked.cc/](https://checkleaked.cc/)|
 |IntelX|[https://intelx.io](https://intelx.io)|
+|Infosteaer|[https://infostealers.info](https://infostealers.info)|
 
 ## Email Gathering
 
