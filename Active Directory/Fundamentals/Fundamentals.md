@@ -166,6 +166,7 @@ Example:
 ### AdminCount
 The `adminCount` attribute is like a “VIP badge” on certain accounts. If a user has `adminCount = 1`, it means they are or were a privileged account, such as a Domain Admin, and their permissions are protected to prevent tampering. AD uses a background process called AdminSDHolder to enforce this protection, making sure these high-value accounts maintain their special access rights.
 
+
 ## Security and Access Control
 
 ### Access Control List
@@ -193,6 +194,7 @@ Tombstone is a container object in AD that holds deleted AD objects. When an obj
 - Allows recovery of deleted AD objects with **attributes and group memberships preserved**.
 - Must be **enabled manually**.
 - Default retention: **180 days**.
+
 
 
 
