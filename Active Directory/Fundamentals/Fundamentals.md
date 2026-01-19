@@ -58,13 +58,13 @@ Corresponding Kerberos realm: EXAMPLE.COM
 ```
 
 
-#### Global Catalog
+### Global Catalog
 Global Catalog Server is a  DC in an Active Directory (AD) network stores full information only related to the domain it is in. To locate objects outside its domain is beyond its scope. Hence, there is a need for a server called a global catalog server. The global catalog contains a partial representation of all objects in the entire forest. Hence, a global catalog server has the potential to search objects from any domain within the forest it is in.
 
-#### SYSVOL
+### SYSVOL
 
 The SYSVOL folder is a shared directory on each domain controller in an Active Directory environment. It contains critical data such as Group Policy Objects (GPOs), Logon scripts, and other AD-related files that need to be replicated between domain controllers within the same domain. SYSVOL ensures that domain controllers maintain a consistent copy of data for the proper functioning of the network.
-#### NTDS.DIT 
+### NTDS.DIT 
 
 It is a critical database file in Active Directory, stored on every **Domain Controller** (DC) in the `C:\Windows\NTDS\` directory. It contains all the essential information about the Active Directory environment, including:
 - **User and group objects** (like user accounts and groups)
