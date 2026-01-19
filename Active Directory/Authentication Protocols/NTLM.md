@@ -1,0 +1,64 @@
+<p align="justify">NTLM(New Technology  Lan Manager) is a authentication protocol developed by micro soft that is used for authenticating users and systems in Windows network. Although it has been replaced by  Kerberos some older systems still use it. </p>
+
+`Versions of NTLM:`
+	NTLMV1:
+  - Easy to crack
+- Doesn't add any salting which makes easier to crack.
+- vulnerable to pass the hash,  relay attacks and brute force attacks
+- LDAP uses NTLMV1 by default
+	
+NTLMV2: Still vulnerable to relay attacks and pass the hash and Possible for MITM Attacks.
+	
+NTLMV3: Vulnerable to Pass the hash attack and Does not provide mutual authentication
+
+### NTML Hashing Process:
+Windows Does not store the plain text password. Instead it stores the NTLM hashes for authentication
+
+- Convert the Password into UTF-16LE encoding
+- Compute the MD4 hash of the password this is for V1.
+- The result is a hash
+
+### Where NTLM Hashes are stored:
+
+- In Windows
+```
+C:\Windows\System32\Config\SAM
+```
+- In Active Directory
+```
+C:\Windows\NTDS\NTDS.dit
+```
+
+### NTLM Hash Storage Format in Windows:
+```
+Username:RID:LMhash:NTLMhash:::
+```
+
+
+### NTLM Authentication Process:
+<p align="justify">NTLM authentication is used when a client authenticates to a server by IP address (instead of by hostname), or if the user attempts to authenticate to a hostname that is not registered on the Active Directory-integrated DNS server. Likewise, third-party applications may choose to use NTLM authentication instead of Kerberos.</p>
+`STEPS`: Before Any Authentication, user passwords are stored as NTLM hashes in Windows Systems.
+
+`Step1: User request access`
+- A user enters his username, password and domain on the client machine
+- The Client machine  creates the NT hash of the password
+- The client send the username in plaintext to target server or domain controller in case of AD.
+- The NT Hash is not sent
+
+`Step2: Server issues a challenge`
+- The server responds by sending a nonce(challenge) to the client.
+- 16 byte challenge for NTLMV1
+- Variable Length Challenge for NTLMV2
+
+`Step3: Client computes a response`
+- The client combines the challenge with the NT hash and encrypt it using
+	- NTLMV1: Uses DES encryption
+	- NTLMV2: Uses HMAC-MD5
+- The Client Send the computed response to the server
+
+`Step4: Server verifies the Response`
+- The server receives the response from the client
+- The Server pulls the stored NT hashes from the NTDS.dit or from SAM database.
+- It recreates the expected response using the Challenge and NT hash
+- if the received response from the client and the calculated by server are same then the user is authenticated.
+![image](https://www.thesecuritybuddy.com/wordpress/bdr/uploads/2020/06/NTLMAuthentication1.jpg.webp)
