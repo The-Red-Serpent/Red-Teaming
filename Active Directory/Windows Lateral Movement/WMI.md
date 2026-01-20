@@ -28,7 +28,6 @@ Invoke-WmiMethod -Class Win32_Process -Name Create `
 wmic /user:[DOMAIN]\[USERNAME] /password:[PASSWORD] /node:"[TARGET_IP]" process call create "[COMMAND]"
 ```
 
----
 
 ## Linux
 
