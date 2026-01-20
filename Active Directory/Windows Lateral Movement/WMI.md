@@ -41,7 +41,6 @@ However, it relies on **TCP port 445** to retrieve command output. If port 445 i
 wmiexec.py <domain>/<username>:<password>@<target_ip> "command"
 ```
 
----
 
 ### NetExec (WMI)
 
