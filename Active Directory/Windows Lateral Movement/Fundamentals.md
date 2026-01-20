@@ -1,5 +1,13 @@
 Lateral movement involves transitioning from one system to another within the same network by leveraging valid credentials or authentication material. These credentials can include passwords, password hashes, Kerberos tickets, SSH keys, or session cookies. By using these, an attacker can remotely connect to other systems and continue their attack. Successful lateral movement requires knowledge of network architecture, available services, and protocols that allow remote execution or access.
 
+### Types:
+#### Direct Lateral Movement
+
+Direct lateral movement occurs when an attacker can execute commands directly on a target system from a compromised machine. This requires network access and valid credentials. Tools like PSExec, RDP, or WinRM are commonly used. For example, after compromising SRV01, an attacker can directly run commands on SRV02 to gain a shell.
+
+#### Indirect Lateral Movement
+
+Indirect lateral movement is used when direct access to the target system is blocked by network restrictions. The attacker instead abuses a trusted third system or service. For example, if SRV02 cannot be reached directly but connects to a compromised WSUS server, a malicious update can be delivered and executed, giving the attacker access to SRV02.
 ### Windows Lateral Movement Techniques (MITRE ATT&CK)
 
 | **Technique ID** | **Technique Name**                        | **Description**                                                                        |
