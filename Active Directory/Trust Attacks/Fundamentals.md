@@ -74,7 +74,7 @@ Important Detail
 - In the Trusting Domain The same shared secret or the trust key is stored in the Trusted Domain Object (TDO) which is used by  the trusting domain’s KDC to Validate and re-sign cross-domain  kereberos tickets
 
 
-## What is Inter-Realm ticket granting ticket
+## Inter-Realm ticket granting ticket
 It is a special type of Kerberos ticket granting ticket that is used to authenticate a user form one domain to another domain in a trusted active Directory environment.
 
 ## Trusted Domain Object
