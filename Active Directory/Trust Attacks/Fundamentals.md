@@ -128,6 +128,7 @@ Forest trust are transitive trust, and they can either one-way or two-way trust.
 Shortcut trust are manually created one-way, transitive trusts. They can only exist within a forest. This trust connection emerges between 2 child domains belonging to diff tress within same forest.
 
 
+
 ## **Cross-Domain Kerberos Authentication Process**
 When a user in Domain A wants to access a resource in an Domain B. There are 2 steps involved
 - Authentication
