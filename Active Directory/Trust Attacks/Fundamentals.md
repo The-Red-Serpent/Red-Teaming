@@ -1,36 +1,4 @@
-![Trust image](https://ad4noobs.justin-p.me/terminology_installing_a_active_directory/domain_tree_forest/domain_tree_forest_05.png)
-
-
-
-## What is Trust
-A trust is a security Relationship between 2 domains that allows user in one domain to access resources in another domain.(trusted_domain_user<----->trusting_domain_resource )
-### Types of Trust
-
-## One-Way Trust
-A one-way trust occurs when only one domain trusts another. For example, Domain A can access Domain B’s resources, but Domain B cannot access Domain A’s resources in return.
-## Two-way trusts
-Two-Way trusts when one domain trusts another domain, the other way is also trust. So, both domains can access the resources of the other.
-## Transitive Trust
-
-Transitive trust is defined as a trust that automatically extends to any other domains that either of the partners trust, enabling [authentication requests]to pass through multiple domains without the need for explicit trust relationships between each pair. If Domain A trusts Domain B and Domain B trusts Domain C, then Domain A trusts Domain C through the transitive property of trust relationships
-## Non-transitive Trust
-Non-Transitive trust, if domain A trusts domain B, and domain B has a non-transitive trust with domain C. In this case, even though domain A has an indirect link to domain C through domain B, domain A does not trust domain C because the trust is non-transitive.
-
-## Parent-Child Trust
-Parent-child trust is implicitly established. It is a two-way transitive trust. Parent-child trust is automatically generated when a child domain is added to a parent domain. When a new child domain is added, the trust path flows upward through the domain hierarchy.
-
-## Tree-Root Trust
-It link the root domain of one tree to root domain of another tree within the same forest. This trust is created automatically when a new tree created in the forest. Tree-root trust is also a two-way transitive trust
-## External Trust
-An External trust is a one-way non-transitive trust. The trust links forms between a domain in one forest and a domain in another separate forest.
-
-## Forest Trust
-Forest trust are transitive trust, and they can either one-way or two-way trust. It is explicitly transitive (between two forest) created trust between two forest root domains. Forest trust are manually created, one-way transitive or two-way transitive trust that allows you to provide access to the resource between multiple forest. It required DNS resolution to be established between forests.
-## Shortcut (cross link) trust
-
-Shortcut trust are manually created one-way, transitive trusts. They can only exist within a forest. This trust connection emerges between 2 child domains belonging to diff tress within same forest.
-
-## Some Important Terms
+## Primer 
 ## Domain
 
 A **domain** in Active Directory is like a **private space or container** that holds objects such as **users, computers, and groups**. Each domain:
@@ -123,6 +91,42 @@ A Trusted Domain Object (TDO) is an Active Directory object that represents a tr
 ldapsearch (objectClass=trustedDomain)
 ```
 
+## Trust Attacks
+
+
+![Trust image](https://ad4noobs.justin-p.me/terminology_installing_a_active_directory/domain_tree_forest/domain_tree_forest_05.png)
+
+
+
+## What is Trust
+A trust is a security Relationship between 2 domains that allows user in one domain to access resources in another domain.(trusted_domain_user<----->trusting_domain_resource )
+## Types of Trust
+
+## One-Way Trust
+A one-way trust occurs when only one domain trusts another. For example, Domain A can access Domain B’s resources, but Domain B cannot access Domain A’s resources in return.
+## Two-way trusts
+Two-Way trusts when one domain trusts another domain, the other way is also trust. So, both domains can access the resources of the other.
+## Transitive Trust
+
+Transitive trust is defined as a trust that automatically extends to any other domains that either of the partners trust, enabling [authentication requests]to pass through multiple domains without the need for explicit trust relationships between each pair. If Domain A trusts Domain B and Domain B trusts Domain C, then Domain A trusts Domain C through the transitive property of trust relationships
+## Non-transitive Trust
+Non-Transitive trust, if domain A trusts domain B, and domain B has a non-transitive trust with domain C. In this case, even though domain A has an indirect link to domain C through domain B, domain A does not trust domain C because the trust is non-transitive.
+
+## Parent-Child Trust
+Parent-child trust is implicitly established. It is a two-way transitive trust. Parent-child trust is automatically generated when a child domain is added to a parent domain. When a new child domain is added, the trust path flows upward through the domain hierarchy.
+
+## Tree-Root Trust
+It link the root domain of one tree to root domain of another tree within the same forest. This trust is created automatically when a new tree created in the forest. Tree-root trust is also a two-way transitive trust
+## External Trust
+An External trust is a one-way non-transitive trust. The trust links forms between a domain in one forest and a domain in another separate forest.
+
+## Forest Trust
+Forest trust are transitive trust, and they can either one-way or two-way trust. It is explicitly transitive (between two forest) created trust between two forest root domains. Forest trust are manually created, one-way transitive or two-way transitive trust that allows you to provide access to the resource between multiple forest. It required DNS resolution to be established between forests.
+
+## Shortcut (cross link) trust
+Shortcut trust are manually created one-way, transitive trusts. They can only exist within a forest. This trust connection emerges between 2 child domains belonging to diff tress within same forest.
+
+
 ## **Cross-Domain Kerberos Authentication Process**
 When a user in Domain A wants to access a resource in an Domain B. There are 2 steps involved
 - Authentication
@@ -176,7 +180,8 @@ The **Domain B server** now performs **authorization** locally:
 PAC (Privileged Attribute Certificate) is a cryptographically signed data structure inside Kerberos tickets that securely carries a user's security context (like their SID and group memberships) from the Domain Controller (DC) to services, allowing those services to verify the user's permissions (authorization) without needing to query the DC repeatedly, speeding up authentication
 
 ### SID Filtering
-The **Security Identifier (SID) Filtering mechanism** is a **security feature in Microsoft Active Directory (AD)** designed to protect domains that are connected through **trust relationships**. It prevents unauthorized elevation of privileges by ensuring that only valid, legitimate SIDs are honored when users from one domain access resources in another domain. When SID Filtering is **enabled**:
+The **Security Identifier (SID) Filtering mechanism** is a **security feature in Microsoft Active Directory (AD)** designed to protect domains that are connected through **trust relationships**. It prevents unauthorized elevation of privileges by ensuring that only valid, legitimate SIDs are honored when users from one domain access resources in another domain. 
+When SID Filtering is **enabled**:
 - The trusting domain examines the list of SIDs in the user’s token.
 - It only honors SIDs that **originate from the trusted domain’s own namespace**.
 - Any **foreign, spoofed, or invalid SIDs** are **filtered out** before access is granted.
@@ -190,6 +195,6 @@ The interesting part of this is that SID History works for SIDs in the same doma
 An Enterprise Admin is a highly privileged built‑in group in Active Directory that has full administrative control over the entire forest, not just a single domain. Members of this group can manage all domains in the forest, create or remove domains, modify forest‑wide configuration and trusts, and add themselves or others to any privileged group. The group exists in the forest root domain, and its permissions automatically apply across every child domain and tree in the forest. In practice, Enterprise Admins are the highest‑level administrators in Active Directory, meaning compromise of this role equals complete forest compromise.
 
 
-###### Trust Attacks
+### Trust Attacks
 
 - [https://itm8.com/articles/sid-filter-as-security-boundary-between-domains-part-1](https://itm8.com/articles/sid-filter-as-security-boundary-between-domains-part-1)
