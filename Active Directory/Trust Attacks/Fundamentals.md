@@ -1,4 +1,5 @@
 ## Primer 
+
 ## Domain
 
 A **domain** in Active Directory is like a **private space or container** that holds objects such as **users, computers, and groups**. Each domain:
