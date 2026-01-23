@@ -223,7 +223,7 @@ The **Domain B server** now performs **authorization** locally:
 ## PAC
 PAC (Privileged Attribute Certificate) is a cryptographically signed data structure inside Kerberos tickets that securely carries a user's security context (like their SID and group memberships) from the Domain Controller (DC) to services, allowing those services to verify the user's permissions (authorization) without needing to query the DC repeatedly, speeding up authentication
 
-### SID Filtering
+## SID Filtering
 The **Security Identifier (SID) Filtering mechanism** is a **security feature in Microsoft Active Directory (AD)** designed to protect domains that are connected through **trust relationships**. It prevents unauthorized elevation of privileges by ensuring that only valid, legitimate SIDs are honored when users from one domain access resources in another domain. 
 When SID Filtering is **enabled**:
 - The trusting domain examines the list of SIDs in the user’s token.
