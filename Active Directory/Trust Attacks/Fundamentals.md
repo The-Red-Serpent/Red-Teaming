@@ -169,6 +169,25 @@ A realm trust is a trust relationship that allows an Active Directory domain to 
 +-----------------------+                          +-----------------------+
 ```
 
+## PAC
+PAC (Privileged Attribute Certificate) is a cryptographically signed data structure inside Kerberos tickets that securely carries a user's security context (like their SID and group memberships) from the Domain Controller (DC) to services, allowing those services to verify the user's permissions (authorization) without needing to query the DC repeatedly, speeding up authentication
+
+## SID Filtering
+The **Security Identifier (SID) Filtering mechanism** is a **security feature in Microsoft Active Directory (AD)** designed to protect domains that are connected through **trust relationships**. It prevents unauthorized elevation of privileges by ensuring that only valid, legitimate SIDs are honored when users from one domain access resources in another domain. 
+When SID Filtering is **enabled**:
+- The trusting domain examines the list of SIDs in the user’s token.
+- It only honors SIDs that **originate from the trusted domain’s own namespace**.
+- Any **foreign, spoofed, or invalid SIDs** are **filtered out** before access is granted.
+
+## SID History
+SID History is an attribute in AD that supports migration scenarios. Every user account has an associated Security IDentifier (SID) which is used to track the security principal and the access the account has when connecting to resources. SID History enables access for another account to effectively be cloned to another. This is extremely useful to ensure users retain access when moved (migrated) from one domain to another. Since the user’s SID changes when the new account is created, the old SID needs to map to the new one. When a user in Domain A is migrated to Domain B, a new user account is created in DomainB and DomainA user’s SID is added to DomainB’s user account’s SID History attribute. This ensures that DomainB user can still access resources in DomainA.
+
+The interesting part of this is that SID History works for SIDs in the same domain as it does across domains in the same forest, which means that a regular user account in DomainA can contain DomainA SIDs and if the DomainA SIDs are for privileged accounts or groups, a regular user account can be granted Domain Admin rights without being a member of Domain Admins.
+
+## Enterprise Admins
+An Enterprise Admin is a highly privileged built‑in group in Active Directory that has full administrative control over the entire forest, not just a single domain. Members of this group can manage all domains in the forest, create or remove domains, modify forest‑wide configuration and trusts, and add themselves or others to any privileged group. The group exists in the forest root domain, and its permissions automatically apply across every child domain and tree in the forest. In practice, Enterprise Admins are the highest‑level administrators in Active Directory, meaning compromise of this role equals complete forest compromise.
+
+
 
 
 ## **Cross-Domain Kerberos Authentication Process**
@@ -220,23 +239,75 @@ The **Domain B server** now performs **authorization** locally:
 
 ![Kerberos Trust Flow Diagram](https://miro.medium.com/v2/resize:fit:1100/format:webp/0*gUBEFVsfluURDEgJ.png)
 
-## PAC
-PAC (Privileged Attribute Certificate) is a cryptographically signed data structure inside Kerberos tickets that securely carries a user's security context (like their SID and group memberships) from the Domain Controller (DC) to services, allowing those services to verify the user's permissions (authorization) without needing to query the DC repeatedly, speeding up authentication
 
-## SID Filtering
-The **Security Identifier (SID) Filtering mechanism** is a **security feature in Microsoft Active Directory (AD)** designed to protect domains that are connected through **trust relationships**. It prevents unauthorized elevation of privileges by ensuring that only valid, legitimate SIDs are honored when users from one domain access resources in another domain. 
-When SID Filtering is **enabled**:
-- The trusting domain examines the list of SIDs in the user’s token.
-- It only honors SIDs that **originate from the trusted domain’s own namespace**.
-- Any **foreign, spoofed, or invalid SIDs** are **filtered out** before access is granted.
+### NTLM Authentication Across Trust Relationships
 
-## SID History
-SID History is an attribute in AD that supports migration scenarios. Every user account has an associated Security IDentifier (SID) which is used to track the security principal and the access the account has when connecting to resources. SID History enables access for another account to effectively be cloned to another. This is extremely useful to ensure users retain access when moved (migrated) from one domain to another. Since the user’s SID changes when the new account is created, the old SID needs to map to the new one. When a user in Domain A is migrated to Domain B, a new user account is created in DomainB and DomainA user’s SID is added to DomainB’s user account’s SID History attribute. This ensures that DomainB user can still access resources in DomainA.
+When a user from a **trusted domain** accesses a resource in a **trusting domain**, NTLM works like a normal handshake with extra steps:
 
-The interesting part of this is that SID History works for SIDs in the same domain as it does across domains in the same forest, which means that a regular user account in DomainA can contain DomainA SIDs and if the DomainA SIDs are for privileged accounts or groups, a regular user account can be granted Domain Admin rights without being a member of Domain Admins.
+1. **NTLM Handshake**
 
-## Enterprise Admins
-An Enterprise Admin is a highly privileged built‑in group in Active Directory that has full administrative control over the entire forest, not just a single domain. Members of this group can manage all domains in the forest, create or remove domains, modify forest‑wide configuration and trusts, and add themselves or others to any privileged group. The group exists in the forest root domain, and its permissions automatically apply across every child domain and tree in the forest. In practice, Enterprise Admins are the highest‑level administrators in Active Directory, meaning compromise of this role equals complete forest compromise.
+   * User and resource perform the 3-way NTLM handshake:
+     **Negotiate → Challenge → Authenticate**.
+   * The resource cannot validate the credentials itself—it relies on its **domain controller (DC)**.
+
+2. **Forwarding Authentication**
+
+   * The resource sends the NTLM Authenticate message to its **DC** via the **workstation secure channel**.
+   * The **trusting DC** detects that the user is from a trusted domain.
+   * It forwards the request to the **trusted domain DC** via the **trusted domain secure channel**.
+
+3. **Credential Validation**
+
+   * The **trusted DC** validates the user’s credentials (NTLM hash).
+   * Validation info is sent back to the **trusting DC**.
+
+4. **Security Checks by Trusting DC**
+   The trusting DC applies two key checks before access is granted:
+
+   * **SID Filtering**: Inspects **ExtraSids** to ensure the trusted domain cannot inject unauthorized SIDs. Prevents attacks like **SID history injection**.
+   * **Selective Authentication**: If enabled, the user must have explicit **“Allowed to Authenticate”** permission on the resource.
+
+5. **Access Decision**
+
+   * The trusting DC sends the validated user info to the resource.
+   * The resource grants or denies access based on the checks above.
+
+```
+[User in Trusted Domain]
+         |
+         | 1. NTLM Negotiate
+         v
+     [Resource in Trusting Domain]
+         |
+         | 2. NTLM Challenge
+         v
+[User in Trusted Domain]
+         |
+         | 3. NTLM Authenticate
+         v
+[Resource in Trusting Domain]
+         |
+         | 4. Forward Authenticate → Trusting DC (workstation secure channel)
+         v
+[Trusting Domain DC]
+         |
+         | 5. Forward → Trusted DC (trusted domain secure channel)
+         v
+[Trusted Domain DC]
+         |
+         | 6. Validate user credentials
+         v
+[Trusting DC applies SID filtering & Selective Authentication]
+         |
+         | 7. Forward validated info → Resource
+         v
+     [Resource grants/denies access]
+
+```
+
+---
+
+
 
 
 ### Trust Attacks
