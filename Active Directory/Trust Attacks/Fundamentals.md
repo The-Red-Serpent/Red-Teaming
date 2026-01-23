@@ -1,10 +1,10 @@
-## Primer 
-
 ## Domain
 
 A **domain** in Active Directory is like a **private space or container** that holds objects such as **users, computers, and groups**. Each domain:
 - Has its own set of **configurations**, **security policies**, and **administrative control**.
 - **Domain** includes domain controllers, which are servers responsible for running Active Directory Domain Services. These domain controllers authenticate and authorize users, manage groups and policies, and store and synchronize the Active Directory database.
+
+
 ## Tree
 A **tree** is a collection of one or more **domains** that shares same contiguous DNS namespace ,A hierarchical structure ,Automatic trust relationships** (transitive trusts)
 
@@ -13,8 +13,8 @@ A **tree** is a collection of one or more **domains** that shares same contiguou
 company.com
  ├── sales.company.com
  └── hr.company.com
-
 ```
+
 ## Forest
 A forest is a collection of one or more domains that shares the common schema and global catalog and they Trust each other
 
@@ -45,6 +45,7 @@ Active Directory Forest
         └── OU: Groups
 ```
 
+
 ## Root Domain
 Also called as forest root domain is the **first domain created** in an Active Directory forest and is at the **top of the hierarchy**. It is the foundation for the forest.
 - Stores **forest-wide configuration** (like schema & configuration partitions)
@@ -54,7 +55,8 @@ Also called as forest root domain is the **first domain created** in an Active D
     - Schema Master
     - Domain Naming Master
 
-## Trust Account
+
+ ## Trust Account
 When two domains establish a trust, each domain creates a hidden trust account in its own Active Directory to represent the other domain’s KDC.
 The trust account acts as a Kerberos principal, not a user or computer.
 Key properties:
@@ -92,6 +94,9 @@ A Trusted Domain Object (TDO) is an Active Directory object that represents a tr
 ldapsearch (objectClass=trustedDomain)
 ```
 
+## Transitivity
+Transitivity is the property of a relationship whereby the relationship extends through an intermediary, such that if A is related to B and B is related to C, then A is also related to C.
+
 ## Trust Attacks
 
 
@@ -100,32 +105,69 @@ ldapsearch (objectClass=trustedDomain)
 
 
 ## What is Trust
-A trust is a security Relationship between 2 domains that allows user in one domain to access resources in another domain.(trusted_domain_user<----->trusting_domain_resource )
+A trust is a link between two domains that allows users from one domain (the trusted) to access resources in another (the trusting), essentially extending authentication and authorization across domain boundaries for simplified management and resource sharing
+```
++-----------------------+        TRUST        +-----------------------+
+|  Domain B             |<-------------------|  Domain A              |
+|  (TRUSTED)            |                    |  (TRUSTING)            | 
+|                       |                    |                        |
+|  Users                |                    |  Resources             |
+|  Attacker foothold    |------------------> |  Targets               |
++-----------------------+                    +------------------------+
+
+```
+
 ## Types of Trust
 
-## One-Way Trust
-A one-way trust occurs when only one domain trusts another. For example, Domain A can access Domain B’s resources, but Domain B cannot access Domain A’s resources in return.
-## Two-way trusts
-Two-Way trusts when one domain trusts another domain, the other way is also trust. So, both domains can access the resources of the other.
 ## Transitive Trust
 
 Transitive trust is defined as a trust that automatically extends to any other domains that either of the partners trust, enabling [authentication requests]to pass through multiple domains without the need for explicit trust relationships between each pair. If Domain A trusts Domain B and Domain B trusts Domain C, then Domain A trusts Domain C through the transitive property of trust relationships
+
 ## Non-transitive Trust
 Non-Transitive trust, if domain A trusts domain B, and domain B has a non-transitive trust with domain C. In this case, even though domain A has an indirect link to domain C through domain B, domain A does not trust domain C because the trust is non-transitive.
+
+## One-Way Trust
+A one-way trust occurs when only one domain trusts another. For example, Domain A can access Domain B’s resources, but Domain B cannot access Domain A’s resources in return.
+
+## Two-way trusts
+Two-Way trusts when one domain trusts another domain, the other way is also trust. So, both domains can access the resources of the other.
+
+![image](https://miro.medium.com/1*3jZAOt9bRwW5Se7NSc0VuA.png)
 
 ## Parent-Child Trust
 Parent-child trust is implicitly established. It is a two-way transitive trust. Parent-child trust is automatically generated when a child domain is added to a parent domain. When a new child domain is added, the trust path flows upward through the domain hierarchy.
 
+![image](https://zindagitech.com/storage/2021/09/Picture4-Deepak-4.png)
+
 ## Tree-Root Trust
 It link the root domain of one tree to root domain of another tree within the same forest. This trust is created automatically when a new tree created in the forest. Tree-root trust is also a two-way transitive trust
+
+![image](https://zindagitech.com/storage/2021/09/Picture4-Deepak-4.png)
+
 ## External Trust
 An External trust is a one-way non-transitive trust. The trust links forms between a domain in one forest and a domain in another separate forest.
+
+![image](https://zindagitech.com/storage/2021/09/Picture7-Deepak-4.png)
 
 ## Forest Trust
 Forest trust are transitive trust, and they can either one-way or two-way trust. It is explicitly transitive (between two forest) created trust between two forest root domains. Forest trust are manually created, one-way transitive or two-way transitive trust that allows you to provide access to the resource between multiple forest. It required DNS resolution to be established between forests.
 
+![image](https://zindagitech.com/storage/2021/09/Picture5-Deepak-4.png)
+
 ## Shortcut (cross link) trust
 Shortcut trust are manually created one-way, transitive trusts. They can only exist within a forest. This trust connection emerges between 2 child domains belonging to diff tress within same forest.
+
+![image](https://zindagitech.com/storage/2021/09/Picture6-Deepak-4.png)
+
+## Realm Trust
+A realm trust is a trust relationship that allows an Active Directory domain to authenticate users from a non-Active Directory Kerberos realm, or vice versa, using the Kerberos protocol.
+```
++-----------------------+        REALM TRUST        +-----------------------+
+|  AD Domain            | <----------------------> |  Kerberos Realm       |
+|  corp.local           |                          |  UNIX.REALM           |
+|                       |                          |  (MIT / Heimdal)      |
++-----------------------+                          +-----------------------+
+```
 
 
 
