@@ -1,5 +1,6 @@
 ## AD Mind Maps
 
+* AD Fundamentals- [https://radioactivedirectory.com/](https://radioactivedirectory.com/)
 * AD Mind Map – [https://orange-cyberdefense.github.io/ocd-mindmaps/](https://orange-cyberdefense.github.io/ocd-mindmaps/)
 * AD Pentest Methodology – [https://r3dbuck3t.notion.site/Windows-Active-Directory-Pentest-Methodology](https://r3dbuck3t.notion.site/Windows-Active-Directory-Pentest-Methodology)
 * AD Enumeration – [https://viperone.gitbook.io/pentest-everything/everything-active-directory/ad-enumeration](https://viperone.gitbook.io/pentest-everything/everything-active-directory/ad-enumeration)
