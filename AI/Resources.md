@@ -8,6 +8,7 @@ https://arcanum-sec.github.io/arc_pi_taxonomy/
 * AI and LLM Cheatsheet-[https://www.thecloudgirl.dev/blog/owasp-top-10-for-llms-and-genai](https://www.thecloudgirl.dev/blog/owasp-top-10-for-llms-and-genai)
 * promptfoo.dev - [https://www.promptfoo.dev/docs/red-team/](https://www.promptfoo.dev/docs/red-team/)
 * Hacktricks - [https://book.hacktricks.wiki/en/AI/index.html](https://book.hacktricks.wiki/en/AI/index.html)
+* HackAprompt - [https://www.hackaprompt.com](https://www.hackaprompt.com)
 
 ### Github
 https://github.com/requie/AI-Red-Teaming-Guide
