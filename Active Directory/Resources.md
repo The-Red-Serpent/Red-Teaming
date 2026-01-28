@@ -106,3 +106,4 @@
 * DBgman - [https://www.notion.so/Red-Team-Notes-26dabf92dc0f800ebb7ee35a93d2ea58](https://www.notion.so/Red-Team-Notes-26dabf92dc0f800ebb7ee35a93d2ea58)
 * hackers Arise -[https://www.notion.so/Red-Team-Notes-26dabf92dc0f800ebb7ee35a93d2ea58](https://www.notion.so/Red-Team-Notes-26dabf92dc0f800ebb7ee35a93d2ea58)
 * Ss0rz - [https://0xss0rz.gitbook.io/0xss0rz](https://0xss0rz.gitbook.io/0xss0rz)
+* Myhackingnotes - [https://myhackingnotes.com/](https://myhackingnotes.com/)
