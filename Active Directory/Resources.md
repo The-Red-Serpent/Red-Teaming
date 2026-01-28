@@ -87,21 +87,6 @@
 
 
 
-## Infrastructure & Red Team Ops
-
-* Red Team Infrastructure – [https://systemsecurity.com/blog/building-a-red-team-infrastructure-in-2023/](https://systemsecurity.com/blog/building-a-red-team-infrastructure-in-2023/)
-* Redirectors – [https://www.optiv.com/insights/discover/blog/redirectors-red-teamers-introduction](https://www.optiv.com/insights/discover/blog/redirectors-red-teamers-introduction)
-* NetBird VPN Setup – [https://docs.netbird.io/selfhosted/selfhosted-quickstart](https://docs.netbird.io/selfhosted/selfhosted-quickstart)
-* WireGuard for Red Teams – [https://watson0x90.com/wireguard-vpn-for-redteams-b8bc02929353](https://watson0x90.com/wireguard-vpn-for-redteams-b8bc02929353)
-* C2 Redirector Setup - [https://xbz0n.sh/blog/c2-redirectors](https://xbz0n.sh/blog/c2-redirectors)
-* Evilginx Phishlets – [https://github.com/An0nUD4Y/Evilginx2-Phishlets](https://github.com/An0nUD4Y/Evilginx2-Phishlets)
-* Phishing Infra – [https://payatu.com/blog/phishing-infrastructure-setup/](https://payatu.com/blog/phishing-infrastructure-setup/)
-* Cloudflare For Phishing - [https://0xd33r.com/article/2025/cloudflare-tunnels-for-phishing](https://0xd33r.com/article/2025/cloudflare-tunnels-for-phishing)
-* Building An Local SMTP Server - [https://m3rcer.github.io/redteaming/spamfilterbypass/](https://m3rcer.github.io/redteaming/spamfilterbypass/)
-* Setting up Gophish - [https://0xsebin-blogs.vercel.app/2025/10/21/GoPhish-Setting-up-without-Evilgnix-Part-1/](https://0xsebin-blogs.vercel.app/2025/10/21/GoPhish-Setting-up-without-Evilgnix-Part-1/)
-
-
-
 ## Toolkit
 * Red Team Tools - [https://stack.chaitin.com/tool/detail/199](https://stack.chaitin.com/tool/detail/199)
 * AD Pentesting Tools - [https://github.com/theyoge/AD-Pentesting-Tools](https://github.com/theyoge/AD-Pentesting-Tools)
