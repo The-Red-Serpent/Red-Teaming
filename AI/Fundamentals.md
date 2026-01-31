@@ -106,6 +106,7 @@ To understand what “it” refers to, your brain checks the whole sentence and 
 
 ### Tokenization
 Tokenization in LLMs is the essential process of breaking down raw text into smaller, manageable units called tokens (words, subwords, or characters) that the model can understand and process numerically, converting language into a numerical sequence for computation and prediction. It's the first step in preparing text, allowing the LLM to learn patterns, understand context, and generate coherent responses by predicting the next most likely token in a sequence.
+![image](https://www.codedex.io/images/gen-ai/token.png)
 
 ### Embeddings
 Embeddings are dense numerical vector representations of tokens (words, subwords, or characters) generated after tokenization, which capture the semantic meaning and relationships of these tokens in a high-dimensional space, enabling the model to process language and predict the next token.
@@ -118,6 +119,7 @@ Expanded explanation:
     - Help the model understand similarity and relationships between tokens.
     - Serve as the input to the transformer, which uses them to compute attention, context, and generate predictions.
 4. Outcome: The model can process and generate text mathematically, not just as raw letters or words.
+![image](https://miro.medium.com/v2/resize:fit:1400/0*4U8GtVLZatSlJqf5)
 
 ### RAG
 Retrieval-Augmented Generation (RAG) is the process of optimizing the output of a large language model, so it references an authoritative knowledge base outside of its training data sources before generating a response. Large Language Models (LLMs) are trained on vast volumes of data and use billions of parameters to generate original output for tasks like answering questions, translating languages, and completing sentences. 
