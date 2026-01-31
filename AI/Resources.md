@@ -1,6 +1,11 @@
+### Mind Map
+* https://github.com/Aviral2642/AI-Attack-Mind-Map-Comprehensive-AI-Security-Threats-Attack-Vectors
+
+
 ### Threat Matrix
-https://atlas.mitre.org/matrices/ATLAS
-https://arcanum-sec.github.io/arc_pi_taxonomy/
+* https://atlas.mitre.org/matrices/ATLAS
+* https://arcanum-sec.github.io/arc_pi_taxonomy/
+
 
 
 ### Guides
