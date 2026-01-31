@@ -119,7 +119,81 @@ Expanded explanation:
     - Help the model understand similarity and relationships between tokens.
     - Serve as the input to the transformer, which uses them to compute attention, context, and generate predictions.
 4. Outcome: The model can process and generate text mathematically, not just as raw letters or words.
+```
+"cat"  → [0.21, -1.04, 0.67, ...]
+"dog"  → [0.18, -0.98, 0.63, ...]
+"car"  → [2.31,  1.12, -0.44, ...]
+```
 ![image](https://miro.medium.com/v2/resize:fit:1400/0*4U8GtVLZatSlJqf5)
+
+### Embedding Space
+An embedding space in AI is a continuous, low-dimensional mathematical space (often hundreds or thousands of dimensions) where data points like words, images, or audio are mapped as vectors. It preserves semantic relationships by placing similar items closer together and dissimilar items further apart, allowing machine learning models to understand context, meaning, and similarity
+![image](https://d2908q01vomqb2.cloudfront.net/77de68daecd823babbb58edb1c8e14d7106e83bb/2023/08/02/WhyLabs-ML-Embeddings-1.png)
+
+### Workflow
+                                                        
+                                                        ┌──────────────────────────┐
+                                                        │        Raw Text          │
+                                                        │     "The cat sat on"     │
+                                                        └─────────────┬────────────┘
+                                                                      │
+                                                                      ▼
+                                                        ┌──────────────────────────┐
+                                                        │       Tokenization       │
+                                                        │  Split text into tokens  │
+                                                        │ ["The"," cat"," sat"," on"] │
+                                                        └─────────────┬────────────┘
+                                                                      │
+                                                                      ▼
+                                                        ┌──────────────────────────┐
+                                                        │        Token IDs         │
+                                                        │  Map tokens to integers  │
+                                                        │     [102,345,981,76]     │
+                                                        └─────────────┬────────────┘
+                                                                      │
+                                                                      ▼
+                                                        ┌──────────────────────────┐
+                                                        │      Embedding Layer     │
+                                                        │  Token IDs → vectors     │
+                                                        │  (semantic meaning)      │
+                                                        └─────────────┬────────────┘
+                                                                      │
+                                                                      ▼
+                                                        ┌──────────────────────────┐
+                                                        │    Positional Encoding   │
+                                                        │  Add order information   │
+                                                        └─────────────┬────────────┘
+                                                                      │
+                                                                      ▼
+                                                        ┌────────────────────────────────┐
+                                                        │      Transformer Layers        │
+                                                        │ ┌────────────────────────────┐ │
+                                                        │ │ Self-Attention (Q, K, V)   │ │
+                                                        │ │ Feed-Forward Network       │ │
+                                                        │ │ Layer Norm + Residual      │ │
+                                                        │ └────────────────────────────┘ │
+                                                        │     (Repeated N times)         │
+                                                        └─────────────┬──────────────────┘
+                                                                      │
+                                                                      ▼
+                                                        ┌──────────────────────────┐
+                                                        │        Output Layer      │
+                                                        │  Softmax over vocabulary │
+                                                        └─────────────┬────────────┘
+                                                                      │
+                                                                      ▼
+                                                        ┌──────────────────────────┐
+                                                        │     Next Token Chosen    │
+                                                        │          " mat"          │
+                                                        └─────────────┬────────────┘
+                                                                      │
+                                                                      ▼
+                                                        ┌──────────────────────────┐
+                                                        │       Detokenization     │
+                                                        │   Tokens → readable text │
+                                                        │   "The cat sat on mat"   │
+                                                        └──────────────────────────┘
+
 
 ### RAG
 Retrieval-Augmented Generation (RAG) is the process of optimizing the output of a large language model, so it references an authoritative knowledge base outside of its training data sources before generating a response. Large Language Models (LLMs) are trained on vast volumes of data and use billions of parameters to generate original output for tasks like answering questions, translating languages, and completing sentences. 
