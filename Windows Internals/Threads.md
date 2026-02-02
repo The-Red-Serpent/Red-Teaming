@@ -74,3 +74,7 @@ Threads can be created using:
 - CreateThread (Win32)
 - CreateRemoteThread (Win32)
 - NtCreateThreadEx (Native API)
+
+### Reference :
+- https://scorpiosoftware.net/2024/07/24/what-can-you-do-with-apcs/
+- https://tbhaxor.com/windows-process-injection-using-asynchronous-threads-queueuserapc/
