@@ -69,6 +69,17 @@ There are three types of APCs:
 
 3. Special kernel-mode APC: A subset of kernel APCs that run in special kernel states. They are used internally by the system for operations like thread termination or resource cleanup and are not accessible to normal user-mode applications.
 
+### Hooking
+It is a powerful technique used to intercept function calls, messages, or events between software components, allowing a program to monitor, modify, or block behavior. 
+By rerouting execution to a custom function (a "hook procedure"), developers can analyze application behavior, debug, or, in security contexts, hook API calls to hide processes or bypass security checks
+
+#### **IAT Hooking**
+Modify the **Import Address Table (IAT)** in the PE (Portable Executable) file. This involves replacing the function pointers in the IAT with the address of the custom hook function. This redirects the calls of specific API functions to your own functions.
+#### 2. **Detours-style Hooking (Inline Hooking)**
+How it's done**: Modify the first few bytes of a target function to insert a **JMP instruction** that redirects execution to a custom hook function. The custom function can call the original function if needed (or modify its behavior) before or after executing.
+#### 3. **SetWindowsHookEx**
+Use the **SetWindowsHookEx** API to install a hook procedure that intercepts specific window messages (like keyboard or mouse events). You can modify, cancel, or forward the messages to other hooks depending on the type of hook (e.g., `WH_KEYBOARD`, `WH_MOUSE`).
+
 ### Thread Creation
 Threads can be created using:
 - CreateThread (Win32)
