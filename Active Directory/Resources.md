@@ -3,7 +3,7 @@ AD Fundamentals- [https://radioactivedirectory.com/](https://radioactivedirector
 
 
 ## AD Mind Maps
-[orange Defense Mindmap](https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2025.03.excalidraw.svg)
+https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2025.03.excalidraw.svg
 
 
 ## Testing Guide
