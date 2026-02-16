@@ -60,7 +60,6 @@ https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2
 
 
 ## Bloodhound
-* BloodHound – [https://www.0xczr.com/tools/bloodhound_new/](https://www.0xczr.com/tools/bloodhound_new/)
 - [BloodHound Cypher Cheatsheet](https://hausec.com/2019/09/09/bloodhound-cypher-cheatsheet/)
 - [BloodHound Query Library](https://queries.specterops.io/)
 
