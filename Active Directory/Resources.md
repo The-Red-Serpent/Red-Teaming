@@ -1,20 +1,17 @@
-## AD Mind Maps
-
+## Fundamentals
 * AD Fundamentals- [https://radioactivedirectory.com/](https://radioactivedirectory.com/)
-* AD Mind Map – [https://orange-cyberdefense.github.io/ocd-mindmaps/](https://orange-cyberdefense.github.io/ocd-mindmaps/)
+
+
+## AD Mind Maps
 * AD Pentest Methodology – [https://r3dbuck3t.notion.site/Windows-Active-Directory-Pentest-Methodology](https://r3dbuck3t.notion.site/Windows-Active-Directory-Pentest-Methodology)
-* AD Enumeration – [https://viperone.gitbook.io/pentest-everything/everything-active-directory/ad-enumeration](https://viperone.gitbook.io/pentest-everything/everything-active-directory/ad-enumeration)
+
+## Testing Guide
+* Iredteam - [https://www.ired.team/](https://www.ired.team/)
+* Hacker Recipe - [https://www.thehacker.recipes/](https://www.thehacker.recipes/)
 * AD  Guide – [https://zer1t0.gitlab.io/posts/attacking_ad/](https://zer1t0.gitlab.io/posts/attacking_ad/)
 * AD Guide - [https://hideandsec.sh/books/cheatsheets-82c/page/active-directory](https://hideandsec.sh/books/cheatsheets-82c/page/active-directory)
 * AD guide - [https://github.com/MGamalCYSEC/Active-Directory-Enumeration-and-Attacks](https://github.com/MGamalCYSEC/Active-Directory-Enumeration-and-Attacks)
-* Kerberoasting – [https://medium.com/@offsecdeer/des-kerberoasting-and-sessionroasting-d78432678864](https://medium.com/@offsecdeer/des-kerberoasting-and-sessionroasting-d78432678864)
-* Persistence – [https://hadess.io/pwning-the-domain-persistence/](https://hadess.io/pwning-the-domain-persistence/)
 * AD CS Attacks – [https://dirkjanm.io/extending-ad-cs-attack-surface-intune-certs/](https://dirkjanm.io/extending-ad-cs-attack-surface-intune-certs/)
-* AD Command Generator – [https://gzzcoo.com/CS](https://gzzcoo.com/CS)
-* CRTP Guide – [https://crtp-certification.certs-study.com/](https://crtp-certification.certs-study.com/)
-* Iredteam - [https://www.ired.team/](https://www.ired.team/)
-* Red Teaming and Malware Analysis - [https://gitbook.seguranca-informatica.pt/](https://gitbook.seguranca-informatica.pt/)
-* Ben Heater Notes - [https://notes.benheater.com/books/active-directory](https://notes.benheater.com/books/active-directory)
 
 
 
@@ -62,6 +59,8 @@
 
 ## Bloodhound
 * BloodHound – [https://www.0xczr.com/tools/bloodhound_new/](https://www.0xczr.com/tools/bloodhound_new/)
+- [BloodHound Cypher Cheatsheet](https://hausec.com/2019/09/09/bloodhound-cypher-cheatsheet/)
+- [BloodHound Query Library](https://queries.specterops.io/)
 
 ## WMIC
 * WMIC Cheatsheet – [https://kwcsec.gitbook.io/the-red-team-handbook](https://kwcsec.gitbook.io/the-red-team-handbook)
@@ -84,8 +83,6 @@
 * Malware Evasion – [https://g3tsyst3m.github.io/edr%20bypass/Malware-EDR-Evasion-Techniques/](https://g3tsyst3m.github.io/edr%20bypass/Malware-EDR-Evasion-Techniques/)
 * DarkArmour – [https://github.com/bats3c/darkarmour](https://github.com/bats3c/darkarmour)
 * EDR Telemetry – [https://www.edr-telemetry.com/](https://www.edr-telemetry.com/)
-
-
 
 ## Toolkit
 * Red Team Tools - [https://stack.chaitin.com/tool/detail/199](https://stack.chaitin.com/tool/detail/199)
