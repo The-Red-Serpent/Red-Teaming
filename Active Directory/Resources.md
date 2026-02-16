@@ -102,6 +102,5 @@ https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2
 * DarkRavenOps - [https://darkravenops.in/](https://darkravenops.in/)
 * Blue Team Files - [https://blueteamfiles.com/](https://blueteamfiles.com/)
 * DBgman - [https://www.notion.so/Red-Team-Notes-26dabf92dc0f800ebb7ee35a93d2ea58](https://www.notion.so/Red-Team-Notes-26dabf92dc0f800ebb7ee35a93d2ea58)
-* hackers Arise -[https://www.notion.so/Red-Team-Notes-26dabf92dc0f800ebb7ee35a93d2ea58](https://www.notion.so/Red-Team-Notes-26dabf92dc0f800ebb7ee35a93d2ea58)
 * Ss0rz - [https://0xss0rz.gitbook.io/0xss0rz](https://0xss0rz.gitbook.io/0xss0rz)
 * Myhackingnotes - [https://myhackingnotes.com/](https://myhackingnotes.com/)
