@@ -1,17 +1,19 @@
 ## Fundamentals
-* AD Fundamentals- [https://radioactivedirectory.com/](https://radioactivedirectory.com/)
+AD Fundamentals- [https://radioactivedirectory.com/](https://radioactivedirectory.com/)
 
 
 ## AD Mind Maps
-* AD Pentest Methodology – [https://r3dbuck3t.notion.site/Windows-Active-Directory-Pentest-Methodology](https://r3dbuck3t.notion.site/Windows-Active-Directory-Pentest-Methodology)
+[orange Defense Mindmap](https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2025.03.excalidraw.svg)
+
 
 ## Testing Guide
-* Iredteam - [https://www.ired.team/](https://www.ired.team/)
-* Hacker Recipe - [https://www.thehacker.recipes/](https://www.thehacker.recipes/)
-* AD  Guide – [https://zer1t0.gitlab.io/posts/attacking_ad/](https://zer1t0.gitlab.io/posts/attacking_ad/)
-* AD Guide - [https://hideandsec.sh/books/cheatsheets-82c/page/active-directory](https://hideandsec.sh/books/cheatsheets-82c/page/active-directory)
-* AD guide - [https://github.com/MGamalCYSEC/Active-Directory-Enumeration-and-Attacks](https://github.com/MGamalCYSEC/Active-Directory-Enumeration-and-Attacks)
-* AD CS Attacks – [https://dirkjanm.io/extending-ad-cs-attack-surface-intune-certs/](https://dirkjanm.io/extending-ad-cs-attack-surface-intune-certs/)
+Iredteam - [https://www.ired.team/](https://www.ired.team/)
+Hacker Recipe - [https://www.thehacker.recipes/](https://www.thehacker.recipes/)
+AD  Guide – [https://zer1t0.gitlab.io/posts/attacking_ad/](https://zer1t0.gitlab.io/posts/attacking_ad/)
+AD Guide - [https://hideandsec.sh/books/cheatsheets-82c/page/active-directory](https://hideandsec.sh/books/cheatsheets-82c/page/active-directory)
+AD guide - [https://github.com/MGamalCYSEC/Active-Directory-Enumeration-and-Attacks](https://github.com/MGamalCYSEC/Active-Directory-Enumeration-and-Attacks)
+AD Pentest Methodology – [https://r3dbuck3t.notion.site/Windows-Active-Directory-Pentest-Methodology](https://r3dbuck3t.notion.site/Windows-Active-Directory-Pentest-Methodology)
+AD CS Attacks – [https://dirkjanm.io/extending-ad-cs-attack-surface-intune-certs/](https://dirkjanm.io/extending-ad-cs-attack-surface-intune-certs/)
 
 
 
