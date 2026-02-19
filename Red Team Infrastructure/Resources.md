@@ -47,3 +47,4 @@
 
 ## Knowledge Base
 - https://hackerhermanos.com/
+- https://0xdbgman.github.io/
