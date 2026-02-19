@@ -14,6 +14,7 @@
 * promptfoo.dev - [https://www.promptfoo.dev/docs/red-team/](https://www.promptfoo.dev/docs/red-team/)
 * Hacktricks - [https://book.hacktricks.wiki/en/AI/index.html](https://book.hacktricks.wiki/en/AI/index.html)
 * HackAprompt - [https://www.hackaprompt.com](https://www.hackaprompt.com)
+* https://cph-sec.gitbook.io/ai-llm-red-team-handbook-and-field-manual
 
 ### Github
 https://github.com/requie/AI-Red-Teaming-Guide
