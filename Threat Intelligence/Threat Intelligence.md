@@ -164,7 +164,6 @@
 |Leakbase|[https://leakbase.io/](https://leakbase.io/)|
 |Leak Lookup|[https://leak-lookup.com/](https://leak-lookup.com/)|
 |LeakCheck|[https://leakcheck.io/](https://leakcheck.io/)|
-|RansomLook|[https://www.ransomlook.io/leaks](https://www.ransomlook.io/leaks)|
 |WikiLeaks|[https://wikileaks.org/](https://wikileaks.org/)|
 |DDoSecrets|[https://ddosecrets.com/](https://ddosecrets.com/)|
 |CheckLeaked|[https://checkleaked.cc/](https://checkleaked.cc/)|
@@ -233,6 +232,11 @@
 |AnyWho|[https://www.anywho.com/](https://www.anywho.com/)|
 |BackgroundChecks|[https://www.backgroundchecks.com/](https://www.backgroundchecks.com/)|
 
+## Ransomware
+|Tool|URL|
+|---|---|
+|RansomLook|[https://www.ransomlook.io/leaks](https://www.ransomlook.io/leaks)|
+|Ranssomware live|https://www.ransomware.live/|
 
 ## Dorking
 
