@@ -15,6 +15,7 @@
 * Hacktricks - [https://book.hacktricks.wiki/en/AI/index.html](https://book.hacktricks.wiki/en/AI/index.html)
 * HackAprompt - [https://www.hackaprompt.com](https://www.hackaprompt.com)
 * https://cph-sec.gitbook.io/ai-llm-red-team-handbook-and-field-manual
+* https://arcanum-sec.github.io/ai-sec-resources/
 
 ### Github
 https://github.com/requie/AI-Red-Teaming-Guide
