@@ -39,6 +39,38 @@ As a result, even if delegation is allowed only to one service (e.g., SQL), an a
 Get-DomainComputer DB01 | Select -ExpandProperty servicePrincipalName
 ```
 
+```
+[1] Attacker compromises WEB01$
+            |
+            v
+[2] Attacker performs S4U2Proxy
+    Requests ticket:
+    Administrator → MSSQLSvc/DB01
+            |
+            v
+[3] KDC issues valid TGS
+    Encrypted with DB01$ key
+            |
+            v
+[4] Attacker edits SPN field (unencrypted)
+    Changes:
+    MSSQLSvc/DB01
+         ↓
+    CIFS/DB01
+            |
+            v
+[5] Attacker sends AP-REQ to CIFS on DB01
+            |
+            v
+[6] DB01 decrypts ticket using DB01$ key
+    Ticket is valid
+    User = Administrator
+            |
+            v
+[7] Access granted to \\DB01\C$
+```
+
+
 ### Impersonate any User
 When a service account is configured for **constrained delegation**, it is allowed to delegate authentication only to specific services listed in its delegation settings. 
 
@@ -47,3 +79,29 @@ If this constrained delegation also has **protocol transition** enabled (via the
 This means that if an attacker compromises such an account, they can arbitrarily impersonate any domain user and then use **S4U2Proxy** to authenticate to the services in the allowed delegation list. 
 
 Because the Kerberos tickets can be requested without waiting for a real user logon, the attacker can immediately abuse the delegated services while appearing as the impersonated user.
+
+```
+[Attacker compromises WEB01]
+            |
+            v
+(1) S4U2Self
+WEB01$ → KDC
+"Give me ticket for Administrator to myself"
+            |
+            v
+KDC returns:
+Administrator → WEB01 (forwardable)
+            |
+            v
+(2) S4U2Proxy
+WEB01$ → KDC
+"Give me ticket for Administrator to CIFS/FILE01"
+            |
+            v
+KDC returns:
+Administrator → CIFS/FILE01
+            |
+            v
+Attacker accesses FILE01 as Administrator
+
+```
