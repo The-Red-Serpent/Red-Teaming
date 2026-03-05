@@ -48,3 +48,4 @@
 ## Knowledge Base
 - https://hackerhermanos.com/
 - https://0xdbgman.github.io/
+- https://github.com/BaddKharma/redStack
