@@ -49,6 +49,8 @@ https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2
 ## Living of the Land
 * Base - [https://lolol.farm/](https://lolol.farm/)
 * LOLBAS – [https://lolbas-project.github.io/](https://lolbas-project.github.io/)
+* LOLexfil - [https://lolexfil.github.io/](https://lolexfil.github.io/)
+* LOLC2 - [https://lolc2.github.io/](https://lolc2.github.io/)
 * LOLdrivers - [https://www.loldrivers.io/](https://www.loldrivers.io/)
 * Filesec – [https://filesec.io/](https://filesec.io/)
 * LOLAD - [https://lolad-project.github.io/](https://lolad-project.github.io/)
@@ -57,6 +59,7 @@ https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2
 * RMM - [https://lolrmm.io/](https://lolrmm.io/)
 * WADcoms - [https://wadcoms.github.io/](https://wadcoms.github.io/)
 * Worst fit - [https://worst.fit/](https://worst.fit/)
+* 
 
 
 ## Bloodhound
