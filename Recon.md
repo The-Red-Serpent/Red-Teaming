@@ -338,6 +338,7 @@
 | Privescheck | https://github.com/itm4n/PrivescCheck |
 | Windows Exploit Suggester | https://github.com/gellin/windows-exploit-suggester |
 | SessionGopher | https://github.com/obscuresec/SessionGopher |
+| Parsing Peas  | https://github.com/YuvalMil/ParsingPeas     |
 
 ### Logging and Monitoring Evasion Tools
 | Tool Name | Link |
