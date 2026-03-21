@@ -1,13 +1,14 @@
 ## OSINT
 
-| Tool        | URL                                                          |
-| ----------- | ------------------------------------------------------------ |
-| OSINTracker | [https://app.osintracker.com/](https://app.osintracker.com/) |
-| FreeOSINT   | [https://freeosint.github.io/](https://freeosint.github.io/) |
-| Cscorza     | https://cscorza.github.io/CScorza/                           |
-| Infoooze    | https://github.com/devxprite/infoooze                        |
-| Osint.sh    | https://osint.sh/                                            |
-| WireTapper  | https://github.com/h9zdev/WireTapper                         |
+| Tool           | URL                                                          |
+| -----------    | ------------------------------------------------------------ |
+| OSINTracker    | [https://app.osintracker.com/](https://app.osintracker.com/) |
+| FreeOSINT      | [https://freeosint.github.io/](https://freeosint.github.io/) |
+| Cscorza        | https://cscorza.github.io/CScorza/                           |
+| Infoooze       | https://github.com/devxprite/infoooze                        |
+| Osint.sh       | https://osint.sh/                                            |
+| WireTapper     | https://github.com/h9zdev/WireTapper                         |
+|OSINT World map | https://map.wddadk.com/
 
 ### Search Engines
 
