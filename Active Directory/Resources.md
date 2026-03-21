@@ -1,13 +1,11 @@
 ## Fundamentals
 AD Fundamentals- [https://radioactivedirectory.com/](https://radioactivedirectory.com/)
 
-
 ## AD Mind Maps
 https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2025.03.excalidraw.svg
 
 ## Reconnaissance
 https://github.com/r1cksec/corptrace
-
 
 ## Testing Guide
 - Iredteam - [https://www.ired.team/](https://www.ired.team/)
@@ -17,12 +15,10 @@ https://github.com/r1cksec/corptrace
 - AD guide - [https://github.com/MGamalCYSEC/Active-Directory-Enumeration-and-Attacks](https://github.com/MGamalCYSEC/Active-Directory-Enumeration-and-Attacks)
 - AD Pentest Methodology – [https://r3dbuck3t.notion.site/Windows-Active-Directory-Pentest-Methodology](https://r3dbuck3t.notion.site/Windows-Active-Directory-Pentest-Methodology)
 
-
 ## Active Directory Certificate Services
 - AD CS Attacks – [https://dirkjanm.io/extending-ad-cs-attack-surface-intune-certs/](https://dirkjanm.io/extending-ad-cs-attack-surface-intune-certs/)
 - Chainforge - [https://github.com/NEED-Programming/Chainforge](https://github.com/NEED-Programming/Chainforge)
 - Certipy JSON Viewer - [https://github.com/incredibleindishell/Certipy-JSON-Viewer](https://github.com/incredibleindishell/Certipy-JSON-Viewer)
-
 
 
 ## Trust Attacks
@@ -30,7 +26,6 @@ https://github.com/r1cksec/corptrace
 
 
 ## Command & Control (C2)
-
 * Sliver Intro & Pivoting – [https://redsiege.com/blog/2022/11/introduction-to-sliver/](https://redsiege.com/blog/2022/11/introduction-to-sliver/)
 * Sliver for Red Teams – [https://medium.com/@lord_murak/sliver-c2-for-red-team-operations-153135648218](https://medium.com/@lord_murak/sliver-c2-for-red-team-operations-153135648218)
 * Sliver AV/EDR Evasion – [https://panosoikogr.github.io/2025/06/10/Sliver-Tunneling-and-AV-bypass/](https://panosoikogr.github.io/2025/06/10/Sliver-Tunneling-and-AV-bypass/)
