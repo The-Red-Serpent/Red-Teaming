@@ -41,6 +41,9 @@
 - `windapsearch`
 - `ldeep`
 
+## ADWS Enumeration
+- `adwsdomaindump`
+
 ## DNS Enumeration
 - `Dnsenum`
 - `dnsrecon`
