@@ -8,7 +8,7 @@
 | Infoooze       | https://github.com/devxprite/infoooze                        |
 | Osint.sh       | https://osint.sh/                                            |
 | WireTapper     | https://github.com/h9zdev/WireTapper                         |
-|OSINT World map | https://map.wddadk.com/
+|OSINT World map | https://map.wddadk.com/                                      |
 
 ### Search Engines
 
@@ -341,6 +341,9 @@
 |X Profile Directory|[https://x.com/i/directory/profiles](https://x.com/i/directory/profiles)|
 |Twitter Pro|[https://pro.twitter.com/](https://pro.twitter.com/)|
 |ListFollowers|[http://ww1.listfollowers.com/](http://ww1.listfollowers.com/)|
+
+## Cyber Crime
+|Cyber Crime Tracker | https://cybercrime-tracker.net/                                      |
 
 ## Knowledge Base
 https://github.com/fastfire/deepdarkCTI
