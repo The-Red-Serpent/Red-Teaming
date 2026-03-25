@@ -1,0 +1,7 @@
+stack
+
+heap
+
+object
+
+handle
