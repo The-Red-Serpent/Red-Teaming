@@ -20,3 +20,6 @@ If ASLR is enabled, the loader picks randomized addresses for the executable and
 
 #### Base Address
 The starting memory address where a module (EXE or DLL) is loaded.
+
+### Reference
+https://securitymaven.medium.com/demystifying-aslr-understanding-exploiting-and-defending-against-memory-randomization-4dd8fe648345
