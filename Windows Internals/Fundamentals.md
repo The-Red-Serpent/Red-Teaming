@@ -5,3 +5,5 @@ heap
 object
 
 handle
+
+register
