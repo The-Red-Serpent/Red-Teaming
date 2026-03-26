@@ -1,6 +1,24 @@
 ### Address Space Layout Randomization
 ASLR is a security technique in Windows that randomly arranges the base addresses of a process’s executable, DLLs, heap, and stack each time it runs, preventing attackers from predicting memory locations and making exploits that rely on fixed addresses much harder.
 
+```
+Before ASLR (Windows XP):
+  Every machine, every boot:
+  kernel32.dll  always at  0x7C800000
+  ntdll.dll     always at  0x7C900000
+  your EXE      always at  0x00400000
+
+  Attacker knows exactly where to jump → exploit works reliably
+
+  After ASLR (Windows Vista+):
+  Boot 1:  kernel32.dll at 0x74A00000
+  Boot 2:  kernel32.dll at 0x76300000
+  Boot 3:  kernel32.dll at 0x759F0000
+
+  Attacker does not know where to jump → exploit fails
+
+```
+
 When you run a program in Windows:
 
 You double-click an .exe or call CreateProcess().
@@ -20,6 +38,8 @@ If ASLR is enabled, the loader picks randomized addresses for the executable and
 
 #### Base Address
 The starting memory address where a module (EXE or DLL) is loaded.
+
+
 
 ### Reference
 https://securitymaven.medium.com/demystifying-aslr-understanding-exploiting-and-defending-against-memory-randomization-4dd8fe648345
