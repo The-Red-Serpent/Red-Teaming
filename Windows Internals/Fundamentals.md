@@ -7,3 +7,7 @@ object
 handle
 
 register
+
+stack pointer
+
+
