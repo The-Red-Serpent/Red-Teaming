@@ -1,6 +1,8 @@
 
 ## Asynchronous Procedural Call
-An asynchronous procedure call (APC) is a mechanism in the Windows operating system that enables a specified function to execute asynchronously within the context of a particular thread, without blocking the thread's ongoing operations.When an APC is queued to a thread, the system generates a software interrupt, allowing the APC function to run the next time the thread is scheduled for execution. Each thread maintains its own dedicated APC queue, which facilitates non-blocking asynchronous processing for tasks such as input/output (I/O) completion notifications and timer callbacks.
+An asynchronous procedure call (APC) is a mechanism in the Windows operating system that enables a specified function to execute asynchronously within the context of a particular thread, without blocking the thread's ongoing operations.When an APC is queued to a thread, the system generates a software interrupt, allowing the APC function to run the next time the thread is scheduled for execution,  it will run the APC function
+
+Each thread maintains its own dedicated APC queue, which facilitates non-blocking asynchronous processing for tasks such as input/output (I/O) completion notifications and timer callbacks.
 
 APC queues are defined inside KTHREAD which is the first member of ETHREAD named Tcb.Specifically inside a field called ApcState which is of type KAPC_STATE:
 ```
@@ -14,11 +16,10 @@ ETHREAD
             └── UserApcPending     ← flag: APC waiting to fire
 ```
 
-When a user mode APC is queued to a thread (more on that later), the APC just sits there in the queue, doing nothing. To actually run the APCs currently attached to a thread, that thread must go into an alertable wait (also called alertable state). When in that state, any and all APCs in the thread’s queue execute in sequence. APCs do NOT execute immediately.They execute only when the target thread becomes alertable.
-
 ## Implementation
 User Mode — QueueUserAPC
-The Win32 API function for queuing a user mode APC:
+
+Each thread has its own APC queue. An application queues an APC to a thread by calling the QueueUserAPC function. The calling thread specifies the address of an APC function in the call to QueueUserAPC. The queuing of an APC is a request for the thread to call the APC function. When a user-mode APC is queued, the thread to which it is queued is not directed to call the APC function unless it is in an alertable state. A thread enters an alertable state when it calls the SleepEx, SignalObjectAndWait, MsgWaitForMultipleObjectsEx, WaitForMultipleObjectsEx, or WaitForSingleObjectEx function. If the wait is satisfied before the APC is queued, the thread is no longer in an alertable wait state so the APC function will not be executed. However, the APC is still queued, so the APC function will be executed when the thread calls another alertable wait function.
 
 ```
 cDWORD QueueUserAPC(
