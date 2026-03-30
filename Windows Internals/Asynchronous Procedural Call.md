@@ -145,3 +145,5 @@ This method involves targeting a handle to a thread within a running process and
 ### 2- Early Bird APC Injection:
 In this technique, a new process is created in a suspended state. Code is injected while the process is still suspended. A pointer to the injected code is then added to the APC queue of a thread in this suspended process. When the process resumes execution, it enters an alertable state, and the queued APC is executed. This allows the code to run early in the process lifecycle, at about the same time as ntdll.dll initializes low-level and environment setup for the process.Because this technique injects code before many AVs have a chance to analyze the process, it can evade detection by running code at a point AVs may not yet monitor.
 
+Reference : https://grokipedia.com/page/asynchronous_procedure_call
+
