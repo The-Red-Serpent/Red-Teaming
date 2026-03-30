@@ -19,3 +19,4 @@
 
 ### Github
 https://github.com/requie/AI-Red-Teaming-Guide
+https://github.com/confident-ai/deepteam
