@@ -11,6 +11,7 @@
 ### Guides
 * AI Pentesting Guide-https://medium.com/@rentierdigital/the-complete-guide-to-ai-penetration-testing-how-to-hack-the-future-before-it-hacks-you-90b754d5e75b
 * AI and LLM Cheatsheet-[https://www.thecloudgirl.dev/blog/owasp-top-10-for-llms-and-genai](https://www.thecloudgirl.dev/blog/owasp-top-10-for-llms-and-genai)
+* AIX-Framework - [https://github.com/licitrasimone/aix-framework](https://github.com/licitrasimone/aix-framework)
 * promptfoo.dev - [https://www.promptfoo.dev/docs/red-team/](https://www.promptfoo.dev/docs/red-team/)
 * Hacktricks - [https://book.hacktricks.wiki/en/AI/index.html](https://book.hacktricks.wiki/en/AI/index.html)
 * HackAprompt - [https://www.hackaprompt.com](https://www.hackaprompt.com)
