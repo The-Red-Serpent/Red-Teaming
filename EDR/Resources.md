@@ -16,4 +16,5 @@
   
 ## Tools
 https://github.com/Invadel-Cybersecurity/NimDrop
+https://github.com/Offensive-Panda/DefenseEvasionTechniques
 
