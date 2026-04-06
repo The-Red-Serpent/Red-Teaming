@@ -18,3 +18,7 @@ https://0xdbgman.github.io/categories/phishing/
 
 https://www.r-tec.net/r-tec-blog-evade-signature-based-phishing-detections
 
+## Tools
+https://github.com/praetorian-inc/GitPhish
+
+https://github.com/nromsdahl/squarephish2
