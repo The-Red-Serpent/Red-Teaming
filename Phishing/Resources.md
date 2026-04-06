@@ -13,10 +13,15 @@ https://ozgunkultekin.medium.com/the-phishers-playbook-part-1-creating-a-10-10-p
 
 https://0xdbgman.github.io/categories/phishing/
 
+https://www.knowbe4.com/hubfs/Social-Engineering-Red-Flags.pdf
+
 
 ## Evasion
 
 https://www.r-tec.net/r-tec-blog-evade-signature-based-phishing-detections
+
+https://www.youtube.com/watch?v=MKCFa_Bl5CM
+
 
 ## Tools
 https://github.com/praetorian-inc/GitPhish
