@@ -1,4 +1,5 @@
 ## Infra Setup
+
 https://payatu.com/blog/phishing-infrastructure-setup/
 
 https://xbz0n.sh/blog/social-engineering-redteam
@@ -24,6 +25,19 @@ https://www.youtube.com/watch?v=MKCFa_Bl5CM
 
 
 ## Tools
+
+https://dnstwist.it/
+
+https://www.expireddomains.net/
+
+https://github.com/threatexpress/domainhunter
+
+https://www.mail-tester.com/
+
+https://www.warmy.io/
+
+https://www.mailreach.co/
+
 https://github.com/praetorian-inc/GitPhish
 
 https://github.com/nromsdahl/squarephish2
