@@ -1,70 +1,6 @@
-![image](https://assets.qlik.com/image/upload/w_1600/q_auto/qlik/glossary/augmented-analytics/seo-hero-machine-learning-vs-ai_kls4c0.png)
 ### AI
 Artificial Intelligence (AI) is the class of computational systems designed to perceive, learn from data, reason under uncertainty, and take actions to achieve specified objectives without being explicitly programmed for every scenario.
 
-### NLP 
-Natural Language Processing (NLP) is a subfield of artificial intelligence that focuses on enabling computers to understand, interpret, generate, and interact with human language in a meaningful way. 
-
-NLP combines computational linguistics, machine learning, and statistical methods to process and analyze textual or spoken data, allowing machines to perform tasks such as language understanding, translation, summarization, question answering, and conversational interaction.
-
-### ML 
-Machine Learning (ML) is a subfield of artificial intelligence that focuses on designing, developing, and analyzing algorithms and statistical models that enable computer systems to automatically learn from and improve with experience, without being explicitly programmed for each specific task. 
-
-ML systems are designed to identify patterns, make predictions, classify information, and make decisions based on data. These systems can adapt their behavior as they are exposed to new data, allowing them to improve performance over time in dynamic environments.
-
-### Types
-#### 1. Supervised Learning
-Supervised Learning is a type of machine learning in which a model is trained on labeled data, meaning that each input example in the training set is paired with a corresponding correct output (label). The goal of supervised learning is for the model to learn the mapping between inputs and outputs so that it can make accurate predictions on new, unseen data.
-#### 2. Unsupervised Learning 
-Unsupervised Learning is a type of machine learning in which a model is trained on unlabeled data, meaning that no correct outputs are provided. The system’s goal is to identify hidden patterns, structures, or relationships in the data on its own.
-#### 3. Reinforcement Learning (RL)  
-Reinforcement Learning is a type of machine learning in which an agent learns to make sequential decisions by interacting with an environment. The agent receives rewards or penalties based on its actions and aims to maximize cumulative rewards over time.
-
-#### Labeled Data
-Labeled data is data that comes with clear, correct answers or tags that tell the machine what the expected output is for each input.
-#### Unlabeled Data
-Unlabeled data is data that has no associated answers or tags. The machine only sees the raw input and must figure out patterns or structure on its own.
-
-| Type                   | Data Type      | Learning Method                | Example Applications                     |
-| ---------------------- | -------------- | ------------------------------ | ---------------------------------------- |
-| Supervised Learning    | Labeled        | Learn input-output mapping     | Spam detection, disease diagnosis        |
-| Unsupervised Learning  | Unlabeled      | Discover patterns or structure | Customer segmentation, anomaly detection |
-| Reinforcement Learning | Feedback-based | Learn by trial and error       | Game AI, robotics, autonomous driving    |
-
-### Deep Learning
-Deep Learning (DL) is a subfield of machine learning and artificial intelligence that focuses on using artificial neural networks with multiple layers (deep neural networks) to automatically learn hierarchical representations of data. Deep learning models are capable of extracting complex features from raw data, identifying patterns, and performing tasks such as classification, prediction, generation, and decision-making, often achieving human-level or superhuman performance in specific domains.
-
-#### Neural Network
-A neural network is a system of connected neurons inspired by the human brain, used in deep learning to learn patterns and make predictions from data.
-
-Structure:
-1. Input Layer: Receives raw data (e.g., pixels, text, audio).
-2. Hidden Layers: Process the data through neurons using weights, biases, and activation functions. Multiple layers allow learning of complex patterns.
-3. Output Layer: Produces the final result (e.g., class label, prediction).
-How it works:
-- Data flows forward through the network (forward pass).
-- The network calculates loss/error comparing predictions to true values.
-- Backpropagation adjusts weights and biases to improve accuracy.
-- After training, the network can predict or classify new data.
-
-Analogy:
-
-> Input → processed step by step → final output, like a factory turning raw material into a finished product.
-
-![image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230602113310/Neural-Networks-Architecture.png)
-
-
-### Types
-#### 1. Feedforward Neural Networks (FNN / MLP)
-A neural network where data flows in one direction from the input layer through hidden layers to the output layer. Used for tasks such as classification and regression where the relationship between input and output is modeled directly.
-#### 2. Convolutional Neural Networks (CNN)
-A type of neural network designed to process grid-like data, especially images, using convolutional layers to automatically detect features such as edges, shapes, and patterns. Widely used in computer vision applications.
-#### 3. Recurrent Neural Networks (RNN / LSTM / GRU)
-A neural network designed for sequential data, where outputs depend on previous inputs. RNNs maintain memory of past information, making them suitable for time series, speech, and natural language processing. LSTMs and GRUs are variants that handle long-term dependencies effectively.
-#### 4. Autoencoders
-A neural network that learns to compress (encode) and reconstruct (decode) data, used for tasks such as dimensionality reduction, anomaly detection, and denoising.
-#### 5. Generative Models (GANs, VAEs)
-Neural networks that generate new data by learning the distribution of existing data. GANs involve two networks competing—one generates data, the other evaluates it—while VAEs learn probabilistic representations. Used for image synthesis, data augmentation, and content creation.
 #### 6. Transformers
 Transformers are a type of neural network architecture used in AI that processes and understands data by focusing on relationships between all parts of the input at once, rather than step by step. They are especially effective for language tasks and form the foundation of modern large language models.
 
@@ -238,3 +174,11 @@ Agentic AI is an advanced form of artificial intelligence focused on autonomous 
 - Example: After handling hundreds of support tickets, it learns which solutions work best.
 
 ![image](https://blogs.nvidia.com/wp-content/uploads/2024/10/agentic-ai-workflow-1.png)
+
+
+overfitting
+underfitting
+selt attention
+context window
+tokens
+
