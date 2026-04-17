@@ -9,6 +9,8 @@
 | Osint.sh       | https://osint.sh/                                            |
 | WireTapper     | https://github.com/h9zdev/WireTapper                         |
 |OSINT World map | https://map.wddadk.com/                                      |
+| Think lol      | https://think-pol.com/                                       |
+
 
 ## Search Engines
 
