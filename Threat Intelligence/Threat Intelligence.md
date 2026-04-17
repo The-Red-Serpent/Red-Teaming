@@ -114,6 +114,7 @@
 | DIFR report    | https://thedfirreport.com/                               |
 | Cyllex         | https://cyllex.io/                                       |
 | Malware Samples| https://samplepedia.cc/                                  |
+| Ctrlaltintel   | https://ctrlaltintel.com/                                |
 
 
 ## SCADA
