@@ -1,32 +1,123 @@
-### Agentic AI
-Agentic AI is an advanced form of artificial intelligence focused on autonomous decision-making and action. Unlike traditional AI, which primarily responds to commands or analyzes data, agentic AI can set goals, plan, and execute tasks with minimal human intervention.
+## What is Agentic AI
 
-### Working
-### 1. Perceive (See and Understand the World)
+An AI system where an LLM acts as a reasoning engine that autonomously plans, decides, and executes multi-step tasks in the real world by using tools, calling APIs, browsing the web, writing and running code, and interacting with external services — with minimal or no human intervention at each step.
 
-- The AI gathers information from sensors, databases, websites, or apps.
-- Example: A self-driving car looks at cameras, GPS, and traffic data to know where it is and what’s around it.
-- Key idea: Extract useful info and recognize important things in the environment.
-### 2. Reason (Think and Plan)
+A regular LLM takes input and produces output. One turn, one response, done. An agentic AI takes a goal and figures out what steps to take, what tools to use, and keeps going until the goal is complete.
 
-- A Large Language Model (LLM) acts as the brain.
-- It analyzes the situation, figures out what to do, and plans the steps.
-- Can coordinate specialized AI tools: like image recognition, recommendation engines, or writing tools.
-- Often uses retrieval-augmented generation (RAG) to get extra info from documents or databases.
-- Example: A customer support agentic AI can read a customer email, figure out the problem, and plan a solution.
-### 3. Act (Do Things in the Real World)
+---
 
-- The AI uses tools and software via APIs to execute the plan.
-- Can automate tasks directly, but with rules (“guardrails”) for safety.
-- Example:
-    - AI can approve claims under $1,000 automatically.
-    - Claims above $1,000 get flagged for human review.
-- Key idea: AI is not just thinking—it’s taking controlled action.
-### 4. Learn (Get Smarter Over Time)
+## How it Differs from a Regular LLM
 
-- The AI collects feedback from its actions and uses it to improve.
-- The “data flywheel”: data → improves model → better actions → more data.
-- Over time, the AI becomes more accurate and efficient.
-- Example: After handling hundreds of support tickets, it learns which solutions work best.
+```
+Regular LLM:
+User sends message → LLM generates response → done
 
-![image](https://blogs.nvidia.com/wp-content/uploads/2024/10/agentic-ai-workflow-1.png)
+Agentic AI:
+User gives goal → LLM plans → calls tool → gets result
+→ reasons → calls tool → gets result → reasons → ...
+→ repeats until goal achieved → returns final output
+```
+
+---
+
+## Core Architecture — 6 Components
+
+### 1. LLM (Brain)
+The central reasoning engine. Receives current state — goal, history, tool results, memory — and decides what to do next. Either calls a tool or declares task complete. Does not execute anything directly — only produces structured text specifying which tool to call and with what arguments.
+
+### 2. Tools
+Functions the LLM can invoke by name with specific arguments.
+
+| Type | Examples |
+|---|---|
+| Information retrieval | Web search, database query, API call |
+| Action | Send email, write file, execute code, click UI |
+| Computation | Run Python, execute SQL, bash command |
+| Memory | Read/write long-term memory, search vector DB |
+| Sub-agent | Spawn another agent, delegate subtask |
+
+Each tool has a name, description, and parameter schema. The LLM reads descriptions to understand what each tool does. Tool descriptions live in the system prompt — part of the attack surface.
+
+### 3. Memory
+
+| Type | What it stores | Scope |
+|---|---|---|
+| In-context | Everything in context window | Current session only |
+| Short-term external | Working scratchpad | Current task |
+| Long-term | Facts, summaries, past experiences | Persistent across sessions |
+| Episodic | Past action sequences and outcomes | Persistent |
+| Semantic | General facts, user preferences | Persistent |
+
+Long-term memory is typically a vector database. Agent retrieves relevant memories by embedding the current goal and searching for similar past content.
+
+### 4. Planning
+How the agent breaks a goal into executable steps.
+
+**Chain of Thought** — LLM reasons step by step before acting. Reasoning written in context.
+
+**ReAct (Reasoning + Acting)** — alternates thought and action:
+```
+Thought: I need to find AAPL stock price
+Action: web_search("AAPL stock price today")
+Observation: AAPL is $189.45
+Thought: Now compare to yesterday's close
+Action: web_search("AAPL closing price yesterday")
+Observation: $187.20
+Thought: Increased $2.25 or 1.2%
+Action: return_answer("AAPL increased 1.2% today")
+```
+
+**Plan-and-Execute** — LLM creates full plan first, then executes each step, replanning if a step fails.
+
+**Tree of Thought** — generates multiple possible next steps, evaluates each, pursues the most promising. Allows backtracking.
+
+### 5. Agent Loop
+The control flow that keeps the agent running.
+
+```
+1. Receive goal
+2. Build context (goal + system prompt + memory + tool descriptions)
+3. LLM generates next action
+4. If final answer → return to user, stop
+5. If tool call → execute tool, get result
+6. Append tool call + result to context
+7. Go to step 3
+```
+
+Termination conditions: task complete, max steps reached, unrecoverable error, human checkpoint triggered.
+
+### 6. Multi-Agent Architecture
+
+**Orchestrator** — top-level agent that receives the goal, breaks it into subtasks, delegates to specialists, synthesizes outputs.
+
+**Sub-agents (workers)** — specialized agents for specific task types. Each has focused tools and a specialized system prompt.
+
+**Peer agents** — same-level agents that communicate directly. One agent's output becomes another's input.
+
+**Critic agent** — reviews and critiques other agents' outputs before returning results.
+
+Agents communicate through messages — structured text passed between agents. They do not share weights or internal state.
+
+---
+
+## End to End Flow
+
+```
+User gives goal
+      ↓
+Orchestrator retrieves memory + builds context
+      ↓
+LLM reasons → calls tool or spawns sub-agent
+      ↓
+Tool executes → result returned to context
+      ↓
+LLM reasons about result → next action
+      ↓
+Loop continues until task complete
+      ↓
+Final answer returned to user
+```
+
+
+
+
