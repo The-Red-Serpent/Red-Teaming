@@ -18,6 +18,7 @@
 * https://cph-sec.gitbook.io/ai-llm-red-team-handbook-and-field-manual
 * https://arcanum-sec.github.io/ai-sec-resources/
 * https://kongsec.github.io/OSAINotesResearch/
+* https://itsbroken.ai/
 
 ### Github
 https://github.com/requie/AI-Red-Teaming-Guide
