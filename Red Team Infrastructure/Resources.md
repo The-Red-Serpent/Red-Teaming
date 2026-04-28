@@ -1,5 +1,6 @@
 ### Red Team Map
 https://kypvas.github.io/red-team-map/
+https://redteam-gen-f5jh.vercel.app/
 
 ### Infrastructure Fundamentals
 
