@@ -107,6 +107,7 @@ https://github.com/r1cksec/corptrace
 * Myhackingnotes - [https://myhackingnotes.com/](https://myhackingnotes.com/)
 * Hackwiki - [https://hackwiki.com](https://hackwiki.com)
 * Deep Hacking tech - [https://blog.deephacking.tech/](https://blog.deephacking.tech)
+* https://p3ta-tricks.com/
 
 ## Red Team Labs
 * https://extremeredlab.0x29a.it/
