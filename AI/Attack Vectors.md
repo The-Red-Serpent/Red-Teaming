@@ -1,0 +1,115 @@
+# AI Security & Vulnerability Layers
+
+## PROMPT LAYER
+
+| Technique                           | Description                     |
+|-------------------------------------|---------------------------------|
+| Direct injection                    | Directly injecting a prompt into the model. |
+| Indirect injection                  | Indirect methods to manipulate the model. |
+| Prompt leaking                      | Unintended leakage of prompt information. |
+| Jailbreaking                        | Breaking out of model constraints. |
+| Role-play / persona hijack          | Taking on a different role or persona. |
+| Virtualization / hypothetical framing | Framing a scenario to influence the model. |
+| Many-shot jailbreak                 | Using multiple inputs to manipulate the model. |
+| Token smuggling                     | Hiding instructions or malicious tokens. |
+| Context overflow                    | Overloading the model’s context window. |
+| Authority escalation                | Gaining higher access through prompts. |
+| Prompt chaining                     | Linking multiple prompts to control output. |
+| Competing objectives                | Using conflicting instructions to confuse the model. |
+
+
+## AGENTIC LAYER
+
+| Technique                           | Description                     |
+|-------------------------------------|---------------------------------|
+| Agent hijacking                     | Taking over or manipulating an agent's decisions. |
+| Tool / function call abuse          | Abusing external tools or functions. |
+| Memory poisoning                    | Manipulating the memory of the AI system. |
+| Planning manipulation               | Influencing the model’s planning process. |
+| Cross-agent injection               | Injecting prompts between different agents. |
+| Callback / SSRF via tools           | Using server-side request forgery (SSRF) via tools. |
+| Excessive agency abuse              | Overuse or abuse of agent capabilities. |
+| A2A task injection                  | Injecting tasks in agent-to-agent communication. |
+| Artifact poisoning                  | Corrupting the data artifacts used by agents. |
+
+
+## RAG LAYER
+
+| Technique                           | Description                     |
+|-------------------------------------|---------------------------------|
+| RAG poisoning                       | Poisoning the retrieval-augmented generation model. |
+| Retrieval manipulation              | Manipulating the retrieval process. |
+| Knowledge base exfiltration         | Extracting information from the knowledge base. |
+| Context window stuffing             | Stuffing extra data into the context window. |
+| Embedding inversion                 | Inverting the embeddings to control the model. |
+| Chunking exploitation               | Exploiting how the model handles chunks of data. |
+| Metadata manipulation               | Manipulating metadata in the retrieval process. |
+
+
+## MODEL LAYER
+
+| Technique                           | Description                     |
+|-------------------------------------|---------------------------------|
+| Adversarial examples                | Using adversarial inputs to mislead the model. |
+| Model extraction                    | Extracting the model's weights or architecture. |
+| Model inversion                     | Reversing the model to uncover its internal workings. |
+| Membership inference                | Inferring if certain data was used in training the model. |
+| Training data extraction            | Extracting the data the model was trained on. |
+| Training data poisoning             | Poisoning the data used to train the model. |
+| Backdoor / trojan                   | Installing backdoors or trojans in the model. |
+| Weight poisoning                    | Altering the model weights for manipulation. |
+| Fine-tuning safety removal          | Removing safety mechanisms during fine-tuning. |
+
+
+## SUPPLY CHAIN LAYER
+
+| Technique                           | Description                     |
+|-------------------------------------|---------------------------------|
+| Model hub typosquatting             | Creating fake model hubs to deceive users. |
+| Pickle / safetensor exploit         | Exploiting Python’s pickle or safetensor formats. |
+| Malicious LoRA upload               | Uploading malicious LoRA models. |
+| MCP server typosquatting            | Attacking server infrastructure through typosquatting. |
+| MCP tool description poisoning      | Poisoning the description of tools in a model. |
+| MCP rug pull                        | Scamming or pulling the rug on MCP tools. |
+| Prompt template tampering           | Tampering with prompt templates. |
+| Dependency confusion                | Exploiting dependency confusion in libraries. |
+
+
+## OUTPUT LAYER
+
+| Technique                           | Description                                                 |
+|-------------------------------------|-------------------------------------------------------------|
+| Insecure output handling            | Mishandling of outputs from the model.                      |
+| Prompt-to-code injection            | Injecting code via prompts.                                 |
+| Hallucination exploitation          | Exploiting model hallucinations.                            |
+| Guardrail bypass                    | Bypassing safety guardrails in the model.                   |
+| Denial of service                   | Performing DoS attacks through model interaction.           |
+| Sponge attack                       | Exploiting model memory or context in a sponge-like manner. |
+| Invisible prompt injection          | Injecting prompts that are not easily visible.              |
+
+
+
+## MULTIMODAL LAYER
+
+| Technique                           | Description                                                   |
+|-------------------------------------|---------------------------------------------------------------|
+| Visual prompt injection             | Injecting prompts into visual inputs.                         |
+| Steganographic injection            | Hiding malicious code within other data types (e.g., images). |
+| Audio adversarial examples          | Manipulating audio inputs to deceive the model.               |
+| OCR injection                       | Injecting text through optical character recognition (OCR).   |
+| Video frame injection               | Injecting prompts through video frames.                       |
+| QR code injection                   | Using QR codes as a medium for prompt injection.              |
+
+
+## SAFETY & BEHAVIORAL LAYER
+
+| Technique                           | Description                                                   |
+|-------------------------------------|---------------------------------------------------------------|
+| Harmful content generation          | Generating harmful or malicious content.                      |
+| Bias exploitation                   | Exploiting model biases for malicious purposes.               |
+| Toxicity amplification              | Amplifying toxic or harmful content.                          |
+| Misinformation generation           | Generating false or misleading information.                   |
+| Social engineering assistance       | Assisting with social engineering attacks.                    |
+| PII extraction                      | Extracting personally identifiable information (PII).         |
+| Psychological manipulation          | Manipulating user psychology through outputs.                 |
+
