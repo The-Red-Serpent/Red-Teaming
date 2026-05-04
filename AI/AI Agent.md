@@ -1,11 +1,17 @@
 ## AI Agent 
-Ai agent is a software program that uses large language model as its reasoning engine to perceive its environment, make decisions and take actions through  tools in order to complete a goal.
+An AI agent is a software program that uses large language model as its reasoning engine to perceive its environment, make decisions and take actions through  tools in order to complete a goal.
 
 ```
 AI Agent = LLM + Knowledge Base + Memory + Tools
 ```
 
-  ![image](https://architecture.learning.sap.com/assets/images/Agent_Flow-22a5c002429b8cf7781c962bd4d12a88.svg)
+
+<p align="center">
+  <img src="https://architecture.learning.sap.com/assets/images/Agent_Flow-22a5c002429b8cf7781c962bd4d12a88.svg" alt="AI Agent Flow"/>
+</p>
+
+
+<br><br>
 ## Components
 
 ### LLM 
@@ -37,3 +43,13 @@ System prompts are pre-programmed instructions or guidelines that shape the agen
 
 ### Guard rails
 Guardrails are mechanisms that ensure the AI agent behaves in a safe, ethical, and reliable manner. They act as constraints that limit the agent’s actions and responses to prevent harmful, biased, or undesirable outcomes.
+
+<br>
+
+## Types
+
+### Multi Agent System
+It is a Computerized System composed of multiple autonomous ai agents that work together, each handling a specifc subtask to solve a problem too complex for one agent alone.
+
+### Multi modal agent
+A Multimodal agent is an AI agent that can take, process and generate multiple types of data like text, images, audio, video etc rather than being limited to text alone. The underlying LLM powering an multimodal agnet is a multimodal model one that has been trained to understand and reason accross different data types simultaneously such as GPT-V4, Claude 3 or Gemini.
