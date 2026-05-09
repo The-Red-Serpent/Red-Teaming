@@ -11,6 +11,7 @@
 * Execevasion - [https://dr34mhacks.github.io/ExecEvasion/](https://dr34mhacks.github.io/ExecEvasion/)
 * unprotect- [https://unprotect.it/](https://unprotect.it/)
 * Tradecraft Garden - [https://tradecraftgarden.org/](https://tradecraftgarden.org/)
+* Evasion CheckList - [https://evasions.checkpoint.com/](https://evasions.checkpoint.com/)
   
 ## AMSI
 * [https://amsi.fail/](https://amsi.fail/)
