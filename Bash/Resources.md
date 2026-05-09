@@ -5,3 +5,4 @@
 ### Reference
 * https://quickref.me/
 * https://devdocs.io/
+* https://devhints.io/bash
