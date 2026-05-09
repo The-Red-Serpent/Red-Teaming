@@ -12,9 +12,10 @@
 
 * NetBird (Self-Hosted VPN)
   [https://docs.netbird.io/selfhosted/selfhosted-quickstart](https://docs.netbird.io/selfhosted/selfhosted-quickstart)
-
 * WireGuard for Red Teams
   [https://watson0x90.com/wireguard-vpn-for-redteams-b8bc02929353](https://watson0x90.com/wireguard-vpn-for-redteams-b8bc02929353)
+* Netbird Installation Guide
+  https://www.techdecoded.org/netbird-self-hosted-setup-installation-guide
 
 ### Redirectors & Traffic Management
 
