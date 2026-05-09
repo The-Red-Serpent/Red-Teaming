@@ -21,6 +21,9 @@ https://github.com/r1cksec/corptrace
 - Chainforge - [https://github.com/NEED-Programming/Chainforge](https://github.com/NEED-Programming/Chainforge)
 - Certipy JSON Viewer - [https://github.com/incredibleindishell/Certipy-JSON-Viewer](https://github.com/incredibleindishell/Certipy-JSON-Viewer)
 
+## Active Directory Command Generator
+- https://gzzcoo.com/CS
+
 
 ## Trust Attacks
 * Trust Attacks Explained - [https://itm8.com/articles/sid-filter-as-security-boundary-between-domains-part-1](https://itm8.com/articles/sid-filter-as-security-boundary-between-domains-part-1)
