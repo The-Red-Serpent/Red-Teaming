@@ -26,6 +26,9 @@ https://github.com/r1cksec/corptrace
 ## Active Directory Command Generator
 - https://gzzcoo.com/CS
 
+## Raw LDAP Queries
+- [https://gist.github.com/GregDurys/cb3b1b5baa1589f0bec50290e10f93ab?ref=payloadforge.io](https://gist.github.com/GregDurys/cb3b1b5baa1589f0bec50290e10f93ab?ref=payloadforge.io)
+
 
 ## Trust Attacks
 * Trust Attacks Explained - [https://itm8.com/articles/sid-filter-as-security-boundary-between-domains-part-1](https://itm8.com/articles/sid-filter-as-security-boundary-between-domains-part-1)
