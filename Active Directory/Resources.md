@@ -16,6 +16,7 @@ https://github.com/r1cksec/corptrace
 - AD Pentest Methodology – [https://r3dbuck3t.notion.site/Windows-Active-Directory-Pentest-Methodology](https://r3dbuck3t.notion.site/Windows-Active-Directory-Pentest-Methodology)
 - Pentest Methodology [https://anshu19981.github.io/Pentestcheatsheet/](https://anshu19981.github.io/Pentestcheatsheet/)
 - Hide Sec AD - [https://hideandsec.sh/books/cheatsheets-82c/page/active-directory](https://hideandsec.sh/books/cheatsheets-82c/page/active-directory)
+- Zero Credentails Mapping - [https://offsecexams.com/cheatsheets/zero-credential-domain-mapping](https://offsecexams.com/cheatsheets/zero-credential-domain-mapping)
 
 ## Active Directory Certificate Services
 - AD CS Attacks – [https://dirkjanm.io/extending-ad-cs-attack-surface-intune-certs/](https://dirkjanm.io/extending-ad-cs-attack-surface-intune-certs/)
