@@ -5,7 +5,7 @@ Antivirus is a kind of software used to prevent, scan, detect and delete viruses
 A modern AV is fueled by signature updates fetched from the vendor's signature database that resides on the internet. Those signature definitions are stored in the local AV signature database, which in turn feeds the more specific engines.
 
 ### File Engine
-The  File Engine is the antivirus module that inspects and analyzes files for malicious content using signatures, heuristics, and behavioral techniques. The file engine is responsible for bothh scheduled and real time file scans. when the engine perfirms a scheduled scan, it simply parses the entire file system and sends each file metadata/data to signature engine.
+The  File Engine is the antivirus module that inspects and analyzes files for malicious content using signatures, heuristics, and behavioral techniques. The file engine is responsible for bothh scheduled and real time file scans. when the engine performs a scheduled scan, it simply parses the entire file system and sends each file metadata/data to signature engine.
 
 ### Memory Engine
 The Memory engine scans/inspects each processe's memory space at runtime for well known binary signatures or suspicious API calls that might result in memory injection attacks.  It actively monitors your computer's RAM (Random Access Memory) to detect and block stealthy, "fileless" malware that tries to execute in-memory without leaving malicious files on your hard drive
@@ -32,12 +32,15 @@ Machine Learning Engine  uses trained machine learning models to detect both kno
 ### Signature-based Detection
 Signature-based detection identifies malware by comparing files, programs, or data against a database of known malware signatures, which are unique patterns such as byte sequences or hashes of previously identified viruses. If a match is found, the antivirus flags the file as malicious and takes action like blocking, quarantining, or removing it.
 
+### Integrity Based Detection
+Integrity Based Detection establishes a  baseline of critical system files. The AV continuousy monitors for unauthorized change to those files. Any modification triggers an alert.
+
 ### Heuristic-based detection
 Heuristic-based detection identifies new or unknown malware  by analyzing a program’s code structure, patterns, and suspicious characteristics  instead of relying on known virus signatures. It looks for behaviors or coding traits commonly found in malware (like self-modifying code, suspicious API calls, or packing/encryption techniques) and flags files as suspicious even if they are not in the virus database.
 
 ### Behavior-based detection
 
-Behavior-based detection identifies malware by monitoring and analyzing the real-time actions and activities of programs, users, or systems to detect suspicious or abnormal behavior patterns. Instead of relying on known signatures or static code analysis, it focuses on what a program does during execution such as modifying system files, encrypting large amounts of data, injecting code into other processes, or making unusual network connections—and flags it as malicious if the behavior matches known attack patterns or deviates significantly from normal activity.
+Behavior-based detection identifies malware by monitoring and analyzing the real-time actions and activities of programs, users, or systems to detect suspicious or abnormal behavior patterns. Instead of relying on known signatures or static code analysis, it focuses on what a program does during execution such as modifying system files, encrypting large amounts of data, injecting code into other processes, or making unusual network connections and flags it as malicious if the behavior matches known attack patterns or deviates significantly from normal activity.
 
 ### Anomaly-based Detection 
 
