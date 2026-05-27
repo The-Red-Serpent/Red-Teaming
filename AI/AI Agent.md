@@ -7,7 +7,7 @@ AI Agent = LLM + Knowledge Base + Memory + Tools
 
 
 <p align="center">
-  <img src="https://architecture.learning.sap.com/assets/images/Agent_Flow-22a5c002429b8cf7781c962bd4d12a88.svg" alt="AI Agent Flow"/>
+  <img src="https://assets.bytebytego.com/diagrams/0412-what-is-an-ai-agent.png" alt="AI Agent Flow"/>
 </p>
 
 
