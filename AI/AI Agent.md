@@ -49,7 +49,10 @@ Guardrails are mechanisms that ensure the AI agent behaves in a safe, ethical, a
 ## Types
 
 ### Multi Agent System
-It is a Computerized System composed of multiple autonomous ai agents that work together, each handling a specifc subtask to solve a problem too complex for one agent alone.
+It is a Computerized System composed of multiple autonomous ai agents that work together, each handling a specifc subtask to solve a problem too complex for one agent alone. Rather than relying on a single monolithic model, these systems distribute responsibilities across agents with distinct roles, capabilities, and access permissions.
+
+However, this distributed architecture dramatically expands the attack surface. While single-agent systems expose interfaces for user input and external tools, multi-agent architectures introduce inter-agent trust boundaries as a critical new attack surface. What were once internal function calls within a monolith are now network requests between distinct entities. This transition exposes authentication gaps, data serialization vulnerabilities, and implicit trust relationships that attackers can exploit to move laterally between agents.
+
 
 ### Multi modal agent
 A Multimodal agent is an AI agent that can take, process and generate multiple types of data like text, images, audio, video etc rather than being limited to text alone. The underlying LLM powering an multimodal agnet is a multimodal model one that has been trained to understand and reason accross different data types simultaneously such as GPT-V4, Claude 3 or Gemini.
