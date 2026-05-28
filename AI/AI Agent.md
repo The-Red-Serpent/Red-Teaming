@@ -7,7 +7,7 @@ AI Agent = LLM + Knowledge Base + Memory + Tools
 
 
 <p align="center">
-  <img src="https://assets.bytebytego.com/diagrams/0412-what-is-an-ai-agent.png" alt="AI Agent Flow"/>
+  <img src="https://sendbird.imgix.net/cms/How-to-build-an-AI-agent_diagram.png"/>
 </p>
 
 
@@ -51,7 +51,7 @@ Guardrails are mechanisms that ensure the AI agent behaves in a safe, ethical, a
 ### Multi Agent System
 It is a Computerized System composed of multiple autonomous ai agents that work together, each handling a specifc subtask to solve a problem too complex for one agent alone. Rather than relying on a single monolithic model, these systems distribute responsibilities across agents with distinct roles, capabilities, and access permissions.
 
-However, this distributed architecture dramatically expands the attack surface. While single-agent systems expose interfaces for user input and external tools, multi-agent architectures introduce inter-agent trust boundaries as a critical new attack surface. What were once internal function calls within a monolith are now network requests between distinct entities. This transition exposes authentication gaps, data serialization vulnerabilities, and implicit trust relationships that attackers can exploit to move laterally between agents.
+![image](https://res.infoq.com/news/2024/12/aws-multi-agent/en/headerimage/generatedHeaderImage-1732918041248.jpg)
 
 
 ### Multi modal agent
