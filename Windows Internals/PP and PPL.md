@@ -54,4 +54,20 @@ The signer level a process gets is not chosen by the process itself — it is de
 
 ### Protected Process Light (PPL)
 
-Protected Process Light (PPL) is  an evolution of the original Protected Process model introduced in Windows 8.1 that extends kernel-enforced process protection to a broader range of critical system components beyond just DRM. Like PP, PPL prevents even administrator and SYSTEM level processes from opening sensitive handles to a PPL process. The key difference from original PP is that PPL introduces a signer-based trust hierarchy  not all PPL processes are equal, protection strength depends entirely on the signer level of the process, and higher signer levels can access lower signer levels but never the reverse. Original PP always outranks PPL regardless of signer level.
+Protected Process Light is a Windows kernel security feature that allows certain processes to run with restricted access, preventing untrusted or lower-privileged processes from reading their memory, injecting code, or manipulating handles. It is designed to protect critical system and security processes while allowing limited trusted interactions.
+
+
+### PPL Signer Levels
+**PPL Signer Levels** in Windows are enumerated trust levels assigned to **Protected Process Light (PPL) processes**, indicating the **source or authority of the code that created the process**. These levels are used by the Windows kernel to enforce access restrictions: only processes with an equal or higher trust level can perform sensitive operations (such as handle opening, memory access, or termination) on a PPL process.
+
+### Implementation : 
+- Each PPL process has **two key fields** in its `EPROCESS` structure:
+    1. **PsProtectedType** → Type of protection (Protected, Protected Light)
+    2. **PsProtectedSigner** → Signer level (WinSystem, Lsa, Antimalware, etc.)
+- When a process tries to **open a handle, duplicate a handle, read/write memory, or inject code**:
+    - The **kernel checks the requestor’s signer level**.
+    - If the requestor is **not trusted at that level**, the action is **denied**, even if it’s running as SYSTEM.
+- There are also **light vs full protection types**:
+    
+    - Light (ProtectedLight) → moderate protection.
+    - Full (Protected) → very strict, even more restrictions.
