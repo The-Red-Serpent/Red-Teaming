@@ -2,6 +2,7 @@
 Event Tracing for Windows (ETW) is a high-performance event logging and tracing framework built into Windows that enables operating system components and applications to generate and consume real-time diagnostic, performance, and security telemetry.
 
 ## ETW Architecture
+![image](https://static.wixstatic.com/media/c173bb_31902a11fd6a47f1a64d5869ed5f644c~mv2.png/v1/fill/w_925,h_555,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/c173bb_31902a11fd6a47f1a64d5869ed5f644c~mv2.png)
 ### Providers
 Providers are the components that generate events. Every application, service, or system component can register as an ETW provider and start sending structured event data. Windows comes with over 1,000 built-in providers, covering everything from. If a third‑party application wants to generate ETW events, it must first register as an ETW provider. Windows already includes more than a thousand built‑in providers.
 You can list them using:
