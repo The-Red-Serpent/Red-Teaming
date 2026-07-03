@@ -13,7 +13,9 @@ Acquisition enumeration is the process of identifying companies, brands, or subs
 ## Cloud Enumeration
 Cloud enumeration is the process of identifying a company’s cloud usage and assets**—such as cloud providers, storage, compute services, and exposed endpoints.In red team reconnaissance, it helps discover cloud infrastructure (AWS, Azure, GCP), misconfigurations, and publicly accessible services that may expand the attack surface.
 
-
+```
+python3 cloud_enum.py -k examplecompany.com
+```
 
 ## Email Enumeration
 Email enumeration is the process of identifying valid email addresses or users within an organization’s domain  by testing how email systems respond to login attempts, SMTP checks, or error messages. In red team reconnaissance, it helps map real users and email formats, which can be used to assess exposure to phishing, password spraying, or account takeover risks.
@@ -33,3 +35,25 @@ Email Validation:
 dig MX example.com
 ```
 
+## Subdomain Enumeration
+Subdomain enumeration is the process of discovering subdomains associated with a target domain. In red team reconnaissance, it helps identify additional applications, environments (dev/test/stage), and exposed services that may be less secured and expand the attack surface.
+```
+# Subfinder – passive subdomain enumeration
+subfinder -d example.com -all -silent
+
+# Sublist3r – search-engine based enumeration
+sublist3r -d example.com -o sublist3r.txt
+
+# PureDNS – fast DNS brute-force & resolution
+puredns bruteforce wordlist.txt example.com \
+  --resolvers resolvers.txt \
+  --write puredns.txt
+
+# crt.sh logs
+curl -s "https://crt.sh/?q=%.example.com&output=json" | jq -r '.[].name_value' | 
+sed 's/\*\.//g' | sort -u > certificate_subdomains.txt
+
+# Assetfinder
+assetfinder --subs-only example.com
+
+```
