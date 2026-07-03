@@ -18,4 +18,7 @@ Username Forging:
 
 Email Validation:
 * https://github.com/gremwell/o365enum
+```
+dig MX example.com
+```
 
