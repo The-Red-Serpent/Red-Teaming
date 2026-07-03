@@ -13,6 +13,8 @@ Acquisition enumeration is the process of identifying companies, brands, or subs
 ## Cloud Enumeration
 Cloud enumeration is the process of identifying a company’s cloud usage and assets**—such as cloud providers, storage, compute services, and exposed endpoints.In red team reconnaissance, it helps discover cloud infrastructure (AWS, Azure, GCP), misconfigurations, and publicly accessible services that may expand the attack surface.
 
+* https://kaeferjaeger.gay/
+
 ```
 python3 cloud_enum.py -k examplecompany.com
 ```
@@ -56,4 +58,11 @@ sed 's/\*\.//g' | sort -u > certificate_subdomains.txt
 # Assetfinder
 assetfinder --subs-only example.com
 
+```
+
+## IP Address Enumeration
+IP address reconnaissance is the process of identifying, mapping, and analyzing public IP addresses associated with a target organization. In red team reconnaissance, it helps determine hosting location, cloud or on-prem infrastructure, exposed services, and network boundaries, expanding the visible attack surface.
+
+```
+dnsx -l domains.txt -a -aaaa -cname -resp -retry 3 -threads 200 -o resolved.txt
 ```
