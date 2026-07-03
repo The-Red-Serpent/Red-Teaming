@@ -10,6 +10,10 @@ Acquisition enumeration is the process of identifying companies, brands, or subs
 * https://tracxn.com/
 * https://www.crunchbase.com/
 
+## Cloud Enumeration
+Cloud enumeration is the process of identifying a company’s cloud usage and assets**—such as cloud providers, storage, compute services, and exposed endpoints.In red team reconnaissance, it helps discover cloud infrastructure (AWS, Azure, GCP), misconfigurations, and publicly accessible services that may expand the attack surface.
+
+
 
 ## Email Enumeration
 Email enumeration is the process of identifying valid email addresses or users within an organization’s domain  by testing how email systems respond to login attempts, SMTP checks, or error messages. In red team reconnaissance, it helps map real users and email formats, which can be used to assess exposure to phishing, password spraying, or account takeover risks.
