@@ -3,3 +3,19 @@ An Autonomous System Number is a unique number assigned to a network that is ind
 
   * https://bgp.he.net/
   * https://dnschecker.org/all-dns-records-of-domain.php
+
+## Email Enumeration
+Email enumeration is the process of identifying valid email addresses or users within an organization’s domain  by testing how email systems respond to login attempts, SMTP checks, or error messages. In red team reconnaissance, it helps map real users and email formats, which can be used to assess exposure to phishing, password spraying, or account takeover risks.
+
+Email Scraping:
+ https://snov.io/
+ https://hunter.io/
+ https://www.apollo.io/
+ https://www.signalhire.com/home
+
+Username Forging:
+https://github.com/urbanadventurer/username-anarchy
+
+Email Validation:
+https://github.com/gremwell/o365enum
+
