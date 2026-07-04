@@ -51,14 +51,16 @@ puredns bruteforce wordlist.txt example.com \
   --resolvers resolvers.txt \
   --write puredns.txt
 
-# crt.sh logs
-curl -s "https://crt.sh/?q=%.example.com&output=json" | jq -r '.[].name_value' | 
-sed 's/\*\.//g' | sort -u > certificate_subdomains.txt
-
 # Assetfinder
 assetfinder --subs-only example.com
 
 ```
+
+* https://github.com/gotr00t0day/crt.sh
+```
+python3 crtsh_enum.py -d example.com
+```
+
 
 ## IP Address Enumeration
 IP address reconnaissance is the process of identifying, mapping, and analyzing public IP addresses associated with a target organization. In red team reconnaissance, it helps determine hosting location, cloud or on-prem infrastructure, exposed services, and network boundaries, expanding the visible attack surface.
