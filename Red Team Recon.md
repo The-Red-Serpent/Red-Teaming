@@ -66,3 +66,24 @@ IP address reconnaissance is the process of identifying, mapping, and analyzing 
 ```
 dnsx -l domains.txt -a -aaaa -cname -resp -retry 3 -threads 200 -o resolved.txt
 ```
+
+## Google Dorking
+Google dorking is the technique of using advanced Google search operators to discover publicly exposed information related to a target, such as sensitive files, credentials, admin panels, or misconfigured pages. In red team reconnaissance, it helps uncover unintended data exposure and weak security hygiene without directly interacting with the target systems.
+* https://dorkengine.github.io/
+```
+python3 dorks_hunter.py -d domain.com -o output.txt
+```
+
+## Credential Leak
+Credential leak reconnaissance is the process of identifying exposed usernames, passwords, API keys, or tokens that have been leaked through data breaches, public repositories, paste sites, or misconfigurations. In red team reconnaissance, it helps assess account takeover risk and identity exposure caused by leaked credentials.
+* https://leak.sx/
+* https://link-base.ms/index.php
+
+## Github Enumeration
+GitHub enumeration is the process of searching GitHub for code, repositories, commits, and issues related to a target organization to identify exposed credentials, internal domains, API keys, secrets, or infrastructure details. In red team reconnaissance, it helps uncover accidental leaks and developer mistakes that may expose sensitive information publicly.
+
+```
+gitleaks detect --source https://github.com/org/repo.git --report-path gitleaks-remote.json --report-format json
+
+trufflehog git https://github.com/org/repo.git --json > trufflehog-report.json
+```
