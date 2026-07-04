@@ -40,21 +40,15 @@ dig MX example.com
 ## Subdomain Enumeration
 Subdomain enumeration is the process of discovering subdomains associated with a target domain. In red team reconnaissance, it helps identify additional applications, environments (dev/test/stage), and exposed services that may be less secured and expand the attack surface.
 ```
-# Subfinder – passive subdomain enumeration
 subfinder -d example.com -all -silent
-
-# Sublist3r – search-engine based enumeration
-sublist3r -d example.com -o sublist3r.txt
-
-# PureDNS – fast DNS brute-force & resolution
-puredns bruteforce wordlist.txt example.com \
-  --resolvers resolvers.txt \
-  --write puredns.txt
-
-# Assetfinder
-assetfinder --subs-only example.com
-
 ```
+```
+sublist3r -d example.com -o sublist3r.txt
+```
+```
+assetfinder --subs-only example.com
+```
+
 
 * https://github.com/gotr00t0day/crt.sh
 ```
