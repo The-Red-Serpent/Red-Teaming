@@ -49,6 +49,10 @@ sublist3r -d example.com -o sublist3r.txt
 assetfinder --subs-only example.com
 ```
 
+```
+gotator -sub subs.txt -perm perm-final.txt -depth 2 -numbers 5 -mindup
+```
+
 
 * https://github.com/gotr00t0day/crt.sh
 ```
