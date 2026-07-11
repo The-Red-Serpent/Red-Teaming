@@ -19,6 +19,31 @@ Cloud enumeration is the process of identifying a company’s cloud usage and as
 python3 cloud_enum.py -k examplecompany.com
 ```
 
+Azure
+
+Storage Accounts
+Blob
+Azure Apps
+Front Door
+Functions
+API Management
+
+AWS
+
+S3
+CloudFront
+ELB
+API Gateway
+Lambda
+Route53
+
+GCP
+
+Buckets
+App Engine
+Cloud Run
+
+
 ## Email Enumeration
 Email enumeration is the process of identifying valid email addresses or users within an organization’s domain  by testing how email systems respond to login attempts, SMTP checks, or error messages. In red team reconnaissance, it helps map real users and email formats, which can be used to assess exposure to phishing, password spraying, or account takeover risks.
 
