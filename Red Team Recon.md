@@ -78,6 +78,7 @@ python3 dorks_hunter.py -d domain.com -o output.txt
 Credential leak reconnaissance is the process of identifying exposed usernames, passwords, API keys, or tokens that have been leaked through data breaches, public repositories, paste sites, or misconfigurations. In red team reconnaissance, it helps assess account takeover risk and identity exposure caused by leaked credentials.
 * https://leak.sx/
 * https://link-base.ms/index.php
+* https://pwnforums.st/
 
 ## Github Enumeration
 GitHub enumeration is the process of searching GitHub for code, repositories, commits, and issues related to a target organization to identify exposed credentials, internal domains, API keys, secrets, or infrastructure details. In red team reconnaissance, it helps uncover accidental leaks and developer mistakes that may expose sensitive information publicly.
