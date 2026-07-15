@@ -92,6 +92,11 @@ IP address reconnaissance is the process of identifying, mapping, and analyzing 
 dnsx -l domains.txt -a -aaaa -cname -resp -retry 3 -threads 200 -o resolved.txt
 ```
 
+```
+naabu -host example.com -p -
+```
+
+
 ## Google Dorking
 Google dorking is the technique of using advanced Google search operators to discover publicly exposed information related to a target, such as sensitive files, credentials, admin panels, or misconfigured pages. In red team reconnaissance, it helps uncover unintended data exposure and weak security hygiene without directly interacting with the target systems.
 * https://dorkengine.github.io/
