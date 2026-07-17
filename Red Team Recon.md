@@ -86,7 +86,12 @@ github-subdomains -d target.com -t $GITHUB_TOKEN -o subs_github.txt
 ```
 python3 crtsh_enum.py -d example.com
 ```
-
+* https://github.com/bing0o/SubEnum/
+```
+./subenum.sh -d target.com \
+  -u wayback,crt,abuseipdb,Findomain,Subfinder,Amass,Assetfinder \
+  -o subs_subenum.txt
+```
 
 ## IP Address Enumeration
 IP address reconnaissance is the process of identifying, mapping, and analyzing public IP addresses associated with a target organization. In red team reconnaissance, it helps determine hosting location, cloud or on-prem infrastructure, exposed services, and network boundaries, expanding the visible attack surface.
