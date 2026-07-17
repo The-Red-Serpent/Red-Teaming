@@ -144,6 +144,8 @@ GitHub enumeration is the process of searching GitHub for code, repositories, co
 
 ```
 gitleaks detect --source https://github.com/org/repo.git --report-path gitleaks-remote.json --report-format json
+```
 
+```
 trufflehog git https://github.com/org/repo.git --json > trufflehog-report.json
 ```
