@@ -78,6 +78,9 @@ assetfinder --subs-only example.com
 gotator -sub subs.txt -perm perm-final.txt -depth 2 -numbers 5 -mindup
 ```
 
+```
+github-subdomains -d target.com -t $GITHUB_TOKEN -o subs_github.txt
+```
 
 * https://github.com/gotr00t0day/crt.sh
 ```
