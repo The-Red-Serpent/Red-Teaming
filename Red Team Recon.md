@@ -24,15 +24,11 @@ Cloud enumeration is the process of identifying a company’s cloud usage and as
 python3 cloud_enum.py -k examplecompany.com
 ```
 
-Azure
-
-Storage Accounts
-Blob
-Azure Apps
-Front Door
-Functions
-API Management
-
+## Azure Enumeration
+* https://github.com/yuyudhn/AzSubEnum
+```
+azsubenum.py -b retailcorp --thread 10 --permutation permutations.txt --verbose
+```
 AWS
 
 S3
