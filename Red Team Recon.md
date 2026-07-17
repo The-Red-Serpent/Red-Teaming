@@ -3,6 +3,7 @@ An Autonomous System Number is a unique number assigned to a network that is ind
 
   * https://bgp.he.net/
   * https://dnschecker.org/all-dns-records-of-domain.php
+  * https://asnlookup.com/
 
 ## Acquisition Enumeration
 Acquisition enumeration is the process of identifying companies, brands, or subsidiaries acquired by a target organization to uncover additional domains, assets, and infrastructure.In red team reconnaissance, it helps expand attack surface and scope by finding newly acquired or loosely integrated systems that may be less secured.
@@ -93,6 +94,26 @@ python3 crtsh_enum.py -d example.com
   -o subs_subenum.txt
 ```
 
+## Favicon Enumeration
+* https://github.com/devanshbatham/FavFreak
+```
+# favUp — finds origin IP via favicon hash + Shodan
+python3 favUp.py -ff favicon.ico --shodan-cli
+python3 favUp.py --web target-behind-cloudflare.com -sc
+
+# FavFreak — identifies unique favicon hashes across your subdomain list
+# Anything with a different hash = different infrastructure = worth investigating
+cat subs.txt | python3 favfreak.py
+```
+
+## Origin IP Enumeration
+* https://github.com/rix4uni/originiphunter
+```
+cat domains.txt | originiphunter
+```
+
+
+
 ## IP Address Enumeration
 IP address reconnaissance is the process of identifying, mapping, and analyzing public IP addresses associated with a target organization. In red team reconnaissance, it helps determine hosting location, cloud or on-prem infrastructure, exposed services, and network boundaries, expanding the visible attack surface.
 
@@ -101,7 +122,7 @@ dnsx -l domains.txt -a -aaaa -cname -resp -retry 3 -threads 200 -o resolved.txt
 ```
 
 ```
-naabu -host example.com -p -
+naabu -l ips.txt -p - -o ports_fullscan.txt
 ```
 
 
