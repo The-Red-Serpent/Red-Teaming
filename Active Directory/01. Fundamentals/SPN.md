@@ -13,7 +13,7 @@ service-class / host : port
 ```
 
 
-## Process
+## Flow
 When a user wants to access a service using Kerberos:
 
 The user requests a service ticket from the KDC (Key Distribution Center) on the Domain Controller.
@@ -51,6 +51,22 @@ HTTP/app.company.com → svc_app
 The ticket is encrypted using the service account's secret.
 
 The service receives the ticket and decrypts it using its own account credentials.
+
+```
+Attacker account
+        |
+        | Request TGS ticket
+        ↓
+Domain Controller
+        |
+        | Finds SPN owner:
+        | svc_sql
+        |
+        | Encrypts ticket using svc_sql password hash
+        ↓
+Attacker receives ticket
+```
+
 ## Service Account
 A service account is a special, non-human user account created for an application, virtual machine, or automated script so it can securely run processes, access data, and talk to other software or APIs without a person needing to log in
 
