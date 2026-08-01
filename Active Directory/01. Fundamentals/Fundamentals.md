@@ -245,6 +245,17 @@ Tombstone is a container object in AD that holds deleted AD objects. When an obj
 - Default retention: **180 days**.
 <br></br>
 
+## SYSVOL
+The SYSVOL folder is a shared directory on each domain controller in an Active Directory environment. It contains critical data such as Group Policy Objects (GPOs), Logon scripts, and other AD-related files that need to be replicated between domain controllers within the same domain. SYSVOL ensures that domain controllers maintain a consistent copy of data for the proper functioning of the network.
+<br></br>
+
+## NTDS.DIT 
+It is a critical database file in Active Directory, stored on every Domain Controller in the `C:\Windows\NTDS\` directory. It contains all the essential information about the Active Directory environment, including:
+- User and group objects (like user accounts and groups)
+- Group membership
+- Password hashes for all users in the domain (this is particularly important to attackers)
+<br></br>
+
 ## Services
 
 AD is a Directory Service(A directory service is like a digital phone book or catalog for a network, where information about users, computers, devices, and other resources is stored and organized.)
@@ -260,17 +271,6 @@ AD is a Directory Service(A directory service is like a digital phone book or ca
 | **Centralized Management**                   | Allows centralized control of users, devices, and network resources.        | **AD DS**                 |
 | **Time Synchronization**                     | Ensures all computers in the network have synchronized time.                | **AD DS**                 |
 
-<br></br>
-
-## SYSVOL
-The SYSVOL folder is a shared directory on each domain controller in an Active Directory environment. It contains critical data such as Group Policy Objects (GPOs), Logon scripts, and other AD-related files that need to be replicated between domain controllers within the same domain. SYSVOL ensures that domain controllers maintain a consistent copy of data for the proper functioning of the network.
-<br></br>
-
-## NTDS.DIT 
-It is a critical database file in Active Directory, stored on every Domain Controller in the `C:\Windows\NTDS\` directory. It contains all the essential information about the Active Directory environment, including:
-- User and group objects (like user accounts and groups)
-- Group membership
-- Password hashes for all users in the domain (this is particularly important to attackers)
 
 
 
