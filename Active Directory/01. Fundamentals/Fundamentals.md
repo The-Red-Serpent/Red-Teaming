@@ -1,17 +1,14 @@
-## 1. Forest
-A forest is the topmost logical container in Active Directory and can contain one or more domains.
-- All domains in a forest share:
-    - A common schema
-    - A configuration
-    - A global catalog
+## Domain
+An Active Directory Domain is a logical and administrative boundary within an Active Directory environment that contains and manages a collection of users, computers, groups, and other network resources. It uses a centralized database for authentication, authorization, and security management, allowing administrators to control access to resources through a common set of policies.
+<br></br>
+<p align="center">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGaG_aKV23dNIQPlJqwjNZhpvu9n8j_lfPA_WVFGlSe6iNBd2XU3rfxvie&s=10" alt="Architecture Diagram" width="600">
+</p>
 
-## 2. Domain
-A domain in Active Directory is like a private space or container that holds objects such as users, computers, and groups. Each domain:
-- Has its own set of configurations, security policies, and administrative control.
-- Has its own set of administrators who manage the objects within it.
 
-## 3. Tree
-A tree is a collection of one or more domains that shares same contiguous DNS namespace ,A hierarchical structure ,Automatic trust relationships (transitive trusts)
+
+## Tree
+An Active Directory Tree is a hierarchical collection of one or more Active Directory domains that share a contiguous DNS namespace and are connected through automatic two-way transitive trust relationship.
 
 ```
 # Tree Example
@@ -19,10 +16,24 @@ company.com
  ├── sales.company.com
  └── hr.company.com
 ```
+<br></br>
+![image](https://cdn.infrasos.com/wp-content/uploads/2023/10/Untitled-2-4.png)
+
+
+
+##  Forest
+A Forest is the highest-level logical structure in Active Directory that consists of one or more Active Directory trees. All trees within a forest share a common schema, configuration, and global catalog, and are connected through automatic two-way transitive trust relationships, enabling centralized management, authentication, and resource sharing across the entire environment.
+<br></br>
+
+<p align="center">
+  <img src="https://ad4noobs.justin-p.me/terminology_installing_a_active_directory/domain_tree_forest/domain_tree_forest_05.png" alt="Architecture Diagram" width="600">
+</p>
+
 
 
 ## 4. Organizational Units (OUs)
 An Organizational Unit (OU) is a container in an Active Directory domain that organizes users, computers, and groups. It allows delegation of administrative control and serves as a scope for applying Group Policy settings. OUs can be nested to create a structured hierarchy.
+
 
 ![image](https://cdn.hashnode.com/res/hashnode/image/upload/v1691363420865/8a7b429b-d600-4ea7-ad33-ee3b9e9c13f2.jpeg)
 
