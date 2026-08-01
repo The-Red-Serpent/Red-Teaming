@@ -1,4 +1,4 @@
-## Enumerate Base Naming Context
+## Enumerate Domain
 ```   
 ldapsearch (ObjectClass=domain) --attributes name,distinguishedName,objectSid,lockoutThreshold,ms-DS-MachineAccountQuota,lockoutDuration
 ```
@@ -53,6 +53,11 @@ ldapsearch (objectClass=container) --attributes name,distinguishedName,objectGUI
 ldapsearch (objectClass=*) --dn "CN=ForeignSecurityPrincipals,DC=dublin,DC=contoso,DC=com" --attributes description,distinguishedName,objectSid
 ```
 
+## Enumerate ACLS
+```
+ldapsearch (objectClass=*) --dn "CN=John Doe,OU=Users,DC=contoso,DC=com" --attributes nTSecurityDescriptor
+```
+
 ## Enumerate Trusts
 ```
 ldapsearch (objectClass=trustedDomain) --attributes cn,trustDirection,trustPartnet,flatname
@@ -67,6 +72,9 @@ ldapsearch "(objectClass=site)" --dn "CN=Sites,CN=Configuration,DC=contoso,DC=co
 ```
 ldapsearch (servicePrincipalName=*) --attributes cn,objectSid,sAMAccountName,servicePrincipalName
 ```
+
+## Enumerating Shares
+ldapsearch (objectClass=volume) --attributes cn,uNCName,distinguishedName
 
 ## Enumerating ASrep roastable Users
 ```
