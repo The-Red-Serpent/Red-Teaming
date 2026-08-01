@@ -1,3 +1,18 @@
+## Enumerate Forests
+```
+ldapsearch  (objectClass=crossRef) "CN=Partitions,CN=Configuration,DC=contoso,DC=com" --attributes cn,dnsRoot,nCName,trustParent
+```
+## Enumerate Forest Sites
+```
+ldapsearch (objectClass=site)  --dn "CN=Sites,CN=Configuration,DC=contoso,DC=com"  --attributes name,description
+```
+
+## Enumerate Global Catalog Servers
+```
+ldapsearch  "(&(objectClass=nTDSDSA)(options:1.2.840.113556.1.4.804:=1))" --dn "CN=Sites,CN=Configuration,DC=contoso,DC=com" --attributes distinguishedName
+```
+
+
 ## Enumerate Domain
 ```   
 ldapsearch (ObjectClass=domain) --attributes name,distinguishedName,objectSid,lockoutThreshold,ms-DS-MachineAccountQuota,lockoutDuration
