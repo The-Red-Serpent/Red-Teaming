@@ -105,6 +105,8 @@ Key Functions of a Global Catalog Server:
 - Enables forest-wide searches for users, groups, computers, and other AD objects.
 - Assists with user logon by providing Universal Group Membership information.
 - Helps applications such as Microsoft Exchange locate recipients across the forest.
+
+Why it exists: Without GC, cross-domain queries would require contacting every domain. GC enables forest-wide searches from a single server.
 <br></br>
 
 <p align="center">
