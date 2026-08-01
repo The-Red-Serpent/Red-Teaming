@@ -96,7 +96,7 @@ A Domain Controller is a server that runs Active Directory Domain Services (AD D
 <br></br>
 
 
-## Global catalog Server
+## Global Catalog Server
 A Global Catalog (GC) Server is a domain controller in an Active Directory forest that stores a full, writable copy of all objects in its own domain and a partial, read-only copy of objects from every other domain in the forest. It enables users and applications to quickly locate Active Directory objects and supports forest-wide authentication and directory searches.
 
 Key Functions of a Global Catalog Server:
