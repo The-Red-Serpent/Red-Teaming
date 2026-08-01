@@ -4,7 +4,7 @@ An Active Directory Domain is a logical and administrative boundary within an Ac
 <p align="center">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGaG_aKV23dNIQPlJqwjNZhpvu9n8j_lfPA_WVFGlSe6iNBd2XU3rfxvie&s=10" alt="Architecture Diagram" width="600">
 </p>
-
+<br> </br>
 
 ## Realm 
 A realm is a Kerberos authentication boundary that defines where user and service credentials are stored and validated. Each Active Directory domain functions as a Kerberos realm, and realms are primarily used when Active Directory interoperates with non-Windows Kerberos systems.
@@ -13,12 +13,14 @@ A realm is a Kerberos authentication boundary that defines where user and servic
 Active Directory domain: example.com
 Corresponding Kerberos realm: EXAMPLE.COM
 ```
+<br> </br>
 
 ## Distinguished Name
 A Distinguished Name (DN) is the unique full path that identifies an object (like a user, group, or computer) in Active Directory. It specifies the exact location of the object within the AD hierarchy, including its OU, domain, and any parent containers.
 ```
 CN=John Doe,OU=HR,DC=example,DC=com
 ```
+<br></br>
 
 ## Fully Qualified Domain Name
 A Fully Qualified Domain Name (FQDN) is the complete, exact domain name of a computer, server, or network resource in the DNS hierarchy. It specifies its exact location in the domain name system, including the host name and all domain levels up to the top-level domain (TLD).
@@ -33,9 +35,7 @@ Example:
 - `hr` → subdomain or OU-level grouping
 - `example` → second-level domain
 - `com` → top-level domain
-
-
-
+<br></br>
 ## Tree
 An Active Directory Tree is a hierarchical collection of one or more Active Directory domains that share a contiguous DNS namespace and are connected through automatic two-way transitive trust relationship.
 
@@ -47,7 +47,7 @@ company.com
 ```
 <br></br>
 ![image](https://cdn.infrasos.com/wp-content/uploads/2023/10/Untitled-2-4.png)
-
+<br></br>
 
 ##  Forest
 A Forest is the highest-level logical structure in Active Directory that consists of one or more Active Directory trees. All trees within a forest share a common schema, configuration, and global catalog, and are connected through automatic two-way transitive trust relationships, enabling centralized management, authentication, and resource sharing across the entire environment.
@@ -56,8 +56,7 @@ A Forest is the highest-level logical structure in Active Directory that consist
 <p align="center">
   <img src="https://ad4noobs.justin-p.me/terminology_installing_a_active_directory/domain_tree_forest/domain_tree_forest_05.png" alt="Architecture Diagram" width="600">
 </p>
-
-
+<br></br>
 
 ##  Organizational Units (OUs)
 An Organizational Unit (OU) is a container in an Active Directory domain that organizes users, computers, and groups. It allows delegation of administrative control and serves as a scope for applying Group Policy settings. OUs can be nested to create a structured hierarchy.
@@ -66,6 +65,7 @@ An Organizational Unit (OU) is a container in an Active Directory domain that or
 <p align="center">
   <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1691363420865/8a7b429b-d600-4ea7-ad33-ee3b9e9c13f2.jpeg" alt="Architecture Diagram" width="600">
 </p>
+<br></br>
 
 ## Container
 A container in Active Directory is an object that can hold (contain) other Active Directory objects. Those child objects can include users, computers, groups, other containers, or Organizational Units (OUs). The easiest way to understand containers is to think of Active Directory as a hierarchical tree.
@@ -88,11 +88,12 @@ DC=contoso,DC=com
      └── PC-03
 
 ```
-
+<br></br>
 
 ## Domain Controller (DC)
 
 A Domain Controller is a server that runs Active Directory Domain Services (AD DS). It is responsible for authenticating users and computers, authorizing access to resources, storing Active Directory data, and replicating directory information within a domain. A DC acts as the central authority for identity and access management in an Active Directory environment.
+<br></br>
 
 
 ## Global catalog Server
@@ -109,6 +110,7 @@ Key Functions of a Global Catalog Server:
 <p align="center">
   <img src="https://networkencyclopedia.com/wp-content/uploads/2019/08/global-catalog-active-directory-infrastructure.jpg" alt="Architecture Diagram" width="600">
 </p>
+<br></br>
 
 
 ## Group Policy Object
@@ -164,6 +166,8 @@ Important files include:
 - Registry.pol – registry-based policy settings
 - Scripts – startup, shutdown, logon, and logoff scripts
 - Preferences – Group Policy Preferences data.
+<br> </br>
+
 
 ## Security Identifier (SID)
 A Security Identifier (SID) is a unique value used in Windows operating systems to identify user accounts, groups, and other security principals. SIDs are essential in Windows security because they are used to control access to resources—permissions are assigned to SIDs, not to the human-readable names of accounts.
@@ -177,7 +181,7 @@ S-1-5-21-DomainIdentifier-RID
 - **5** → Identifier authority (NT Authority)
 - **21-DomainIdentifier** → Unique identifier for the domain or computer
 - **RID** → Relative Identifier, identifying the specific user, group, or computer within that domain
-
+<br> </br>
 
 ## Relative Identifier
 
@@ -189,11 +193,14 @@ A RID is the last part of a Security Identifier (SID) in Windows, used to unique
 | 501   | Guest account         |
 | 512   | Domain Admins group   |
 | 1000+ | Normal user accounts  |
+<br></br>
 
 
 ## Global Unique Identifier (GUID)
 
 <p align="justify">Global Unique Identifier is a unique 128-bit value assigned when a domain user or group is created. This GUID value is unique across the enterprise, similar to a MAC address. Every single object created by Active Directory is assigned a GUID, not only user and group objects. The GUID is stored in the `ObjectGUID` attribute</p>
+<br></br>
+
 
 ## Foreign Security Principal
 
@@ -203,15 +210,19 @@ An FSP acts as a placeholder that allows external principals to be:
 - Added to domain local security groups
 - Assigned permissions on resources through ACLs
 - Included in Group Policy filtering
+<br></br>
 
 
 ## AdminCount
 
 The `adminCount` attribute is like a “VIP badge” on certain accounts. If a user has `adminCount = 1`, it means they are or were a privileged account, such as a Domain Admin, and their permissions are protected to prevent tampering. AD uses a background process called AdminSDHolder to enforce this protection, making sure these high-value accounts maintain their special access rights.
 
-## MachineAccountQuota
+<br></br>
 
-Machine Account Quota (MAQ), or `ms-DS-MachineAccountQuota`, is an Active Directory (AD) setting that determines the maximum number of computer accounts an individual non-administrative user is allowed to create in the domain
+
+## MachineAccountQuota
+Machine Account Quota (MAQ), or `ms-DS-MachineAccountQuota`, is an Active Directory (AD) setting that determines the maximum number of computer accounts an individual non-administrative user is allowed to create in the domain.
+<br></br>
 
 ## Tombstone
 
@@ -220,6 +231,7 @@ Tombstone is a container object in AD that holds deleted AD objects. When an obj
 - A **deleted object placeholder** in AD.
 - Objects remain in **tombstoned** state for a **defined lifetime** before full deletion.
 - Attribute `isDeleted = TRUE`.
+<br></br>
 
 
 ## Active Directory Recycle Bin
@@ -229,6 +241,7 @@ Tombstone is a container object in AD that holds deleted AD objects. When an obj
 - Allows recovery of deleted AD objects with **attributes and group memberships preserved**.
 - Must be **enabled manually**.
 - Default retention: **180 days**.
+<br></br>
 
 
 ## Services
@@ -246,10 +259,12 @@ AD is a Directory Service(A directory service is like a digital phone book or ca
 | **Centralized Management**                   | Allows centralized control of users, devices, and network resources.        | **AD DS**                 |
 | **Time Synchronization**                     | Ensures all computers in the network have synchronized time.                | **AD DS**                 |
 
+<br></br>
 
 
 ## SYSVOL
 The SYSVOL folder is a shared directory on each domain controller in an Active Directory environment. It contains critical data such as Group Policy Objects (GPOs), Logon scripts, and other AD-related files that need to be replicated between domain controllers within the same domain. SYSVOL ensures that domain controllers maintain a consistent copy of data for the proper functioning of the network.
+<br></br>
 
 
 ## NTDS.DIT 
