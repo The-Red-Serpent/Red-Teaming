@@ -224,8 +224,8 @@ The `adminCount` attribute is like a “VIP badge” on certain accounts. If a u
 Machine Account Quota (MAQ), or `ms-DS-MachineAccountQuota`, is an Active Directory (AD) setting that determines the maximum number of computer accounts an individual non-administrative user is allowed to create in the domain.
 <br></br>
 
-## Tombstone
 
+## Tombstone
 Tombstone is a container object in AD that holds deleted AD objects. When an object is deleted and the Recycle Bin is not enabled, the object enters the **Tombstone state** as a part of Active Directory’s internal process for marking deleted objects. When an object is deleted from AD, the object remains for a set period of time known as the `Tombstone Lifetime,` and the `isDeleted` attribute is set to `TRUE`. Once an object exceeds the `Tombstone Lifetime`, it will be entirely removed.
 
 - A **deleted object placeholder** in AD.
@@ -236,13 +236,12 @@ Tombstone is a container object in AD that holds deleted AD objects. When an obj
 
 ## Active Directory Recycle Bin
 
- <p align="justify">It is a feature that allows for the recovery of deleted AD objects, such as users, groups, and organizational units, without requiring a system restore. When an object is deleted, it enters a "soft delete" state where its data is preserved, and it can be restored with all its attributes, including group memberships and passwords</p>
+<p align="justify">It is a feature that allows for the recovery of deleted AD objects, such as users, groups, and organizational units, without requiring a system restore. When an object is deleted, it enters a "soft delete" state where its data is preserved, and it can be restored with all its attributes, including group memberships and passwords</p>
  
 - Allows recovery of deleted AD objects with **attributes and group memberships preserved**.
 - Must be **enabled manually**.
 - Default retention: **180 days**.
 <br></br>
-
 
 ## Services
 
@@ -261,11 +260,9 @@ AD is a Directory Service(A directory service is like a digital phone book or ca
 
 <br></br>
 
-
 ## SYSVOL
 The SYSVOL folder is a shared directory on each domain controller in an Active Directory environment. It contains critical data such as Group Policy Objects (GPOs), Logon scripts, and other AD-related files that need to be replicated between domain controllers within the same domain. SYSVOL ensures that domain controllers maintain a consistent copy of data for the proper functioning of the network.
 <br></br>
-
 
 ## NTDS.DIT 
 It is a critical database file in Active Directory, stored on every Domain Controller in the `C:\Windows\NTDS\` directory. It contains all the essential information about the Active Directory environment, including:
