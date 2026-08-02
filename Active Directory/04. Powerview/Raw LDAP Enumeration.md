@@ -18,10 +18,22 @@ ldapsearch  "(&(objectClass=nTDSDSA)(options:1.2.840.113556.1.4.804:=1))" --dn "
 ldapsearch (ObjectClass=domain) --attributes name,distinguishedName,objectSid,lockoutThreshold,ms-DS-MachineAccountQuota,lockoutDuration
 ```
 
+## Enumerate Domain Controller
+```
+ldapsearch (&(objectCategory=Computer)(userAccountControl:1.2.840.113556.1.4.803:=8192))
+```
+
+
 ## Enumerate Users
 ```
 ldapsearch (samAccountType=805306368) --attributes name,sAMAccountName,distinguishedName,memberOf
 ```
+
+## Enumerate User Description
+```
+ldapsearch (&(objectCategory=user)(description=*))
+```
+
 
 ## Enumerating Enabled and Disabled User Accounts
 ```
@@ -72,6 +84,23 @@ ldapsearch (objectClass=*) --dn "CN=ForeignSecurityPrincipals,DC=dublin,DC=conto
 ```
 ldapsearch (objectClass=*) --dn "CN=John Doe,OU=Users,DC=contoso,DC=com" --attributes nTSecurityDescriptor
 ```
+
+## Unconstrained Delegation
+```
+ldapsearch (&(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=524288))
+```
+
+
+## Constrained Delegation
+```
+ldapsearch (msDS-AllowedToDelegateTo=*) samAccountName dNSHostName msDS-AllowedToDelegateTo
+```
+
+## RBCD
+```
+ldapsearch "(msDS-AllowedToActOnBehalfOfOtherIdentity=*)" samAccountName dNSHostName msDS-AllowedToActOnBehalfOfOtherIdentity
+```
+
 
 ## Enumerate Trusts
 ```
