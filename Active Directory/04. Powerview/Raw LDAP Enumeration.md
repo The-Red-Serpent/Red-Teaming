@@ -118,7 +118,9 @@ ldapsearch (servicePrincipalName=*) --attributes cn,objectSid,sAMAccountName,ser
 ```
 
 ## Enumerating Shares
+```
 ldapsearch (objectClass=volume) --attributes cn,uNCName,distinguishedName
+```
 
 ## Enumerating ASrep roastable Users
 ```
