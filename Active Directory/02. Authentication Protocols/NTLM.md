@@ -11,31 +11,10 @@ NTLMV2: Still vulnerable to relay attacks and pass the hash and Possible for MIT
 	
 NTLMV3: Vulnerable to Pass the hash attack and Does not provide mutual authentication
 
-### NTML Hashing Process:
-Windows Does not store the plain text password. Instead it stores the NTLM hashes for authentication
-
-- Convert the Password into UTF-16LE encoding
-- Compute the MD4 hash of the password this is for V1.
-- The result is a hash
-
-### Where NTLM Hashes are stored:
-
-- In Windows
-```
-C:\Windows\System32\Config\SAM
-```
-- In Active Directory
-```
-C:\Windows\NTDS\NTDS.dit
-```
-
-### NTLM Hash Storage Format in Windows:
-```
-Username:RID:LMhash:NTLMhash:::
-```
 
 
-### NTLM Authentication Process:
+
+## NTLM Authentication Process:
 <p align="justify">NTLM authentication is used when a client authenticates to a server by IP address (instead of by hostname), or if the user attempts to authenticate to a hostname that is not registered on the Active Directory-integrated DNS server. Likewise, third-party applications may choose to use NTLM authentication instead of Kerberos.</p>
 `STEPS`: Before Any Authentication, user passwords are stored as NTLM hashes in Windows Systems.
 
@@ -64,3 +43,20 @@ Username:RID:LMhash:NTLMhash:::
 <br></br>
 
 ![image](https://itsfading.github.io/assets/AD-Auth/ntlm.png)
+
+
+## Where NTLM Hashes are stored:
+
+- In Windows
+```
+C:\Windows\System32\Config\SAM
+```
+- In Active Directory
+```
+C:\Windows\NTDS\NTDS.dit
+```
+
+### NTLM Hash Storage Format in Windows:
+```
+Username:RID:LMhash:NTLMhash:::
+```
