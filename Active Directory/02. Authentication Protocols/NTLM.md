@@ -61,4 +61,6 @@ Username:RID:LMhash:NTLMhash:::
 - The Server pulls the stored NT hashes from the NTDS.dit or from SAM database.
 - It recreates the expected response using the Challenge and NT hash
 - if the received response from the client and the calculated by server are same then the user is authenticated.
-![image](https://www.thesecuritybuddy.com/wordpress/bdr/uploads/2020/06/NTLMAuthentication1.jpg.webp)
+<br></br>
+
+![image](https://itsfading.github.io/assets/AD-Auth/ntlm.png)
