@@ -148,6 +148,10 @@ ldapsearch "(objectClass=*)" --dn "CN=Public Key Services,CN=Services,CN=Configu
 ```
 
 
+## Resolve SIDS
+```
+ldapsearch (objectSid=S-1-5-21-3926355307-1661546229-813047887) --attributes sAMAccountName,cn,distinguishedName
+```
 
 
 
