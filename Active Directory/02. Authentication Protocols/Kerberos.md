@@ -56,7 +56,7 @@ The **Ticket Granting Service** is responsible for issuing **service tickets**. 
 - The client constructs a **Ticket Granting Service Request (TGS-REQ)** packet that consists of the following:
     - The current user
     - A timestamp encrypted with the session key
-    - The name of the resource
+    - The name of the resource SPN associated with it.
     - The encrypted **TGT**
 
 The **ticket-granting service** on the KDC receives the **TGS-REQ**, and if the resource exists in the domain, the **TGT** is decrypted using the secret key known only to the KDC. The session key is then extracted from the **TGT** and used to decrypt the username and timestamp of the request. 
@@ -71,7 +71,7 @@ If this verification process succeeds, the **Ticket Granting Service** responds 
 - A session key to be used between the client and the service.
 - A **service ticket** containing the username and group memberships along with the newly created session key.
 
-The service ticket’s **service name** and **session key** are encrypted using the original session key associated with the creation of the **TGT**. The service ticket is encrypted using the password hash of the **service account** registered with the service in question.
+The service ticket’s **service name** and **session key** are encrypted using the original session key associated with the creation of the **TGT**. The service ticket is encrypted using the password hash of the **service account** registered with the service in question. when they send this  Service  ticket to the service, the latter can decrypt the ticket's content and read the user's information.
 
 
 ## PAC
@@ -95,6 +95,9 @@ Each ticket and key is tagged with an etype number: An encryption type (etype) i
 
 
 
+
+Reference:
+- https://attl4s.github.io/
 
 
 
