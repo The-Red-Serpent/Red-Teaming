@@ -1,6 +1,6 @@
 ## Enumerate Forests
 ```
-ldapsearch  (objectClass=crossRef) "CN=Partitions,CN=Configuration,DC=contoso,DC=com" --attributes cn,dnsRoot,nCName,trustParent
+ldapsearch  (objectClass=crossRef) --dn "CN=Partitions,CN=Configuration,DC=contoso,DC=com" --attributes cn,dnsRoot,nCName,trustParent
 ```
 ## Enumerate Forest Sites
 ```
@@ -20,7 +20,7 @@ ldapsearch (ObjectClass=domain) --attributes name,distinguishedName,objectSid,lo
 
 ## Enumerate Domain Controller
 ```
-ldapsearch (&(objectCategory=Computer)(userAccountControl:1.2.840.113556.1.4.803:=8192))
+ldapsearch (&(objectCategory=Computer)(userAccountControl:1.2.840.113556.1.4.803:=8192)) --attributes name,sAMAccountName,dNSHostName
 ```
 
 
@@ -31,7 +31,7 @@ ldapsearch (samAccountType=805306368) --attributes name,sAMAccountName,distingui
 
 ## Enumerate User Description
 ```
-ldapsearch (&(objectCategory=user)(description=*))
+ldapsearch (objectCategory=user) --attributes cn,description
 ```
 
 
@@ -124,7 +124,7 @@ ldapsearch (objectClass=volume) --attributes cn,uNCName,distinguishedName
 
 ## Enumerating ASrep roastable Users
 ```
-ldapsearch "(&(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=4194304)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))"
+ldapsearch "(&(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=4194304)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))" --attributes name,sAMAccountName
 ```
 
 ## Check for AD CS
