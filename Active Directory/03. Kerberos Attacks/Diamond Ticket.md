@@ -16,6 +16,38 @@ There are two common techniques to detect the use of golden tickets:
 - Use the modified TGT: The attacker can now present the modified TGT to access resources as if they were a privileged user, bypassing normal access control mechanisms.
 - TGS (Service Ticket): The TGS tickets are issued based on the TGT. They do not directly store the PAC; instead, they rely on the TGT’s PAC to validate the user’s identity and permissions.
 
+```
+ticketer.py -request -domain 'lab.local' -user 'domain_user' -password 'password' -nthash 'krbtgt/service NT hash' -aesKey 'krbtgt/service AES key' -domain-sid 'S-1-5-21-...' -user-id '1337' -groups '512,513,518,519,520' 'baduser'
+
+Rubeus.exe diamond /domain:DOMAIN /user:USER /password:PASSWORD /dc:DOMAIN_CONTROLLER /enctype:AES256 /krbkey:HASH /ticketuser:USERNAME /ticketuserid:USER_ID /groups:GROUP_IDS
+
+```
+
+**`ticketer.py` fields**
+
+* **`-request`** – Requests a legitimate ticket from the KDC before creating/modifying the final ticket.
+* **`-domain`** – Active Directory domain (Kerberos realm).
+* **`-user`** – Account used to authenticate to the KDC.
+* **`-password`** – Password of the authentication account.
+* **`-nthash`** – RC4 (NT) key of the `krbtgt` account (Golden) or service account (Silver).
+* **`-aesKey`** – AES128/AES256 key of the `krbtgt` account or service account.
+* **`-domain-sid`** – Base SID of the Active Directory domain.
+* **`-user-id`** – Relative Identifier (RID) of the user.
+* **`-groups`** – Comma-separated list of group RIDs we want to impersonate to include in the PAC.
+* **`baduser`** – Username that the ticket will represent.
+
+**`Rubeus diamond` fields**
+
+* **`/domain`** – Active Directory domain (Kerberos realm).
+* **`/user`** – Account used to obtain the legitimate TGT.
+* **`/password`** – Password of that account.
+* **`/dc`** – Domain Controller (KDC) to contact.
+* **`/enctype`** – Kerberos encryption type (AES256, AES128, or RC4).
+* **`/krbkey`** – Long-term `krbtgt` key (AES or RC4) used to decrypt and re-protect the TGT.
+* **`/ticketuser`** – Username that the modified ticket will represent.
+* **`/ticketuserid`** – RID of the user to include in the PAC.
+* **`/groups`** – Group RIDs we want to impersonate  to include in the PAC for authorization.
+
 
 
 
