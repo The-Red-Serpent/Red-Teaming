@@ -43,12 +43,73 @@ An Organizational Unit (OU) is a container in an Active Directory domain that or
 An Active Directory Site is a logical representation of a physical network location that consists of one or more well-connected IP subnets. Sites are used by Active Directory to optimize authentication, replication, and the location of domain services by reflecting the organization's network topology rather than its administrative structure.
 
 - When a user logs in, the client determines which site it belongs to based on its IP address and contacts the nearest domain controller instead of one across the WAN.
-Clients use sites to locate nearby services such as:
-- Domain Controllers (DCs)
-- Global Catalog (GC) Servers
-- DFS Namespace Servers
-- Certificate Services
-- Exchange Servers (legacy deployments)
+
+With sites:
+
+- Clients authenticate to the nearest domain controller.
+- Replication is optimized.
+- WAN bandwidth is conserved.
+- Services such as Global Catalog are located efficiently.
+
+An Active Directory Domain can span multiple physical locations, but the Domain Controllers (DCs) in those locations must have network connectivity so they can replicate Active Directory data.
+
+```
+                                                         Contoso.com Domain
+                                                               |
+                                               -----------------------------------
+                                               |                                 |
+                                           Headquarters                     Branch Office
+                                             Site A                            Site B
+                                            DC1                              DC2
+                                          192.168.1.0/24                  10.10.10.0/24
+                                               |                                 |
+                                               +----------- WAN/VPN/MPLS --------+
+```
+Here:
+- DC1 and DC2 belong to the same domain (contoso.com).
+- They are in different AD Sites because they're in different physical locations.
+- The WAN/VPN/MPLS link provides the physical network connectivity.
+- The Site Link in Active Directory tells the DCs when and how to replicate.
+
+## Sites
+An Active Directory Subnet is an IP address range that is mapped to an Active Directory Site, enabling clients to identify their site and locate the nearest Domain Controller for authentication and other directory services.
+
+Suppose you have two offices:
+```
+Mumbai Office
+Site: Mumbai
+Subnet: 192.168.1.0/24
+
+Delhi Office
+Site: Delhi
+Subnet: 10.10.10.0/24
+```
+A user in Delhi gets this IP address:
+```
+10.10.10.55
+```
+The client checks:
+```
+10.10.10.55
+        │
+        ▼
+Matches subnet
+10.10.10.0/24
+        │
+        ▼
+Belongs to Delhi Site
+        │
+        ▼
+Contact DC in Delhi
+
+```
+Without the subnet mapping, Active Directory wouldn't know which site the client belongs to.
+
+
+<p align="center">
+  <img src="https://www.techtutsonline.com/wp-content/uploads/2015/08/Active-Directory-Sites.jpg" alt="Architecture Diagram" width="600">
+</p>
+
 
 
 ## Realm 
