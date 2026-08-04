@@ -6,36 +6,7 @@ An Active Directory Domain is a logical and administrative boundary within an Ac
 </p>
 <br> </br>
 
-## Realm 
-A realm is a Kerberos authentication boundary that defines where user and service credentials are stored and validated. Each Active Directory domain functions as a Kerberos realm, and realms are primarily used when Active Directory interoperates with non-Windows Kerberos systems.
 
-```
-Active Directory domain: example.com
-Corresponding Kerberos realm: EXAMPLE.COM
-```
-<br> </br>
-
-## Distinguished Name
-A Distinguished Name (DN) is the unique full path that identifies an object (like a user, group, or computer) in Active Directory. It specifies the exact location of the object within the AD hierarchy, including its OU, domain, and any parent containers.
-```
-CN=John Doe,OU=HR,DC=example,DC=com
-```
-<br></br>
-
-## Fully Qualified Domain Name
-A Fully Qualified Domain Name (FQDN) is the complete, exact domain name of a computer, server, or network resource in the DNS hierarchy. It specifies its exact location in the domain name system, including the host name and all domain levels up to the top-level domain (TLD).
-
-```
-hostname.subdomain.domain.tld
-```
-
-Example: 
-`server01.hr.example.com`
-- `server01` → host/computer name
-- `hr` → subdomain or OU-level grouping
-- `example` → second-level domain
-- `com` → top-level domain
-<br></br>
 ## Tree
 An Active Directory Tree is a hierarchical collection of one or more Active Directory domains that share a contiguous DNS namespace and are connected through automatic two-way transitive trust relationship.
 
@@ -65,6 +36,50 @@ An Organizational Unit (OU) is a container in an Active Directory domain that or
 <p align="center">
   <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1691363420865/8a7b429b-d600-4ea7-ad33-ee3b9e9c13f2.jpeg" alt="Architecture Diagram" width="600">
 </p>
+<br></br>
+
+
+## Site
+An Active Directory Site is a logical representation of a physical network location that consists of one or more well-connected IP subnets. Sites are used by Active Directory to optimize authentication, replication, and the location of domain services by reflecting the organization's network topology rather than its administrative structure.
+
+- When a user logs in, the client determines which site it belongs to based on its IP address and contacts the nearest domain controller instead of one across the WAN.
+Clients use sites to locate nearby services such as:
+- Domain Controllers (DCs)
+- Global Catalog (GC) Servers
+- DFS Namespace Servers
+- Certificate Services
+- Exchange Servers (legacy deployments)
+
+
+## Realm 
+A realm is a Kerberos authentication boundary that defines where user and service credentials are stored and validated. Each Active Directory domain functions as a Kerberos realm, and realms are primarily used when Active Directory interoperates with non-Windows Kerberos systems.
+
+```
+Active Directory domain: example.com
+Corresponding Kerberos realm: EXAMPLE.COM
+```
+<br> </br>
+
+## Distinguished Name
+A Distinguished Name (DN) is the unique full path that identifies an object (like a user, group, or computer) in Active Directory. It specifies the exact location of the object within the AD hierarchy, including its OU, domain, and any parent containers.
+```
+CN=John Doe,OU=HR,DC=example,DC=com
+```
+<br></br>
+
+## Fully Qualified Domain Name
+A Fully Qualified Domain Name (FQDN) is the complete, exact domain name of a computer, server, or network resource in the DNS hierarchy. It specifies its exact location in the domain name system, including the host name and all domain levels up to the top-level domain (TLD).
+
+```
+hostname.subdomain.domain.tld
+```
+
+Example: 
+`server01.hr.example.com`
+- `server01` → host/computer name
+- `hr` → subdomain or OU-level grouping
+- `example` → second-level domain
+- `com` → top-level domain
 <br></br>
 
 ## Container
