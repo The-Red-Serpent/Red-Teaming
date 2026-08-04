@@ -91,11 +91,14 @@ ldapsearch (objectClass=*) --dn "CN=ForeignSecurityPrincipals,DC=dublin,DC=conto
 ldapsearch (objectClass=*) --dn "CN=John Doe,OU=Users,DC=contoso,DC=com" --attributes nTSecurityDescriptor
 ```
 
-## Unconstrained Delegation
+## Unconstrained Delegation - User
 ```
 ldapsearch (&(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=524288))
 ```
-
+## Unconstrained Delegation - Computer
+```
+ldapsearch (&(objectCategory=computer)(userAccountControl:1.2.840.113556.1.4.803:=524288))
+```
 
 ## Constrained Delegation
 ```
