@@ -1,10 +1,20 @@
+## Enumerate Domain
+```   
+ldapsearch (ObjectClass=domain) --attributes name,distinguishedName,objectSid,lockoutThreshold,ms-DS-MachineAccountQuota,lockoutDuration
+```
+
 ## Enumerate Forests
 ```
 ldapsearch  (objectClass=crossRef) --dn "CN=Partitions,CN=Configuration,DC=contoso,DC=com" --attributes cn,dnsRoot,nCName,trustParent
 ```
-## Enumerate Forest Sites
+## Enumerate  Sites
 ```
 ldapsearch (objectClass=site)  --dn "CN=Sites,CN=Configuration,DC=contoso,DC=com"  --attributes name,description
+```
+
+## Enumerate Subnets
+```
+ldapsearch (objectClass=site)  --dn "CN=Subnets,CN=Sites,CN=Configuration,DC=contoso,DC=com"
 ```
 
 ## Enumerate Global Catalog Servers
@@ -13,10 +23,6 @@ ldapsearch  "(&(objectClass=nTDSDSA)(options:1.2.840.113556.1.4.804:=1))" --dn "
 ```
 
 
-## Enumerate Domain
-```   
-ldapsearch (ObjectClass=domain) --attributes name,distinguishedName,objectSid,lockoutThreshold,ms-DS-MachineAccountQuota,lockoutDuration
-```
 
 ## Enumerate Domain Controller
 ```
@@ -107,10 +113,6 @@ ldapsearch "(msDS-AllowedToActOnBehalfOfOtherIdentity=*)" samAccountName dNSHost
 ldapsearch (objectClass=trustedDomain) --attributes cn,trustDirection,trustPartnet,flatname
 ```
 
-## Enumerating Sites
-```
-ldapsearch "(objectClass=site)" --dn "CN=Sites,CN=Configuration,DC=contoso,DC=com"
-```
 
 ## Enumerating Objects with SPN set
 ```
