@@ -14,8 +14,12 @@ Many techniques are used in the pre-relay phase, including:
     - ADIDNS Poisoning
     - WPAD Spoofing
     - WSUS Spoofing
+
+    
 - Authentication Coercion attacks.
-    - 
+    - MS-RPRN PrinterBug
+    - MS-EFSR PetitPotam
+    - MS-DFSNM DFSCoerce
 
 ## Phase II: Relay
 The Relay phase focuses on relaying the  NTLM authentication of the client to a relay target. We must find machines that meet some criteria: if we target 
@@ -38,4 +42,6 @@ HTTP NTLM authentication can be relayed over all protocols without requiring the
 Tools used:
 - Responder / pretender - for poisoning the broadcast traffic requests.
 - ntlmrelayx - for relaying NTLM authentication.
+- Coercer
+- https://github.com/p0dalirius/windows-coerced-authentication-methods
 
