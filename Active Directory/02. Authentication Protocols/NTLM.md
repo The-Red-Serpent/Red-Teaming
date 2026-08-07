@@ -43,7 +43,11 @@ NTLMV3: Vulnerable to Pass the hash attack and Does not provide mutual authentic
 <br></br>
 
 ![image](https://itsfading.github.io/assets/AD-Auth/ntlm.png)
+<br></br>
 
+## NTLM Authentication in AD:
+![image](https://techcommunity.microsoft.com/t5/s/gxcuf89792/images/bS00MTIwNjU4LTU3MzQwOGlFMDFGM0VEMjI5ODIyRUZF?image-dimensions=400x400&revision=3)
+<br></br>
 
 ## Where NTLM Hashes are stored:
 
