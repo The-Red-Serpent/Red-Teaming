@@ -82,3 +82,148 @@ When NTLM message signing is enabled, the client and server first agree to use s
 ```
 
 
+## Message Sealing
+Message sealing in NTLM is the process of encrypting messages exchanged between the client and server so that an attacker who captures network traffic cannot read the contents. While message signing provides integrity (detects if a message was modified), message sealing provides confidentiality (keeps the message secret). After NTLM authentication, the client and server already have a shared session key. From this session key, they derive separate sealing keys that are used for encryption.
+
+```
+                                                         NTLM AUTHENTICATION PHASE
+                                 ┌───────────────┐                                      ┌───────────────┐
+                                 │    CLIENT     │                                      │    SERVER     │
+                                 └───────┬───────┘                                      └───────┬───────┘
+                                         │                                                      │
+                                         │  1. NTLM NEGOTIATE                                  │
+                                         │  (Request authentication + signing/sealing support)  │
+                                         ├─────────────────────────────────────────────────────►│
+                                         │                                                      │
+                                         │  2. Server Challenge                                 │
+                                         │◄─────────────────────────────────────────────────────┤
+                                         │                                                      │
+                                         │  3. Client Authentication                            │
+                                         │  (Uses password-derived secret + challenges)         │
+                                         ├─────────────────────────────────────────────────────►│
+                                         │                                                      │
+                                         │                                                      │
+                                         │          Both sides calculate the same:              │
+                                         │                                                      │
+                                         │        Password Hash + Challenges                   │
+                                         │                  │                                   │
+                                         │                  ▼                                   │
+                                         │            SESSION KEY                               │
+                                         │                                                      │
+                                         └──────────────────────────────────────────────────────┘
+                                
+                                
+                                                     AFTER AUTHENTICATION
+                                              (Signing and Sealing Enabled)
+                                
+                                
+                                CLIENT                                                     SERVER
+                                  │                                                           │
+                                  │                                                           │
+                                  │  Original Message:                                        │
+                                  │  "Transfer $100"                                          │
+                                  │                                                           │
+                                  │                                                           │
+                                  │                 ┌────────────────────┐                    │
+                                  │                 │   MESSAGE SEALING  │                    │
+                                  │                 └────────────────────┘                    │
+                                  │                                                           │
+                                  │        Session Key → Sealing Key                          │
+                                  │                                                           │
+                                  │  Encrypt message using sealing key                       │
+                                  │                                                           │
+                                  │        "Transfer $100"                                    │
+                                  │              │                                            │
+                                  │              ▼                                            │
+                                  │        "8F92AB77X9"                                       │
+                                  │        (Encrypted Data)                                   │
+                                  │                                                           │
+                                  │                                                           │
+                                  │                 ┌────────────────────┐                    │
+                                  │                 │  MESSAGE SIGNING   │                    │
+                                  │                 └────────────────────┘                    │
+                                  │                                                           │
+                                  │        Session Key → Signing Key                          │
+                                  │                                                           │
+                                  │  Create MAC:                                              │
+                                  │                                                           │
+                                  │  MAC = HMAC(Signing Key, Message + Sequence Number)        │
+                                  │                                                           │
+                                  │        MAC = A1B2C3D4                                     │
+                                  │                                                           │
+                                  │                                                           │
+                                  │  Send:                                                    │
+                                  │                                                           │
+                                  │  ┌───────────────────────────┐                            │
+                                  │  │ Encrypted Message         │                            │
+                                  │  │ 8F92AB77X9                │                            │
+                                  │  ├───────────────────────────┤                            │
+                                  │  │ MAC Signature             │                            │
+                                  │  │ A1B2C3D4                 │                            │
+                                  │  └───────────────────────────┘                            │
+                                  │                                                           │
+                                  ├──────────────────────────────────────────────────────────►│
+                                                                                              │
+                                                                                              │
+                                                                      SERVER RECEIVES PACKET │
+                                                                                              │
+                                                                      ┌───────────────────┐   │
+                                                                      │ 1. Verify MAC     │   │
+                                                                      └───────────────────┘   │
+                                                                                              │
+                                                                      Calculate:              │
+                                                                      HMAC(Signing Key,       │
+                                                                      Message + Sequence)     │
+                                                                                              │
+                                                                      Compare:                │
+                                                                      Received MAC            │
+                                                                      vs                      │
+                                                                      Calculated MAC          │
+                                                                                              │
+                                                                      ┌─────────┴─────────┐   │
+                                                                      │                   │   │
+                                                                  MATCH              DIFFERENT
+                                                                      │                   │
+                                                                      ▼                   ▼
+                                                                Message OK        Reject Message
+                                                                Not Modified      Tampered
+                                                                                              │
+                                                                                              │
+                                                                      ┌───────────────────┐   │
+                                                                      │ 2. Decrypt Data   │   │
+                                                                      └───────────────────┘   │
+                                                                                              │
+                                                                      Use Sealing Key:         │
+                                                                      "8F92AB77X9"             │
+                                                                             │                │
+                                                                             ▼                │
+                                                                      "Transfer $100"         │
+                                                                                              │
+                                                                                              ▼
+                                
+                                
+                                                         FINAL RESULT
+                                
+                                          ┌─────────────────────────────────────────┐
+                                          │          NTLM MESSAGE SECURITY          │
+                                          ├─────────────────────────────────────────┤
+                                          │ Signing → Protects Integrity            │
+                                          │          (Detects modification)         │
+                                          │                                         │
+                                          │ Sealing → Protects Confidentiality      │
+                                          │          (Hides message contents)       │
+                                          └─────────────────────────────────────────┘
+                                
+                                
+                                ATTACKER VIEW:
+                                
+                                Captured Traffic:
+                                
+                                ┌──────────────────────────┐
+                                │ Encrypted Data           │
+                                │ 8F92AB77X9               │
+                                │                          │
+                                │ MAC: A1B2C3D4            │
+                                └──────────────────────────┘
+
+```
