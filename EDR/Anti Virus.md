@@ -66,7 +66,7 @@ Cloud-based detection works by sending file information, metadata, or behavioral
 - Encoding
 - packing
 - Compression
-- String obfuscation
+- String obfuscation/ Manipulation
 - Character substitution
 - LOTL
 - In memory Execution techniques
