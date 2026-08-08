@@ -99,6 +99,10 @@ ldapsearch (&(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=52428
 ```
 ldapsearch (&(objectCategory=computer)(userAccountControl:1.2.840.113556.1.4.803:=524288))
 ```
+##  Enumerate Foreign Security Principals
+```
+ldapsearch (objectClass=foreignSecurityPrincipal) --dn "CN=ForeignSecurityPrincipals,DC=domain,DC=com"
+```
 
 ## Constrained Delegation
 ```
