@@ -59,6 +59,7 @@ Machine learning–based detection identifies malware by using algorithms traine
 
 Cloud-based detection works by sending file information, metadata, or behavioral data from a local device to cloud servers, where powerful computing resources and up-to-date threat intelligence databases analyze it. The cloud system compares the data against global threat information, machine learning models, and millions of known samples to quickly identify threats. This allows faster detection, better accuracy, and real-time updates without relying heavily on the local device’s resources.
 
+![image](https://learn.microsoft.com/en-us/defender-endpoint/media/next-gen-protection-engines.png)
 
 ## Evasion Techniques
 - Obfuscation
