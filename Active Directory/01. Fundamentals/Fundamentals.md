@@ -280,16 +280,6 @@ A RID is the last part of a Security Identifier (SID) in Windows, used to unique
 <br></br>
 
 
-## Foreign Security Principal
-
-<p align="justify">When domains establish trust relationships (such as forest or external trusts), security principals (users, groups, or computers) from one domain can be referenced in another. A Foreign Security Principal (FSP) is an Active Directory object that represents a security principal from a trusted external domain or forest within the local domain.</p>
-
-An FSP acts as a placeholder that allows external principals to be:
-- Added to domain local security groups
-- Assigned permissions on resources through ACLs
-- Included in Group Policy filtering
-<br></br>
-
 
 ## AdminCount
 
