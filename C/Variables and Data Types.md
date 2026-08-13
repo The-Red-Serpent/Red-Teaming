@@ -76,3 +76,142 @@ typedef int <new_alias_name>;
 | `HANDLE`             | `%p`                        |
 | `LPVOID`             | `%p`                        |
 
+
+## Sample Program
+```
+#include <stdio.h>
+
+// Windows-style type definitions
+typedef unsigned char BYTE;
+typedef unsigned short WORD;
+typedef unsigned long DWORD;
+typedef unsigned long long DWORD64;
+typedef int BOOL;
+typedef void* HANDLE;
+typedef void* LPVOID;
+
+#define TRUE 1
+#define FALSE 0
+
+int main(void)
+{
+    // =========================
+    // Primitive Data Types
+    // =========================
+
+    char grade = 'A';
+    signed char temperature = -20;
+    unsigned char byte = 255;
+
+    short smallNumber = -30000;
+    unsigned short port = 443;
+
+    int age = 25;
+    unsigned int count = 4000000000U;
+
+    long population = 10000000L;
+    unsigned long bigNumber = 4000000000UL;
+
+    long long money = 1000000000000LL;
+    unsigned long long hugeNumber = 9000000000000ULL;
+
+    float height = 5.9f;
+    double pi = 3.14159265359;
+    long double precision = 3.141592653589793L;
+
+
+    // =========================
+    // Windows Data Types
+    // =========================
+
+    BYTE b = 0x41;
+    WORD w = 80;
+    DWORD pid = 1234;
+    DWORD64 address = 0x7FF6ABCD1234ULL;
+
+    BOOL success = TRUE;
+
+    HANDLE hProcess = NULL;
+    LPVOID buffer = NULL;
+
+
+    // =========================
+    // Print Values
+    // =========================
+
+    printf("===== Primitive Data Types =====\n\n");
+
+    printf("char:                %c\n", grade);
+    printf("signed char:         %hhd\n", temperature);
+    printf("unsigned char:       %hhu\n", byte);
+
+    printf("short:               %hd\n", smallNumber);
+    printf("unsigned short:      %hu\n", port);
+
+    printf("int:                 %d\n", age);
+    printf("unsigned int:        %u\n", count);
+
+    printf("long:                %ld\n", population);
+    printf("unsigned long:       %lu\n", bigNumber);
+
+    printf("long long:           %lld\n", money);
+    printf("unsigned long long:  %llu\n", hugeNumber);
+
+    printf("float:               %f\n", height);
+    printf("double:              %f\n", pi);
+    printf("long double:         %Lf\n", precision);
+
+
+    printf("\n===== Windows Data Types =====\n\n");
+
+    printf("BYTE:                %hhu\n", b);
+    printf("WORD:                %hu\n", w);
+    printf("DWORD:               %lu\n", pid);
+    printf("DWORD64:             %llu\n", address);
+
+    printf("BOOL:                %d\n", success);
+
+    printf("HANDLE:              %p\n", hProcess);
+    printf("LPVOID:              %p\n", buffer);
+
+
+    // =========================
+    // Memory Sizes
+    // =========================
+
+    printf("\n===== Memory Sizes =====\n\n");
+
+    printf("char:                %zu byte(s)\n", sizeof(char));
+    printf("signed char:         %zu byte(s)\n", sizeof(signed char));
+    printf("unsigned char:       %zu byte(s)\n", sizeof(unsigned char));
+
+    printf("short:               %zu byte(s)\n", sizeof(short));
+    printf("unsigned short:      %zu byte(s)\n", sizeof(unsigned short));
+
+    printf("int:                 %zu byte(s)\n", sizeof(int));
+    printf("unsigned int:        %zu byte(s)\n", sizeof(unsigned int));
+
+    printf("long:                %zu byte(s)\n", sizeof(long));
+    printf("unsigned long:       %zu byte(s)\n", sizeof(unsigned long));
+
+    printf("long long:           %zu byte(s)\n", sizeof(long long));
+    printf("unsigned long long:  %zu byte(s)\n", sizeof(unsigned long long));
+
+    printf("float:               %zu byte(s)\n", sizeof(float));
+    printf("double:              %zu byte(s)\n", sizeof(double));
+    printf("long double:         %zu byte(s)\n", sizeof(long double));
+
+    printf("BYTE:                %zu byte(s)\n", sizeof(BYTE));
+    printf("WORD:                %zu byte(s)\n", sizeof(WORD));
+    printf("DWORD:               %zu byte(s)\n", sizeof(DWORD));
+    printf("DWORD64:             %zu byte(s)\n", sizeof(DWORD64));
+
+    printf("BOOL:                %zu byte(s)\n", sizeof(BOOL));
+    printf("HANDLE:              %zu byte(s)\n", sizeof(HANDLE));
+    printf("LPVOID:              %zu byte(s)\n", sizeof(LPVOID));
+
+
+    return 0;
+}
+```
+
