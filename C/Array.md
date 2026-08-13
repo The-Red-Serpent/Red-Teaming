@@ -60,3 +60,27 @@ printf("%zu\n", sizeof(numbers));
 ```
 20
 ```
+
+## Multidimensional Array's
+A multidimensional array is an array that contains other arrays as its elements. The most common type is a 2D array, which is organized into rows and columns, like a table or matrix.
+
+- Declaring a 2D Array
+```
+data_type array_name[rows][columns];
+```
+```
+int matrix[2][3];
+```
+
+- You can Visualize it as
+```
+             Columns
+             0    1    2
+          ┌────┬────┬────┐
+Row 0     │ 10 │ 20 │ 30 │
+          ├────┼────┼────┤
+Row 1     │ 40 │ 50 │ 60 │
+          └────┴────┴────┘
+
+```
+
