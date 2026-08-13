@@ -22,7 +22,7 @@ numbers
  index
 ```
 
-You can also let C determine the size:
+- You can also let C determine the size:
 ```
 int numbers[] = {10, 20, 30, 40, 50};
 ```
