@@ -51,4 +51,28 @@ typedef int <new_alias_name>;
 | **HANDLE**  | `typedef void* HANDLE;` A HANDLE is a reference to a Windows object.                                       | **Pointer-sized** | `HANDLE hProcess;`                  | Processes, threads, files, tokens, mutexes, events   |
 | **LPVOID**  | `typedef void* LPVOID;`                                        | **Pointer-sized** | `LPVOID buffer;`                    | Generic pointers, memory allocation, API buffers     |
 
+## Format Specifier
+| Data Type            | `printf()` Format Specifier |
+| -------------------- | --------------------------- |
+| `char`               | `%c`                        |
+| `signed char`        | `%hhd`                      |
+| `unsigned char`      | `%hhu`                      |
+| `short`              | `%hd`                       |
+| `unsigned short`     | `%hu`                       |
+| `int`                | `%d`                        |
+| `unsigned int`       | `%u`                        |
+| `long`               | `%ld`                       |
+| `unsigned long`      | `%lu`                       |
+| `long long`          | `%lld`                      |
+| `unsigned long long` | `%llu`                      |
+| `float`              | `%f`                        |
+| `double`             | `%f`                        |
+| `long double`        | `%Lf`                       |
+| `BYTE`               | `%hhu`                      |
+| `WORD`               | `%hu`                       |
+| `DWORD`              | `%lu`                       |
+| `DWORD64`            | `%llu`                      |
+| `BOOL`               | `%d`                        |
+| `HANDLE`             | `%p`                        |
+| `LPVOID`             | `%p`                        |
 
