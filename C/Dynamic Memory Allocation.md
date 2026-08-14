@@ -7,8 +7,10 @@ They are declared in:
 #include <stdlib.h>
 ```
 
+All these  function returns a void* pointer to the beginning of the newly allocated memory block if the allocation is successful. If the system cannot allocate the requested memory, it returns NULL. we need tpo typecast it to the type we want
+
 ## malloc()
-`malloc()` is used to **allocate a block of memory of a specified size at runtime**. The allocated memory is **not initialized**, so its contents are indeterminate. The malloc function returns a void* (void pointer) pointing to the beginning of the newly allocated memory block if the request succeeds, or NULL if the allocation fails
+`malloc()` is used to **allocate a block of memory of a specified size at runtime**. The allocated memory is **not initialized**, so its contents are indeterminate.
 
 ```c
 ptr = malloc(n * sizeof(*ptr));
