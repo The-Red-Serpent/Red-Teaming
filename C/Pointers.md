@@ -1,5 +1,6 @@
 ## Pointers
 A pointer is simply a variable that stores the memory address of another variable. The computer's memory is a sequential store of data, and a pointer points to a specific part of the memory. Our program can use pointers in such a way that the pointers point to a large amount of memory - depending on how much we decide to read from that point on.
+![image](https://codeforwin.org/wp-content/uploads/2017/10/pointer-to-pointer.png)
 ```
 int x = 42;
 int *p = &x;
@@ -53,4 +54,54 @@ p
 │    10     │  ← value of x
 └───────────┘
 ```
+
+## Pointer arithmetic
+
+Pointer arithmetic is the process of performing arithmetic operations on a pointer to move it between elements of a data structure, typically an array.
+
+```c
+int arr[] = {10, 20, 30};
+int *p = arr;
+
+p++;
+```
+
+Here, `p++` moves the pointer from `arr[0]` to `arr[1]`.
+
+```text
+Before p++:
+
+ p
+ ↓
+┌────┬────┬────┐
+│ 10 │ 20 │ 30 │
+└────┴────┴────┘
+  0    1    2
+
+
+After p++:
+
+      p
+      ↓
+┌────┬────┬────┐
+│ 10 │ 20 │ 30 │
+└────┴────┴────┘
+  0    1    2
+```
+
+Common pointer arithmetic operations are:
+
+```c
+p + 1
+p - 1
+p++
+p--
+```
+
+You can also use:
+
+```c
+*(p + 2)
+```
+
 
