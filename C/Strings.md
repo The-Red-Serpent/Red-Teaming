@@ -14,3 +14,32 @@ char myname[17] = "The Red Serpent";
 
 The reason that we need to add one, although the string The Red Serpent is exactly 16 characters long, is for the string termination a special character (equal to 0) which indicates the end of the string. The end of the string is marked because the program does not know the length of the string only the compiler knows it according to the code.
 
+## Basic String Functions
+
+| Function  | Syntax                    | Purpose                            |
+| --------- | ------------------------- | ---------------------------------- |
+| `strlen`  | `strlen(str)`             | Get string length                  |
+| `strcpy`  | `strcpy(dest, src)`       | Copy string                        |
+| `strncpy` | `strncpy(dest, src, n)`   | Copy up to `n` characters          |
+| `strcat`  | `strcat(dest, src)`       | Append one string to another       |
+| `strncat` | `strncat(dest, src, n)`   | Append up to `n` characters        |
+| `strcmp`  | `strcmp(str1, str2)`      | Compare two strings                |
+| `strncmp` | `strncmp(str1, str2, n)`  | Compare first `n` characters       |
+| `strchr`  | `strchr(str, ch)`         | Find first occurrence of character |
+| `strrchr` | `strrchr(str, ch)`        | Find last occurrence of character  |
+| `strstr`  | `strstr(str, substr)`     | Find a substring                   |
+| `strtok`  | `strtok(str, delimiters)` | Split string into tokens           |
+
+## Memory Functions
+| Function  | Syntax                  | Purpose               |
+| --------- | ----------------------- | --------------------- |
+| `memcpy`  | `memcpy(dest, src, n)`  | Copy `n` bytes        |
+| `memmove` | `memmove(dest, src, n)` | Safely move `n` bytes |
+| `memset`  | `memset(str, value, n)` | Fill `n` bytes        |
+| `memcmp`  | `memcmp(ptr1, ptr2, n)` | Compare `n` bytes     |
+| `memchr`  | `memchr(ptr, ch, n)`    | Search for a byte     |
+
+
+## Reference
+- https://en.cppreference.com/c/string/byte
+- 
