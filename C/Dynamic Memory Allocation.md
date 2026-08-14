@@ -8,7 +8,7 @@ They are declared in:
 ```
 
 ## malloc()
-`malloc()` is used to **allocate a block of memory of a specified size at runtime**. The allocated memory is **not initialized**, so its contents are indeterminate.
+`malloc()` is used to **allocate a block of memory of a specified size at runtime**. The allocated memory is **not initialized**, so its contents are indeterminate. The malloc function returns a void* (void pointer) pointing to the beginning of the newly allocated memory block if the request succeeds, or NULL if the allocation fails
 
 ```c
 ptr = malloc(n * sizeof(*ptr));
