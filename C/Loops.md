@@ -50,8 +50,10 @@ do {
 } while (i < 5);
 ```
 
+There are two important loop directives that are used in conjunction with all loop types in C - the break and continue directives.
 
-
+- The break directive halts a loop after ten loops, even though the while loop never finishes
+-  the continue directive causes the printf command to be skipped and continue the loop
 
 
 
