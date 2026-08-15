@@ -1,6 +1,16 @@
 ## Registers
 A register is a small, high-speed storage location located inside the CPU, used to hold data, memory addresses, or instructions that are currently being processed or immediately needed by the CPU.
 
+A CPU (Central Processing Unit) is the part of a computer that executes instructions, and inside the CPU there are small, extremely fast storage locations called registers. You can think of registers like variables that the CPU uses to temporarily store numbers and other data while it is performing operations.  When we say 64-bit assembly, we're generally referring to a CPU architecture such as x86-64 that supports 64-bit operations and has 64-bit general-purpose registers. A 64-bit register can hold 64 bits, where each bit is either 0 or 1, allowing it to represent values from 0 to 2⁶⁴ - 1 when dealing with unsigned integers
+
+## History of Registers
+The original Intel 8008 CPU from 1972 had four main general-purpose registers called A, B, C, and D, and because it was an 8-bit CPU, these registers were 8 bits wide. Each register originally had a somewhat specific job: A was mainly an accumulator for arithmetic, B could be used for addressing memory, C was commonly used as a counter, and D was used for additional data. Then Intel created the 8086 in 1978, which was a 16-bit CPU. Instead of throwing away the old 8-bit registers, Intel expanded them to 16 bits. So the old A register became AX, B became BX, C became CX, and D became DX. The clever part is that AX could still be divided into smaller pieces: the lower 8 bits were called AL, and the upper 8 bits were called AH. So you can imagine AX like this: AH | AL, where AH is 8 bits and AL is 8 bits, making AX 16 bits total.
+
+Then in 1985, Intel released the 80386, which moved the architecture to 32 bits. Again, instead of destroying the existing registers, they simply expanded them. AX became EAX, BX became EBX, CX became ECX, and DX became EDX. The E basically means extended. So now EAX was 32 bits, but you could still access its lower 16 bits using AX, and inside AX you could still access AL and AH. In other words, these aren't completely separate registers—they are different ways of accessing portions of the same physical register.
+
+Then we eventually got 64-bit processors. AMD introduced the first x86-64 processors in 2003, and Intel followed. The 32-bit registers were expanded again. So EAX became RAX, EBX became RBX, ECX became RCX, and EDX became RDX. The R refers to the 64-bit register. So now you can think of RAX like this: RAX = 64 bits, inside it is EAX = lower 32 bits, inside that is AX = lower 16 bits, and inside AX are AH and AL, each 8 bits.
+
+A really important thing to understand is that RAX, EAX, AX, AH, and AL are not five completely different storage locations. They're different views of the same register. Imagine you have a 64-bit box. If you look at the whole box, that's RAX. If you look only at the bottom 32 bits, that's EAX. If you look at the bottom 16 bits, that's AX. If you look at the bottom 8 bits, that's AL. And if you look at the 8 bits immediately above AL, that's AH. The same idea applies to RBX/EBX/BX/BH/BL, RCX/ECX/CX/CH/CL, and RDX/EDX/DX/DH/DL.
 
 ## Types of Registers
 
