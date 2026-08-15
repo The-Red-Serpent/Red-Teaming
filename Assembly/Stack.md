@@ -1,5 +1,15 @@
 ## Stack
 The stack is a special region of computer memory that the CPU uses to store temporary data in a structured, last-in-first-out (LIFO) order. It is fundamental for function calls, returning from functions, storing local variables, and keeping track of execution context.
+
+The stack can store several kinds of temporary information, especially when functions are called:
+
+- Return addresses — where the CPU should continue after a function finishes.
+- Local variables — variables created inside a function.
+- Saved registers — register values saved so they can be restored later.
+- Function arguments — arguments that are passed on the stack when the calling convention requires it.
+- Temporary data — values that need to be stored temporarily during calculations.
+- Stack frames — the collection of data associated with a particular function call.
+<br></br>
 ![image](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*3M10Yuk0xd6kXSm2k1W77A.png)
 
 ## Stack Frame
