@@ -12,6 +12,8 @@ Then we eventually got 64-bit processors. AMD introduced the first x86-64 proces
 
 A really important thing to understand is that RAX, EAX, AX, AH, and AL are not five completely different storage locations. They're different views of the same register. Imagine you have a 64-bit box. If you look at the whole box, that's RAX. If you look only at the bottom 32 bits, that's EAX. If you look at the bottom 16 bits, that's AX. If you look at the bottom 8 bits, that's AL. And if you look at the 8 bits immediately above AL, that's AH. The same idea applies to RBX/EBX/BX/BH/BL, RCX/ECX/CX/CH/CL, and RDX/EDX/DX/DH/DL.
 
+![x86-64 Register Layout](.Registers.ong)
+
 ## Types of Registers
 
 ## General Purpose Register
