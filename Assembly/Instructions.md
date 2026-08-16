@@ -378,4 +378,534 @@ Result:
 
 So `AL = 10101100`.
 
+## Conditional Instructions
+
+# 1. CMP
+`CMP` compares two operands by internally subtracting the source from the destination and setting the CPU flags based on the result. It **does not store the subtraction result**, so the original operands remain unchanged. Conditional jump instructions can then examine those flags to decide whether to jump.
+
+### Syntax
+
+```asm
+CMP destination, source
+```
+
+### Example
+
+```asm
+cmp rax, rbx
+je equal
+```
+
+If `RAX` and `RBX` contain the same value, `CMP` sets the Zero Flag (`ZF`), and `JE` jumps to `equal`.
+
+Think of it roughly as:
+
+```c
+if (rax == rbx)
+    goto equal;
+```
+
+# 2. JMP
+
+
+`JMP` performs an **unconditional jump**. It immediately changes the program's execution location to the specified label, regardless of any flags or conditions.
+
+### Syntax
+
+```asm
+JMP label
+```
+
+### Example
+
+```asm
+jmp loop
+
+mov rax, 100
+
+loop:
+    inc rbx
+```
+
+The `mov rax, 100` instruction is skipped because execution jumps directly to `loop`.
+
+# 3. JE / JZ
+
+
+`JE` (Jump Equal) and `JZ` (Jump Zero) jump to a specified label when the **Zero Flag (`ZF`) is set**. They are commonly used after `CMP` to check whether two values are equal.
+
+`JE` and `JZ` are two names for the same condition.
+
+### Syntax
+
+```asm
+JE label
+```
+
+### Example
+
+```asm
+cmp rax, 10
+je equal
+
+equal:
+    mov rbx, 1
+```
+
+If `RAX == 10`, the jump is taken.
+
+# 4. JNE / JNZ
+
+`JNE` (Jump Not Equal) and `JNZ` (Jump Not Zero) jump when the **Zero Flag (`ZF`) is clear**. They are commonly used to check whether two values are different.
+
+### Syntax
+
+```asm
+JNE label
+```
+
+### Example
+
+```asm
+cmp rax, rbx
+jne different
+```
+
+If `RAX != RBX`, execution jumps to `different`.
+
+# 5. JG
+`JG` (Jump Greater) performs a signed comparison and jumps when the destination value is **greater than** the source value. It uses the Sign Flag (`SF`), Overflow Flag (`OF`), and Zero Flag (`ZF`).
+
+### Syntax
+
+```asm
+JG label
+```
+
+### Example
+
+```asm
+cmp rax, rbx
+jg greater
+```
+
+If `RAX > RBX` as signed integers, execution jumps to `greater`.
+
+
+# 6. JGE
+
+`JGE` (Jump Greater or Equal) performs a signed comparison and jumps when the destination value is **greater than or equal to** the source value.
+
+### Syntax
+
+```asm
+JGE label
+```
+
+### Example
+
+```asm
+cmp rax, 10
+jge valid
+```
+
+If `RAX >= 10`, execution jumps to `valid`.
+
+
+# 7. JL
+
+`JL` (Jump Less) performs a signed comparison and jumps when the destination value is **less than** the source value.
+
+### Syntax
+
+```asm
+JL label
+```
+
+### Example
+
+```asm
+cmp rax, rbx
+jl smaller
+```
+
+If `RAX < RBX` as signed integers, execution jumps to `smaller`.
+
+# 8. JLE
+
+`JLE` (Jump Less or Equal) performs a signed comparison and jumps when the destination value is **less than or equal to** the source value.
+
+### Syntax
+
+```asm
+JLE label
+```
+
+### Example
+
+```asm
+cmp rax, 10
+jle loop
+```
+
+If `RAX <= 10`, execution jumps to `loop`.
+
+
+# 9. JA
+
+`JA` (Jump Above) performs an **unsigned comparison** and jumps when the destination value is greater than the source value.
+
+### Syntax
+
+```asm
+JA label
+```
+
+### Example
+
+```asm
+cmp rax, rbx
+ja bigger
+```
+
+If `RAX > RBX` when treated as **unsigned integers**, execution jumps to `bigger`.
+
+
+# 10. JAE
+`JAE` (Jump Above or Equal) performs an unsigned comparison and jumps when the destination value is greater than or equal to the source value.
+
+### Syntax
+
+```asm
+JAE label
+```
+
+### Example
+
+```asm
+cmp rax, 10
+jae valid
+```
+
+If the unsigned value of `RAX >= 10`, execution jumps to `valid`.
+
+
+# 11. JB
+
+
+`JB` (Jump Below) performs an unsigned comparison and jumps when the destination value is less than the source value.
+
+### Syntax
+
+```asm
+JB label
+```
+
+### Example
+
+```asm
+cmp rax, rbx
+jb smaller
+```
+
+If `RAX < RBX` as unsigned integers, execution jumps to `smaller`.
+
+
+# 12. JBE
+
+`JBE` (Jump Below or Equal) performs an unsigned comparison and jumps when the destination value is less than or equal to the source value.
+
+### Syntax
+
+```asm
+JBE label
+```
+
+### Example
+
+```asm
+cmp rax, 100
+jbe valid
+```
+
+If `RAX <= 100` as an unsigned value, execution jumps to `valid`.
+
+# 13. JC
+
+
+`JC` (Jump if Carry) jumps when the **Carry Flag (`CF`) is set**. It is commonly used when checking unsigned arithmetic overflow or the result of an unsigned comparison.
+
+### Syntax
+
+```asm
+JC label
+```
+
+### Example
+
+```asm
+add al, 255
+jc overflow
+```
+
+If the addition produces a carry, execution jumps to `overflow`.
+
+
+# 14. JNC
+
+`JNC` (Jump if No Carry) jumps when the **Carry Flag (`CF`) is clear**.
+
+### Syntax
+
+```asm
+JNC label
+```
+
+### Example
+
+```asm
+add al, 5
+jnc no_carry
+```
+
+If no carry occurred, execution jumps to `no_carry`.
+
+# 15. JO
+
+
+`JO` (Jump if Overflow) jumps when the **Overflow Flag (`OF`) is set**, indicating signed arithmetic overflow.
+
+### Syntax
+
+```asm
+JO label
+```
+
+### Example
+
+```asm
+add al, 127
+jo overflow
+```
+
+If the signed addition overflows, execution jumps to `overflow`.
+
+
+# 16. JNO
+
+`JNO` (Jump if No Overflow) jumps when the **Overflow Flag (`OF`) is clear**.
+
+### Syntax
+
+```asm
+JNO label
+```
+
+### Example
+
+```asm
+add eax, ebx
+jno safe
+```
+
+If no signed overflow occurred, execution jumps to `safe`.
+
+
+# 17. JS
+
+`JS` (Jump if Sign) jumps when the **Sign Flag (`SF`) is set**, which generally indicates that the result has its most significant bit set and is therefore negative when interpreted as a signed integer.
+
+### Syntax
+
+```asm
+JS label
+```
+
+### Example
+
+```asm
+sub rax, 20
+js negative
+```
+
+If the result is negative, execution jumps to `negative`.
+
+
+# 18. JNS
+
+`JNS` (Jump if No Sign) jumps when the **Sign Flag (`SF`) is clear**.
+
+### Syntax
+
+```asm
+JNS label
+```
+
+### Example
+
+```asm
+sub rax, rbx
+jns positive
+```
+
+If the result is not negative, execution jumps to `positive`.
+
+
+# 19. JP / JPE
+
+`JP` (Jump if Parity) and `JPE` (Jump if Parity Even) jump when the **Parity Flag (`PF`) is set**. They are mainly used for checking the parity of the low byte of a result.
+
+### Syntax
+
+```asm
+JP label
+```
+
+### Example
+
+```asm
+test al, al
+jp even_parity
+```
+
+If the result has even parity in its low byte, the jump occurs.
+
+
+# 20. JNP / JPO
+
+`JNP` (Jump if No Parity) and `JPO` (Jump if Parity Odd) jump when the **Parity Flag (`PF`) is clear**.
+
+### Syntax
+
+```asm
+JNP label
+```
+
+### Example
+
+```asm
+test al, al
+jnp odd_parity
+```
+
+If the parity condition is odd, execution jumps to `odd_parity`.
+
+
+
+##  Important: Signed vs Unsigned Jumps
+
+This is one of the most important things to understand.
+
+After:
+
+```asm
+cmp rax, rbx
+```
+
+you need to choose the jump based on whether you're treating the values as **signed or unsigned**.
+
+### Signed
+
+```text
+JG   → greater
+JGE  → greater/equal
+JL   → less
+JLE  → less/equal
+```
+
+### Unsigned
+
+```text
+JA   → above/greater
+JAE  → above/equal
+JB   → below/less
+JBE  → below/equal
+```
+
+For example:
+
+```asm
+cmp rax, rbx
+jg signed_greater
+```
+
+means:
+
+> Treat the values as signed integers.
+
+While:
+
+```asm
+cmp rax, rbx
+ja unsigned_greater
+```
+
+means:
+
+> Treat the values as unsigned integers.
+
+---
+
+# How `CMP` + Jump Works
+
+This is the key concept behind most conditional branches.
+
+Suppose you have C:
+
+```c
+if (x == 10) {
+    something();
+}
+```
+
+Assembly could look roughly like:
+
+```asm
+cmp rax, 10
+je something
+```
+
+The CPU essentially does:
+
+```text
+CMP
+ ↓
+sets flags
+ ↓
+JE checks ZF
+ ↓
+condition true? → jump
+condition false? → continue
+```
+
+Another example:
+
+```c
+if (x > 10) {
+    something();
+}
+```
+
+roughly:
+
+```asm
+cmp rax, 10
+jg something
+```
+
+And:
+
+```c
+if (x != 10) {
+    something();
+}
+```
+
+roughly:
+
+```asm
+cmp rax, 10
+jne something
+```
+
 
