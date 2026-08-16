@@ -1,4 +1,4 @@
-## Instructions
+## Arithmetic Instructions
 
 ## 1. MOV
 `MOV` copies data from the source operand to the destination operand. The original source value is not changed.
@@ -217,3 +217,165 @@ INT interrupt_number
 ```asm
 int 0x80
 ```
+
+## Logical Instructions
+
+## 1. AND
+
+`AND` performs a bitwise AND operation between two operands. Each resulting bit is `1` only when both corresponding bits are `1`; otherwise, it is `0`.
+
+### Syntax
+
+```asm
+AND destination, source
+```
+
+### Example
+
+```asm
+mov al, 0b1010
+and al, 0b0011
+```
+
+Result:
+
+```text
+1010
+0011
+----
+0010
+```
+
+So `AL = 0010`.
+
+A common use of `AND` is **masking bits**, such as checking whether a number is odd:
+
+```asm
+and al, 1
+```
+
+If the result is `1`, the number was odd; if it is `0`, it was even.
+
+
+## 2. OR
+
+`OR` performs a bitwise OR operation between two operands. Each resulting bit is `1` when either or both corresponding bits are `1`; it is `0` only when both bits are `0`.
+
+### Syntax
+
+```asm
+OR destination, source
+```
+
+### Example
+
+```asm
+mov al, 0b0101
+or  al, 0b0011
+```
+
+Result:
+
+```text
+0101
+0011
+----
+0111
+```
+
+So `AL = 0111`.
+
+A common use of `OR` is **setting specific bits to 1**.
+
+
+
+## 3. XOR
+
+`XOR` performs a bitwise exclusive OR operation. Each resulting bit is `1` when the corresponding bits are different and `0` when they are the same.
+
+### Syntax
+
+```asm
+XOR destination, source
+```
+
+### Example
+
+```asm
+mov al, 0b0101
+xor al, 0b0011
+```
+
+Result:
+
+```text
+0101
+0011
+----
+0110
+```
+
+So `AL = 0110`.
+
+A very common use is clearing a register:
+
+```asm
+xor eax, eax
+```
+
+Because any value XORed with itself produces zero, this sets `EAX` to `0`.
+
+## 4. TEST
+
+`TEST` performs a bitwise AND between two operands **only for the purpose of setting the CPU flags**. Unlike `AND`, it does not store the result, so the operands remain unchanged.
+
+### Syntax
+
+```asm
+TEST operand1, operand2
+```
+
+### Example
+
+```asm
+test al, 1
+```
+
+This checks the lowest bit of `AL`.
+
+If the lowest bit is `0`, the Zero Flag (`ZF`) is set:
+
+```asm
+jz even_number
+```
+
+This is commonly used to check whether a number is even or odd without modifying the original value.
+
+
+## 5. NOT
+`NOT` performs a bitwise NOT operation. It reverses every bit in the operand: `1` becomes `0`, and `0` becomes `1`.
+
+### Syntax
+
+```asm
+NOT destination
+```
+
+### Example
+
+```asm
+mov al, 0b01010011
+not al
+```
+
+Result:
+
+```text
+01010011
+↓ NOT
+10101100
+```
+
+So `AL = 10101100`.
+
+
