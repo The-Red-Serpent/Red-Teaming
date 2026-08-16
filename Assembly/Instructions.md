@@ -55,11 +55,8 @@ dec rax
 
 If `RAX` contains `10`, it becomes `9`.
 
----
 
 ## 4. ADD
-
-### Definition
 
 `ADD` adds the source operand to the destination operand and stores the result in the destination.
 
@@ -77,11 +74,7 @@ add rax, rbx
 
 If `RAX = 10` and `RBX = 5`, then `RAX = 15`.
 
----
-
 ## 5. SUB
-
-### Definition
 
 `SUB` subtracts the source operand from the destination operand and stores the result in the destination.
 
@@ -99,11 +92,8 @@ sub rax, rbx
 
 If `RAX = 10` and `RBX = 3`, then `RAX = 7`.
 
----
 
 ## 6. MUL
-
-### Definition
 
 `MUL` performs an unsigned multiplication. One operand is explicitly provided, while the other operand is implicitly taken from the accumulator register. In x64, multiplying two 64-bit values produces a 128-bit result in `RDX:RAX`.
 
@@ -123,11 +113,8 @@ mul rbx
 
 This multiplies `RAX × RBX`, producing `50` in the `RDX:RAX` result.
 
----
 
 ## 7. IMUL
-
-### Definition
 
 `IMUL` performs signed integer multiplication. Unlike `MUL`, `IMUL` also has forms that allow you to specify the destination explicitly.
 
@@ -145,11 +132,8 @@ imul rax, rbx
 
 If `RAX = 10` and `RBX = 5`, then `RAX = 50`.
 
----
 
 ## 8. DIV
-
-### Definition
 
 `DIV` performs unsigned integer division. The CPU divides the implicit dividend by the specified divisor, placing the quotient and remainder in specific registers.
 
@@ -177,12 +161,7 @@ RAX = 3    ; quotient
 RDX = 2    ; remainder
 ```
 
----
-
 ## 9. IDIV
-
-### Definition
-
 `IDIV` performs signed integer division. Like `DIV`, it produces a quotient and remainder, but it interprets the operands as signed values.
 
 ### Syntax
@@ -204,11 +183,7 @@ This calculates `-20 ÷ 6`.
 
 The quotient is stored in `RAX` and the remainder in `RDX`.
 
----
-
 ## 10. XOR
-
-### Definition
 
 `XOR` performs a bitwise exclusive OR operation between two operands. A bit is `1` when the corresponding bits are different and `0` when they are the same.
 
@@ -226,11 +201,8 @@ xor eax, eax
 
 This sets `EAX` to `0`, because any value XORed with itself produces zero.
 
----
 
 ## 11. INT
-
-### Definition
 
 `INT` generates a software interrupt, transferring execution to an interrupt handler. On older 32-bit Linux systems, `int 0x80` was commonly used to request a system call from the kernel.
 
@@ -245,7 +217,3 @@ INT interrupt_number
 ```asm
 int 0x80
 ```
-
-On 32-bit Linux, this enters the kernel using the system-call information stored in the appropriate registers.
-
-> Note: `int 0x80` is primarily a **32-bit Linux** example. On Linux x64, the normal system-call instruction is `syscall`.
