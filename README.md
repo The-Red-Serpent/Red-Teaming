@@ -1,5 +1,5 @@
-This is my personal set of notes, which I will continue updating as I learn. Im using AI to learn and make notes so its kind of AI slop so to speak but in the current status gotta follow this way to keep up with people. Despite Using AI im trying my best to keep the infomation accurate and beginner friendly. so, that anyone who consumes knowledge from my notes will be able to grasp it quickly.
+These are my personal learning notes, which I’ll continue updating as I learn. I use AI to help me understand and organize concepts, but I do my best to verify the information and keep it accurate and beginner-friendly.
 
-Learning is a lifelong process, and I don’t expect it to have a definite end. I can only keep growing and improving over time. 
+These notes are mainly for my own learning, though I hope they can also help others. If you spot any mistakes or misinformation, please let me know so I can correct them.
 
-If there is any misinformation in these notes, please let me know so I can correct it.
+Learning never really ends. I’m just trying to keep improving.
