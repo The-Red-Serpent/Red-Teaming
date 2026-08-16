@@ -17,6 +17,18 @@ mov rax, rbx
 
 This copies the value in `RBX` into `RAX`.
 
+## Dereference
+If you ever see brackets like [], they are meant to dereference, which deals with pointers. A pointer is a value that points to a particular memory address (it is a memory address). Dereferencing a pointer means to treat a pointer like the value it points to. For instance:
+
+```
+mov rax, [rdx]
+```
+Will move the value pointed to by rdx into the rax register. On the flipside:
+```
+mov [rax], rdx
+```
+
+Will move the value of the rdx register into whatever memory is pointed to by the rax register. The actual value of the rax register does not change.
 
 ## 2. INC
 
@@ -217,6 +229,15 @@ INT interrupt_number
 ```asm
 int 0x80
 ```
+
+
+## 12. LEA
+The lea instruction calculates the address of the second operand, and moves that address in the first. For instance:
+```
+lea rdi, [rbx+0x10]
+```
+This will move the address rbx+0x10 into the rdi register.
+
 
 ## Logical Instructions
 
