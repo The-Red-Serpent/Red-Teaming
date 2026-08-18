@@ -18,6 +18,7 @@
 
 * [EDR Internals — XSEC](https://xsec.fr/en/evasion/edr-internals/?utm_source=chatgpt.com)
 * [EDR Telemetry](https://www.edr-telemetry.com/?utm_source=chatgpt.com)
+* https://www.vaadata.com/en/blog/edr-endpoint-detection-and-response-how-it-works-and-detection-mechanisms/
 
 ## 4. AMSI
 
