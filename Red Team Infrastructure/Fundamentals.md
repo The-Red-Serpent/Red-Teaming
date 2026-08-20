@@ -1,3 +1,8 @@
+## Domain Fronting
+Domain fronting is a traffic-obfuscation technique in which C2 traffic is made to appear as though it is communicating with a legitimate, trusted domain or CDN, while the underlying request is routed through that infrastructure to the red team’s C2 server. CDNs (Content Delivery Networks) are commonly used as intermediaries because they host and serve traffic for many legitimate, high-reputation websites. Consequently, completely blocking CDN infrastructure can be impractical, as doing so may disrupt access to legitimate services.
+
+
+
 ## CDN
 A Content Delivery Network is a geographically distributed network of servers, called edge servers, that sits between users and an application's origin server. Its main purpose is to deliver content faster, improve availability, reduce the load on the origin server, and provide additional security features.
 
@@ -32,6 +37,7 @@ A Content Delivery Network is a geographically distributed network of servers, c
 
 
 ![image](https://www.cloudns.net/blog/wp-content/uploads/2023/04/CDN.png)
+<br></br>
 
 
 ## Redirector
@@ -51,6 +57,9 @@ Uses routing logic via tools like Nginx or Apache to inspect request attributes 
 - Cloudflare Tunnels
 - Amazon Cloudfront
 - Azure Frontdoor
+- caddy
+- azure app services
+- Microsoft dev Tunnels
 - Azure Relay
 
 
@@ -66,4 +75,5 @@ Uses routing logic via tools like Nginx or Apache to inspect request attributes 
 - Custom HTTP clients with TLS stack modification (e.g., uTLS, Golang tls.Config) gimme defintion of Redirector
 
 ![img](https://bluescreenofjeff.com/assets/attack-infrastructure-design/red-team-attack-infrastructure-diagram.png)
+
 
