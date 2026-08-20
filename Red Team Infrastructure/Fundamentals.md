@@ -1,9 +1,6 @@
 ## Red Team Infrastructure Development
 Red Team Infrastructure Development is the design, deployment, and management of secure, covert systems and services used to simulate real-world adversary operations during a security assessment, including command-and-control servers, redirectors, delivery platforms, and related network assets.
 
-
-
-
 ## Domain Fronting
 Domain fronting is a traffic-obfuscation technique in which C2 traffic is made to appear as though it is communicating with a legitimate, trusted domain or CDN, while the underlying request is routed through that infrastructure to the red team’s C2 server. CDNs (Content Delivery Networks) are commonly used as intermediaries because they host and serve traffic for many legitimate, high-reputation websites. Consequently, completely blocking CDN infrastructure can be impractical, as doing so may disrupt access to legitimate services.
 <br></br>
@@ -99,6 +96,7 @@ SMTP relay services act as intermediaries in the email delivery process, providi
 - SparkPost
 - MXRoute
 
+<br></br>
 ![image](SMTP_Relay.png)
 
 
