@@ -99,6 +99,6 @@ SMTP relay services act as intermediaries in the email delivery process, providi
 - SparkPost
 - MXRoute
 
-!image](SMTP Relay.png)
+![image](SMTP_Relay.png)
 
 
