@@ -1,5 +1,13 @@
+## Red Team Infrastructure Development
+Red Team Infrastructure Development is the design, deployment, and management of secure, covert systems and services used to simulate real-world adversary operations during a security assessment, including command-and-control servers, redirectors, delivery platforms, and related network assets.
+
+
+
+
 ## Domain Fronting
 Domain fronting is a traffic-obfuscation technique in which C2 traffic is made to appear as though it is communicating with a legitimate, trusted domain or CDN, while the underlying request is routed through that infrastructure to the red team’s C2 server. CDNs (Content Delivery Networks) are commonly used as intermediaries because they host and serve traffic for many legitimate, high-reputation websites. Consequently, completely blocking CDN infrastructure can be impractical, as doing so may disrupt access to legitimate services.
+<br></br>
+![image](https://blog.compass-security.com/wp-content/uploads/2025/02/image-51-1024x288.png)
 
 
 
@@ -75,5 +83,20 @@ Uses routing logic via tools like Nginx or Apache to inspect request attributes 
 - Custom HTTP clients with TLS stack modification (e.g., uTLS, Golang tls.Config) gimme defintion of Redirector
 
 ![img](https://bluescreenofjeff.com/assets/attack-infrastructure-design/red-team-attack-infrastructure-diagram.png)
+
+
+## SMTP Relay Server
+Simple Mail Transfer Protocol (SMTP) relay is a critical email delivery mechanism that facilitates the transmission of email messages between different domains and servers. When an email is sent to a recipient outside the sender’s domain, SMTP relay ensures the message is routed correctly and delivered to the intended destination.
+
+SMTP relay services act as intermediaries in the email delivery process, providing businesses and organizations with a robust infrastructure to handle outgoing emails. These services are particularly useful for sending bulk emails, such as newsletters or marketing campaigns, without straining the organization’s own email servers. SMTP relay enables businesses to send emails to thousands of recipients without having the business domain blocklisted as spam
+
+- Amazon SES
+- SendGrid (Twilio)
+- Nospamproxy
+- Mailgun
+- Postmark
+- SMTP.com
+- SparkPost
+- MXRoute
 
 
