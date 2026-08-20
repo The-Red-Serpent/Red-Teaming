@@ -42,7 +42,7 @@ A Content Delivery Network is a geographically distributed network of servers, c
 7. CDN delivers it to the user
    * The CDN sends the content back to the user.
    * Depending on the configuration, the CDN may cache the content for subsequent requests.
-
+<br></br>
 
 ![image](https://www.cloudns.net/blog/wp-content/uploads/2023/04/CDN.png)
 <br></br>
