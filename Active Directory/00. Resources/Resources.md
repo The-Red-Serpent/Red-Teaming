@@ -87,10 +87,10 @@ https://github.com/r1cksec/corptrace
 * Netexec Cheatsheet - [Netexec Cheatsheet](https://seriotonctf.github.io/CrackMapExec-and-NetExec-Cheat-Sheet/)
 
 ## Powershell
-* PowerShell Download Cradles – [https://gist.github.com/HarmJ0y/bb48307ffa663256e239](https://gist.github.com/HarmJ0y/bb48307ffa663256e239)
+* https://screetsec.com/blog/offensive-powershell-for-red-teamer-with-defense-evastion-techniques
 * Poweshell for Red teamers -[https://github.com/tobor88/PowerShell-Red-Team](https://github.com/tobor88/PowerShell-Red-Team)
 * Powershell Guide - [https://woshub.com/powershell/](https://woshub.com/powershell/)
-* powershell Tactics - [powershell-exploits-modern-apts-and-their-malicious-scripting-tactics](https://medium.com/@0xHossam/powershell-exploits-modern-apts-and-their-malicious-scripting-tactics-7f98b0e8090c)
+* https://redteamrecipes.com/blog/Evasion/
 
 ## PowerUpSQl
 * PowerUpSQl Cheatsheet - [https://github.com/NetSPI/PowerUpSQL/wiki/PowerUpSQL-Cheat-Sheet](https://github.com/NetSPI/PowerUpSQL/wiki/PowerUpSQL-Cheat-Sheet)
