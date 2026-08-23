@@ -149,3 +149,8 @@ gitleaks detect --source https://github.com/org/repo.git --report-path gitleaks-
 ```
 trufflehog git https://github.com/org/repo.git --json > trufflehog-report.json
 ```
+
+
+
+## Tools
+https://github.com/r1cksec/corptrace
