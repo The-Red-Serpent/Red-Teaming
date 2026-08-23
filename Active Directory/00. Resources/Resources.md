@@ -4,9 +4,6 @@ AD Fundamentals- [https://radioactivedirectory.com/](https://radioactivedirector
 ## AD Mind Maps
 https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2025.03.excalidraw.svg
 
-## Reconnaissance
-https://github.com/r1cksec/corptrace
-
 ## Testing Guide
 - Iredteam - [https://www.ired.team/](https://www.ired.team/)
 - Hacker Recipe - [https://www.thehacker.recipes/](https://www.thehacker.recipes/)
