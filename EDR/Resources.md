@@ -43,3 +43,6 @@
 * [NimDrop — GitHub](https://github.com/Invadel-Cybersecurity/NimDrop?utm_source=chatgpt.com)
 * [DefenseEvasionTechniques — GitHub](https://github.com/Offensive-Panda/DefenseEvasionTechniques?utm_source=chatgpt.com)
 
+## EDR Testing Lab
+https://jadu101.github.io/RedTeam/AV-Evasion/Malware-Testing-Lab
+
