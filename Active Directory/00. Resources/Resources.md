@@ -5,15 +5,9 @@ AD Fundamentals- [https://radioactivedirectory.com/](https://radioactivedirector
 https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2025.03.excalidraw.svg
 
 ## Testing Guide
-- Iredteam - [https://www.ired.team/](https://www.ired.team/)
-- Hacker Recipe - [https://www.thehacker.recipes/](https://www.thehacker.recipes/)
+- https://mayfly277.github.io/categories/goad/
 - AD  Guide – [https://zer1t0.gitlab.io/posts/attacking_ad/](https://zer1t0.gitlab.io/posts/attacking_ad/)
-- AD Guide - [https://hideandsec.sh/books/cheatsheets-82c/page/active-directory](https://hideandsec.sh/books/cheatsheets-82c/page/active-directory)
-- AD guide - [https://github.com/MGamalCYSEC/Active-Directory-Enumeration-and-Attacks](https://github.com/MGamalCYSEC/Active-Directory-Enumeration-and-Attacks)
-- AD Pentest Methodology – [https://r3dbuck3t.notion.site/Windows-Active-Directory-Pentest-Methodology](https://r3dbuck3t.notion.site/Windows-Active-Directory-Pentest-Methodology)
-- Pentest Methodology [https://anshu19981.github.io/Pentestcheatsheet/](https://anshu19981.github.io/Pentestcheatsheet/)
 - Hide Sec AD - [https://hideandsec.sh/books/cheatsheets-82c/page/active-directory](https://hideandsec.sh/books/cheatsheets-82c/page/active-directory)
-- Zero Credentails Mapping - [https://offsecexams.com/cheatsheets/zero-credential-domain-mapping](https://offsecexams.com/cheatsheets/zero-credential-domain-mapping)
 
 ## Active Directory Certificate Services
 - AD CS Attacks – [https://dirkjanm.io/extending-ad-cs-attack-surface-intune-certs/](https://dirkjanm.io/extending-ad-cs-attack-surface-intune-certs/)
@@ -35,13 +29,9 @@ https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2
 
 ## Command & Control (C2)
 * Sliver Intro & Pivoting – [https://redsiege.com/blog/2022/11/introduction-to-sliver/](https://redsiege.com/blog/2022/11/introduction-to-sliver/)
-* Sliver for Red Teams – [https://medium.com/@lord_murak/sliver-c2-for-red-team-operations-153135648218](https://medium.com/@lord_murak/sliver-c2-for-red-team-operations-153135648218)
 * Sliver AV/EDR Evasion – [https://panosoikogr.github.io/2025/06/10/Sliver-Tunneling-and-AV-bypass/](https://panosoikogr.github.io/2025/06/10/Sliver-Tunneling-and-AV-bypass/)
 * Sliver Tutorial - [https://dominicbreuker.com/post/](https://dominicbreuker.com/post/)
 * Sliver Cheatsheet - [https://github.com/Anon-Exploiter/sliver-cheatsheet](https://github.com/Anon-Exploiter/sliver-cheatsheet)
-* Using DInvoke + Sliver – [https://medium.com/@luisgerardomoret_69654/using-dinvoke-and-sliver-to-evade-openedr-and-escalate-privileges-f19a174abbc9](https://medium.com/@luisgerardomoret_69654/using-dinvoke-and-sliver-to-evade-openedr-and-escalate-privileges-f19a174abbc9)
-* Mythic Commands – [https://intrusionz3r0.gitbook.io/intrusionz3r0/c2-command-and-control/mythic](https://intrusionz3r0.gitbook.io/intrusionz3r0/c2-command-and-control/mythic)
-
 
 ## Pivoting
 
@@ -70,8 +60,6 @@ https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2
 * SAAS - [https://lolfsaas.github.io/](https://lolfsaas.github.io/)
 * WADcoms - [https://wadcoms.github.io/](https://wadcoms.github.io/)
 * Worst fit - [https://worst.fit/](https://worst.fit/)
-* 
-
 
 ## Bloodhound
 - [BloodHound Cypher Cheatsheet](https://hausec.com/2019/09/09/bloodhound-cypher-cheatsheet/)
@@ -89,16 +77,8 @@ https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2
 * Powershell Guide - [https://woshub.com/powershell/](https://woshub.com/powershell/)
 * https://redteamrecipes.com/blog/Evasion/
 
-## PowerUpSQl
-* PowerUpSQl Cheatsheet - [https://github.com/NetSPI/PowerUpSQL/wiki/PowerUpSQL-Cheat-Sheet](https://github.com/NetSPI/PowerUpSQL/wiki/PowerUpSQL-Cheat-Sheet)
 
 
-
-## Toolkit
-* Red Team Tools - [https://stack.chaitin.com/tool/detail/199](https://stack.chaitin.com/tool/detail/199)
-* AD Pentesting Tools - [https://github.com/theyoge/AD-Pentesting-Tools](https://github.com/theyoge/AD-Pentesting-Tools)
-* AD Pentesting tools - [https://github.com/infosecn1nja/Red-Teaming-Toolkit](https://github.com/infosecn1nja/Red-Teaming-Toolkit)
-* Inventory - [https://inventory.raw.pm/tools.html](https://inventory.raw.pm/tools.html)
 
 ## Pre Compiled Binaries
 * https://github.com/h4rithd/PrecompiledBinaries
@@ -114,13 +94,9 @@ https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2
 * Ss0rz - [https://0xss0rz.gitbook.io/0xss0rz](https://0xss0rz.gitbook.io/0xss0rz)
 * Myhackingnotes - [https://myhackingnotes.com/](https://myhackingnotes.com/)
 * Hackwiki - [https://hackwiki.com](https://hackwiki.com)
-* Deep Hacking tech - [https://blog.deephacking.tech/](https://blog.deephacking.tech)
 * Game Hacking - [https://gamehacking.academy/](https://gamehacking.academy/)
 * https://p3ta-tricks.com/
 * https://yunolay.com/
 
 ## Red Team Labs
 * https://extremeredlab.0x29a.it/
-* https://ronin66.io/
-* Vulnlab
-
