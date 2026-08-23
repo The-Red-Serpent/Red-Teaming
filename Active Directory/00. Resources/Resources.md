@@ -87,16 +87,10 @@ https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2
 * https://github.com/S3N4T0R-0X0/APTs-Adversary-Simulation
 
 ## Knowledge Bases
-* Swiz Security - [https://hacking.swizsecurity.com/hacking_methodology](https://hacking.swizsecurity.com/hacking_methodology)
 * DarkRavenOps - [https://darkravenops.in/](https://darkravenops.in/)
-* Blue Team Files - [https://blueteamfiles.com/](https://blueteamfiles.com/)
 * DBgman - [https://www.notion.so/Red-Team-Notes-26dabf92dc0f800ebb7ee35a93d2ea58](https://www.notion.so/Red-Team-Notes-26dabf92dc0f800ebb7ee35a93d2ea58)
-* Ss0rz - [https://0xss0rz.gitbook.io/0xss0rz](https://0xss0rz.gitbook.io/0xss0rz)
-* Myhackingnotes - [https://myhackingnotes.com/](https://myhackingnotes.com/)
 * Hackwiki - [https://hackwiki.com](https://hackwiki.com)
 * Game Hacking - [https://gamehacking.academy/](https://gamehacking.academy/)
-* https://p3ta-tricks.com/
-* https://yunolay.com/
 
 ## Red Team Labs
 * https://extremeredlab.0x29a.it/
