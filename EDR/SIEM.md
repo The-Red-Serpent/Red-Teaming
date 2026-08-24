@@ -3,6 +3,7 @@ SIEM (Security Information and Event Management) is a security system that colle
 
 It can collect data from servers, firewalls, routers, network devices, cloud services, applications, endpoints, and other security tools, and then analyze that data to detect suspicious or potentially malicious activity.
 
+</br></br>
 ## Components
 
 ### Forwarder
@@ -33,7 +34,7 @@ The detection engine uses security rules, signatures, analytics, and other detec
 
 ### SIEM Dashboard
 A dashboard provides a visual interface where security analysts can see alerts, events, trends, and security activity
-
+<br></br>
 
 ## Architecture
 ```
