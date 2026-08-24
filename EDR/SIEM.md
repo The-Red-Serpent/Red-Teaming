@@ -37,99 +37,96 @@ A dashboard provides a visual interface where security analysts can see alerts, 
 
 ## Architecture
 ```
-                         SIEM ARCHITECTURE
-                         ================
-
- ┌──────────────────────────────────────────────────────────────────┐
- │                         DATA SOURCES                              │
- │                                                                  │
- │  Endpoints     Servers      Firewalls      Routers/Switches      │
- │  Windows/Linux  Apps        VPN             Cloud Services       │
- │  EDR/AV         AD/Entra    Databases       Other Security Tools │
- └───────┬──────────┬──────────┬──────────┬──────────┬───────────────┘
-         │          │          │          │          │
-         │          │          │          │          │
-         ▼          ▼          ▼          ▼          ▼
- ┌──────────────────────────────────────────────────────────────────┐
- │                     LOG COLLECTION                               │
- │                                                                  │
- │  Forwarders / Agents       Syslog       APIs       Connectors    │
- │                                                                  │
- │  "Collect the logs and send them somewhere."                     │
- └──────────────────────────────┬───────────────────────────────────┘
-                                │
-                                ▼
- ┌──────────────────────────────────────────────────────────────────┐
- │                         AGGREGATOR                               │
- │                                                                  │
- │  Receives logs from MANY sources and consolidates them.          │
- │                                                                  │
- │  Endpoint ───┐                                                   │
- │  Firewall ───┤                                                   │
- │  Server ─────┼──► Aggregator ─────► SIEM                         │
- │  Router ─────┤                                                   │
- │  Cloud ──────┘                                                   │
- │                                                                  │
- │  "Bring all this data together."                                 │
- └──────────────────────────────┬───────────────────────────────────┘
-                                │
-                                ▼
- ┌──────────────────────────────────────────────────────────────────┐
- │                         NORMALIZER                               │
- │                                                                  │
- │  Converts different log formats into a common structure.         │
- │                                                                  │
- │  Firewall:  src=10.1.1.5                                         │
- │  Server:    source_ip=10.1.1.5                                   │
- │                       │                                          │
- │                       ▼                                          │
- │                Source IP = 10.1.1.5                              │
- │                                                                  │
- │  "Make different logs understandable in the same way."           │
- └──────────────────────────────┬───────────────────────────────────┘
-                                │
-                                ▼
- ┌──────────────────────────────────────────────────────────────────┐
- │                     SIEM PLATFORM                                │
- │                                                                  │
- │   ┌──────────────────┐       ┌───────────────────────────────┐   │
- │   │  LOG STORAGE     │       │     CORRELATION ENGINE        │   │
- │   │                  │       │                               │   │
- │   │ Stores events    │       │ Connects related events       │   │
- │   │ for searching    │       │ from different sources        │   │
- │   └────────┬─────────┘       └──────────────┬────────────────┘   │
- │            │                                │                    │
- │            └───────────────┬────────────────┘                    │
- │                            ▼                                     │
- │                  ┌──────────────────────┐                        │
- │                  │ DETECTION / ANALYSIS │                        │
- │                  │                      │                        │
- │                  │ Rules + Analytics    │                        │
- │                  │ Behavioral Analysis  │                        │
- │                  └──────────┬───────────┘                        │
- │                             │                                    │
- │                             ▼                                    │
- │                       🚨 ALERT                                   │
- └─────────────────────────────┬────────────────────────────────────┘
-                               │
-                               ▼
-                  ┌─────────────────────────┐
-                  │    SECURITY ANALYST     │
-                  │                         │
-                  │  Investigates the alert │
-                  │  Searches logs          │
-                  │  Determines what        │
-                  │  happened               │
-                  └────────────┬────────────┘
-                               │
-                               ▼
-                  ┌─────────────────────────┐
-                  │ RESPONSE / REMEDIATION  │
-                  │                         │
-                  │ Block IP                │
-                  │ Disable account         │
-                  │ Isolate endpoint        │
-                  │ Investigate attacker    │
-                  └─────────────────────────┘
+                                   ┌──────────────────────────────────────────────────────────────────┐
+                                   │                         DATA SOURCES                             │
+                                   │                                                                  │
+                                   │  Endpoints     Servers      Firewalls      Routers/Switches      │
+                                   │  Windows/Linux  Apps        VPN             Cloud Services       │
+                                   │  EDR/AV         AD/Entra    Databases       Other Security Tools │
+                                   └───────┬──────────┬──────────┬──────────┬──────────┬──────────────┘
+                                           │          │          │          │          │
+                                           │          │          │          │          │
+                                           ▼          ▼          ▼          ▼          ▼
+                                   ┌──────────────────────────────────────────────────────────────────┐
+                                   │                     LOG COLLECTION                               │
+                                   │                                                                  │
+                                   │  Forwarders / Agents       Syslog       APIs       Connectors    │
+                                   │                                                                  │
+                                   │  "Collect the logs and send them somewhere."                     │
+                                   └──────────────────────────────┬───────────────────────────────────┘
+                                                                  │
+                                                                  ▼
+                                   ┌──────────────────────────────────────────────────────────────────┐
+                                   │                         AGGREGATOR                               │
+                                   │                                                                  │
+                                   │  Receives logs from MANY sources and consolidates them.          │
+                                   │                                                                  │
+                                   │  Endpoint ───┐                                                   │
+                                   │  Firewall ───┤                                                   │
+                                   │  Server ─────┼──► Aggregator ─────► SIEM                         │
+                                   │  Router ─────┤                                                   │
+                                   │  Cloud ──────┘                                                   │
+                                   │                                                                  │
+                                   │  "Bring all this data together."                                 │
+                                   └──────────────────────────────┬───────────────────────────────────┘
+                                                                  │
+                                                                  ▼
+                                   ┌──────────────────────────────────────────────────────────────────┐
+                                   │                         NORMALIZER                               │
+                                   │                                                                  │
+                                   │  Converts different log formats into a common structure.         │
+                                   │                                                                  │
+                                   │  Firewall:  src=10.1.1.5                                         │
+                                   │  Server:    source_ip=10.1.1.5                                   │
+                                   │                       │                                          │
+                                   │                       ▼                                          │
+                                   │                Source IP = 10.1.1.5                              │
+                                   │                                                                  │
+                                   │  "Make different logs understandable in the same way."           │
+                                   └──────────────────────────────┬───────────────────────────────────┘
+                                                                  │
+                                                                  ▼
+                                   ┌──────────────────────────────────────────────────────────────────┐
+                                   │                     SIEM PLATFORM                                │
+                                   │                                                                  │
+                                   │   ┌──────────────────┐       ┌───────────────────────────────┐   │
+                                   │   │  LOG STORAGE     │       │     CORRELATION ENGINE        │   │
+                                   │   │                  │       │                               │   │
+                                   │   │ Stores events    │       │ Connects related events       │   │
+                                   │   │ for searching    │       │ from different sources        │   │
+                                   │   └────────┬─────────┘       └──────────────┬────────────────┘   │
+                                   │            │                                │                    │
+                                   │            └───────────────┬────────────────┘                    │
+                                   │                            ▼                                     │
+                                   │                  ┌──────────────────────┐                        │
+                                   │                  │ DETECTION / ANALYSIS │                        │
+                                   │                  │                      │                        │
+                                   │                  │ Rules + Analytics    │                        │
+                                   │                  │ Behavioral Analysis  │                        │
+                                   │                  └──────────┬───────────┘                        │
+                                   │                             │                                    │
+                                   │                             ▼                                    │
+                                   │                       🚨 ALERT                                   │
+                                   └─────────────────────────────┬────────────────────────────────────┘
+                                                                 │
+                                                                 ▼
+                                                    ┌─────────────────────────┐
+                                                    │    SECURITY ANALYST     │
+                                                    │                         │
+                                                    │  Investigates the alert │
+                                                    │  Searches logs          │
+                                                    │  Determines what        │
+                                                    │  happened               │
+                                                    └────────────┬────────────┘
+                                                                 │
+                                                                 ▼
+                                                    ┌─────────────────────────┐
+                                                    │ RESPONSE / REMEDIATION  │
+                                                    │                         │
+                                                    │ Block IP                │
+                                                    │ Disable account         │
+                                                    │ Isolate endpoint        │
+                                                    │ Investigate attacker    │
+                                                    └─────────────────────────┘
 
 ```
