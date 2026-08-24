@@ -2,7 +2,6 @@
 SIEM (Security Information and Event Management) is a security system that collects logs and security events from different devices and systems, analyzes them, and alerts security teams when it detects suspicious or potentially malicious activity.
 
 It can collect data from servers, firewalls, routers, network devices, cloud services, applications, endpoints, and other security tools, and then analyze that data to detect suspicious or potentially malicious activity.
-
 </br></br>
 ## Components
 
