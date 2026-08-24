@@ -21,9 +21,8 @@ An aggregator collects logs from multiple devices or sources and consolidates th
 A normalizer converts logs from different devices and vendors into a consistent, standardized format so the SIEM can understand and analyze them. When data is being collected from various sources, it is usually in many formats. Such diversity of log formats creates a problem with the analysis and correlation of information. During the normalization process, this diverse log format is transformed into a standardized format, which is much easier for the SIEM to process.
 
 
-### Log Management
-
-This component stores the collected and processed logs so they can be searched and analyzed later.
+### Indexer
+This component stores the collected and processed logs so they can be searched and analyzed later. An indexer is a component that processes incoming log/event data, organizes it into an indexed structure, and stores it so that the SIEM can search and retrieve the data quickly.
 
 ### Correlation Engine
 The correlation engine analyzes multiple events and looks for relationships or patterns that may indicate an attack. This engine processes the normalized data in order to identify patterns and relationships that would otherwise point toward a security threat.
