@@ -22,7 +22,7 @@ A normalizer converts logs from different devices and vendors into a consistent,
 
 
 ### Indexer
-This component stores the collected and processed logs so they can be searched and analyzed later. An indexer is a component that processes incoming log/event data, organizes it into an indexed structure, and stores it so that the SIEM can search and retrieve the data quickly.
+This component stores the collected and processed logs so they can be searched and analyzed later. An indexer is a component that processes incoming log/event data, organizes it into an indexed structure, and stores it so that the SIEM can search and retrieve the data quickly. All collected and processed data must be stored, and that responsibility falls to the storage layer. This includes both short-term storage for immediate querying and long-term storage for compliance or forensic analysis. Hot storage is optimized for speed and used for recent data needed in investigations. 
 
 ### Correlation Engine
 The correlation engine analyzes multiple events and looks for relationships or patterns that may indicate an attack. This engine processes the normalized data in order to identify patterns and relationships that would otherwise point toward a security threat.
