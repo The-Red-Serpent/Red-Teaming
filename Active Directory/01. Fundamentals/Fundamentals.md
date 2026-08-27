@@ -71,7 +71,7 @@ Here:
 - The WAN/VPN/MPLS link provides the physical network connectivity.
 - The Site Link in Active Directory tells the DCs when and how to replicate.
 
-## Sites
+## Subnet
 An Active Directory Subnet is an IP address range that is mapped to an Active Directory Site, enabling clients to identify their site and locate the nearest Domain Controller for authentication and other directory services.
 
 Suppose you have two offices:
