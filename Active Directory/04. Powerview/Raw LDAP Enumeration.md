@@ -61,6 +61,11 @@ ldapsearch (ObjectClass=group) --attributes name,distinguishedName,sAMAccountNam
 ldapsearch (samAccountType=805306369) --attributes samAccountName,dNSHostName,cn,servicePrincipalName
 ```
 
+## Enumerate Machine Account Quota
+```
+ldapsearch "(objectClass=domain)" --dn "DC=contoso,DC=com" --attributes ms-DS-MachineAccountQuota
+```
+
 ## Enumerating OU's
 ```
 ldapsearch (objectCategory=organizationalUnit) --attributes ou,distinguishedName,description,gPLink
