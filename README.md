@@ -1,17 +1,25 @@
-Im Lisitinh out the skills that i want to develop over the years in red team Space. These may take a lot of time But ultimately ill gain them.
+## Red Team Skill Roadmap
 
 
-- Active Directory Pentestinga
-- Azure AD pentesting - OAOTC
-- Wifi Pentesting
-- Mobile Pentesting
-- OSINT
-- Physical Red teaming
+## Core Skills to Develop
+- Active Directory Penetration Testing
+- Azure AD / Entra ID Penetration Testing
+  - OAOTC
+- Wi-Fi / Wireless Penetration Testing
+- Mobile Application Penetration Testing
+- OSINT (Open-Source Intelligence)
+- Physical Red Teaming
   - Lockpicking
-  - RFID
-  - Radio Frequency
+  - RFID / Access Control
+  - Radio Frequency (RF)
 
-Skills for long terms
-- Av/EDR evasion
-- Malware Development - Maldev Academy
-- AI Red teaming - OSAI
+
+## Long-Term / Advanced Skills
+
+These are skills I expect to take significantly more time to develop, but ultimately want to master:
+
+- AV / EDR Evasion
+- Malware Development
+  - MalDev Academy
+- AI Red Teaming
+  - OSAI
