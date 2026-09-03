@@ -1,3 +1,17 @@
-These are my personal learning notes, which I’ll continue updating as I learn. I use AI to help me understand and organize concepts, but I do my best to verify the information and keep it accurate and beginner-friendly.
+Im Lisitinh out the skills that i want to develop over the years in red team Space. These may take a lot of time But ultimately ill gain them.
 
-These notes are mainly for my own learning, though I hope they can also help others. If you spot any mistakes or misinformation, please let me know so I can correct them.
+
+- Active Directory Pentestinga
+- Azure AD pentesting - OAOTC
+- Wifi Pentesting
+- Mobile Pentesting
+- OSINT
+- Physical Red teaming
+  - Lockpicking
+  - RFID
+  - Radio Frequency
+
+Skills for long terms
+- Av/EDR evasion
+- Malware Development - Maldev Academy
+- AI Red teaming - OSAI
