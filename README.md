@@ -1,4 +1,4 @@
-## Red Team Skill Roadmap
+#  Red Team Skill Roadmap
 
 
 ## Core Skills to Develop
@@ -8,10 +8,13 @@
 - Wi-Fi / Wireless Penetration Testing
 - Mobile Application Penetration Testing
 - OSINT (Open-Source Intelligence)
+- Terraform
+- Phishing Operations
 - Physical Red Teaming
   - Lockpicking
   - RFID / Access Control
   - Radio Frequency (RF)
+
 
 
 ## Long-Term / Advanced Skills
@@ -19,6 +22,7 @@
 These are skills I expect to take significantly more time to develop, but ultimately want to master:
 
 - AV / EDR Evasion
+- BOF-Development
 - Malware Development
   - MalDev Academy
 - AI Red Teaming
