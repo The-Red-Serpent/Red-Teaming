@@ -6,7 +6,9 @@
 - Azure AD / Entra ID Penetration Testing
   - OAOTC
 - Wi-Fi / Wireless Penetration Testing
+  - CWPE
 - Mobile Application Penetration Testing
+  - eMAPT
 - OSINT (Open-Source Intelligence)
 - Terraform
 - Phishing Operations
