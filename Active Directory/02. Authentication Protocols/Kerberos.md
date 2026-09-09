@@ -20,7 +20,7 @@ The Authentication Server is responsible for verifying the identity of users dur
 	- The realm name
 	- The desired service, which is in case of `AS-REQ` always `KRBTGT`
 	- A randomly generated value (called a _Nonce_)
-	- if pre-authentication is configured, an encrypted timestamp "PA-ENC-TIMESTAMP" which is  encrypted with the user's long-term key, which is derived from the password.
+	- if pre-authentication is configured, an encrypted timestamp "PA-ENC-TIMESTAMP" which is  encrypted with the user's long-term key, which is derived from the password. NTLM hash of the client’s password and a timestamp encrypted with that NTLM hash.
 
 #### 2. **Verification of User**:
 
