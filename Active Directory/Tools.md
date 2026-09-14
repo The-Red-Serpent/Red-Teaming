@@ -206,3 +206,4 @@
 
 
 - https://github.com/crypt0p3g/adexsnap
+- https://github.com/digitaloffensive/RedTeam-GO/tree/main/domainsvet
