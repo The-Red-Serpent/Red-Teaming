@@ -16,4 +16,3 @@
 - Conditional Access Policies
 - Golden SAML Attack
 - FOCI clients
-- 
