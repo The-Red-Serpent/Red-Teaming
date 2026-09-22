@@ -12,6 +12,8 @@
   - ESC11
 - Generic All, Generic Write
 - PKI
+- NTLM relay Attacks
+- Parent Child Trust Attack (SID injection Attack)
 
 ## Azure
 
