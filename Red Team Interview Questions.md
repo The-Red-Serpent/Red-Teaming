@@ -10,3 +10,9 @@ Active Directory
   - ESC11
 - Generic All, Generic Write
 - 
+
+## Azure
+
+- Conditional Access Policies
+- Golden SAML Attack
+- FOCI clients
