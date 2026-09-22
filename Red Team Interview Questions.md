@@ -9,10 +9,11 @@
   - ESC8
   - ESC11
 - Generic All, Generic Write
-- 
+- PKI
 
 ## Azure
 
 - Conditional Access Policies
 - Golden SAML Attack
 - FOCI clients
+- 
