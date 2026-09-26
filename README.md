@@ -24,6 +24,7 @@
 These are skills I expect to take significantly more time to develop, but ultimately want to master:
 
 - AV / EDR Evasion
+    - CETP
 - BOF-Development
 - Malware Development
   - MalDev Academy
