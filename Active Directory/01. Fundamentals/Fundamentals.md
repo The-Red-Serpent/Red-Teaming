@@ -316,10 +316,10 @@ The SYSVOL folder is a shared directory on each domain controller in an Active D
 <br></br>
 
 ## NTDS.DIT 
-It is a critical database file in Active Directory, stored on every Domain Controller in the `C:\Windows\NTDS\` directory. It contains all the essential information about the Active Directory environment, including:
-- User and group objects (like user accounts and groups)
-- Group membership
-- Password hashes for all users in the domain (this is particularly important to attackers)
+It is a critical database file in Active Directory, stored on every Domain Controller in the `C:\Windows\NTDS\` directory. An attacker who copies it, together with the SYSTEM registry hive needed to decrypt it, walks away with the credentials of the entire organisation, including Domain Admins and KRBTGT. It contains all the essential information about the Active Directory environment, including:
+- Directory Objects: User accounts, groups, group memberships, and computer accounts.
+- Credentials: Password hashes for all domain users, service accounts, and administrative objects.
+- Configuration Data: Group policy settings, domain trusts, and schema definitions
 <br></br>
 
 ## Services
