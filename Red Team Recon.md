@@ -147,6 +147,8 @@ Google dorking is the technique of using advanced Google search operators to dis
 ```
 python3 dorks_hunter.py -d domain.com -o output.txt
 ```
+
+- https://shadohdorks.vercel.app/
 <br></br>
 
 ## Credential Leak
