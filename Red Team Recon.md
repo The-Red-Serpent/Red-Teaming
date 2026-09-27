@@ -1,5 +1,6 @@
 ## ASN Enumeration
-An Autonomous System Number is a unique number assigned to a network that is independently managed and controls its own IP routing policies on the internet, allowing it to exchange routing information with other networks using BGP, also represents a network operated by an organization that owns or manages public IP address ranges and controls how they are routed on the internet. In red team reconnaissance, ASN enumeration is used to identify whether a company owns public IP blocks and runs its own infrastructure, helping map servers and network assets that may be in scope.
+<p align="justify">
+An Autonomous System Number is a unique number assigned to a network that is independently managed and controls its own IP routing policies on the internet, allowing it to exchange routing information with other networks using BGP, also represents a network operated by an organization that owns or manages public IP address ranges and controls how they are routed on the internet. In red team reconnaissance, ASN enumeration is used to identify whether a company owns public IP blocks and runs its own infrastructure, helping map servers and network assets that may be in scope.</p>
 
 ```
 asnmap -d target.com
@@ -15,32 +16,36 @@ whois <IP> | grep -i "origin\|as\|route"
   * https://dnschecker.org/all-dns-records-of-domain.php
   * https://asnlookup.com/
 
-
+<br></br>
 ## Acquisition Enumeration
 Acquisition enumeration is the process of identifying companies, brands, or subsidiaries acquired by a target organization to uncover additional domains, assets, and infrastructure.In red team reconnaissance, it helps expand attack surface and scope by finding newly acquired or loosely integrated systems that may be less secured.
 
 * https://tracxn.com/
 * https://www.crunchbase.com/
+<br></br>
 
 ## Tech Stack Enumeration
 Identifying a company's technology stack involves examining publicly available information, such as career pages and job postings, to determine the technologies and security products the organization uses. This can include identity providers such as Okta or Microsoft Entra ID, endpoint detection and response (EDR) platforms, security information and event management (SIEM) solutions, cloud platforms, email security services, and other enterprise technologies.
-
+<br></br>
 
 ## Email Service Provider Enumeration
 
 ```
 dig MX example.com
-
-dig TXT example.com
-
-dig CNAME example.com
-
-dig TXT example.com +short | grep spf
-
-dig TXT _dmarc.example.com +short
-
 ```
-
+```
+dig TXT example.com
+```
+```
+dig CNAME example.com
+```
+```
+dig TXT example.com +short | grep spf
+```
+```
+dig TXT _dmarc.example.com +short
+```
+<br></br>
 
 ## Email Enumeration
 Email enumeration is the process of identifying valid email addresses or users within an organization’s domain  by testing how email systems respond to login attempts, SMTP checks, or error messages. In red team reconnaissance, it helps map real users and email formats, which can be used to assess exposure to phishing, password spraying, or account takeover risks.
@@ -56,6 +61,7 @@ Username Forging:
 
 Email Validation:
 * https://github.com/gremwell/o365enum
+<br></br>
 
 ## Subdomain Enumeration
 Subdomain enumeration is the process of discovering subdomains associated with a target domain. In red team reconnaissance, it helps identify additional applications, environments (dev/test/stage), and exposed services that may be less secured and expand the attack surface.
@@ -162,7 +168,7 @@ trufflehog git https://github.com/org/repo.git --json > trufflehog-report.json
 
 
 ## Cloud Asset  Enumeration
-Cloud enumeration is the process of identifying a company’s cloud usage and assets**—such as cloud providers, storage, compute services, and exposed endpoints.In red team reconnaissance, it helps discover cloud infrastructure (AWS, Azure, GCP), misconfigurations, and publicly accessible services that may expand the attack surface.
+Cloud enumeration is the process of identifying a company’s cloud usage and assets such as cloud providers, storage, compute services, and exposed endpoints. In red team reconnaissance, it helps discover cloud infrastructure (AWS, Azure, GCP), misconfigurations, and publicly accessible services that may expand the attack surface.
 
 * https://kaeferjaeger.gay/
 
