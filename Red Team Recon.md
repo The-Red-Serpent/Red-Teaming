@@ -3,11 +3,17 @@ An Autonomous System Number is a unique number assigned to a network that is ind
 
 ```
 asnmap -d target.com
+
+dig target.com +short
+
+whois <IP> | grep -i "origin\|as\|route"
+
 ```
 
   * https://bgp.he.net/
   * https://dnschecker.org/all-dns-records-of-domain.php
   * https://asnlookup.com/
+
 
 ## Acquisition Enumeration
 Acquisition enumeration is the process of identifying companies, brands, or subsidiaries acquired by a target organization to uncover additional domains, assets, and infrastructure.In red team reconnaissance, it helps expand attack surface and scope by finding newly acquired or loosely integrated systems that may be less secured.
@@ -15,34 +21,24 @@ Acquisition enumeration is the process of identifying companies, brands, or subs
 * https://tracxn.com/
 * https://www.crunchbase.com/
 
-## Cloud Enumeration
-Cloud enumeration is the process of identifying a company’s cloud usage and assets**—such as cloud providers, storage, compute services, and exposed endpoints.In red team reconnaissance, it helps discover cloud infrastructure (AWS, Azure, GCP), misconfigurations, and publicly accessible services that may expand the attack surface.
+## Tech Stack Enumeration
+Identifying a company's technology stack involves examining publicly available information, such as career pages and job postings, to determine the technologies and security products the organization uses. This can include identity providers such as Okta or Microsoft Entra ID, endpoint detection and response (EDR) platforms, security information and event management (SIEM) solutions, cloud platforms, email security services, and other enterprise technologies.
 
-* https://kaeferjaeger.gay/
+
+## Email Service Provider Enumeration
 
 ```
-python3 cloud_enum.py -k examplecompany.com
+dig MX example.com
+
+dig TXT example.com
+
+dig CNAME example.com
+
+dig TXT example.com +short | grep spf
+
+dig TXT _dmarc.example.com +short
+
 ```
-
-## Azure Enumeration
-* https://github.com/yuyudhn/AzSubEnum
-```
-azsubenum.py -b retailcorp --thread 10 --permutation permutations.txt --verbose
-```
-AWS
-
-S3
-CloudFront
-ELB
-API Gateway
-Lambda
-Route53
-
-GCP
-
-Buckets
-App Engine
-Cloud Run
 
 
 ## Email Enumeration
@@ -59,9 +55,6 @@ Username Forging:
 
 Email Validation:
 * https://github.com/gremwell/o365enum
-```
-dig MX example.com
-```
 
 ## Subdomain Enumeration
 Subdomain enumeration is the process of discovering subdomains associated with a target domain. In red team reconnaissance, it helps identify additional applications, environments (dev/test/stage), and exposed services that may be less secured and expand the attack surface.
@@ -94,6 +87,23 @@ python3 crtsh_enum.py -d example.com
   -o subs_subenum.txt
 ```
 
+## CDN and WAF Detection
+```
+httpx -l domains.txt -status-code -title -tech-detect -server
+```
+
+```
+wafw00f -i domains.txt
+```
+
+## Origin IP Enumeration
+* https://github.com/rix4uni/originiphunter
+```
+cat domains.txt | originiphunter
+```
+
+
+
 ## Favicon Enumeration
 * https://github.com/devanshbatham/FavFreak
 ```
@@ -106,11 +116,6 @@ python3 favUp.py --web target-behind-cloudflare.com -sc
 cat subs.txt | python3 favfreak.py
 ```
 
-## Origin IP Enumeration
-* https://github.com/rix4uni/originiphunter
-```
-cat domains.txt | originiphunter
-```
 
 
 
@@ -125,6 +130,9 @@ dnsx -l domains.txt -a -aaaa -cname -resp -retry 3 -threads 200 -o resolved.txt
 naabu -l ips.txt -p - -o ports_fullscan.txt
 ```
 
+```
+httpx -l domains.txt -ip -status-code -title
+```
 
 ## Google Dorking
 Google dorking is the technique of using advanced Google search operators to discover publicly exposed information related to a target, such as sensitive files, credentials, admin panels, or misconfigured pages. In red team reconnaissance, it helps uncover unintended data exposure and weak security hygiene without directly interacting with the target systems.
@@ -135,6 +143,7 @@ python3 dorks_hunter.py -d domain.com -o output.txt
 
 ## Credential Leak
 Credential leak reconnaissance is the process of identifying exposed usernames, passwords, API keys, or tokens that have been leaked through data breaches, public repositories, paste sites, or misconfigurations. In red team reconnaissance, it helps assess account takeover risk and identity exposure caused by leaked credentials.
+
 * https://leak.sx/
 * https://link-base.ms/index.php
 * https://pwnforums.st/
@@ -150,6 +159,35 @@ gitleaks detect --source https://github.com/org/repo.git --report-path gitleaks-
 trufflehog git https://github.com/org/repo.git --json > trufflehog-report.json
 ```
 
+
+## Cloud Asset  Enumeration
+Cloud enumeration is the process of identifying a company’s cloud usage and assets**—such as cloud providers, storage, compute services, and exposed endpoints.In red team reconnaissance, it helps discover cloud infrastructure (AWS, Azure, GCP), misconfigurations, and publicly accessible services that may expand the attack surface.
+
+* https://kaeferjaeger.gay/
+
+```
+python3 cloud_enum.py -k examplecompany.com
+```
+
+## Azure Enumeration
+* https://github.com/yuyudhn/AzSubEnum
+```
+azsubenum.py -b retailcorp --thread 10 --permutation permutations.txt --verbose
+```
+AWS
+
+S3
+CloudFront
+ELB
+API Gateway
+Lambda
+Route53
+
+GCP
+
+Buckets
+App Engine
+Cloud Run
 
 
 ## Tools
