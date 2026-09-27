@@ -93,6 +93,7 @@ python3 crtsh_enum.py -d example.com
   -u wayback,crt,abuseipdb,Findomain,Subfinder,Amass,Assetfinder \
   -o subs_subenum.txt
 ```
+<br></br>
 
 ## CDN and WAF Detection
 ```
@@ -102,14 +103,14 @@ httpx -l domains.txt -status-code -title -tech-detect -server
 ```
 wafw00f -i domains.txt
 ```
+<br></br>
 
 ## Origin IP Enumeration
 * https://github.com/rix4uni/originiphunter
 ```
 cat domains.txt | originiphunter
 ```
-
-
+<br></br>
 
 ## Favicon Enumeration
 * https://github.com/devanshbatham/FavFreak
@@ -122,9 +123,7 @@ python3 favUp.py --web target-behind-cloudflare.com -sc
 # Anything with a different hash = different infrastructure = worth investigating
 cat subs.txt | python3 favfreak.py
 ```
-
-
-
+<br></br>
 
 ## IP Address Enumeration
 IP address reconnaissance is the process of identifying, mapping, and analyzing public IP addresses associated with a target organization. In red team reconnaissance, it helps determine hosting location, cloud or on-prem infrastructure, exposed services, and network boundaries, expanding the visible attack surface.
@@ -140,6 +139,7 @@ naabu -l ips.txt -p - -o ports_fullscan.txt
 ```
 httpx -l domains.txt -ip -status-code -title
 ```
+<br></br>
 
 ## Google Dorking
 Google dorking is the technique of using advanced Google search operators to discover publicly exposed information related to a target, such as sensitive files, credentials, admin panels, or misconfigured pages. In red team reconnaissance, it helps uncover unintended data exposure and weak security hygiene without directly interacting with the target systems.
@@ -147,6 +147,7 @@ Google dorking is the technique of using advanced Google search operators to dis
 ```
 python3 dorks_hunter.py -d domain.com -o output.txt
 ```
+<br></br>
 
 ## Credential Leak
 Credential leak reconnaissance is the process of identifying exposed usernames, passwords, API keys, or tokens that have been leaked through data breaches, public repositories, paste sites, or misconfigurations. In red team reconnaissance, it helps assess account takeover risk and identity exposure caused by leaked credentials.
@@ -154,6 +155,7 @@ Credential leak reconnaissance is the process of identifying exposed usernames, 
 * https://leak.sx/
 * https://link-base.ms/index.php
 * https://pwnforums.st/
+<br></br>
 
 ## Github Enumeration
 GitHub enumeration is the process of searching GitHub for code, repositories, commits, and issues related to a target organization to identify exposed credentials, internal domains, API keys, secrets, or infrastructure details. In red team reconnaissance, it helps uncover accidental leaks and developer mistakes that may expose sensitive information publicly.
@@ -165,7 +167,7 @@ gitleaks detect --source https://github.com/org/repo.git --report-path gitleaks-
 ```
 trufflehog git https://github.com/org/repo.git --json > trufflehog-report.json
 ```
-
+<br></br>
 
 ## Cloud Asset  Enumeration
 Cloud enumeration is the process of identifying a company’s cloud usage and assets such as cloud providers, storage, compute services, and exposed endpoints. In red team reconnaissance, it helps discover cloud infrastructure (AWS, Azure, GCP), misconfigurations, and publicly accessible services that may expand the attack surface.
@@ -183,19 +185,19 @@ azsubenum.py -b retailcorp --thread 10 --permutation permutations.txt --verbose
 ```
 AWS
 
-S3
-CloudFront
-ELB
-API Gateway
-Lambda
-Route53
+- S3
+- CloudFront
+- ELB
+- API Gateway
+- Lambda
+- Route53
 
 GCP
 
-Buckets
-App Engine
-Cloud Run
+- Buckets
+- App Engine
+- Cloud Run
 
 
-## Tools
+## Automation Tools
 https://github.com/r1cksec/corptrace
