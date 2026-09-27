@@ -3,11 +3,12 @@ An Autonomous System Number is a unique number assigned to a network that is ind
 
 ```
 asnmap -d target.com
-
+```
+```
 dig target.com +short
-
+```
+```
 whois <IP> | grep -i "origin\|as\|route"
-
 ```
 
   * https://bgp.he.net/
