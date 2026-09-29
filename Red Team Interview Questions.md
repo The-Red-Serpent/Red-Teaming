@@ -25,4 +25,8 @@
 ## Malware Development
 - Difference Between CreateRemoteThread and QueueUserAPC
 - Difference between Process and Thread
-- 
+
+
+## Wi-Fi
+- Karma Attack
+- Rogue Access Point Setup
