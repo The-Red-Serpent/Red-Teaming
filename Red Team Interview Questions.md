@@ -1,3 +1,7 @@
+## Core Red team
+- Difference between loader and Dropper
+
+
 ## Active Directory
 
 - Kerbroasting
