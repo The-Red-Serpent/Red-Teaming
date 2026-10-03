@@ -1,5 +1,7 @@
 ## Core Red team
 - Difference between loader and Dropper
+- AMSI Bypass Techniques
+- ETW bypass techniques
 
 
 ## Active Directory
@@ -27,8 +29,15 @@
 - Entra ID Connect
 
 ## Malware Development
-- Difference Between CreateRemoteThread and QueueUserAPC
+- Difference between CreateRemoteThread and QueueUserAPC
 - Difference between Process and Thread
+- Position Independent Code
+- API Proxying
+- Static Analysis Evasion
+  - Api Hashing
+  - Obduscation
+  - Encoding
+  - Encryption
 
 
 ## Wi-Fi
