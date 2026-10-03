@@ -1,6 +1,6 @@
 ## Core Red team
 - Difference between loader and Dropper
-- AMSI Bypass Techniques
+- AMSI bypass Techniques
 - ETW bypass techniques
 
 
@@ -35,7 +35,7 @@
 - API Proxying
 - Static Analysis Evasion
   - Api Hashing
-  - Obduscation
+  - Obfuscation
   - Encoding
   - Encryption
 
