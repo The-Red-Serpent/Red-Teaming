@@ -2,6 +2,8 @@
 - Difference between loader and Dropper
 - AMSI bypass Techniques
 - ETW bypass techniques
+- How can u collect data for bloodhound without using any collectors
+- how will you find out that a specific company is using Outlook, gsuite or any diff provider
 
 
 ## Active Directory
