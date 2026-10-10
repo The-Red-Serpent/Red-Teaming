@@ -6,6 +6,7 @@
 - How can u collect data for bloodhound without using any collectors
 - Difference between stack and heap
 - What is Callstack and stackframe
+- What are the different methods of persistence
 
 ## OSINT
 - Explain me How will u perform an OSINT on a specific company-
@@ -36,6 +37,9 @@
 - Entra ID Connect
 
 ## Malware Development
+- Difference between direct and indirect syscalls
+- What is Hells's gate
+- what is Halo's gate
 - Difference between CreateRemoteThread and QueueUserAPC
 - Difference between Process and Thread
 - Position Independent Code
