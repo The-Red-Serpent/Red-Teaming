@@ -1,5 +1,6 @@
 
 ## Core Red team
+
 - Difference between loader and Dropper
 - AMSI bypass Techniques
 - ETW bypass techniques
@@ -9,6 +10,7 @@
 - What are the different methods of persistence
 
 ## OSINT
+
 - Explain me How will u perform an OSINT on a specific company-
 - How will you find out that a specific company is using Outlook, gsuite or any diff provider and what are the tools used
  
@@ -37,6 +39,8 @@
 - Entra ID Connect
 
 ## Malware Development
+
+- What is API Hooking
 - Difference between direct and indirect syscalls
 - What is Hells's gate
 - what is Halo's gate
