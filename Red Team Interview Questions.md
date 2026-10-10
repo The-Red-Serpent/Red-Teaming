@@ -1,11 +1,16 @@
+
 ## Core Red team
 - Difference between loader and Dropper
 - AMSI bypass Techniques
 - ETW bypass techniques
 - How can u collect data for bloodhound without using any collectors
-- how will you find out that a specific company is using Outlook, gsuite or any diff provider
+- Difference between stack and heap
+- What is Callstack and stackframe
 
-
+## OSINT
+- Explain me How will u perform an OSINT on a specific company-
+- How will you find out that a specific company is using Outlook, gsuite or any diff provider and what are the tools used
+ 
 ## Active Directory
 
 - Kerbroasting
@@ -44,4 +49,4 @@
 
 ## Wi-Fi
 - Karma Attack
-- Rogue Access Point Setup
+- How would you setup a Rogue Access Point
