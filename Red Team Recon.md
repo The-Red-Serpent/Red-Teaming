@@ -61,6 +61,7 @@ Username Forging:
 
 Email Validation:
 * https://github.com/gremwell/o365enum
+* https://github.com/dievus/geeMailUserFinder
 <br></br>
 
 ## Subdomain Enumeration
