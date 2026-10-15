@@ -20,7 +20,6 @@ whois <IP> | grep -i "origin\|as\|route"
 ## Acquisition Enumeration
 Acquisition enumeration is the process of identifying companies, brands, or subsidiaries acquired by a target organization to uncover additional domains, assets, and infrastructure.In red team reconnaissance, it helps expand attack surface and scope by finding newly acquired or loosely integrated systems that may be less secured.
 
-* https://tracxn.com/
 * https://www.crunchbase.com/
 <br></br>
 
@@ -62,6 +61,7 @@ Username Forging:
 Email Validation:
 * https://github.com/gremwell/o365enum
 * https://github.com/dievus/geeMailUserFinder
+
 <br></br>
 
 ## Subdomain Enumeration
@@ -84,16 +84,7 @@ gotator -sub subs.txt -perm perm-final.txt -depth 2 -numbers 5 -mindup
 github-subdomains -d target.com -t $GITHUB_TOKEN -o subs_github.txt
 ```
 
-* https://github.com/gotr00t0day/crt.sh
-```
-python3 crtsh_enum.py -d example.com
-```
-* https://github.com/bing0o/SubEnum/
-```
-./subenum.sh -d target.com \
-  -u wayback,crt,abuseipdb,Findomain,Subfinder,Amass,Assetfinder \
-  -o subs_subenum.txt
-```
+
 <br></br>
 
 ## CDN and WAF Detection
@@ -241,7 +232,7 @@ Cloud enumeration is the process of identifying a company’s cloud usage and as
 python3 cloud_enum.py -k examplecompany.com
 ```
 
-## Azure Enumeration
+### Azure Enumeration
 * https://github.com/yuyudhn/AzSubEnum
 ```
 azsubenum.py -b retailcorp --thread 10 --permutation permutations.txt --verbose
