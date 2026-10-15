@@ -1,3 +1,21 @@
+## Network
+- Difference Between IDS and IPS
+- Different between Anycast, broadcast, unicast, multicast
+- Different types of network Topologies
+- DNS based attacks
+- NAT and types of NAT
+- Difference between AV, EDR, XDR, SIEM
+
+## Wi-Fi
+- Karma Attack
+- How would you setup a Rogue Access Point
+- Evil twin attack
+
+## OSINT
+
+- How would you perform OSINT on a specific company, and what tools would you use?
+- How would you identify whether a company uses Microsoft 365, Google Workspace, or another email provider? Which tools and DNS records would you check?
+
 
 ## Core Red team
 
@@ -9,11 +27,22 @@
 - What is Callstack and stackframe
 - What are the different methods of persistence
 
-## OSINT
+## Red Team Infrastructure
+- Redirectors and its types
+- Jitter
+- Domain fronting
+- CDN
+- Reverse proxy
 
-- Explain me How will u perform an OSINT on a specific company-
-- How will you find out that a specific company is using Outlook, gsuite or any diff provider and what are the tools used
- 
+
+
+
+## Phishing
+ - What are  SPF, DKIM, DMARC records
+ - Explain about tools u use for phishing campaigns
+ - SMTP relay servers
+
+
 ## Active Directory
 
 - Kerbroasting
@@ -33,10 +62,15 @@
 
 ## Azure
 
+- Azure Unauthenticated External Recon
+- Primary Refresh token
 - Conditional Access Policies
 - Golden SAML Attack
 - FOCI
 - Entra ID Connect
+- Managed Identities
+- Illicit consent grant
+- App registrations and its abuse
 
 ## Malware Development
 
@@ -46,16 +80,11 @@
 - what is Halo's gate
 - Difference between CreateRemoteThread and QueueUserAPC
 - Difference between Process and Thread
-- Position Independent Code
+- what is Position Independent Code
+- What is sleep mask
 - API Proxying
 - Static Analysis Evasion
   - Api Hashing
   - Obfuscation
   - Encoding
   - Encryption
-
-
-## Wi-Fi
-- Karma Attack
-- How would you setup a Rogue Access Point
-- Evil twin attack
