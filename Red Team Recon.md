@@ -104,6 +104,11 @@ httpx -l domains.txt -cdn  -status-code -title -tech-detect -server
 ```
 wafw00f -i domains.txt
 ```
+
+```
+dnsx -l subdomains.txt  -cdn  -retry 3 -threads 100
+```
+
 <br></br>
 
 ## Origin IP Enumeration
