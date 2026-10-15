@@ -180,6 +180,61 @@ trufflehog git https://github.com/org/repo.git --json > trufflehog-report.json
 ## Cloud Asset  Enumeration
 Cloud enumeration is the process of identifying a company’s cloud usage and assets such as cloud providers, storage, compute services, and exposed endpoints. In red team reconnaissance, it helps discover cloud infrastructure (AWS, Azure, GCP), misconfigurations, and publicly accessible services that may expand the attack surface.
 
+###  1. AWS
+
+| Resource type      | Service             | Endpoint format / example                                     |
+| ------------------ | ------------------- | ------------------------------------------------------------- |
+| Virtual machine    | EC2                 | `<public-ip>:<port>`                                          |
+| VM public DNS      | EC2                 | `<hostname>.compute-1.amazonaws.com`                          |
+| Object storage     | S3                  | `https://<bucket>.s3.<region>.amazonaws.com`                  |
+| Object storage     | S3 regional         | `https://s3.<region>.amazonaws.com/<bucket>`                  |
+| Load balancer      | ALB / NLB           | `<name>-<id>.<region>.elb.amazonaws.com`                      |
+| Managed database   | RDS                 | `<db-id>.<id>.<region>.rds.amazonaws.com:<port>`              |
+| Search service     | OpenSearch          | `https://<domain>.<region>.es.amazonaws.com`                  |
+| API                | API Gateway         | `https://<api-id>.execute-api.<region>.amazonaws.com/<stage>` |
+| Serverless         | Lambda Function URL | `https://<url-id>.lambda-url.<region>.on.aws/`                |
+| Container registry | ECR                 | `<account-id>.dkr.ecr.<region>.amazonaws.com`                 |
+| Kubernetes         | EKS                 | `https://<cluster-endpoint>`                                  |
+
+
+
+###  2. Azure
+
+| Resource type      | Service                  | Endpoint format / example                             |
+| ------------------ | ------------------------ | ----------------------------------------------------- |
+| Virtual machine    | Azure VM                 | `<public-ip>:<port>`                                  |
+| VM public DNS      | Azure VM                 | `<label>.<region>.cloudapp.azure.com`                 |
+| Object storage     | Blob Storage             | `https://<account>.blob.core.windows.net/<container>` |
+| File storage       | Azure Files              | `https://<account>.file.core.windows.net/<share>`     |
+| Web application    | App Service              | `https://<app>.azurewebsites.net`                     |
+| Serverless         | Azure Functions          | `https://<app>.azurewebsites.net/api/<function>`      |
+| Load balancer      | Application Gateway      | `https://<custom-domain>` or `https://<public-ip>`    |
+| Managed database   | Azure SQL                | `<server>.database.windows.net:1433`                  |
+| Managed cache      | Azure Managed Redis      | `<name>.<region>.redis.azure.net:<port>`              |
+| Container registry | Azure Container Registry | `https://<registry>.azurecr.io`                       |
+| Kubernetes         | AKS                      | `https://<cluster-api-endpoint>`                      |
+| Secrets management | Key Vault                | `https://<vault>.vault.azure.net`                     |
+
+
+
+### 3. GCP
+
+| Resource type      | Service                      | Endpoint format / example                                  |
+| ------------------ | ---------------------------- | ---------------------------------------------------------- |
+| Virtual machine    | Compute Engine               | `<external-ip>:<port>`                                     |
+| Object storage     | Cloud Storage                | `https://storage.googleapis.com/<bucket>`                  |
+| Object storage     | Cloud Storage virtual-hosted | `https://<bucket>.storage.googleapis.com`                  |
+| Load balancer      | Cloud Load Balancing         | `https://<custom-domain>` or `https://<external-ip>`       |
+| Managed database   | Cloud SQL                    | `<public-ip>:3306` or `<public-ip>:5432`                   |
+| Serverless         | Cloud Run                    | `https://<service>-<hash>.<region>.run.app`                |
+| Serverless         | Cloud Functions              | `https://<region>-<project>.cloudfunctions.net/<function>` |
+| Container registry | Artifact Registry            | `<region>-docker.pkg.dev/<project>/<repository>`           |
+| Kubernetes         | GKE                          | `https://<cluster-endpoint>`                               |
+| Secrets management | Secret Manager API           | `https://secretmanager.googleapis.com`                     |
+| Managed cache      | Memorystore                  | `<private-ip>:<port>` (typically private)                  |
+
+
+
 * https://kaeferjaeger.gay/
 
 ```
@@ -191,20 +246,6 @@ python3 cloud_enum.py -k examplecompany.com
 ```
 azsubenum.py -b retailcorp --thread 10 --permutation permutations.txt --verbose
 ```
-AWS
-
-- S3
-- CloudFront
-- ELB
-- API Gateway
-- Lambda
-- Route53
-
-GCP
-
-- Buckets
-- App Engine
-- Cloud Run
 
 
 ## Automation Tools
