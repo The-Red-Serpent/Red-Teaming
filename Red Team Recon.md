@@ -98,7 +98,7 @@ python3 crtsh_enum.py -d example.com
 
 ## CDN and WAF Detection
 ```
-httpx -l domains.txt -status-code -title -tech-detect -server
+httpx -l domains.txt -cdn  -status-code -title -tech-detect -server
 ```
 
 ```
