@@ -237,7 +237,44 @@ python3 cloud_enum.py -k examplecompany.com
 ```
 azsubenum.py -b retailcorp --thread 10 --permutation permutations.txt --verbose
 ```
+```
+site:blob.core.windows.net "COMPANY"
+```
+```
+site:file.core.windows.net "COMPANY"
+```
+```
+site:azurewebsites.net "example.com"
+```
+```
+site:cloudapp.azure.com "COMPANY"
+```
 
+```
+site:database.windows.net "example.com"
+```
+```
+site:vault.azure.net "COMPANY"
+```
+```
+site:azurecr.io "example.com"`
+```
+
+### AWS Enumeration
+```
+site:*.s3.amazonaws.com "COMPANY"
+```
+
+### GCP
+```
+site:blob.core.windows.net "COMPANY"
+site:file.core.windows.net "COMPANY"
+site:azurewebsites.net "example.com"
+site:cloudapp.azure.com "COMPANY"
+site:database.windows.net "example.com"
+site:vault.azure.net "COMPANY"
+site:azurecr.io "example.com"
+```
 
 ## Automation Tools
 https://github.com/r1cksec/corptrace
