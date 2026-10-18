@@ -47,3 +47,13 @@
 - `AROUND(n)` — Attempts to find two words or phrases that appear close to each other, within a specified number of words. Support may vary.
 
 - `@` — Can be used in searches involving social media handles or mentions, although its usefulness depends on the search.
+
+- `()` (Parentheses) — Groups search terms together to clarify how alternatives and other search conditions should be combined.
+
+- `location` — Can be used for location-based news filtering in supported Google News contexts.
+
+
+
+## Reference
+- https://dorkbuilder.com/operators.html
+- 
