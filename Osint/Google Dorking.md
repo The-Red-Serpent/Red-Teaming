@@ -18,6 +18,16 @@
 
 - `cache:` — Was used to access Google's saved copy of a webpage. Google has discontinued its public cache feature, so this operator is no longer useful for that purpose.
 
+- `related:` — Finds websites that Google considers similar or related to a specific website.
+
+- `info:` — Was used to retrieve information about a website, such as its indexed pages and related details. This operator is no longer reliably supported by Google.
+
+- `phonebook:` — Was used to search for phone numbers and contact information for people or businesses. Google discontinued this operator, so it no longer works as a standard search operator.
+
+- `inanchor:` — Searches for webpages whose incoming links contain specific words in their clickable text, known as anchor text. Support may vary.
+
+- `keyword:` — This is not a recognized standard Google Search operator for excluding words. To exclude a specific word from search results, use the minus (`-`) operator instead.
+
 ## Modifiers, Symbols, and Logic
 
 - `" "` (Quotation marks) — Searches for an exact phrase, keeping the words in the same order.
