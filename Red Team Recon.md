@@ -14,7 +14,7 @@ whois <IP> | grep -i "origin\|as\|route"
 
   * https://bgp.he.net/
   * https://dnschecker.org/all-dns-records-of-domain.php
-  * https://asnlookup.com/
+  * https://hackertarget.com/as-ip-lookup/
 
 <br></br>
 ## Acquisition Enumeration
@@ -49,9 +49,23 @@ dig TXT _dmarc.example.com +short
 ## Email Enumeration
 Email enumeration is the process of identifying valid email addresses or users within an organization’s domain  by testing how email systems respond to login attempts, SMTP checks, or error messages. In red team reconnaissance, it helps map real users and email formats, which can be used to assess exposure to phishing, password spraying, or account takeover risks.
 
+Employee Names
+```
+site:linkedin.com/in/ ("Company Name") ("Experience" OR "Employment")
+```
+```
+site:linkedin.com/in/ "Company Name" ("current" OR "present")
+```
+```
+site:linkedin.com/in "Company Name" ("engineer" OR "developer" OR "analyst")
+```
+```
+site:linkedin.com/in intitle:"at Company Name" ("IT" OR "security" OR "helpdesk" OR "engineer") -"former" -"ex-"
+```
+
+
 Email Scraping:
  * https://snov.io/
- * https://hunter.io/
  * https://www.apollo.io/
  * https://www.signalhire.com/home
 
