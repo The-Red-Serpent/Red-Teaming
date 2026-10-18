@@ -86,6 +86,9 @@ https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2
 ## APT emulation
 * https://github.com/S3N4T0R-0X0/APTs-Adversary-Simulation
 
+## C2 Development
+* https://maxdcb.github.io/BuildingAModernC2/
+
 ## Knowledge Bases
 * DarkRavenOps - [https://darkravenops.in/](https://darkravenops.in/)
 * DBgman - [https://www.notion.so/Red-Team-Notes-26dabf92dc0f800ebb7ee35a93d2ea58](https://www.notion.so/Red-Team-Notes-26dabf92dc0f800ebb7ee35a93d2ea58)
