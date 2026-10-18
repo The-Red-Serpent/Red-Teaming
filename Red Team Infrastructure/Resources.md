@@ -24,6 +24,8 @@
 
 * C2 Redirector Setup
   [https://xbz0n.sh/blog/c2-redirectors](https://xbz0n.sh/blog/c2-redirectors)
+* Adaptrix c2 setup
+  [https://stillbigjosh.com/writeup.html?file=writeups/adaptix-setup.md](https://stillbigjosh.com/writeup.html?file=writeups/adaptix-setup.md)
 
 ### Phishing Infrastructure
 
