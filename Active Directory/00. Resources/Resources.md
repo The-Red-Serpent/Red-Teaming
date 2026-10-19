@@ -88,6 +88,7 @@ https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2
 
 ## C2 Development
 * https://maxdcb.github.io/BuildingAModernC2/
+* https://jm33.me/linux-c2-from-scratch-0x00-processes-syscalls-libc-and-tls.html
 
 ## BOF's
 * https://chryzsh.github.io/awesome-bof/site/
