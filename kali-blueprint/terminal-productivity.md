@@ -8,3 +8,4 @@
 - tmux
 - jq
 - Rofi — application launcher and search bar
+- Neovim
