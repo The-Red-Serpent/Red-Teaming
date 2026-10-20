@@ -9,3 +9,5 @@
 - smbclient-ng
 - snaffler
 - Sharehound
+- Kerbrute
+- 
