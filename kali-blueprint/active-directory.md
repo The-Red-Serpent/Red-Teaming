@@ -4,3 +4,8 @@
 - LDAPx
 - ldeep
 - certipy-ad
+- Netexec
+- Smbmap
+- smbclient-ng
+- snaffler
+- Sharehound
