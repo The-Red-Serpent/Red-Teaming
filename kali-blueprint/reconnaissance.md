@@ -1,0 +1,16 @@
+- Subfinder
+- Sublister
+- AlterX
+- httpx-toolkit
+- GoWitness
+- Katana
+- GAU (GetAllURLs)
+- Waybackurls
+- Gotator
+- Paramspider
+- DNSx
+- MapCIDR
+- Naabu
+- RustScan
+- tlsx
+- Nuclei  
