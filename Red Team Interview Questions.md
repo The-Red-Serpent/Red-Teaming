@@ -59,6 +59,8 @@
 - PKI
 - NTLM relay Attacks
 - Parent Child Trust Attack (SID injection Attack)
+- U2u authentication
+- SPN less RBCD
 
 ## Azure
 
