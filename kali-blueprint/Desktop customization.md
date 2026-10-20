@@ -1,0 +1,3 @@
+- Nitrogen — wallpaper management
+- Rofi — launcher/search bar
+- Kate — text editor
