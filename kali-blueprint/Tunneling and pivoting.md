@@ -1,2 +1,4 @@
 -  Ligolo-ng / Ligolo-mp
 -  sshuttle
+-  Penelope
+-  pwncat
