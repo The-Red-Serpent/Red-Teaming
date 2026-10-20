@@ -1,0 +1,4 @@
+- Docker
+- Docker Compose
+- npm
+- Cargo
