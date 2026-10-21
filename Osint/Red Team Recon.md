@@ -174,11 +174,14 @@ Credential leak reconnaissance is the process of identifying exposed usernames, 
 GitHub enumeration is the process of searching GitHub for code, repositories, commits, and issues related to a target organization to identify exposed credentials, internal domains, API keys, secrets, or infrastructure details. In red team reconnaissance, it helps uncover accidental leaks and developer mistakes that may expose sensitive information publicly.
 
 ```
+("example.com" OR "example company") (site:github.com OR site:gitlab.com OR site:bitbucket.org OR site:pastebin.com)
+```
+```
 gitleaks detect --source https://github.com/org/repo.git --report-path gitleaks-remote.json --report-format json
 ```
 
 ```
-trufflehog git https://github.com/org/repo.git --json > trufflehog-report.json
+trufflehog git  --repo=https://github.com/org/repo.git --json > trufflehog-report.json
 ```
 <br></br>
 
