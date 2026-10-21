@@ -19,5 +19,8 @@
 - subjs
 - jsleaks
 - jsecrets
+- jsluice
 - waymore
 - theHarvester
+- Trufflehog
+- githound
