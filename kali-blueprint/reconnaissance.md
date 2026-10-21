@@ -5,6 +5,7 @@
 - GoWitness
 - Katana
 - GAU (GetAllURLs)
+- gauplus
 - Waybackurls
 - Gotator
 - Paramspider
@@ -13,4 +14,10 @@
 - Naabu
 - RustScan
 - tlsx
-- Nuclei  
+- Nuclei
+- subenum
+- subjs
+- jsleaks
+- jsecrets
+- waymore
+- theHarvester
