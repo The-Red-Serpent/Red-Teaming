@@ -80,6 +80,7 @@ python3 oh365userfinder.py -r testemails.txt -w valid.txt
 ```
 
 CredSpy is used to check whether a user account exists in Azure Active Directory (Azure AD), now known as Microsoft Entra ID. CredSpy also displays supported authentication methods for existing accounts.
+* https://github.com/RedByte1337/CredSpy
 ```
 credspy emails.txt --save-existing existing.txt --save-ngc ngc.txt --save-password-preferred password-preferred.txt
 ```
