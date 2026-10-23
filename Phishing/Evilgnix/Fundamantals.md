@@ -1,4 +1,50 @@
-### Session Token
+## Evilginx
+
+Evilginx is an open-source Adversary-in-the-Middle (AiTM) phishing framework that operates as a reverse proxy between a victim's browser and a legitimate website. It relays HTTP/HTTPS requests and responses between the two parties and is designed to intercept authentication traffic, potentially capturing login credentials and authenticated session cookies.
+
+
+A reverse proxy is an intermediary server that sits in front of one or more backend web servers, intercepting incoming requests from clients (such as web browsers) and forwarding them to the appropriate origin server
+
+
+## How Evilginx Works
+
+Evilginx leverages the concept of a reverse proxy, but configured specifically to capture a user’s credentials and session cookies once they are tricked into accessing the Evilginx URL instead of the legitimate target server.
+
+### 1. Phishing Lure
+
+The attacker tricks a victim into clicking a phishing link sent through email, SMS, or another communication channel. The link directs the victim to a domain configured to route traffic to the server running Evilginx.
+
+<p align="center">   
+	<img src="https://www.hypr.com/hs-fs/hubfs/Blog/Evilginx-blog-Diagram5x.jpg?width=600\&height=139\&name=Evilginx-blog-Diagram5x.jpg" alt="Phishing email lure diagram" width="600"/> 
+</p>
+
+### 2. Fraudulent Website and Reverse Proxy
+
+The victim visits the phishing domain, which presents the target website through Evilginx's reverse-proxy functionality. The domain may have a valid TLS certificate, indicated by HTTPS and a padlock icon. However, HTTPS alone does not guarantee that a website is legitimate. Evilginx relays requests to the genuine website and returns its responses to the victim's browser, allowing the real authentication flow to appear to work normally.
+
+<p align="center">  
+	<img src="https://www.hypr.com/hs-fs/hubfs/Blog/Evilginx-blog-Diagram6x.jpg" alt="Evilginx reverse proxy communication diagram" width="800"/> 
+</p>
+
+### 3. Credential and Authentication Interception
+
+When the victim submits their username and password, the authentication request passes through the proxy to the legitimate service. Depending on the authentication flow, Evilginx may also relay MFA interactions, including one-time passwords (OTPs). This can expose authentication information to the attacker.
+
+### 4. Session Hijacking
+
+If authentication succeeds, the legitimate service may issue a session cookie or other authentication token. If Evilginx captures a reusable session credential, the attacker may be able to replay it to access the victim's account without repeating the original authentication process.
+
+<p align="center">   
+	<img src="https://www.hypr.com/hs-fs/hubfs/Blog/Evilginx-blog-Diagram1x.jpg" alt="Evilginx credential and session interception diagram" width="800"/>
+</p>
+
+### 5. Account Takeover
+
+If the attacker gains access to the authenticated account, they may attempt further unauthorized actions, such as accessing sensitive information, changing account settings, or modifying recovery details. Whether they can change the password or lock out the victim depends on the account's permissions and security controls.
+
+
+
+## Session Token
 A session token is a unique identifier that is generated and assigned to a user's session when they log into an application or a website, enabling the system to recognize and manage the state of interaction with that user.
 
 Workflow:
