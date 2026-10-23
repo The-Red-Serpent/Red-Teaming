@@ -22,11 +22,9 @@ Acquisition enumeration is the process of identifying companies, brands, or subs
 
 * https://www.crunchbase.com/
 <br></br>
-
 ## Tech Stack Enumeration
 Identifying a company's technology stack involves examining publicly available information, such as career pages and job postings, to determine the technologies and security products the organization uses. This can include identity providers such as Okta or Microsoft Entra ID, endpoint detection and response (EDR) platforms, security information and event management (SIEM) solutions, cloud platforms, email security services, and other enterprise technologies.
 <br></br>
-
 ## Email Service Provider Enumeration
 
 ```
@@ -45,7 +43,6 @@ dig TXT example.com +short | grep spf
 dig TXT _dmarc.example.com +short
 ```
 <br></br>
-
 ## Employees  Enumeration
 ```
 site:linkedin.com/in/ ("Company Name") ("Experience" OR "Employment")
@@ -59,7 +56,7 @@ site:linkedin.com/in "Company Name" ("engineer" OR "developer" OR "analyst")
 ```
 site:linkedin.com/in intitle:"at Company Name" ("IT" OR "security" OR "helpdesk" OR "engineer") -"former" -"ex-"
 ```
-
+<br></br>
 ## Email Enumeration
 Email enumeration is the process of identifying valid email addresses or users within an organization’s domain  by testing how email systems respond to login attempts, SMTP checks, or error messages. In red team reconnaissance, it helps map real users and email formats, which can be used to assess exposure to phishing, password spraying, or account takeover risks.
 
@@ -70,9 +67,8 @@ Email Scraping:
 
 Username Forging:
 * https://github.com/urbanadventurer/username-anarchy
-
+<br></br>
 ## Email Validation:
-
 Oh365UserFinder can be used to check whether a username has a valid Office 365 (O365) account. It helps verify whether the user account exists and has access to Office 365 services such as Outlook, Word, Excel, Exchange Online, PowerPoint, Teams, OneDrive, and SharePoint, depending on the assigned license and permissions.
 * [https://github.com/gremwell/o365enum](https://github.com/dievus/Oh365UserFinder)
 ```
@@ -109,10 +105,7 @@ gotator -sub subs.txt -perm perm-final.txt -depth 2 -numbers 5 -mindup
 ```
 github-subdomains -d target.com -t $GITHUB_TOKEN -o subs_github.txt
 ```
-
-
 <br></br>
-
 ## CDN and WAF Detection
 ```
 httpx -l domains.txt -cdn  -status-code -title -tech-detect -server
@@ -125,16 +118,13 @@ wafw00f -i domains.txt
 ```
 dnsx -l subdomains.txt  -cdn  -retry 3 -threads 100
 ```
-
 <br></br>
-
 ## Origin IP Enumeration
 * https://github.com/rix4uni/originiphunter
 ```
 cat domains.txt | originiphunter
 ```
 <br></br>
-
 ## Favicon Enumeration
 * https://github.com/devanshbatham/FavFreak
 ```
@@ -147,7 +137,6 @@ python3 favUp.py --web target-behind-cloudflare.com -sc
 cat subs.txt | python3 favfreak.py
 ```
 <br></br>
-
 ## IP Address Enumeration
 IP address reconnaissance is the process of identifying, mapping, and analyzing public IP addresses associated with a target organization. In red team reconnaissance, it helps determine hosting location, cloud or on-prem infrastructure, exposed services, and network boundaries, expanding the visible attack surface.
 
@@ -163,7 +152,6 @@ naabu -l ips.txt -p - -o ports_fullscan.txt
 httpx -l domains.txt -ip -status-code -title
 ```
 <br></br>
-
 ## Google Dorking
 Google dorking is the technique of using advanced Google search operators to discover publicly exposed information related to a target, such as sensitive files, credentials, admin panels, or misconfigured pages. In red team reconnaissance, it helps uncover unintended data exposure and weak security hygiene without directly interacting with the target systems.
 * https://dorkengine.github.io/
@@ -173,7 +161,6 @@ python3 dorks_hunter.py -d domain.com -o output.txt
 
 - https://shadohdorks.vercel.app/
 <br></br>
-
 ## Credential Leak
 Credential leak reconnaissance is the process of identifying exposed usernames, passwords, API keys, or tokens that have been leaked through data breaches, public repositories, paste sites, or misconfigurations. In red team reconnaissance, it helps assess account takeover risk and identity exposure caused by leaked credentials.
 
@@ -181,7 +168,6 @@ Credential leak reconnaissance is the process of identifying exposed usernames, 
 * https://link-base.ms/index.php
 * https://pwnforums.st/
 <br></br>
-
 ## Github Enumeration
 GitHub enumeration is the process of searching GitHub for code, repositories, commits, and issues related to a target organization to identify exposed credentials, internal domains, API keys, secrets, or infrastructure details. In red team reconnaissance, it helps uncover accidental leaks and developer mistakes that may expose sensitive information publicly.
 
@@ -196,7 +182,6 @@ gitleaks detect --source https://github.com/org/repo.git --report-path gitleaks-
 trufflehog git  --repo=https://github.com/org/repo.git --json > trufflehog-report.json
 ```
 <br></br>
-
 ## Cloud Asset  Enumeration
 Cloud enumeration is the process of identifying a company’s cloud usage and assets such as cloud providers, storage, compute services, and exposed endpoints. In red team reconnaissance, it helps discover cloud infrastructure (AWS, Azure, GCP), misconfigurations, and publicly accessible services that may expand the attack surface.
 
