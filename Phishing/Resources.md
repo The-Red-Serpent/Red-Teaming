@@ -1,12 +1,14 @@
 ## Infra Setup
 
-https://payatu.com/blog/phishing-infrastructure-setup/
+
 
 https://xbz0n.sh/blog/social-engineering-redteam
 
 https://argv.cloud/blog/2025/red-team-infrastructure-setup/
 
 https://github.com/An0nUD4Y/Evilginx-Phishing-Infra-Setup
+
+https://janbakker.tech/how-to-set-up-evilginx-to-phish-office-365-credentials/
 
 https://m3rcer.github.io/redteaming/spamfilterbypass/
 
@@ -20,9 +22,19 @@ https://0xdbgman.github.io/categories/phishing/
 
 https://www.knowbe4.com/hubfs/Social-Engineering-Red-Flags.pdf
 
-## Evilgnix
 https://research.aurainfosec.io/pentest/hook-line-and-phishlet/
-* Evilgnix TTP Removal - [https://github.com/aalex954/evilginx2-TTPs](https://github.com/aalex954/evilginx2-TTPs)
+
+## Evilgnix TTP Removal 
+- [https://github.com/aalex954/evilginx2-TTPs](https://github.com/aalex954/evilginx2-TTPs)
+
+
+
+## Phishlets
+https://github.com/An0nUD4Y/Evilginx-Phishlets
+
+
+## Evilgnix Documentation
+- https://help.evilginx.com/community
 
 
 ## Evasion
