@@ -113,6 +113,7 @@ github-subdomains -d target.com -t $GITHUB_TOKEN -o subs_github.txt
 ```
 
 - https://crt.name/
+- https://dnshistory.org/
 <br></br>
 
 
