@@ -102,9 +102,20 @@ gotator -sub subs.txt -perm perm-final.txt -depth 2 -numbers 5 -mindup
 ```
 
 ```
+sublist3r -d example.com -o output.txt
+```
+```
+theHarvester -d example.com -b all
+```
+
+```
 github-subdomains -d target.com -t $GITHUB_TOKEN -o subs_github.txt
 ```
+
+- https://crt.name/
 <br></br>
+
+
 ## CDN and WAF Detection
 ```
 httpx -l domains.txt -cdn  -status-code -title -tech-detect -server
@@ -275,18 +286,17 @@ site:azurecr.io "example.com"`
 
 ### AWS Enumeration
 ```
+s3scanner -bucket-file names.txt -enumerate
+```
+
+```
 site:*.s3.amazonaws.com "COMPANY"
 ```
 
 ### GCP
+- https://github.com/RhinoSecurityLabs/GCPBucketBrute
 ```
-site:blob.core.windows.net "COMPANY"
-site:file.core.windows.net "COMPANY"
-site:azurewebsites.net "example.com"
-site:cloudapp.azure.com "COMPANY"
-site:database.windows.net "example.com"
-site:vault.azure.net "COMPANY"
-site:azurecr.io "example.com"
+python3 gcpbucketbrute.py -k test -u
 ```
 
 ## Automation Tools
