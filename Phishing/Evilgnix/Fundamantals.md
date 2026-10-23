@@ -43,59 +43,8 @@ If authentication succeeds, the legitimate service may issue a session cookie or
 If the attacker gains access to the authenticated account, they may attempt further unauthorized actions, such as accessing sensitive information, changing account settings, or modifying recovery details. Whether they can change the password or lock out the victim depends on the account's permissions and security controls.
 
 
-
-## Session Token
-A session token is a unique identifier that is generated and assigned to a user's session when they log into an application or a website, enabling the system to recognize and manage the state of interaction with that user.
-
-Workflow:
-- You log in → server verifies your username/password
-- Server creates a session → generates a session token
-- Browser stores session token in a cookie
-- Each time you load a new page, your browser sends the session token
-- Server checks the token → allows access
-- Session ends when you log out or it times out
-
-### Reverse Proxy Phishing
-**Reverse proxy phishing** is a phishing attack where the attacker uses a fake website acting as a _middleman_ (a reverse proxy) between the victim and the real website. This lets the attacker capture the victim’s **real session cookies/tokens** _after_ they log in, allowing the attacker to take over the account without needing the password or 2FA.
-
-### Phishlets
-A phishlet is typically a **YAML configuration** that describes:
-
-1. **Target domain and subdomains**
-2. **Which pages to proxy** (e.g., `/login`, `/auth`)
-3. **Which resources should be rewritten** (JS, CSS, images)
-4. **Session/cookie rules** — which tokens should be captured
-5. **Authentication flow logic**
-6. **Custom behaviors**, e.g., blocking non-browser bots
-
-
-### How to Create Phishlets
-- Configure the base domain. this will be our base phishing Domain
-	```
-	config domain <domain_name> 
-	```
-- Configure IP address of the evilgnix server
-	```
-	config ipv4 <ip>
-	```
-- Configure the phishing hostname. The hostname should end with the phishing domain
-	```
-	phishlets hostname <phishlet> <domainending with the phishing_domain>### Session Token
-A session token is a unique identifier that is generated and assigned to a user's session when they log into an application or a website, enabling the system to recognize and manage the state of interaction with that user.
-
-Workflow:
-- You log in → server verifies your username/password
-- Server creates a session → generates a session token
-- Browser stores session token in a cookie
-- Each time you load a new page, your browser sends the session token
-- Server checks the token → allows access
-- Session ends when you log out or it times out
-
-### Reverse Proxy Phishing
-**Reverse proxy phishing** is a phishing attack where the attacker uses a fake website acting as a _middleman_ (a reverse proxy) between the victim and the real website. This lets the attacker capture the victim’s **real session cookies/tokens** _after_ they log in, allowing the attacker to take over the account without needing the password or 2FA.
-
-### Phishlets
-A phishlet is typically a **YAML configuration** that describes:
+## Phishlets
+A phishlet is essentially a YAML configuration file  that tells a reverse-proxy phishing tool  such as Evilginx  how to impersonate a specific website. It defines how the proxy should interact with the legitimate site, what content to load, what data to capture, and how to forward traffic back and forth between the victim and the real service without raising suspicion.
 
 1. **Target domain and subdomains**
 2. **Which pages to proxy** (e.g., `/login`, `/auth`)
@@ -457,3 +406,14 @@ Location validation on websites is the process of verifying a user's or a given 
 
 #### Secret Token Validation
 **Secret token validation** is a mechanism used to manage and verify user sessions safely. When someone clicks a link (called a “lure”) in a controlled lab environment, Evilginx generates a unique secret token for that session. This token is included in the URL, cookies, or hidden form fields. Whenever the user interacts with the page or submits credentials, Evilginx checks whether the token matches the one it generated for that session. If the token is valid, the session continues and data is processed (for testing purposes); if it is missing or invalid, the request is rejected. This system prevents unauthorized or accidental access to the server, ensures sessions are properly tracked, and protects against session hijacking or replay attacks. Essentially, the token acts like a “guest pass” that only allows legitimate sessions to proceed, and it is meant to be used **ethically in labs or penetration tests on systems you control**.
+
+## Session Token
+A session token is a unique identifier that is generated and assigned to a user's session when they log into an application or a website, enabling the system to recognize and manage the state of interaction with that user.
+
+Workflow:
+- You log in → server verifies your username/password
+- Server creates a session → generates a session token
+- Browser stores session token in a cookie
+- Each time you load a new page, your browser sends the session token
+- Server checks the token → allows access
+- Session ends when you log out or it times out
