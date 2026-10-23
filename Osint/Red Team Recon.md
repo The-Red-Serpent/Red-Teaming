@@ -46,10 +46,7 @@ dig TXT _dmarc.example.com +short
 ```
 <br></br>
 
-## Email Enumeration
-Email enumeration is the process of identifying valid email addresses or users within an organization’s domain  by testing how email systems respond to login attempts, SMTP checks, or error messages. In red team reconnaissance, it helps map real users and email formats, which can be used to assess exposure to phishing, password spraying, or account takeover risks.
-
-Employee Names
+## Employees  Enumeration
 ```
 site:linkedin.com/in/ ("Company Name") ("Experience" OR "Employment")
 ```
@@ -63,6 +60,8 @@ site:linkedin.com/in "Company Name" ("engineer" OR "developer" OR "analyst")
 site:linkedin.com/in intitle:"at Company Name" ("IT" OR "security" OR "helpdesk" OR "engineer") -"former" -"ex-"
 ```
 
+## Email Enumeration
+Email enumeration is the process of identifying valid email addresses or users within an organization’s domain  by testing how email systems respond to login attempts, SMTP checks, or error messages. In red team reconnaissance, it helps map real users and email formats, which can be used to assess exposure to phishing, password spraying, or account takeover risks.
 
 Email Scraping:
  * https://snov.io/
@@ -72,14 +71,26 @@ Email Scraping:
 Username Forging:
 * https://github.com/urbanadventurer/username-anarchy
 
-Email Validation:
-* https://github.com/gremwell/o365enum
+## Email Validation:
+
+Oh365UserFinder can be used to check whether a username has a valid Office 365 (O365) account. It helps verify whether the user account exists and has access to Office 365 services such as Outlook, Word, Excel, Exchange Online, PowerPoint, Teams, OneDrive, and SharePoint, depending on the assigned license and permissions.
+* [https://github.com/gremwell/o365enum](https://github.com/dievus/Oh365UserFinder)
+```
+python3 oh365userfinder.py -r testemails.txt -w valid.txt
+```
+
+CredSpy is used to check whether a user account exists in Azure Active Directory (Azure AD), now known as Microsoft Entra ID. CredSpy also displays supported authentication methods for existing accounts.
+```
+credspy emails.txt --save-existing existing.txt --save-ngc ngc.txt --save-password-preferred password-preferred.txt
+```
+
 * https://github.com/dievus/geeMailUserFinder
 
 <br></br>
 
 ## Subdomain Enumeration
 Subdomain enumeration is the process of discovering subdomains associated with a target domain. In red team reconnaissance, it helps identify additional applications, environments (dev/test/stage), and exposed services that may be less secured and expand the attack surface.
+
 ```
 subfinder -d example.com -all -silent
 ```
