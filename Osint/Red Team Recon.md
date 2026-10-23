@@ -15,7 +15,6 @@ whois <IP> | grep -i "origin\|as\|route"
   * https://bgp.he.net/
   * https://dnschecker.org/all-dns-records-of-domain.php
   * https://hackertarget.com/as-ip-lookup/
-
 <br></br>
 ## Acquisition Enumeration
 Acquisition enumeration is the process of identifying companies, brands, or subsidiaries acquired by a target organization to uncover additional domains, assets, and infrastructure.In red team reconnaissance, it helps expand attack surface and scope by finding newly acquired or loosely integrated systems that may be less secured.
