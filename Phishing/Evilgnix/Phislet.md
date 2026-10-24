@@ -1,4 +1,4 @@
-## Phishlets
+## Phishlet
 A phishlet is essentially a YAML configuration file  that tells a reverse-proxy phishing tool  such as Evilginx  how to impersonate a specific website. It defines how the proxy should interact with the legitimate site, what content to load, what data to capture, and how to forward traffic back and forth between the victim and the real service without raising suspicion.
 
 1. **Target domain and subdomains**
@@ -190,33 +190,4 @@ When a user visits our phishing Domain with a broken link or with missing parame
 Location validation on websites is the process of verifying a user's or a given address's actual location to ensure it is accurate and matches what is provided. Location validation is primarily a part of its **Botguard** feature, which is designed to identify and block automated scanners and security products from accessing the phishing website
 
 ### Secret Token Validation
-**Secret token validation** is a mechanism used to manage and verify user sessions safely. When someone clicks a link (called a “lure”) in a controlled lab environment, Evilginx generates a unique secret token for that session. This token is included in the URL, cookies, or hidden form fields. Whenever the user interacts with the page or submits credentials, Evilginx checks whether the token matches the one it generated for that session. If the token is valid, the session continues and data is processed (for testing purposes); if it is missing or invalid, the request is rejected. This system prevents unauthorized or accidental access to the server, ensures sessions are properly tracked, and protects against session hijacking or replay attacks. Essentially, the token acts like a “guest pass” that only allows legitimate sessions to proceed, and it is meant to be used **ethically in labs or penetration tests on systems you control**.
-	```
-- Enable the phishlet
-	```
-	phishlets enable <phishlet>
-	```
-- create Lure aka  Phishing link
-	```
-	lure create <phishlet>
-	```
-- generate the url link
-	```
-	lure get-url <lure-id>
-	```
-- create a lure with custom path
-	```
-	lure edit <id_of_lure> path <convinving_path> 
-	```
-- create a lure with custom hostname but it will end with our base phishing domain
-	```
-	lure edit <id_of_lure> hostname <convinving_hostname> 
-	```
-- configure an redirect url which will redirect the user after  all the session token are stolen to keep the rhythm
-	```
-	lure edit <id_0f_lure> redirect_url <custom_url_to_redirect>
-	```
-- custom parameters are dynamic variables embedded in the phishing URL to personalize the lure for each victim. They can be used in pre-phish HTML templates or injected JavaScript to customize content like the target's name or email, making the attack more convincing
-	```
-	lures get-url <id> param1=value1 param2="value2 with spaces"
-	```
+**Secret token validation** is a mechanism used to manage and verify user sessions safely. When someone clicks a link (called a “lure”) in a controlled lab environment, Evilginx generates a unique secret token for that session. This token is included in the URL, cookies, or hidden form fields. Whenever the user interacts with the page or submits credentials, Evilginx checks whether the token matches the one it generated for that session. If the token is valid, the session continues and data is processed (for testing purposes); if it is missing or invalid, the request is rejected. This system prevents unauthorized or accidental access to the server, ensures sessions are properly tracked, and protects against session hijacking or replay attacks. Essentially, the token acts like a “guest pass” that only allows legitimate sessions to proceed, and it is meant to be used ethically in labs or penetration tests on systems you control.
