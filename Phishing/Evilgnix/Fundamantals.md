@@ -407,6 +407,33 @@ Location validation on websites is the process of verifying a user's or a given 
 #### Secret Token Validation
 **Secret token validation** is a mechanism used to manage and verify user sessions safely. When someone clicks a link (called a “lure”) in a controlled lab environment, Evilginx generates a unique secret token for that session. This token is included in the URL, cookies, or hidden form fields. Whenever the user interacts with the page or submits credentials, Evilginx checks whether the token matches the one it generated for that session. If the token is valid, the session continues and data is processed (for testing purposes); if it is missing or invalid, the request is rejected. This system prevents unauthorized or accidental access to the server, ensures sessions are properly tracked, and protects against session hijacking or replay attacks. Essentially, the token acts like a “guest pass” that only allows legitimate sessions to proceed, and it is meant to be used **ethically in labs or penetration tests on systems you control**.
 
+## Cookie
+A cookie (also known as a web cookie or browser cookie) is a small piece of data a server sends to a user's web browser. The browser may store cookies, create new cookies, modify existing ones, and send them back to the same server with later requests. Cookies are stored locally on your device inside your web browser's data directory or profile folders, typically as structured SQLite database files rather than plain text files. JavaScript cannot directly read it, Browser sends it automatically when cookie rules match
+
+Where Cookie Files Are Stored on Disk
+• Google Chrome (Windows): C:\Users\<Your_Username>\AppData\Local\Google\Chrome\User Data\Default\Network
+• Google Chrome (macOS): ~/Library/Application Support/Google/Chrome/Default/Cookies
+• Mozilla Firefox (Windows): C:\Users\<Your_Username>\AppData\Roaming\Mozilla\Firefox\Profiles\<profile_folder>\cookies.sqlite
+• Microsoft Edge (Windows): C:\Users\<Your_Username>\AppData\Local\Microsoft\Edge\User Data\Default\Network
+• Android Browsers: Inside the application data directory of each individual browser under the device's internal storage
+
+
+## Local Storage
+Local Storage is a built-in web feature that allows websites to store data directly inside your web browser. It saves information as key-value pairs (like theme: "dark") as strings, and this data persists indefinitely—meaning it stays saved even if you refresh the page, close the tab, or shut down your device entirely.
+Unlike cookies, Local Storage provides a much larger capacity (typically around 5MB to 10MB per website) and its data is never automatically transmitted to the web server with your internet requests, making it faster and more private from network interception
+
+Local Storage is saved locally on your physical device's hard drive. The specific path depends on the web browser and operating system you are using. Web browsers usually save this data inside dedicated SQLite database files within your user profile directory:
+
+Google Chrome	Windows	%LocalAppData%\Google\Chrome\User Data\Default\Local Storage\
+Google Chrome	macOS	~/Library/Application Support/Google/Chrome/Default/Local Storage/
+Mozilla Firefox	Windows	%AppData%\Mozilla\Firefox\Profiles\[profile_id]\webappsstore.sqlite
+Mozilla Firefox	macOS	~/Library/Application Support/Firefox/Profiles/[profile_id]/webappsstore.sqlite
+
+
+Cookies and localStorage both store data locally on your computer, usually within your browser's profile directory. However, they differ in how the browser manages and uses that data. Cookies can be sent automatically to the server with matching HTTP requests, whereas localStorage data is not automatically transmitted and must be explicitly read and sent by JavaScript. To identify which method a website uses, open the browser's Developer Tools by pressing `F12`. In the Application tab in Chrome or Edge, navigate to Storage → Cookies to view cookies and their attributes, or Storage → Local Storage to view key-value pairs stored by the website. To understand how the website uses authentication, open the Network tab, reload the page, log in, and inspect requests to protected endpoints. Look for the `Cookie` request header, the `Set-Cookie` response header, or an `Authorization: Bearer` header containing a token. You can also inspect localStorage using `Object.keys(localStorage)` in the browser console. Remember that a website can use both cookies and localStorage simultaneously, so checking storage alone does not prove which method is responsible for authentication.
+
+
+
 ## Session Token
 A session token is a unique identifier that is generated and assigned to a user's session when they log into an application or a website, enabling the system to recognize and manage the state of interaction with that user.
 
