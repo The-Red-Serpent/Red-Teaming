@@ -52,86 +52,42 @@ A phishlet is essentially a YAML configuration file  that tells a reverse-proxy 
 	```
 
 ## Proxy_hosts
-proxy_hosts tells the framework which upstream website hosts are involved and how those hosts are represented in the proxy configuration. It is different from the lures or URLs used to direct a visitor to a phishing page.
-2. Understand each parameter
+proxy_hosts tells the framework which upstream website hosts are involved and how those hosts are represented in the proxy configuration. It is different from the lures or URLs used to direct a visitor to a phishing page
 
-Here are the six main fields you'll see in the proxy_hosts section of the classic Evilginx 2.3 phishlet format. 
-GitHub
-+1
-1. phish_sub
+1. phish_sub : The proxy-side subdomain label. This identifies the subdomain label used on the proxy's configured domain. It is not the legitimate website's original hostname.
 
-The proxy-side subdomain label
+2. orig_sub : The original website's subdomain. This identifies the subdomain of the legitimate host being referenced. For example, in login.example.com, the subdomain is login. If the hostname is just example.com, there is no subdomain label before the base domain.
 
-This identifies the subdomain label used on the proxy's configured domain. It is not the legitimate website's original hostname.
+3. domain : The legitimate host's base domain. This identifies the domain portion used with orig_sub to describe the upstream hostname. For example, the parts login and example.com combine to form login.example.com. The exact hostname depends on the real service and its configuration.
 
-Think of it as: Where is this host represented on the proxy side?
-2. orig_sub
-
-The original website's subdomain
-
-This identifies the subdomain of the legitimate host being referenced.
-
-For example, in login.example.com, the subdomain is login. If the hostname is just example.com, there is no subdomain label before the base domain.
-3. domain
-
-The legitimate host's base domain
-
-This identifies the domain portion used with orig_sub to describe the upstream hostname.
-
-For example, the parts login and example.com combine to form login.example.com. The exact hostname depends on the real service and its configuration.
-4. session
-
-A Boolean: true or false
-
-In the classic format, this flag marks a host whose responses are relevant to session handling.
-
-    true: marks the host for session-related processing.
-
-    false: does not mark that host for session handling.
-
+4. session: A Boolean: true or false.
+Setting this to true for specific host will make sure that this host's responses will contain session cookies, credentials and other data worth capturing. If it is a host serving static content (e.g. javascript), you can safely set this parameter to false.
 Important: It does not mean the website requires a login, and it is not the same as enabling a browser session. A static-content host and a host serving the main application may have different roles.
-5. is_landing
 
-A Boolean: true or false
-
+5. is_landing: A Boolean: true or false
 This marks which configured proxy host is used as the landing host when generating a lure URL.
 
     true: identifies the landing host.
 
     false: the host is not designated as the landing host.
 
-This is a routing/configuration distinction, not a setting that makes a page safe or authentic. The classic documentation describes one host as the landing host. 
-GitHub
-+1
-6. auto_filter
-
-A Boolean: true or false
-
-This controls automatic generation of content-replacement rules for the host.
+6. auto_filter: A Boolean: true or false
+This controls automatic generation of content-replacement rules for the host.whether Evilginx automatically attempts to create the required sub_filters for a host. A website may include references to other hostnames in its HTML or JavaScript. When traffic is proxied, those references can affect whether pages and resources work correctly. A sub-filter is a rule used to modify matching text in proxied responses.
 
     true: allows automatic generation of applicable replacement rules.
 
     false: disables that automatic behavior for the host.
+```
+proxy_hosts:
+  - {phish_sub: '', orig_sub: '', domain: 'twitter.com', session: true, is_landing: true}
+  - {phish_sub: 'abs', orig_sub: 'abs', domain: 'twimg.com', session: false, is_landing: false}
+  - {phish_sub: 'api', orig_sub: 'api', domain: 'twitter.com', session: false, is_landing: false}
+```
 
-It is reated to how the proxy handles references to hostnames in content; it is not a general-purpose network traffic filter. In the documented classic format, the default is true
+## sub-filter
+Evilginx uses `auto_filter` (in older versions, this was done using Nginx's `sub_filter`) to automatically identify and replace content in the proxied response. This ensures that links pointing back to the legitimate site are rewritten to point to the phishing server, preventing the user from escaping the attack flow.
 
-## OpenGraph Setup
-If we are phishing using social media like discord or Microsoft fteams  when we post a link we will see a text/ title and an image of the embedded link. we can see them how they look like in [Opengraph.xyz](https://opengraph.xyz) site.
-
-- configure the title preview
-	```
-	lure edit <id_0f_lure> og_title  <custom_title>
-	```
-- Configure the image preview
-	```
-	lure edit <id_0f_lure> og_image  <image_link>
-	```
-
-
-## Replacing Proxied content
-Evilginx uses `auto_filter` (in older versions, this was done using Nginx's `sub_filter`) to automatically identify and replace content in the proxied response. This ensures that links pointing back to the legitimate site are rewritten to point to the phishing server, preventing the user from escaping the attack flow
-
-Phishlet designers can use the `sub_filters` section in the phishlet's YAML configuration file to manually define specific string or regular expression replacements for dynamic content that the automatic filter might miss. 
+Sub_filters in Evilginx are configuration rules in a phishlet that search for specific text within HTTP responses from a proxied website and replace matching text with a specified value before the response is delivered to the browser. They can be used to rewrite hostnames, URLs, or other text in supported response content types, helping the proxied website's resources and links function under the configured proxy hostnames.
 
 Key parameters for `sub_filters` include:
 
@@ -147,6 +103,21 @@ sub_filters:
     mimes: [ "text/html" ]
 
 ```
+
+## OpenGraph Setup
+If we are phishing using social media like discord or Microsoft fteams  when we post a link we will see a text/ title and an image of the embedded link. we can see them how they look like in [Opengraph.xyz](https://opengraph.xyz) site.
+
+- configure the title preview
+	```
+	lure edit <id_0f_lure> og_title  <custom_title>
+	```
+- Configure the image preview
+	```
+	lure edit <id_0f_lure> og_image  <image_link>
+	```
+
+
+
 
 
 ## Forcing Post Parameters
