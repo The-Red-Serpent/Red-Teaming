@@ -9,7 +9,7 @@ A phishlet is essentially a YAML configuration file  that tells a reverse-proxy 
 6. **Custom behaviors**, e.g., blocking non-browser bots
 
 
-### How to Create Phishlets
+## Configuration
 - Configure the base domain. this will be our base phishing Domain
 	```
 	config domain <domain_name> 
@@ -50,6 +50,71 @@ A phishlet is essentially a YAML configuration file  that tells a reverse-proxy 
 	```
 	lures get-url <id> param1=value1 param2="value2 with spaces"
 	```
+
+## Proxy_hosts
+proxy_hosts tells the framework which upstream website hosts are involved and how those hosts are represented in the proxy configuration. It is different from the lures or URLs used to direct a visitor to a phishing page.
+2. Understand each parameter
+
+Here are the six main fields you'll see in the proxy_hosts section of the classic Evilginx 2.3 phishlet format. 
+GitHub
++1
+1. phish_sub
+
+The proxy-side subdomain label
+
+This identifies the subdomain label used on the proxy's configured domain. It is not the legitimate website's original hostname.
+
+Think of it as: Where is this host represented on the proxy side?
+2. orig_sub
+
+The original website's subdomain
+
+This identifies the subdomain of the legitimate host being referenced.
+
+For example, in login.example.com, the subdomain is login. If the hostname is just example.com, there is no subdomain label before the base domain.
+3. domain
+
+The legitimate host's base domain
+
+This identifies the domain portion used with orig_sub to describe the upstream hostname.
+
+For example, the parts login and example.com combine to form login.example.com. The exact hostname depends on the real service and its configuration.
+4. session
+
+A Boolean: true or false
+
+In the classic format, this flag marks a host whose responses are relevant to session handling.
+
+    true: marks the host for session-related processing.
+
+    false: does not mark that host for session handling.
+
+Important: It does not mean the website requires a login, and it is not the same as enabling a browser session. A static-content host and a host serving the main application may have different roles.
+5. is_landing
+
+A Boolean: true or false
+
+This marks which configured proxy host is used as the landing host when generating a lure URL.
+
+    true: identifies the landing host.
+
+    false: the host is not designated as the landing host.
+
+This is a routing/configuration distinction, not a setting that makes a page safe or authentic. The classic documentation describes one host as the landing host. 
+GitHub
++1
+6. auto_filter
+
+A Boolean: true or false
+
+This controls automatic generation of content-replacement rules for the host.
+
+    true: allows automatic generation of applicable replacement rules.
+
+    false: disables that automatic behavior for the host.
+
+It is reated to how the proxy handles references to hostnames in content; it is not a general-purpose network traffic filter. In the documented classic format, the default is true
+
 ## OpenGraph Setup
 If we are phishing using social media like discord or Microsoft fteams  when we post a link we will see a text/ title and an image of the embedded link. we can see them how they look like in [Opengraph.xyz](https://opengraph.xyz) site.
 
