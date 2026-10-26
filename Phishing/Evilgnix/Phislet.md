@@ -18,7 +18,7 @@ A phishlet is essentially a YAML configuration file  that tells a reverse-proxy 
 	```
 	config ipv4 <ip>
 	```
-- Configure the phishing hostname. The hostname should end with the phishing domain
+- Configure the phishing hostname. This is where phishing URL will be hosted. This will asssign specific phislet to a specific URL or subdomain.   The hostname should end with the phishing domain. since this is where we will host the phishing page . the base domain dosent have to do anything with it.
 	```
 	phishlets hostname <phishlet> <domainending with the phishing_domain>
 	```
