@@ -9,9 +9,14 @@
   - CWPE
 - Mobile Application Penetration Testing
   - eMAPT
+
 - OSINT (Open-Source Intelligence)
+
 - Terraform
+
 - Phishing Operations
+  - Break Dev Evilginx Mastery Course
+  
 - Physical Red Teaming
   - Lockpicking
   - RFID / Access Control
