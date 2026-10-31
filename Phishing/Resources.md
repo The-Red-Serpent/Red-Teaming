@@ -36,6 +36,12 @@ https://github.com/An0nUD4Y/Evilginx-Phishlets
 ## Evilgnix Documentation
 - https://help.evilginx.com/community
 
+## OIDC
+- https://www.riskinsight-wavestone.com/en/2025/07/phishing-pushing-evilginx-to-its-limit/
+- https://www.obsidiansecurity.com/blog/demystifying-okta-aitm
+
+## Bot Guard
+- https://hideandsec.sh/books/research/page/bypassing_botguard_and_dbsc_technical_study/
 
 ## Evasion
 
