@@ -12,66 +12,66 @@ Kerberos is a network authentication protocol that uses secret-key cryptography 
 
 The Authentication Server is responsible for verifying the identity of users during the initial login process. Below is a detailed breakdown of its operation:
 
-#### 1. **User Authentication Process**:
+### 1. User Authentication Process:
 
-- When a user attempts to authenticate to the system, the client sends an **Authentication Server Request (AS-REQ)** to the **Authentication Server (AS)**.
-- The **AS-REQ** typically contains:
+- When a user attempts to authenticate to the system, the client sends an Authentication Server Request (AS-REQ) to the Authentication Server (AS).
+- The AS-REQ typically contains:
     - Its name (the client principal name)
 	- The realm name
 	- The desired service, which is in case of `AS-REQ` always `KRBTGT`
 	- A randomly generated value (called a _Nonce_)
-	- if pre-authentication is configured, an encrypted timestamp "PA-ENC-TIMESTAMP" which is  encrypted with the user's long-term key, which is derived from the password. NTLM hash of the client’s password and a timestamp encrypted with that NTLM hash.
+	- if pre-authentication is configured, an encrypted timestamp "PA-ENC-TIMESTAMP" which is  encrypted with the user's long-term key(AES key ot NTLM hash), which is derived from the password. NTLM hash of the client’s password and a timestamp encrypted with that NTLM hash.
 
-#### 2. **Verification of User**:
+### 2. Verification of User:
 
-- Upon receiving the **AS-REQ**, the **AS** performs the following actions:
-    - It looks up the password associated with the specific user in the **ntds.dit** file.
-    - The **AS** attempts to **decrypt the timestamp** using this hash.
-    - If the decryption is successful and the timestamp is valid (not a duplicate), the authentication is considered **successful**.
+- Upon receiving the AS-REQ, the AS performs the following actions:
+    - It looks up the password associated with the specific user in the ntds.dit file.
+    - The AS attempts to decrypt the timestamp using this hash.
+    - If the decryption is successful and the timestamp is valid (not a duplicate), the authentication is considered successful.
 
-#### 3. **Issuance of Ticket Granting Ticket (TGT)**:
+#f## 3. Issuance of Ticket Granting Ticket (TGT):
 
-- If the user is successfully authenticated, the **AS** generates a **Ticket Granting Ticket (TGT)** for the user.
-- The **TGT** contains:
+- If the user is successfully authenticated, the AS generates a Ticket Granting Ticket (TGT) for the user.
+- The TGT contains:
      - The client's identity (principal name). 
-    - A **TGT session key** which is encrypted with users key.
+    - A TGT session key which is encrypted with users key.
     - Timestamps, validity period (default ~10 hours).
 
-#### 4. **Encryption of the TGT**:
+#### 4. Encryption of the TGT:
 
-- The **TGT** is encrypted using a secret key associated with the **krbtgt** account, which is an account known only to the KDC (Key Distribution Center).
-- Since the **krbtgt** key is only known to the KDC, it cannot be decrypted by the client.
-- The **TGT** provides the client with the ability to request **service tickets** without needing to re-enter credentials, ensuring both convenience and security.
+- The TGT is encrypted using a secret key(AES key or NTLM hash) associated with the krbtgt account, which is an account known only to the KDC (Key Distribution Center).
+- Since the krbtgt key is only known to the KDC, it cannot be decrypted by the client.
+- The TGT provides the client with the ability to request service tickets without needing to re-enter credentials, ensuring both convenience and security.
 
-#### 5. **TGT Validity and Renewal**:
+#### 5. TGT Validity and Renewal:
 
-- By default, the **TGT** is valid for **ten hours**.
-- After this period, the **TGT** will require a **renewal** to extend its validity.
+- By default, the TGT is valid for ten hours.
+- After this period, the TGT will require a renewal to extend its validity.
 
 
 ## Ticket Granting Service (TGS):
 
-The **Ticket Granting Service** is responsible for issuing **service tickets**. Once a client has a valid **TGT** (obtained from the AS), they can use it to request access to specific services in the network.
+The Ticket Granting Service is responsible for issuing service tickets. Once a client has a valid TGT (obtained from the AS), they can use it to request access to specific services in the network.
 
-- The client constructs a **Ticket Granting Service Request (TGS-REQ)** packet that consists of the following:
+- The client constructs a Ticket Granting Service Request (TGS-REQ) packet that consists of the following:
     - The current user
     - A timestamp encrypted with the session key
     - The name of the resource SPN associated with it.
-    - The encrypted **TGT**
+    - The encrypted TGT
 
-The **ticket-granting service** on the KDC receives the **TGS-REQ**, and if the resource exists in the domain, the **TGT** is decrypted using the secret key known only to the KDC. The session key is then extracted from the **TGT** and used to decrypt the username and timestamp of the request. 
+The ticket-granting service on the KDC receives the TGS-REQ, and if the resource exists in the domain, the TGT is decrypted using the secret key known only to the KDC. The session key is then extracted from the TGT and used to decrypt the username and timestamp of the request. 
 
 The KDC performs several checks:
-- The **TGT** must have a valid timestamp.
-- The username from the **TGS-REQ** has to match the username from the **TGT**.
-- The client IP address needs to coincide with the **TGT** IP address.
+- The TGT must have a valid timestamp.
+- The username from the TGS-REQ has to match the username from the TGT.
+- The client IP address needs to coincide with the TGT IP address.
 
-If this verification process succeeds, the **Ticket Granting Service** responds to the client with a **Ticket Granting Server Reply (TGS-REP)**. This packet contains three parts:
+If this verification process succeeds, the Ticket Granting Service responds to the client with a Ticket Granting Server Reply (TGS-REP). This packet contains three parts:
 - The name of the service for which access has been granted.
 - A session key to be used between the client and the service.
-- A **service ticket** containing the username and group memberships along with the newly created session key.
+- A service ticket containing the username and group memberships along with the newly created session key.
 
-The service ticket’s **service name** and **session key** are encrypted using the original session key associated with the creation of the **TGT**. The service ticket is encrypted using the password hash of the **service account** registered with the service in question. when they send this  Service  ticket to the service, the latter can decrypt the ticket's content and read the user's information.
+The service ticket’s service name and session key are encrypted using the original session key associated with the creation of the TGT. The service ticket is encrypted using the secrey key (AES key or NTLM hash) of the service account registered with the service in question. when they send this  Service  ticket to the service, the latter can decrypt the ticket's content and read the user's information.
 
 
 ## PAC
