@@ -193,7 +193,7 @@ Why it exists: Without GC, cross-domain queries would require contacting every d
 
 ## Group Policy Object
 
-A Group Policy Object (GPO) is a set of rules that administrators apply to user and computer accounts in an Active Directory environment. These rules control system behavior, security settings, and user experience, ensuring consistency across all devices. In other words, the GPO prevents users from going rogue, delivering centralized governance across devices and users at scale.
+A Group Policy Object (GPO) is a set of rules that administrators apply to user and computer accounts in an Active Directory environment. These rules control system behavior, security settings, and user experience, ensuring consistency across all devices. In other words, the GPO prevents users from going rogue, delivering centralized governance across devices and users at scale. GPO are stored in the DC in \\<domain.dns>\SYSVOL\<domain.dns>\Policies\<GPOName>\, inside two folders User and Machine. If you have the right to edit the GPO you can connect to the DC and replace the files. Planned Tasks are located at Machine\Preferences\ScheduledTasks.
 
 A GPO can be linked to:
 ```
@@ -206,18 +206,18 @@ Users and computers inherit the GPOs linked to the container they belong to.
 
 There are two primary Group Policy Object types:
 
-**Local Group Policy**  applies only to a single machine and is managed independently.
-**Domain-Based GPO** is managed through Active Directory and applies settings to groups of users or devices across the network.
+- **Local Group Policy**  applies only to a single machine and is managed independently.
+- **Domain-Based GPO** is managed through Active Directory and applies settings to groups of users or devices across the network.
 
 GPOs are structured into two scopes:
 
-**User Configuration**: Controls the user environment – desktop settings, application access, folder redirection, and more.
-**Computer Configuration**: Applies system-wide settings like firewall rules, password policies, and software controls.
+- **User Configuration**: Controls the user environment – desktop settings, application access, folder redirection, and more.
+- **Computer Configuration**: Applies system-wide settings like firewall rules, password policies, and software controls.
 
 Every Group Policy Object is made up of:
 
-**Group Policy Template (GPT)**: Stored in the SYSVOL folder of domain controllers; contains policy files, scripts, and templates.
-**Group Policy Container (GPC)**: Stored in Active Directory; holds metadata such as version, status, and permissions.
+- **Group Policy Template (GPT)**: Stored in the SYSVOL folder of domain controllers; contains policy files, scripts, and templates.
+- **Group Policy Container (GPC)**: Stored in Active Directory; holds metadata such as version, status, and permissions.
 
 ### Structure of a GPT folder
 
@@ -279,6 +279,24 @@ A RID is the last part of a Security Identifier (SID) in Windows, used to unique
 <p align="justify">Global Unique Identifier is a unique 128-bit value assigned when a domain user or group is created. This GUID value is unique across the enterprise, similar to a MAC address. Every single object created by Active Directory is assigned a GUID, not only user and group objects. The GUID is stored in the `ObjectGUID` attribute</p>
 <br></br>
 
+
+
+## Access Control List
+An Access Control List (ACL) in Active Directory (AD) is an ordered collection of rules that determines which users, groups, or service accounts (known as security principals) can access or modify a specific directory object (such as a user account, group, Organizational Unit [OU], or computer object) and what actions they are allowed to perform.
+
+Two Main Types of ACLs:
+• Discretionary Access Control List (DACL): Defines who is allowed or denied access to the object and what specific rights they have.
+• System Access Control List (SACL): Used by administrators to log and audit successful or failed attempts to access an object into the Windows Security Event Log.
+
+## Access Control Entry
+An ACL is made up of one or more Access Control Entries (ACEs). Each ACE is an individual rule inside the ACL.
+
+A standard ACE contains:
+• Trustee (Security Principal): The specific user, security group, or computer account the ACE applies to.
+• Access Type: Whether the ACE Allows, Denies, or Audits the permission.
+• Permissions / Rights: What actions are permitted or blocked. These can be:
+	• Standard Permissions: Read, Write, Delete, Change Owner.
+	• Extended/Property-Specific Rights: AD-specific actions like Reset Password, Receive As, Send As, or modifying specific object attribute
 
 
 ## AdminCount
