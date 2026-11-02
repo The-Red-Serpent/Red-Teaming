@@ -29,7 +29,7 @@ The Authentication Server is responsible for verifying the identity of users dur
     - The AS attempts to decrypt the timestamp using this hash.
     - If the decryption is successful and the timestamp is valid (not a duplicate), the authentication is considered successful.
 
-#f## 3. Issuance of Ticket Granting Ticket (TGT):
+### 3. Issuance of Ticket Granting Ticket (TGT):
 
 - If the user is successfully authenticated, the AS generates a Ticket Granting Ticket (TGT) for the user.
 - The TGT contains:
@@ -37,13 +37,13 @@ The Authentication Server is responsible for verifying the identity of users dur
     - A TGT session key which is encrypted with users key.
     - Timestamps, validity period (default ~10 hours).
 
-#### 4. Encryption of the TGT:
+### 4. Encryption of the TGT:
 
 - The TGT is encrypted using a secret key(AES key or NTLM hash) associated with the krbtgt account, which is an account known only to the KDC (Key Distribution Center).
 - Since the krbtgt key is only known to the KDC, it cannot be decrypted by the client.
 - The TGT provides the client with the ability to request service tickets without needing to re-enter credentials, ensuring both convenience and security.
 
-#### 5. TGT Validity and Renewal:
+### 5. TGT Validity and Renewal:
 
 - By default, the TGT is valid for ten hours.
 - After this period, the TGT will require a renewal to extend its validity.
