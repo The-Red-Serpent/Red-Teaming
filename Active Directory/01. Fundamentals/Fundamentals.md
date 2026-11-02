@@ -303,9 +303,17 @@ A standard ACE contains:
 </p>
 
 
-## Security Descrioptor
-## AdminCount
+## Security Descriptor
+A Security Descriptor in Active Directory (AD) is a data structure attached to every directory object (such as a user, group, computer, or Organizational Unit) that defines who owns it, who can access or modify it, and how actions on it are audited.
 
+A security descriptor stored on an Active Directory object contains the following main elements:
+- Owner SID: A unique Security Identifier (SID) identifying the user or group that owns the object. The owner can change the object's permissions.
+- Primary Group SID: A SID used primarily for POSIX and legacy compatibility.
+- Discretionary Access Control List (DACL): The list that defines which users or groups are allowed or denied specific permissions (like read, write, or delete) on the object.
+- System Access Control List (SACL): The list that controls which access attempts or actions generate audit logs for security tracking and incident response.
+- Control Bits (Control Flags): A set of flags that qualify the meaning of the descriptor, handle inheritance rules, and manage how permissions flow down to child objects
+
+## AdminCount
 The `adminCount` attribute is like a “VIP badge” on certain accounts. If a user has `adminCount = 1`, it means they are or were a privileged account, such as a Domain Admin, and their permissions are protected to prevent tampering. AD uses a background process called AdminSDHolder to enforce this protection, making sure these high-value accounts maintain their special access rights.
 
 <br></br>
