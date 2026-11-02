@@ -285,20 +285,25 @@ A RID is the last part of a Security Identifier (SID) in Windows, used to unique
 An Access Control List (ACL) in Active Directory (AD) is an ordered collection of rules that determines which users, groups, or service accounts (known as security principals) can access or modify a specific directory object (such as a user account, group, Organizational Unit [OU], or computer object) and what actions they are allowed to perform.
 
 Two Main Types of ACLs:
-• Discretionary Access Control List (DACL): Defines who is allowed or denied access to the object and what specific rights they have.
-• System Access Control List (SACL): Used by administrators to log and audit successful or failed attempts to access an object into the Windows Security Event Log.
+- Discretionary Access Control List (DACL): Defines who is allowed or denied access to the object and what specific rights they have.
+- System Access Control List (SACL): Used by administrators to log and audit successful or failed attempts to access an object into the Windows Security Event Log.
 
 ## Access Control Entry
 An ACL is made up of one or more Access Control Entries (ACEs). Each ACE is an individual rule inside the ACL.
 
 A standard ACE contains:
-• Trustee (Security Principal): The specific user, security group, or computer account the ACE applies to.
-• Access Type: Whether the ACE Allows, Denies, or Audits the permission.
-• Permissions / Rights: What actions are permitted or blocked. These can be:
+- Trustee (Security Principal): The specific user, security group, or computer account the ACE applies to.
+-  Access Type: Whether the ACE Allows, Denies, or Audits the permission.
+-  Permissions / Rights: What actions are permitted or blocked. These can be:
 	• Standard Permissions: Read, Write, Delete, Change Owner.
 	• Extended/Property-Specific Rights: AD-specific actions like Reset Password, Receive As, Send As, or modifying specific object attribute
 
+<p align="center">
+  <img src="https://www.researchgate.net/profile/Simon-Parkinson-2/publication/257537216/figure/fig1/AS:614254235381766@1523461030163/Access-Control-List-illustration.png" alt="Architecture Diagram" width="600">
+</p>
 
+
+## Security Descrioptor
 ## AdminCount
 
 The `adminCount` attribute is like a “VIP badge” on certain accounts. If a user has `adminCount = 1`, it means they are or were a privileged account, such as a Domain Admin, and their permissions are protected to prevent tampering. AD uses a background process called AdminSDHolder to enforce this protection, making sure these high-value accounts maintain their special access rights.
