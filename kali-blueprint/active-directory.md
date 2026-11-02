@@ -11,3 +11,7 @@
 - Sharehound
 - Kerbrute
 - ldapdomaindump
+- seatbelt
+- sharpup
+- sharpersist
+- ADrecon
