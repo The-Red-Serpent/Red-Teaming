@@ -1,3 +1,8 @@
+## Check if a machine is domain Joined or not
+```
+echo %COMPUTERNAME%.%USERDNSDOMAIN%
+```
+
 ## Enumerate Domain
 ```   
 ldapsearch (ObjectClass=domain) --attributes name,distinguishedName,objectSid,lockoutThreshold,ms-DS-MachineAccountQuota,lockoutDuration
