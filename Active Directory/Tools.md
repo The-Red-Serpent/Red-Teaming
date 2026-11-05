@@ -24,6 +24,12 @@
 - `Smbclient-ng`
 - `smbstatus`
 
+## Share Enumeration
+- Share finder
+- ShareHound
+- PowerHunt Shares
+- Snaffler
+
 ## NetBIOS Enumeration
 - `nbtstat`
 - `NBTscan`
@@ -40,6 +46,10 @@
 - `ldapdomaindump`
 - `windapsearch`
 - `ldeep`
+
+### GPO Enumeration
+- https://github.com/cogiceo/gpohound
+- https://github.com/crypt0p3g/adexsnap
 
 ## ADWS Enumeration
 - `adwsdomaindump`
@@ -61,10 +71,6 @@
 - `LUDUShound`
 - `Plumhound`
 - `Sharphound.exe/ps1`
-- [Network Hound](https://github.com/MorDavid/NetworkHound)
-- `Soapy`
-- Taskhound
-- [Sharehound](https://github.com/p0dalirius/ShareHound)
 
 
 ## Active Directory Certificate Services
@@ -201,9 +207,5 @@
 | Outray | https://outray.dev/ |
 | Nxposed | https://github.com/nxposed/Nxposed |
 
-### GPO Enumeration
-- https://github.com/cogiceo/gpohound
 
-
-- https://github.com/crypt0p3g/adexsnap
 - https://github.com/digitaloffensive/RedTeam-GO/tree/main/domainsvet
