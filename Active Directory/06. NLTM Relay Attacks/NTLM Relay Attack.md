@@ -1,3 +1,8 @@
+## NTLM Relay
+
+An NTLM relay attack is a type of machine-in-the-middle (MitM) credential exploitation technique where an adversary intercepts an NTLM authentication exchange from a victim and forwards (relays) those valid messages to another target service to gain unauthorized access
+
+
 NTLM relay attack into three phases: Pre-relay , Relay , and Post relay .
 
 ## Phase I: Pre-relay
@@ -34,6 +39,7 @@ SMB on the relay targets, we need SMB signing to be disabled. Enumerate SMB Vers
 ```
 netexec smb 192.168.1.0/24 --gen-relay-list targets.txt
 ```
+
 ## Phase III: Post-relay
 The post-relay phase takes advantage of the authenticated session we obtained through relaying a victim's 1NTLM authentication. We can conduct specific post-relay attacks depending on the authenticated session's protocol.
 
