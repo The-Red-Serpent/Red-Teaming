@@ -1,10 +1,10 @@
-NTLM Relay Attack
+# NTLM Relay Attack
 
 An NTLM relay attack is a type of machine-in-the-middle (MitM) credential exploitation technique where an adversary intercepts an NTLM authentication exchange from a victim and forwards (relays) those valid messages to another target service to gain unauthorized access
 
 ![img](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH0LYBNHtv5tThQULV4KxMlZkjXATwx3dB3pYFlIlkHQ&s=10)
 
-## Message Signing
+# Message Signing
 Message signing is a security mechanism that protects the integrity of communication between a client and a server. In Active Directory environments, you'll commonly encounter it with SMB and LDAP.When a client and server establish an NTLM-authenticated session, they can negotiate whether message signing will be used. If signing is negotiated and required, both sides establish the necessary cryptographic signing keys using session-key material derived from the NTLM authentication process.
 
 Once the session is established, whenever the client sends a message, it calculates a Message Authentication Code (MAC) using the message contents and the signing key. This MAC is attached to the message.When the server receives that message, it independently calculates the expected MAC using its corresponding signing key. It then compares its calculated MAC with the MAC received from the client. If they match, the message passes integrity verification. If they don't match, the message is rejected.
@@ -104,7 +104,7 @@ NTLM message signing is a mechanism that  provides message integrity and helps m
 ```
 
 
-## Message Sealing
+# Message Sealing
 Message sealing in NTLM is the process of encrypting messages exchanged between the client and server so that an attacker who captures network traffic cannot read the contents. While message signing provides integrity (detects if a message was modified), message sealing provides confidentiality (keeps the message secret). After NTLM authentication, the client and server already have a shared session key. From this session key, they derive separate sealing keys that are used for encryption.
 
 ```
@@ -249,7 +249,7 @@ Message sealing in NTLM is the process of encrypting messages exchanged between 
                                 └──────────────────────────┘
 
 ```
-## MIC (Message Integrity Code)
+# MIC (Message Integrity Code)
 
 MIC protects something different: the NTLM authentication exchange itself.
 
@@ -283,7 +283,7 @@ MIC does not:
 
 - Replace SMB signing or EPA
 
-## EPA (Extended Protection for Authentication)
+# EPA (Extended Protection for Authentication)
 
 EPA addresses another weakness in authentication protocols: authentication can potentially be forwarded to a different service or connection.Unlike MIC, which protects the integrity of the NTLM authentication messages, EPA attempts to establish a relationship between the authentication and the destination or communication channel for which it was originally intended.
 
