@@ -1,3 +1,9 @@
+NTLM Relay Attack
+
+An NTLM relay attack is a type of machine-in-the-middle (MitM) credential exploitation technique where an adversary intercepts an NTLM authentication exchange from a victim and forwards (relays) those valid messages to another target service to gain unauthorized access
+
+![img](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH0LYBNHtv5tThQULV4KxMlZkjXATwx3dB3pYFlIlkHQ&s=10)
+
 ## Message Signing
 Message signing is a security mechanism that protects the integrity of communication between a client and a server. In Active Directory environments, you'll commonly encounter it with SMB and LDAP.When a client and server establish an NTLM-authenticated session, they can negotiate whether message signing will be used. If signing is negotiated and required, both sides establish the necessary cryptographic signing keys using session-key material derived from the NTLM authentication process.
 
