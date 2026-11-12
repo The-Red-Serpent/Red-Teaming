@@ -334,3 +334,7 @@ This is where your understanding needs a little adjustment.Signing protects the 
 3. EPA – Protects authentication from being relayed to the wrong destination
 
 EPA binds NTLM authentication to the intended service or TLS channel.If an attacker tries to forward authentication to a different service or TLS endpoint, the binding information won't match, and authentication can be rejected.So EPA can stop the relay before authentication succeeds.
+
+
+## Reference
+- https://en.hackndo.com/ntlm-relay/#preliminary
