@@ -41,6 +41,8 @@
  - What are  SPF, DKIM, DMARC records
  - Explain about tools u use for phishing campaigns
  - SMTP relay servers
+ - Device Code Phishing
+ - Github Phishing
 
 
 ## Active Directory
