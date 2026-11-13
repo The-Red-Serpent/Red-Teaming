@@ -93,6 +93,9 @@ https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2
 ## BOF's
 * https://chryzsh.github.io/awesome-bof/site/
 
+## Compiling Exploits
+* https://hackwithmike.com/oscp/compiling-exploits
+
 ## Knowledge Bases
 * DarkRavenOps - [https://darkravenops.in/](https://darkravenops.in/)
 * DBgman - [https://www.notion.so/Red-Team-Notes-26dabf92dc0f800ebb7ee35a93d2ea58](https://www.notion.so/Red-Team-Notes-26dabf92dc0f800ebb7ee35a93d2ea58)
