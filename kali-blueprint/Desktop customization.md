@@ -1,3 +1,6 @@
 - Nitrogen — wallpaper management
 - Rofi — launcher/search bar
 - Kate — text editor
+- Betterlockscreen
+- sudo apt install kali-desktop-i3
+- JetBrainsMono Nerd fonts
