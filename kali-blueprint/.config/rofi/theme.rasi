@@ -1,0 +1,102 @@
+* {
+    /* Catppuccin Mocha base colors */
+    base:           #1e1e2e;
+    mantle:         #181825;
+    crust:          #11111b;
+    text:           #cdd6f4;
+    subtext0:       #a6adc8;
+    overlay0:       #6c7086;
+    surface0:       #313244;
+    surface1:       #45475a;
+    mauve:          #cba6f7;
+
+    /* Theme roles (same names as the original) */
+    main-bg:        #11111bf2;
+    main-fg:        @text;
+    main-br:        @mauve;
+    main-ex:        @subtext0;
+    select-bg:      @mauve;
+    select-fg:      @crust;
+    line:           #31324466;
+    field-bg:       #181825;
+    field-br:       @surface1;
+
+    background-color: transparent;
+    text-color:       @main-fg;
+    border-color:     transparent;
+    separatorcolor:   transparent;
+    spacing:          0;
+    font:             "JetBrainsMono Nerd Font  11";
+}
+
+window {
+    location:         center;
+    anchor:           center;
+    width:            530px;
+    padding:          10px;
+    border:           2px;
+    border-color:     @main-br;
+    border-radius:    0px;
+    background-color: @main-bg;
+}
+
+mainbox {
+    spacing:  10px;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    padding:          10px 12px;
+    border:           1px;
+    border-color:     @field-br;
+    background-color: @field-bg;
+    spacing:          12px;
+    children:         [ textbox-icon, entry ];
+}
+
+textbox-icon {
+    expand:         false;
+    markup:         true;
+    text-color:     @main-br;
+    vertical-align: 0.5;
+}
+
+entry {
+    text-color:        @main-fg;
+    placeholder:       "";
+    placeholder-color: @overlay0;
+    vertical-align:    0.5;
+}
+
+listview {
+    lines:        9;
+    columns:      1;
+    fixed-height: true;
+    scrollbar:    false;
+    spacing:      0;
+}
+
+element {
+    padding:      9px 12px;
+    border:       0px 0px 1px 0px;
+    border-color: @line;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color:       @main-fg;
+}
+
+element selected.normal {
+    background-color: @select-bg;
+    text-color:       @select-fg;
+    border-color:     transparent;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+    vertical-align:   0.5;
+     margin: 0px 0px 0px 10px;
+}
