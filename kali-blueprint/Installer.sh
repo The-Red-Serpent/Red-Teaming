@@ -68,8 +68,8 @@ sudo apt install -y \
     build-essential cmake \
     python3 python3-pip python3-venv pipx \
     nodejs npm cargo rustc golang-go \
-    docker.io docker-compose-v2 \
-    zsh tmux jq btop fastfetch lsd tldr ranger fontconfig \
+    docker.io docker-compose \
+    zsh tmux jq btop fastfetch lsd  ranger fontconfig \
     kate rofi  ripgrep tree seclists kali-desktop-i3 assetfinder
 
 echo "[+] Configuring Docker..."
