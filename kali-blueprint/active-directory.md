@@ -1,5 +1,5 @@
-- BloodHound
-- RustHound
+- BloodHound-ce
+- RustHound-ce
 - BloodyAD
 - LDAPx
 - ldeep
@@ -7,7 +7,7 @@
 - Netexec
 - Smbmap
 - smbclient-ng
-- snaffler
+- snaffler-ng
 - Sharehound
 - Kerbrute
 - ldapdomaindump
