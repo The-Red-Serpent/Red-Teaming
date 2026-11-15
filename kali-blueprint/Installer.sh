@@ -69,7 +69,7 @@ sudo apt install -y \
     python3 python3-pip python3-venv pipx \
     nodejs npm cargo rustc golang-go \
     docker.io docker-compose \
-    zsh tmux jq btop fastfetch lsd  ranger fontconfig \
+    zsh tmux jq btop fastfetch lsd  ranger fontconfig open-vm-tools open-vm-tools-desktop fuse wordlists \
     kate rofi  ripgrep tree seclists kali-desktop-i3 assetfinder
 
 echo "[+] Configuring Docker..."
