@@ -4,8 +4,6 @@
 - lsd
 - Oh My Zsh
 - Kate
-- Yazi - file manaher
 - tmux
 - jq
-- Rofi — application launcher and search bar
-- Neovim
+- Rofi 
