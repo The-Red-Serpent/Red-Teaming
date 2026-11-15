@@ -77,8 +77,8 @@ info "Installing desktop environment..."
 install_packages \
     kali-desktop-i3 \
     polybar \
-    kate ranger \
-    feh nitrogen arandr \
+    kate  \
+     arandr \
     xclip \
     dbus-x11 \
     fonts-jetbrains-mono \
