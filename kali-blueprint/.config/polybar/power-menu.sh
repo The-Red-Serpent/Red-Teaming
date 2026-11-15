@@ -12,7 +12,7 @@ choice=$(printf '%s\n' \
 
 case "$choice" in
     *Lock)
-        i3lock -c 000000
+        betterlockscreen -l blur
         ;;
     *Switch*)
         dm-tool switch-to-greeter
