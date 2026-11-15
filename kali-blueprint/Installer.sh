@@ -127,17 +127,6 @@ if command -v pipx >/dev/null 2>&1; then
     pipx ensurepath || true
 fi
 
-# ==========================================
-# YAZI
-# ==========================================
-
-info "Installing Yazi..."
-
-if command -v cargo >/dev/null 2>&1; then
-    if ! command -v yazi >/dev/null 2>&1; then
-        cargo install --locked yazi-fm || warn "Yazi installation failed."
-    fi
-fi
 
 # ==========================================
 # OH MY ZSH
