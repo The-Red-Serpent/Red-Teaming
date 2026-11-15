@@ -1,7 +1,11 @@
-
 #!/usr/bin/env bash
 
-set -Eeuo pipefail
+set -e
+
+if [[ $EUID -eq 0 ]]; then
+    echo "Run as normal user, not root."
+    exit 1
+fi
 
 # ==========================================
 # KALI BLUEPRINT - INSTALLER
@@ -22,124 +26,6 @@ ok()   { echo "[OK] $*"; }
 warn() { echo "[!] $*"; }
 
 trap 'echo "[ERROR] Failed at line $LINENO. Check $LOG_FILE"' ERR
-
-# ==========================================
-# SYSTEM CHECKS
-# ==========================================
-
-if [[ $EUID -eq 0 ]]; then
-    echo "Do not run this script as root."
-    exit 1
-fi
-
-if ! command -v apt-get >/dev/null 2>&1; then
-    echo "Kali/Debian with APT is required."
-    exit 1
-fi
-
-if [[ ! -d "$CONFIG_DIR" ]]; then
-    echo "Repository .config directory not found!"
-    exit 1
-fi
-
-sudo -v
-
-# ==========================================
-# UPDATE SYSTEM
-# ==========================================
-
-info "Updating package lists..."
-sudo apt-get update
-
-# ==========================================
-# APT INSTALLATION
-# ==========================================
-
-install_packages() {
-    local available=()
-    local package
-
-    for package in "$@"; do
-        if apt-cache show "$package" >/dev/null 2>&1; then
-            available+=("$package")
-        else
-            warn "Package unavailable: $package"
-        fi
-    done
-
-    if ((${#available[@]})); then
-        sudo apt-get install -y --no-install-recommends "${available[@]}"
-    fi
-}
-
-info "Installing desktop environment..."
-
-install_packages \
-    kali-desktop-i3 \
-    polybar \
-    kate  \
-     arandr \
-    xclip \
-    dbus-x11 \
-    fonts-jetbrains-mono \
-
-info "Installing development tools..."
-
-install_packages \
-    git curl wget \
-    unzip zip p7zip-full \
-    build-essential cmake \
-    pkg-config libssl-dev \
-    ca-certificates \
-    python3 python3-pip python3-venv pipx \
-    nodejs npm \
-    cargo rustc \
-    golang-go \
-    docker.io docker-compose
-
-info "Installing terminal utilities..."
-
-install_packages \
-    zsh tmux neovim \
-    jq btop fastfetch \
-    lsd tldr \
-    fzf ripgrep fd-find \
-    tree htop
-
-# ==========================================
-# DOCKER
-# ==========================================
-
-info "Configuring Docker..."
-
-if command -v docker >/dev/null 2>&1; then
-    sudo systemctl enable docker || warn "Could not enable Docker."
-    sudo systemctl start docker || warn "Could not start Docker."
-fi
-
-# ==========================================
-# PIPX
-# ==========================================
-
-info "Configuring pipx..."
-
-if command -v pipx >/dev/null 2>&1; then
-    pipx ensurepath || true
-fi
-
-
-# ==========================================
-# OH MY ZSH
-# ==========================================
-
-info "Installing Oh My Zsh..."
-
-if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
-    RUNZSH=no CHSH=no KEEP_ZSHRC=yes \
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" \
-        || warn "Oh My Zsh installation failed."
-fi
-
 # ==========================================
 # COPY GITHUB CONFIGURATIONS
 # ==========================================
@@ -169,72 +55,77 @@ for directory in i3 kitty picom polybar ranger rofi; do
     ok "Copied $directory"
 done
 
-# ==========================================
-# SCRIPT PERMISSIONS
-# ==========================================
+echo "[+] Updating Kali..."
+sudo apt update
 
-info "Setting script permissions..."
+echo "[+] Upgrading  Kali..."
+sudo apt full-upgrade
 
-for directory in polybar rofi; do
-    if [[ -d "$CONFIG_HOME/$directory" ]]; then
-        find "$CONFIG_HOME/$directory" \
-            -maxdepth 1 -type f -name "*.sh" \
-            -exec chmod +x {} \;
-    fi
+
+echo "[+] Installing dependencies and utilities..."
+sudo apt install -y \
+    git curl wget unzip zip \
+    build-essential cmake \
+    python3 python3-pip python3-venv pipx \
+    nodejs npm cargo rustc golang-go \
+    docker.io docker-compose-v2 \
+    zsh tmux jq btop fastfetch lsd tldr ranger fontconfig \
+    kate rofi  ripgrep tree seclists kali-desktop-i3 assetfinder
+
+echo "[+] Configuring Docker..."
+sudo systemctl enable --now docker
+
+echo "[+] Configuring PATH..."
+mkdir -p ~/.local/bin ~/.cargo/bin ~/go/bin
+
+for rc in ~/.bashrc ~/.zshrc; do
+    grep -q 'export PATH="$HOME/go/bin' "$rc" 2>/dev/null || \
+    echo 'export PATH="$HOME/go/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH"' >> "$rc"
 done
 
-# ==========================================
-# VERIFICATION
-# ==========================================
+echo "[+] Installing JetBrainsMono Nerd Font..."
+mkdir -p ~/.local/share/fonts/JetBrainsMonoNerd
+curl -fsSL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip \
+    -o /tmp/JetBrainsMono.zip
+unzip -oq /tmp/JetBrainsMono.zip -d ~/.local/share/fonts/JetBrainsMonoNerd
+rm /tmp/JetBrainsMono.zip
+fc-cache -f
 
-info "Verifying installations..."
 
-COMMANDS=(
-    git curl wget
-    python3 pipx
-    node npm cargo rustc
-    docker
-    i3 kitty picom polybar rofi
-    kate ranger
-    zsh tmux nvim
-    jq btop fastfetch
-)
 
-FAILED=()
 
-for cmd in "${COMMANDS[@]}"; do
-    if command -v "$cmd" >/dev/null 2>&1; then
-        ok "$cmd"
-    else
-        warn "Missing: $cmd"
-        FAILED+=("$cmd")
-    fi
-done
+echo "[+] Installing Cloud Tools..."
+sudo apt install -y cloud-enum cloudbrute azurehound s3scanner
 
-# ==========================================
-# COMPLETION
-# ==========================================
+echo "[+] Installing Pivoting Tools..."
+sudo apt install -y ligolo-ng ligolo-mp sshuttle penelope pwncat
 
-echo
-echo "======================================"
-echo "       KALI BLUEPRINT INSTALLED"
-echo "======================================"
+echo "[+] Installing Active Directoty Tools..."
+sudo apt install -y bloodhound bloodhound-ce-python ldeep bloodyad snaffler-ng python3-ldapdomaindump
+cargo install rusthound-ce
+cargo install rusthound
+pipx install smbclientng
 
-echo "Repository : $REPO_DIR"
-echo "Configs    : $CONFIG_HOME"
-echo "Log        : $LOG_FILE"
+echo "[+] Installing Recon Tools......"
+sudo apt install -y subfinder sublist3r theharvester trufflehog httpx-toolkit gowitness
+go install github.com/projectdiscovery/alterx/cmd/alterx@latest
+go install github.com/tomnomnom/waybackurls@latest
+go install github.com/lc/gau/v2/cmd/gau@latest
+go install github.com/projectdiscovery/katana/cmd/katana@latest
+go install github.com/bp0lr/gauplus@latest
+go install github.com/Josue87/gotator@latest
+go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
+go install -v github.com/projectdiscovery/mapcidr/cmd/mapcidr@latest
+go install github.com/projectdiscovery/tlsx/cmd/tlsx@latest
+go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+go install github.com/lc/subjs@latest
+go install github.com/BishopFox/jsluice/cmd/jsluice@latest
+pipx install git+https://github.com/xnl-h4ck3r/waymore.git
 
-if [[ -d "$BACKUP_DIR" ]]; then
-    echo "Backup     : $BACKUP_DIR"
-fi
 
-if ((${#FAILED[@]})); then
-    echo
-    echo "Missing commands:"
-    printf ' - %s\n' "${FAILED[@]}"
-fi
+
 
 echo
-echo "Installation complete!"
-echo "Restart i3 to apply configurations."
-echo "======================================"
+echo "[+] Installation complete!"
+echo "[+] Restart your terminal."
+
