@@ -103,7 +103,6 @@ sudo apt install -y ligolo-ng ligolo-mp sshuttle penelope pwncat
 echo "[+] Installing Active Directoty Tools..."
 sudo apt install -y bloodhound bloodhound-ce-python ldeep bloodyad snaffler-ng python3-ldapdomaindump
 cargo install rusthound-ce
-cargo install rusthound
 pipx install smbclientng
 
 echo "[+] Installing Recon Tools......"
