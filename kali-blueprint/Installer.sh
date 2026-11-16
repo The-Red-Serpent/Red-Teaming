@@ -125,6 +125,10 @@ go install github.com/BishopFox/jsluice/cmd/jsluice@latest
 pipx install git+https://github.com/xnl-h4ck3r/waymore.git
 
 
+echo "Installing Ohmy Zsh.................."
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+
 
 
 echo
