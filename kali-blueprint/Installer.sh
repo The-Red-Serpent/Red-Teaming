@@ -72,6 +72,8 @@ sudo apt install -y \
     zsh tmux jq btop fastfetch lsd  ranger fontconfig open-vm-tools open-vm-tools-desktop fuse wordlists \
     kate rofi  ripgrep tree seclists kali-desktop-i3 assetfinder
 
+sudo apt remove htop
+
 echo "[+] Configuring Docker..."
 sudo systemctl enable --now docker
 
