@@ -22,4 +22,5 @@ The KDC proceeds the following way:
 
 The client first sends a ``KERB-TGT-REQUEST`` message directly to the target service. The service responds with a ``KERB-TGT-REPLY`` containing its own TGT. The client then submits this TGT to the KDC in the additional-tickets field of a modified TGS-REQ with the ``ENC-TKT-IN-SKEY`` flag set. The KDC decrypts the additional TGT using the KRBTGT key, extracts the session key, and uses it to encrypt the new U2U service ticket. The ENC-TKT-IN-SKEY flag tells the KDC to encrypt the service ticket using a session key rather than the service account Password.
 
+<img width="1536" height="1540" alt="image" src="https://thattotallyrealmyth.gitbook.io/kerberos-explained/~gitbook/image?url=https%3A%2F%2F1571145929-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FFSbYr5z9w3jdovoJAP5r%252Fuploads%252Fy42GiCMy7qRkWbfaoOCi%252Fimage.png%3Falt%3Dmedia%26token%3Dbe284c31-7389-4be8-aeb5-4b4b4e3f31f2&width=768&dpr=2&quality=100&sign=03d94471e30f4855f0bf4f71ccb64a28&sv=3" />
 
