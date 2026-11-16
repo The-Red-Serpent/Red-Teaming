@@ -1,13 +1,14 @@
 ## Fundamentals
-AD Fundamentals- [https://radioactivedirectory.com/](https://radioactivedirectory.com/)
+- [https://radioactivedirectory.com/](https://radioactivedirectory.com/)
+- https://sourcesudo.com/
 
 ## AD Mind Maps
 https://orange-cyberdefense.github.io/ocd-mindmaps/img/mindmap_ad_dark_classic_2025.03.excalidraw.svg
 
 ## Testing Guide
 - https://mayfly277.github.io/categories/goad/
-- AD  Guide – [https://zer1t0.gitlab.io/posts/attacking_ad/](https://zer1t0.gitlab.io/posts/attacking_ad/)
-- Hide Sec AD - [https://hideandsec.sh/books/cheatsheets-82c/page/active-directory](https://hideandsec.sh/books/cheatsheets-82c/page/active-directory)
+- [https://zer1t0.gitlab.io/posts/attacking_ad/](https://zer1t0.gitlab.io/posts/attacking_ad/)
+- [https://hideandsec.sh/books/cheatsheets-82c/page/active-directory](https://hideandsec.sh/books/cheatsheets-82c/page/active-directory)
 
 ## Active Directory Certificate Services
 - AD CS Attacks – [https://dirkjanm.io/extending-ad-cs-attack-surface-intune-certs/](https://dirkjanm.io/extending-ad-cs-attack-surface-intune-certs/)
