@@ -70,7 +70,7 @@ sudo apt install -y \
     nodejs npm cargo rustc golang-go \
     docker.io docker-compose zram-tools \
     zsh tmux jq btop fastfetch lsd  ranger fontconfig open-vm-tools open-vm-tools-desktop fuse wordlists \
-    kate rofi  ripgrep tree seclists kali-desktop-i3 assetfinder
+    rofi  ripgrep tree seclists kali-desktop-i3 assetfinder
 
 sudo apt remove htop
 
