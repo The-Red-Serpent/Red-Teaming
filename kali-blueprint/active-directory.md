@@ -16,4 +16,6 @@
 - sharpersist
 - ADrecon
 - GPOddity
-- 
+- Oh365userfinder
+- Credspy
+- Teamsenum
