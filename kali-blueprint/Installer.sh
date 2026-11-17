@@ -72,7 +72,8 @@ sudo apt install -y \
     zsh tmux jq btop fastfetch lsd  ranger fontconfig open-vm-tools open-vm-tools-desktop fuse wordlists \
     rofi  ripgrep tree seclists kali-desktop-i3 assetfinder
 
-sudo apt remove htop
+pipx install git+https://github.com/RedByte1337/CredSpy.git
+
 
 echo "[+] Configuring Docker..."
 sudo systemctl enable --now docker
