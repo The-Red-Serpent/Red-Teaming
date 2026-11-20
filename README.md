@@ -46,3 +46,6 @@ These are skills I expect to take significantly more time to develop, but ultima
 - AI Red Teaming
   - OSAI
 
+- Binary Analysis
+  - Art of Exploitation by john ericson
+  - Pratical Binary Analysis
