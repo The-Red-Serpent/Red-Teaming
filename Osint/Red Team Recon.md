@@ -163,6 +163,7 @@ naabu -l ips.txt -p - -o ports_fullscan.txt
 httpx -l domains.txt -ip -status-code -title
 ```
 <br></br>
+
 ## Google Dorking
 Google dorking is the technique of using advanced Google search operators to discover publicly exposed information related to a target, such as sensitive files, credentials, admin panels, or misconfigured pages. In red team reconnaissance, it helps uncover unintended data exposure and weak security hygiene without directly interacting with the target systems.
 * https://dorkengine.github.io/
@@ -302,4 +303,5 @@ python3 gcpbucketbrute.py -k test -u
 
 
 ## Automation Tools
-https://github.com/r1cksec/corptrace
+- https://github.com/r1cksec/corptrace
+- https://bugbounty.info/
