@@ -7,6 +7,8 @@
 
 - Azure AD / Entra ID Penetration Testing
   - OAOTC
+  - CARTP
+  - CARTE
  
 - Wi-Fi / Wireless Penetration Testing
   - CWPE
