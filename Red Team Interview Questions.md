@@ -75,6 +75,9 @@
 - Managed Identities
 - Illicit consent grant
 - App registrations and its abuse
+- OAUTH
+- OPENID
+- JWT Assertions
 
 ## Malware Development
 
