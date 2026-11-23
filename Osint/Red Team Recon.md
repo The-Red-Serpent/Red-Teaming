@@ -61,7 +61,7 @@ Email enumeration is the process of identifying valid email addresses or users w
 
 Email Scraping:
  * https://snov.io/
- * https://www.apollo.io/
+ * https://www.lusha.com/
  * https://www.signalhire.com/home
 
 Username Forging:
