@@ -43,6 +43,8 @@
  - SMTP relay servers
  - Device Code Phishing
  - Github Phishing
+ - Consent Fix attack
+ - Illicit consent Grant
 
 
 ## Active Directory
