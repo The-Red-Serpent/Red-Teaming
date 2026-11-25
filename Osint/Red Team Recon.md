@@ -65,6 +65,7 @@ Email Scraping:
  * https://www.signalhire.com/home
  * prospeo.io
  * leadiq
+ * Zoominfo
 
 Username Forging:
 * https://github.com/urbanadventurer/username-anarchy
