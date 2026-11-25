@@ -63,6 +63,8 @@ Email Scraping:
  * https://snov.io/
  * https://www.lusha.com/
  * https://www.signalhire.com/home
+ * prospeo.io
+ * leadiq
 
 Username Forging:
 * https://github.com/urbanadventurer/username-anarchy
