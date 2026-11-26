@@ -45,6 +45,8 @@
  - Github Phishing
  - Consent Fix attack
  - Illicit consent Grant
+ - click fix
+ - File FIx
 
 
 ## Active Directory
