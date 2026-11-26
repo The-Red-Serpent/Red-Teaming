@@ -82,6 +82,10 @@
 - OAUTH
 - OPENID
 - JWT Assertions
+- PHS
+- PTS
+- Federation
+- Entra Cloud Sync
 
 ## Malware Development
 
