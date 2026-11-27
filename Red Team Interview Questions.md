@@ -42,7 +42,7 @@
  - Explain about tools u use for phishing campaigns
  - SMTP relay servers
  - Device Code Phishing
- - Github Phishing
+ - Github device code Phishing
  - Consent Fix attack
  - Illicit consent Grant
  - click fix
