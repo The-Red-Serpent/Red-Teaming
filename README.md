@@ -20,7 +20,8 @@
 
 
 - C programming Language
-  https://www.sans.org/webcasts/intro-c-windows-devs
+  - https://www.sans.org/webcasts/intro-c-windows-devs
+
 - Terraform
 
 - Phishing Operations
