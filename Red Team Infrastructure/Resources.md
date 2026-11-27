@@ -29,9 +29,6 @@
 
 ### Phishing Infrastructure
 
-* Phishing Infrastructure Setup
-  [https://payatu.com/blog/phishing-infrastructure-setup/](https://payatu.com/blog/phishing-infrastructure-setup/)
-
 * Cloudflare Tunnels for Phishing
   [https://0xd33r.com/article/2025/cloudflare-tunnels-for-phishing](https://0xd33r.com/article/2025/cloudflare-tunnels-for-phishing)
 
