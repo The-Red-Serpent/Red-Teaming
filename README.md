@@ -19,6 +19,8 @@
 - OSINT (Open-Source Intelligence)
 
 
+- C programming Language
+  https://www.sans.org/webcasts/intro-c-windows-devs
 - Terraform
 
 - Phishing Operations
